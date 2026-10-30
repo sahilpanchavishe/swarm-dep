@@ -1,0 +1,10 @@
+# PLACEHOLDER confusion matrix - REPLACE with measured values from participant recordings.
+# Rows = intended gesture, Columns = recognised gesture. Each row sums to 1.0.
+# Order: CIRCLE, LINE, CLUSTER, SPLIT, STOP, WAIT
+intended,CIRCLE,LINE,CLUSTER,SPLIT,STOP,WAIT
+CIRCLE,0.95,0.02,0.01,0.01,0.00,0.01
+LINE,0.02,0.94,0.02,0.01,0.00,0.01
+CLUSTER,0.01,0.02,0.94,0.02,0.00,0.01
+SPLIT,0.01,0.01,0.03,0.93,0.00,0.02
+STOP,0.00,0.00,0.00,0.01,0.97,0.02
+WAIT,0.01,0.01,0.01,0.01,0.02,0.94
