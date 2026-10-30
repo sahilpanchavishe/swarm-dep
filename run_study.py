@@ -12,7 +12,7 @@ os.makedirs("data", exist_ok=True)
 
 LOSS_RATES = [0.0, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40]
 SWARM_SIZES = [8, 16, 32]
-SEEDS = 50                 # episodes per (N, loss) cell; more = tighter CIs
+SEEDS = 200                 # episodes per (N, loss) cell; more = tighter CIs
 BURST_LEN = 5
 
 rows = []

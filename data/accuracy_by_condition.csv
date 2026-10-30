@@ -1,0 +1,4 @@
+condition,overall_accuracy_pct,frames
+far_bright,79.94,11352
+near_bright,76.16,11159
+near_dim,87.18,10378
