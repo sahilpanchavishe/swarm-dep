@@ -16,7 +16,7 @@ total_frames = 0
 per_gesture_correct = defaultdict(int)
 per_gesture_total = defaultdict(int)
 
-for path in sorted(glob.glob("data/gesture_recordings/*.csv")):
+for path in sorted(glob.glob("data/gesture_recordings_cb/*.csv")):
     with open(path) as f:
         reader = csv.DictReader(f)
         for row in reader:
