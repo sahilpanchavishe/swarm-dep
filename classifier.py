@@ -12,6 +12,9 @@
 #   pinky:  17 MCP, 18 PIP, 19 DIP, 20 TIP
 
 import numpy as np
+# Tunable thresholds (verified robust via threshold_sensitivity_cb.py)
+FINGER_EXT_RATIO = 1.05
+THUMB_PALM_DIST  = 0.55
 
 # Each landmark is (x, y, z). `lm` is a (21, 3) array.
 
@@ -29,7 +32,7 @@ def finger_extended(lm, mcp, pip, tip):
     wrist = lm[0][:2]
     d_tip = np.linalg.norm(lm[tip][:2] - wrist)
     d_pip = np.linalg.norm(lm[pip][:2] - wrist)
-    return d_tip > d_pip * 1.05     # tip clearly beyond the knuckle
+    return d_tip > d_pip * FINGER_EXT_RATIO    # tip clearly beyond the knuckle
 
 def thumb_extended(lm, handedness="Right"):
     """Thumb extended if its tip is far from the palm center (as in thumbs-up).
@@ -38,7 +41,7 @@ def thumb_extended(lm, handedness="Right"):
     """
     palm = (lm[5][:2] + lm[9][:2] + lm[13][:2] + lm[17][:2]) / 4
     tip = lm[4][:2]
-    return np.linalg.norm(tip - palm) > 0.55
+    return np.linalg.norm(tip - palm) > THUMB_PALM_DIST
 
 def normalize(lm_raw):
     """lm_raw: (21,3) array. Translate to wrist origin, scale by hand size
