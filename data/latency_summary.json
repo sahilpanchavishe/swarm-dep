@@ -1,8 +1,8 @@
 {
-  "n_packets": 20,
-  "min_ms": 7.03,
-  "median_ms": 16.39,
-  "mean_ms": 15.72,
-  "max_ms": 25.61,
-  "std_ms": 5.16
+  "n_packets": 500,
+  "min_ms": 1.49,
+  "median_ms": 11.5,
+  "mean_ms": 12.36,
+  "max_ms": 27.36,
+  "std_ms": 6.84
 }

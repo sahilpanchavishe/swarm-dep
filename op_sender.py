@@ -8,12 +8,7 @@ from protocol import UDP_IP, UDP_PORT, make_packet
 
 # A scripted command timeline: (time_in_seconds, command)
 # This stands in for the human operator's gestures for now.
-SCHEDULE = [
-    (0.0, "CIRCLE"),
-    (8.0, "LINE"),
-    (16.0, "STOP"),    # the safety-critical one
-    (20.0, "CLUSTER"),
-]
+SCHEDULE = [(i * 0.1, "CIRCLE") for i in range(100)]
 
 def main():
     
