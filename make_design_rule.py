@@ -10,7 +10,7 @@ from run_episode_supervised import run_episode_supervised
 N = 8
 LOSS = 0.2
 TIMEOUTS = [0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.7, 1.0]
-SEEDS = 50
+SEEDS = 200
 
 safety_rate = []     # fraction of episodes with a safety violation
 nuisance_rate = []   # avg needless stops per episode (per robot)
