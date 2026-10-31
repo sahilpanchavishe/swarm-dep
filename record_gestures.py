@@ -31,8 +31,8 @@ GESTURES = {ord('1'): "STOP", ord('2'): "CIRCLE", ord('3'): "LINE",
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
 
-os.makedirs("data/gesture_recordings", exist_ok=True)
-out_path = f"data/gesture_recordings/{PARTICIPANT}_{CONDITION}.csv"
+os.makedirs("data/gesture_recordings_cb", exist_ok=True)
+out_path = f"data/gesture_recordings_cb/{PARTICIPANT}_{CONDITION}.csv"
 
 # CSV header: metadata + handedness + 63 landmark coords (x0,y0,z0,...,x20,y20,z20)
 header = ["participant", "condition", "intended_gesture", "handedness", "timestamp"]
@@ -50,10 +50,16 @@ recording = 0   # frames left to record in current burst
 print(f"Recording for {PARTICIPANT} / {CONDITION}")
 print("Keys: 1=STOP 2=CIRCLE 3=LINE 4=CLUSTER 5=SPLIT 6=WAIT | r=record burst | q=quit")
 
+fail_count = 0
 while True:
     ok, frame = cap.read()
     if not ok:
-        break
+        fail_count += 1
+        if fail_count > 60:
+            print("Camera lost - stopping.")
+            break
+        continue
+    fail_count = 0
     frame = cv2.flip(frame, 1)
     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     result = hands.process(rgb)
@@ -106,8 +112,12 @@ cap.release()
 cv2.destroyAllWindows()
 
 # Save.
-with open(out_path, "w", newline="") as f:
-    w = csv.writer(f)
-    w.writerow(header)
-    w.writerows(rows)
-print(f"\nSaved {len(rows)} frames to {out_path}")
+# Save only if we actually recorded something (protects existing files).
+if rows:
+    with open(out_path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(rows)
+    print(f"\nSaved {len(rows)} frames to {out_path}")
+else:
+    print("\nNo frames recorded - nothing saved (any existing file is kept).")
