@@ -95,6 +95,23 @@ if os.path.exists("data/design_rule_v2.csv"):
         L.append(f"- burst {b} s, loss 10%: " + "; ".join(
             f"T={r['timeout_s']}: viol {100*float(r['total_violation']):.1f}%, nuisance {100*float(r['nuisance_per_robot_3s']):.1f}%" for r in row))
 
+# --- peer relay (run_relay_study) ---
+if os.path.exists("data/relay_study.csv"):
+    Q = list(csv.DictReader(open("data/relay_study.csv")))
+    def gq(relay, f, b, l, N):
+        return [r for r in Q if r["relay"] == str(relay) and float(r["rx_fraction"]) == f and r["burst_s"] == b
+                and r["loss"] == l and r["N"] == N][0]
+    L.append("\n## Peer relay of STOP vs broadcast only (300 seeds; misread floor added exactly)")
+    for f in (0.0, 0.5, 1.0):
+        L.append(f"- 0.3 s bursts, 10% loss, {int(100*f)}% of loss at receiver: " + "; ".join(
+            f"N={N} broadcast {100*float(gq(0,f,'0.3','0.1',N)['total_violation']):.1f}% -> relay {100*float(gq(1,f,'0.3','0.1',N)['total_violation']):.1f}%"
+            for N in ("8", "16", "32")))
+    for b in ("0.1", "1.0"):
+        L.append(f"- {b} s bursts, 10% loss, path fading only: " + "; ".join(
+            f"N={N} {100*float(gq(0,0.0,b,'0.1',N)['total_violation']):.1f}% -> {100*float(gq(1,0.0,b,'0.1',N)['total_violation']):.1f}%"
+            for N in ("8", "16", "32")))
+    L.append("- Relay cannot fix the shared misread (nobody receives STOP) and cannot reach a robot whose own receiver is deaf")
+
 # --- latency ---
 lat = json.load(open("data/latency_summary.json"))
 L.append(f"\n## Command latency (localhost UDP, {lat['n_packets']} packets)")

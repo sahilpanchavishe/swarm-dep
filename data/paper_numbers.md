@@ -37,6 +37,14 @@
 - burst 0.3 s, loss 10%: T=none: viol 26.9%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 59.9%; T=0.15: viol 1.3%, nuisance 52.2%; T=0.2: viol 1.3%, nuisance 45.6%; T=0.25: viol 1.3%, nuisance 38.3%; T=0.3: viol 1.3%, nuisance 32.9%; T=0.4: viol 8.2%, nuisance 24.9%; T=0.5: viol 11.2%, nuisance 17.6%; T=0.7: viol 19.7%, nuisance 7.8%
 - burst 1.0 s, loss 10%: T=none: viol 41.8%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 32.7%; T=0.15: viol 1.3%, nuisance 30.8%; T=0.2: viol 1.3%, nuisance 29.2%; T=0.25: viol 1.3%, nuisance 27.7%; T=0.3: viol 1.3%, nuisance 26.3%; T=0.4: viol 3.6%, nuisance 23.7%; T=0.5: viol 5.9%, nuisance 20.7%; T=0.7: viol 12.8%, nuisance 16.2%
 
+## Peer relay of STOP vs broadcast only (300 seeds; misread floor added exactly)
+- 0.3 s bursts, 10% loss, 0% of loss at receiver: N=8 broadcast 26.9% -> relay 1.3%; N=16 broadcast 47.0% -> relay 1.3%; N=32 broadcast 75.6% -> relay 1.3%
+- 0.3 s bursts, 10% loss, 50% of loss at receiver: N=8 broadcast 26.6% -> relay 18.4%; N=16 broadcast 51.3% -> relay 28.9%; N=32 broadcast 72.7% -> relay 46.4%
+- 0.3 s bursts, 10% loss, 100% of loss at receiver: N=8 broadcast 26.9% -> relay 26.9%; N=16 broadcast 46.7% -> relay 46.7%; N=32 broadcast 71.4% -> relay 71.4%
+- 0.1 s bursts, 10% loss, path fading only: N=8 4.6% -> 1.3%; N=16 5.5% -> 1.3%; N=32 10.8% -> 1.3%
+- 1.0 s bursts, 10% loss, path fading only: N=8 43.4% -> 1.3%; N=16 70.0% -> 1.6%; N=32 92.1% -> 1.6%
+- Relay cannot fix the shared misread (nobody receives STOP) and cannot reach a robot whose own receiver is deaf
+
 ## Command latency (localhost UDP, 500 packets)
 - median 11.5 ms, mean 12.36 ms, SD 6.84, range 1.49-27.36 ms
 - Processing + local network-stack latency only (a lower bound). NOT comparable with RAIST's 45 ms Wi-Fi estimate.

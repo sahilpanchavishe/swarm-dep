@@ -47,3 +47,31 @@ ax.set_xlabel("confirmation delay = window / 30 fps (ms)"); ax.set_ylabel("error
 ax.set_title("Waiting longer does not reduce STOP misreads")
 plt.tight_layout(); plt.savefig("figures/v2_confirmation_window.png", dpi=200); plt.close()
 print("saved figures/v2_*.png")
+
+# 4. peer relay vs broadcast
+import os
+if os.path.exists("data/relay_study.csv"):
+    Q = list(csv.DictReader(open("data/relay_study.csv")))
+    def g(relay, f, b, l, N):
+        return [r for r in Q if r["relay"] == str(relay) and float(r["rx_fraction"]) == f and r["burst_s"] == b
+                and r["loss"] == l and r["N"] == N][0]
+    fig, axs = plt.subplots(1, 2, figsize=(11, 3.8))
+    # (a) violation vs N at reference (0.3 s bursts, 10% loss)
+    Ns = ["8", "16", "32"]; x = [8, 16, 32]
+    axs[0].plot(x, [100 * float(g(0, 0.0, "0.3", "0.1", N)["total_violation"]) for N in Ns], "o-", color="#c0392b", label="broadcast only")
+    for f, col in [(0.0, "#1e8449"), (0.5, "#2a78c8"), (1.0, "#7f8c8d")]:
+        axs[0].plot(x, [100 * float(g(1, f, "0.3", "0.1", N)["total_violation"]) for N in Ns], "s--", color=col,
+                    label=f"peer relay, {int(100*f)}% of loss at receiver")
+    axs[0].set_xlabel("swarm size N"); axs[0].set_ylabel("STOP-violation rate (%)"); axs[0].set_xticks(x)
+    axs[0].set_title("Mean burst 300 ms, 10% loss"); axs[0].grid(alpha=0.3); axs[0].legend(fontsize=7)
+    # (b) benefit vs where bursts occur, N=16
+    fs = [0.0, 0.25, 0.5, 0.75, 1.0]
+    for b, col in [("0.1", "#e08a1e"), ("0.3", "#2a78c8"), ("1.0", "#8e44ad")]:
+        br = [100 * float(g(0, f, b, "0.1", "16")["total_violation"]) for f in fs]
+        rl = [100 * float(g(1, f, b, "0.1", "16")["total_violation"]) for f in fs]
+        axs[1].plot([100 * f for f in fs], br, "o-", color=col, label=f"broadcast, {1000*float(b):.0f} ms bursts")
+        axs[1].plot([100 * f for f in fs], rl, "s--", color=col, label=f"relay, {1000*float(b):.0f} ms bursts")
+    axs[1].set_xlabel("share of burst loss at the robot's own receiver (%)"); axs[1].set_ylabel("STOP-violation rate (%)")
+    axs[1].set_title("N = 16, 10% loss"); axs[1].grid(alpha=0.3); axs[1].legend(fontsize=7, ncol=2)
+    plt.tight_layout(); plt.savefig("figures/v2_peer_relay.png", dpi=200); plt.close()
+    print("saved figures/v2_peer_relay.png")

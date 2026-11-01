@@ -40,6 +40,10 @@ new method. Never call it a "novel framework" — that invites those three as co
   robot per 3 s at 10% bursty loss -> under bursty Wi-Fi the fail-safe buys safety with availability.
 - **Confirmation window:** waiting 33 -> 833 ms does not change STOP misreads (both misread holds are
   pose-level: P08, dim, read as LINE on every frame). Don't delay STOP for voting.
+- **Peer relay of STOP (`run_relay_study.py`):** robots that hold STOP rebroadcast it to neighbours.
+  If bursts are path fading, relay removes every loss-driven violation and safety no longer depends on
+  swarm size (0.3 s bursts, 10% loss, N=32: 75.6% -> 1.3%). If bursts are the robot's own receiver
+  going deaf, relay gives nothing. At a 50/50 split: 72.7% -> 46.4%. Relay never fixes the shared misread.
 - **FMEA:** regenerated on `sim_v2` at a stated reference Wi-Fi condition (placeholder until measured).
 - **Superseded:** v1 results (N-effect at 0% loss, 0.4-0.5 s timeout) are in `superseded_v1/` with the reason.
 

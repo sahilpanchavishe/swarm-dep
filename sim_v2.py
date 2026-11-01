@@ -97,3 +97,54 @@ def analytic_violation(N, mean_loss, mean_burst_s, p_misread, rec_delay_s=0.033,
         p_bg = 1.0 / max(1.0, mean_burst_s * RATE_HZ)
         q = mean_loss * (1 - p_bg) ** (k - 1)         # start lost, stay lost k-1 more steps
     return p_misread + (1 - p_misread) * (1 - (1 - q) ** N), k, q
+
+
+def run_episode_relay(N, mean_loss, mean_burst_s, seed, p_misread, rx_fraction=0.0,
+                      spacing_m=3.0, relay_range_m=6.0, rec_delay_s=0.033,
+                      t_stop_cmd=1.0, relay=True, sim_s=3.0):
+    """Peer relay of STOP. Every robot that has latched STOP rebroadcasts it at RATE_HZ to robots
+    within relay_range_m (multi-hop: relayed robots relay too).
+    Where do loss bursts happen? rx_fraction splits the burst loss between
+      - the robot's own receiver (deaf to everyone: operator AND neighbours), loss = mean_loss*rx_fraction
+      - individual links (operator->i, j->i, each its own burst channel), loss = mean_loss*(1-rx_fraction).
+    rx_fraction=0: pure path fading (relay can route around it). rx_fraction=1: pure receiver deafness
+    (relay cannot help). Same scenario, timing, shared misread and safety check as run_episode_v2.
+    relay=False gives plain 30 Hz broadcast. Relay airtime/collisions are not modelled (limitation)."""
+    rng = np.random.default_rng(seed)
+    robots = [Robot(x=i * spacing_m, y=0.0, theta=0.0, robot_id=i) for i in range(N)]
+    nbrs = [set(j for j in range(N) if j != i and abs(i - j) * spacing_m <= relay_range_m) for i in range(N)]
+    rx = [GilbertElliott(mean_loss * rx_fraction, mean_burst_s, rng) for _ in range(N)]
+    op = [GilbertElliott(mean_loss * (1 - rx_fraction), mean_burst_s, rng) for _ in range(N)]
+    links = {}
+    def link(j, i):
+        if (j, i) not in links: links[(j, i)] = GilbertElliott(mean_loss * (1 - rx_fraction), mean_burst_s, rng)
+        return links[(j, i)]
+    misread = np.random.default_rng([seed, 7]).random() < p_misread
+    t_emit = t_stop_cmd + rec_delay_s
+    stopped = [False] * N
+    deadline = t_stop_cmd + T_STOP
+    v_after = [0.0] * N
+    next_tx, t = 0.0, 0.0
+    while t < sim_s:
+        if t >= next_tx - 1e-9:
+            op_stop = t >= t_emit and not misread
+            deaf = [ch.step() for ch in rx]
+            op_lost = [ch.step() for ch in op]
+            senders = [j for j in range(N) if stopped[j]] if relay else []
+            new = []
+            for i in range(N):
+                if stopped[i]: continue
+                got = op_stop and not (deaf[i] or op_lost[i])
+                if not got and not deaf[i]:
+                    for j in senders:
+                        if j in nbrs[i] and not link(j, i).step():
+                            got = True; break
+                if got: new.append(i)
+            for i in new: stopped[i] = True
+            next_tx += 1.0 / RATE_HZ
+        for i, r in enumerate(robots):
+            r.step(0.0 if stopped[i] else V_MAX, 0.0, DT)
+            if t >= deadline: v_after[i] = max(v_after[i], abs(r.v))
+        t += DT
+    n_moving = sum(v > V_STOPPED for v in v_after)
+    return {"violated": n_moving > 0, "n_moving": n_moving, "misread": misread}

@@ -10,8 +10,11 @@
 - [x] FMEA regenerated on `sim_v2` at a stated reference condition (0.3 s bursts, 10% loss) - update REF in `make_fmea.py` once Wi-Fi is measured.
 - [x] Gazebo summary fixed: a parked robot's wheel jitter (0.012 m/s, <1 mm) was counted as "moving". Now uses >1 cm displacement. Result unchanged: robots 1 and 5 violate.
 
+- [x] Peer relay analysed (`run_relay_study.py`, `figures/v2_peer_relay.png`): full benefit under path fading, none under receiver deafness; stated limitation: relay airtime/collisions not modelled.
+
 ## Must do before submission (data)
 - [ ] **Measure the real Wi-Fi burst statistics** (see below) and set the reference condition. The headline depends on it.
+- [ ] **Where do bursts happen?** Relay's benefit depends on it. In the Wi-Fi sessions, place two receivers side by side (< 0.5 m) and two far apart: if side-by-side receivers lose the same packets, loss is environmental/path; if they don't, it is receiver-specific. `fit_wifi.py` reports the overlap.
 - [ ] **Dedicated STOP dataset**: the STOP misread rate rests on 2 events, both from one person in one condition (CI 0.35-4.5%). Record ~60 STOP holds per person with the same protocol; if the 2 events were a labelling slip the true rate may be ~0.
 
 ## Must do before submission (humans)
