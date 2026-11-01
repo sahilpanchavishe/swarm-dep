@@ -1,0 +1,4 @@
+condition,accuracy_pct,instances
+far_bright,87.25,690
+near_bright,84.51,678
+near_dim,80.68,730

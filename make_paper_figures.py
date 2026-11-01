@@ -46,13 +46,13 @@ print("saved figures/latency_histogram.png")
 
 # 3. Accuracy by condition
 conds=[]; accs=[]
-with open("data/accuracy_by_condition_cb.csv") as f:
+with open("data/accuracy_by_condition_voted.csv") as f:
     for row in csv.DictReader(f):
         conds.append(row["condition"]); accs.append(float(row["accuracy_pct"]))
 fig,ax=plt.subplots(figsize=(6,4))
 bars=ax.bar(conds, accs, color=["tab:green","tab:blue","tab:orange"])
 ax.set_ylabel("Recognition accuracy (%)"); ax.set_ylim(0,100)
-ax.set_title("Recognition accuracy by condition")
+ax.set_title("Per-command recognition accuracy by condition (voted)")
 for b,a in zip(bars,accs):
     ax.text(b.get_x()+b.get_width()/2, a+1, f"{a:.1f}%", ha="center")
 plt.tight_layout(); plt.savefig("figures/accuracy_by_condition.png", dpi=200); plt.close()

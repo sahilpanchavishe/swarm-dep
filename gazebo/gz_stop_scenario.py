@@ -82,8 +82,17 @@ def summarise(rows, a, fates):
         if t >= a.t_stop and r["t_rest"] is None and v < V_STOPPED and fate != "DRIVE":
             r["t_rest"] = t - a.t_stop
             r["x_rest"] = x
+    # Moving after the deadline = displaced > 1 cm over the post-deadline window.
+    # (Instantaneous speed alone is unreliable: Gazebo wheel-contact jitter reaches
+    #  ~0.012 m/s on a parked robot, which is above V_STOPPED but moves it < 1 mm.)
+    xs = {}
+    for t, i, fate, x, y, v in rows:
+        if t >= deadline:
+            xs.setdefault(i, []).append((x, y))
+    for i, pts in xs.items():
+        per[i]["disp_after_deadline_m"] = math.hypot(pts[-1][0] - pts[0][0], pts[-1][1] - pts[0][1])
     receivers = [r for r in per.values() if r["fate"] != "DRIVE" and r["t_rest"] is not None]
-    still = [i for i, r in per.items() if r["v_after_deadline"] > V_STOPPED]
+    still = [i for i, r in per.items() if r.get("disp_after_deadline_m", 0.0) > 0.01]
     out = {
         "N": a.N, "loss_rate": a.loss, "burst_len": a.burst, "seed": a.seed,
         "fates": fates, "n_missed_stop": fates.count("DRIVE"),

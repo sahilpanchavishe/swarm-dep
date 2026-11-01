@@ -10,6 +10,7 @@ Run from the repo root on the Ubuntu/WSL machine:
 1. `bash gazebo/launch_swarm.sh 8`            (terminal 1, leave open)
 2. `python3 gazebo/gz_stop_scenario.py --N 8 --loss 0.2 --seed 0`   (terminal 2)
 3. `python3 gazebo/plot_gazebo_run.py data/gazebo_runs/run_N8_loss0.2_seed0.csv`
+4. (after a code change only) `python3 gazebo/resummarise.py data/gazebo_runs/run_N8_loss0.2_seed0.csv` rebuilds the .json from the logged .csv
 
 What to report honestly in the paper: Gazebo is a second simulator, not
 hardware. The physics server runs headless and uses sim time, so results do not

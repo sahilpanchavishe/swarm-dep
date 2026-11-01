@@ -1,5 +1,7 @@
 # Swarm Dependability Study — Project Status & Handoff
 
+**All numbers for the paper: see `data/paper_numbers.md` (regenerate with `python make_numbers_sheet.py`).**
+
 **Paper (working title):** *Data-Driven Dependability of Gesture-Commanded Decentralized Swarms: Recognition Errors, Packet Loss, and a Fail-Safe Design Rule*
 **Target journal:** Sādhanā (Springer, SCIE, Q3)
 **Team:** Group 13, COEP Technological University, Pune
@@ -21,13 +23,13 @@ new method. Never call it a "novel framework" — that invites those three as co
 
 ## 2. Key results (all from the CLEAN counterbalanced dataset)
 
-- **Gesture recognition:** 83.4% overall (8 participants, counterbalanced, 3 conditions).
-  Strong: LINE 95%, STOP 99%, SPLIT 92%, WAIT 92%, CLUSTER 74%. Weak: CIRCLE 47%
+- **Gesture recognition:** 84.1% per command (temporal vote, 15 frames; 83.4% per frame). 8 participants, counterbalanced, 3 conditions.
+  Strong: LINE 96%, STOP 99%, SPLIT 93%, WAIT 93%, CLUSTER 75%. Weak: CIRCLE 47% (fist vs thumbs-up)
   (fist vs thumbs-up confusion — a real recognition ambiguity, reported as a limitation).
-- **Per-condition robustness (now valid — confound fixed):** far 87%, near 84%, dim 79%.
+- **Per-condition robustness (now valid — confound fixed):** far 87.2%, near 84.5%, dim 80.7% (per command; dim vs far p<0.001).
   Dim lighting degrades recognition, especially subtle gestures (CLUSTER, WAIT); distance is fine.
 - **Dependability sweep (STOP-violation rate vs packet loss, 200 seeds):**
-  baseline (0% loss) rises with swarm size — N=8: 13%, N=16: 23%, N=32: 37% — because more
+  baseline (0% loss) rises with swarm size — N=8: 12.5%, N=16: 22.0%, N=32: 34.5% — because more
   robots means higher chance ≥1 misreads STOP. All climb to ~100% as packet loss increases.
 - **Fail-safe design rule:** set timeout ≈ 0.4–0.5 s (safety violations ≤1.5%, nuisance ≤4%).
 - **FMEA:** top risks are dropped STOP (RPN 378) and misclassified STOP (252) — exactly what
