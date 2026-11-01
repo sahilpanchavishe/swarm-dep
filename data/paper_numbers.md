@@ -10,35 +10,37 @@
   - far_bright vs near_dim: z=3.36, p=0.0008
   - near_bright vs near_dim: z=1.89, p=0.0587
 
-## STOP channel
-- P(STOP recognised as STOP) = 98.68%; P(STOP misread) per robot = 1.32%
-- Spurious STOP: CLUSTER->STOP 22.4%, SPLIT->STOP 4.0% (fail-safe direction)
+## STOP channel (per gesture hold, shared by all robots)
+- window 1 frames (33 ms): STOP misread 2/157 = 1.27% (95% CI 0.35-4.53); all-gesture error 17.5%
+- window 15 frames (500 ms): STOP misread 2/151 = 1.32% (95% CI 0.36-4.70); all-gesture error 15.6%
+- Both misread STOP holds: participant P08, near_dim, read as LINE on every frame -> pose-level (or labelling) error; no temporal window or STOP-priority rule removes it
+- STOP-priority (any STOP frame in first 1): missed STOP 1.27%, false STOP on other gestures 5.6%
+- STOP-priority (any STOP frame in first 5): missed STOP 1.31%, false STOP on other gestures 7.6%
+- STOP-priority (any STOP frame in first 15): missed STOP 1.32%, false STOP on other gestures 9.3%
 
-## Dependability sweep (STOP-violation rate, 200 seeds/cell)
-- N=8, 0% loss: 12.5% (95% CI 8.6-17.8); closed form 1-(1-p)^N = 10.1%
-- N=16, 0% loss: 22.0% (95% CI 16.8-28.2); closed form 1-(1-p)^N = 19.2%
-- N=32, 0% loss: 34.5% (95% CI 28.3-41.3); closed form 1-(1-p)^N = 34.6%
-  - N=8 vs N=16: z=-2.51, p=0.0119
-  - N=16 vs N=32: z=-2.78, p=0.0055
-  - N=8 vs N=32: z=-5.19, p=0.0000
-- N=8: violation >= 95% from loss = 35%
-- N=16: violation >= 95% from loss = 20%
-- N=32: violation >= 95% from loss = 10%
+## Dependability (sim_v2: shared misread, 30 Hz rebroadcast + latching, Gilbert-Elliott bursts, 400 seeds)
+- 0% loss: total violation = P(misread) = 1.27% for every N (no swarm-size effect)
+- Independent drops (mean burst 33 ms): violation stays at the misread floor up to 40% loss - rebroadcast defeats i.i.d. loss
+- burst 0.1 s, loss 10%: N=8 3.0% (analytic 4.3), N=16 7.4% (analytic 7.3), N=32 9.7% (analytic 12.9)
+- burst 0.1 s, loss 20%: N=8 6.5% (analytic 7.3), N=16 14.4% (analytic 12.9), N=32 20.0% (analytic 23.2)
+- burst 0.3 s, loss 10%: N=8 27.7% (analytic 28.2), N=16 49.9% (analytic 47.7), N=32 72.6% (analytic 72.3)
+- burst 0.3 s, loss 20%: N=8 46.9% (analytic 48.4), N=16 74.6% (analytic 73.0), N=32 91.4% (analytic 92.6)
+- burst 1.0 s, loss 10%: N=8 43.0% (analytic 47.6), N=16 71.6% (analytic 72.2), N=32 90.6% (analytic 92.2)
+- burst 1.0 s, loss 20%: N=8 69.6% (analytic 73.7), N=16 92.8% (analytic 93.0), N=32 99.5% (analytic 99.5)
+  - reference (0.3 s, 10%) N=8 vs N=16: z=-6.56, p=5.5e-11
+  - reference (0.3 s, 10%) N=16 vs N=32: z=-6.66, p=2.7e-11
+  - reference (0.3 s, 10%) N=8 vs N=32: z=-12.87, p=6.6e-38
+- Correlation matters: at 0.3 s/10%, N=32 independent 72.6% vs half-shared bursts 46.9%
 
-## Fail-safe timeout (N=8, 20% loss)
-- timeout 0.1 s: safety violations 0.0%, nuisance stops 99.75%
-- timeout 0.15 s: safety violations 0.0%, nuisance stops 99.75%
-- timeout 0.2 s: safety violations 0.0%, nuisance stops 61.62%
-- timeout 0.25 s: safety violations 0.0%, nuisance stops 61.62%
-- timeout 0.3 s: safety violations 0.0%, nuisance stops 15.81%
-- timeout 0.4 s: safety violations 0.5%, nuisance stops 3.69%
-- timeout 0.5 s: safety violations 1.5%, nuisance stops 1.31%
-- timeout 0.7 s: safety violations 1.5%, nuisance stops 0.06%
-- timeout 1.0 s: safety violations 1.5%, nuisance stops 0.0%
+## Fail-safe timeout (N=8; analytic bound = T_STOP - t_rec - V_MAX/A_MAX = 0.234 s)
+- burst 0.1 s, loss 10%: T=none: viol 2.6%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 74.2%; T=0.15: viol 1.3%, nuisance 49.7%; T=0.2: viol 1.3%, nuisance 31.2%; T=0.25: viol 1.3%, nuisance 18.3%; T=0.3: viol 1.3%, nuisance 11.0%; T=0.4: viol 2.3%, nuisance 3.3%; T=0.5: viol 2.6%, nuisance 0.7%; T=0.7: viol 2.6%, nuisance 0.0%
+- burst 0.3 s, loss 10%: T=none: viol 26.9%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 59.9%; T=0.15: viol 1.3%, nuisance 52.2%; T=0.2: viol 1.3%, nuisance 45.6%; T=0.25: viol 1.3%, nuisance 38.3%; T=0.3: viol 1.3%, nuisance 32.9%; T=0.4: viol 8.2%, nuisance 24.9%; T=0.5: viol 11.2%, nuisance 17.6%; T=0.7: viol 19.7%, nuisance 7.8%
+- burst 1.0 s, loss 10%: T=none: viol 41.8%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 32.7%; T=0.15: viol 1.3%, nuisance 30.8%; T=0.2: viol 1.3%, nuisance 29.2%; T=0.25: viol 1.3%, nuisance 27.7%; T=0.3: viol 1.3%, nuisance 26.3%; T=0.4: viol 3.6%, nuisance 23.7%; T=0.5: viol 5.9%, nuisance 20.7%; T=0.7: viol 12.8%, nuisance 16.2%
 
 ## Command latency (localhost UDP, 500 packets)
-- median 11.5 ms, mean 12.36 ms, SD 6.84, range 1.49-27.36 ms (RAIST assumed 45 ms network)
+- median 11.5 ms, mean 12.36 ms, SD 6.84, range 1.49-27.36 ms
+- Processing + local network-stack latency only (a lower bound). NOT comparable with RAIST's 45 ms Wi-Fi estimate.
 
-## Gazebo validation (run_N8_loss0.2_seed0.json)
+## Gazebo validation of braking (run_N8_loss0.2_seed0.json; fault pattern from the old v1 model - braking result only)
 - missed STOP: 2/8 robots [1, 5]; violated=True
 - stop time: Gazebo 0.750 s vs kinematic 0.733 s; distance: Gazebo 8.7 cm vs kinematic 8.1 cm

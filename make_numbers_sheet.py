@@ -57,45 +57,54 @@ for i in range(len(cs)):
         a, b = vcond[cs[i]], vcond[cs[j]]; zz, p = z(a[0], a[1], b[0], b[1])
         L.append(f"  - {cs[i]} vs {cs[j]}: z={zz:.2f}, p={p:.4f}")
 
-# --- STOP row and closed-form check ---
-conf = {}
-for line in open("data/confusion_matrix.csv"):
-    if line[0] == "#" or line.startswith("intended") or not line.strip(): continue
-    p = line.strip().split(","); conf[p[0]] = [float(v) for v in p[1:]]
-p_miss = 1 - conf["STOP"][G.index("STOP")]
-L.append("\n## STOP channel")
-L.append(f"- P(STOP recognised as STOP) = {100*(1-p_miss):.2f}%; P(STOP misread) per robot = {100*p_miss:.2f}%")
-L.append(f"- Spurious STOP: CLUSTER->STOP {100*conf['CLUSTER'][G.index('STOP')]:.1f}%, SPLIT->STOP {100*conf['SPLIT'][G.index('STOP')]:.1f}% (fail-safe direction)")
+# --- STOP channel (per hold: one camera, one classifier, one shared broadcast) ---
+mw = json.load(open("data/misread_vs_window.json"))
+L.append("\n## STOP channel (per gesture hold, shared by all robots)")
+for e in mw["stop"]:
+    if e["W"] in (1, 15):
+        L.append(f"- window {e['W']} frames ({1000*e['delay_s']:.0f} ms): STOP misread {e['k']}/{e['n']} = {100*e['p']:.2f}% (95% CI {100*e['ci'][0]:.2f}-{100*e['ci'][1]:.2f}); all-gesture error {100*e['all_err']:.1f}%")
+L.append("- Both misread STOP holds: participant P08, near_dim, read as LINE on every frame -> pose-level (or labelling) error; no temporal window or STOP-priority rule removes it")
+for e in mw["priority"]:
+    if e["W"] in (1, 5, 15):
+        L.append(f"- STOP-priority (any STOP frame in first {e['W']}): missed STOP {100*e['missed']:.2f}%, false STOP on other gestures {100*e['false_stop']:.1f}%")
 
-# --- dependability sweep ---
-rows = list(csv.DictReader(open("data/study_results.csv")))
-L.append("\n## Dependability sweep (STOP-violation rate, 200 seeds/cell)")
-base = {}
-for r in rows:
-    if float(r["loss_rate"]) == 0.0:
-        N = int(r["N"]); k = round(float(r["violation_rate"]) * int(r["n_seeds"])); base[N] = (k, int(r["n_seeds"]))
-        pred = 1 - (1 - p_miss) ** N
-        L.append(f"- N={N}, 0% loss: {100*k/base[N][1]:.1f}% (95% CI {ci(*base[N])[0]:.1f}-{ci(*base[N])[1]:.1f}); closed form 1-(1-p)^N = {100*pred:.1f}%")
-for a, b in [(8, 16), (16, 32), (8, 32)]:
-    zz, p = z(*base[a], *base[b]); L.append(f"  - N={a} vs N={b}: z={zz:.2f}, p={p:.4f}")
-for N in (8, 16, 32):
-    sat = [float(r["loss_rate"]) for r in rows if int(r["N"]) == N and float(r["violation_rate"]) >= 0.95]
-    L.append(f"- N={N}: violation >= 95% from loss = {100*min(sat):.0f}%" if sat else f"- N={N}: never >= 95%")
+# --- corrected dependability sweep (sim_v2: shared misread, 30 Hz rebroadcast, Gilbert-Elliott) ---
+R = list(csv.DictReader(open("data/study_v2.csv")))
+L.append("\n## Dependability (sim_v2: shared misread, 30 Hz rebroadcast + latching, Gilbert-Elliott bursts, 400 seeds)")
+L.append(f"- 0% loss: total violation = P(misread) = {100*float(R[0]['p_misread']):.2f}% for every N (no swarm-size effect)")
+L.append("- Independent drops (mean burst 33 ms): violation stays at the misread floor up to 40% loss - rebroadcast defeats i.i.d. loss")
+for b in ("0.1", "0.3", "1.0"):
+    for loss in ("0.1", "0.2"):
+        c = {r["N"]: r for r in R if r["common"] == "0.0" and r["burst_s"] == b and r["loss"] == loss}
+        L.append(f"- burst {b} s, loss {float(loss)*100:.0f}%: " + ", ".join(
+            f"N={N} {100*float(c[N]['total_violation']):.1f}% (analytic {100*float(c[N]['analytic_total']):.1f})" for N in ("8", "16", "32")))
+ref = {r["N"]: r for r in R if r["common"] == "0.0" and r["burst_s"] == "0.3" and r["loss"] == "0.1"}
+def kn(r): n = int(r["seeds"]); return round(float(r["p_loss_violation"]) * n), n
+for a_, b_ in [("8", "16"), ("16", "32"), ("8", "32")]:
+    zz, p = z(*kn(ref[a_]), *kn(ref[b_]))
+    L.append(f"  - reference (0.3 s, 10%) N={a_} vs N={b_}: z={zz:.2f}, p={p:.2g}")
+c5 = {(r["common"], r["N"]): r for r in R if r["burst_s"] == "0.3" and r["loss"] == "0.1"}
+L.append(f"- Correlation matters: at 0.3 s/10%, N=32 independent {100*float(c5[('0.0','32')]['total_violation']):.1f}% vs half-shared bursts {100*float(c5[('0.5','32')]['total_violation']):.1f}%")
 
-# --- design rule ---
-L.append("\n## Fail-safe timeout (N=8, 20% loss)")
-for r in csv.DictReader(open("data/design_rule.csv")):
-    L.append(f"- timeout {r['timeout_s']} s: safety violations {r['safety_violation_pct']}%, nuisance stops {r['nuisance_stop_pct']}%")
+# --- fail-safe timeout (design_rule_v2) ---
+if os.path.exists("data/design_rule_v2.csv"):
+    D = list(csv.DictReader(open("data/design_rule_v2.csv")))
+    L.append(f"\n## Fail-safe timeout (N=8; analytic bound = T_STOP - t_rec - V_MAX/A_MAX = {D[0]['slack_bound_s']} s)")
+    for b in ("0.1", "0.3", "1.0"):
+        row = [r for r in D if r["burst_s"] == b and r["loss"] == "0.1"]
+        L.append(f"- burst {b} s, loss 10%: " + "; ".join(
+            f"T={r['timeout_s']}: viol {100*float(r['total_violation']):.1f}%, nuisance {100*float(r['nuisance_per_robot_3s']):.1f}%" for r in row))
 
 # --- latency ---
 lat = json.load(open("data/latency_summary.json"))
 L.append(f"\n## Command latency (localhost UDP, {lat['n_packets']} packets)")
-L.append(f"- median {lat['median_ms']} ms, mean {lat['mean_ms']} ms, SD {lat['std_ms']}, range {lat['min_ms']}-{lat['max_ms']} ms (RAIST assumed 45 ms network)")
+L.append(f"- median {lat['median_ms']} ms, mean {lat['mean_ms']} ms, SD {lat['std_ms']}, range {lat['min_ms']}-{lat['max_ms']} ms")
+L.append("- Processing + local network-stack latency only (a lower bound). NOT comparable with RAIST's 45 ms Wi-Fi estimate.")
 
 # --- Gazebo ---
 for f in sorted(glob.glob("data/gazebo_runs/*.json")):
     s = json.load(open(f))
-    L.append(f"\n## Gazebo validation ({os.path.basename(f)})")
+    L.append(f"\n## Gazebo validation of braking ({os.path.basename(f)}; fault pattern from the old v1 model - braking result only)")
     L.append(f"- missed STOP: {s['n_missed_stop']}/{s['N']} robots {s['robots_still_moving']}; violated={s['violated']}")
     L.append(f"- stop time: Gazebo {s['gazebo_stop_time_s_mean']:.3f} s vs kinematic {s['kinematic_stop_time_s']:.3f} s; "
              f"distance: Gazebo {100*s['gazebo_stop_dist_m_mean']:.1f} cm vs kinematic {100*s['kinematic_stop_dist_m']:.1f} cm")

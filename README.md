@@ -28,12 +28,20 @@ new method. Never call it a "novel framework" — that invites those three as co
   (fist vs thumbs-up confusion — a real recognition ambiguity, reported as a limitation).
 - **Per-condition robustness (now valid — confound fixed):** far 87.2%, near 84.5%, dim 80.7% (per command; dim vs far p<0.001).
   Dim lighting degrades recognition, especially subtle gestures (CLUSTER, WAIT); distance is fine.
-- **Dependability sweep (STOP-violation rate vs packet loss, 200 seeds):**
-  baseline (0% loss) rises with swarm size — N=8: 12.5%, N=16: 22.0%, N=32: 34.5% — because more
-  robots means higher chance ≥1 misreads STOP. All climb to ~100% as packet loss increases.
-- **Fail-safe design rule:** set timeout ≈ 0.4–0.5 s (safety violations ≤1.5%, nuisance ≤4%).
-- **FMEA:** top risks are dropped STOP (RPN 378) and misclassified STOP (252) — exactly what
-  the fail-safe supervisor addresses.
+- **Dependability (corrected model `sim_v2.py`, 1 Nov 2026):** one shared misread per STOP hold,
+  STOP rebroadcast at 30 Hz with latching (as RAIST), Gilbert-Elliott burst loss.
+  - 0% loss: violation = P(STOP misread) = 1.27% for every swarm size (no N effect).
+  - Short independent drops: rebroadcast defeats them (stays at 1.27% up to 40% loss).
+  - Long bursts break it and swarm size returns: 0.3 s bursts, 10% loss -> 27.7% / 49.9% / 72.6%
+    for N = 8 / 16 / 32 (closed-form Markov result matches simulation).
+  - The answer depends on the real burst statistics -> measure them on the actual Wi-Fi.
+- **Fail-safe timeout:** analytic bound timeout <= T_stop - t_rec - v_max/a_max = 0.23 s removes
+  loss-driven violations; the shared misread (1.27%) remains. Cost: nuisance stops of 18-38% per
+  robot per 3 s at 10% bursty loss -> under bursty Wi-Fi the fail-safe buys safety with availability.
+- **Confirmation window:** waiting 33 -> 833 ms does not change STOP misreads (both misread holds are
+  pose-level: P08, dim, read as LINE on every frame). Don't delay STOP for voting.
+- **FMEA:** regenerated on `sim_v2` at a stated reference Wi-Fi condition (placeholder until measured).
+- **Superseded:** v1 results (N-effect at 0% loss, 0.4-0.5 s timeout) are in `superseded_v1/` with the reason.
 
 ---
 

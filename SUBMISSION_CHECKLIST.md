@@ -3,17 +3,23 @@
 ## Done (verified from data, see data/paper_numbers.md)
 - [x] Novelty: OpenAlex (19 queries + citation tracking) and IEEE Xplore (8 queries). No paper combines a measured gesture channel + STOP-safety analysis of a decentralized swarm + fail-safe rule. Details: Project doc `novelty-check-2026-11-01.md`.
 - [x] Every paper number regenerated from data in one file (`make_numbers_sheet.py` -> `data/paper_numbers.md`). Use only these numbers.
-- [x] Closed-form check: baseline violation = 1-(1-p)^N with measured p = 1.32% gives 10.1/19.2/34.6% vs simulated 12.5/22.0/34.5% (all inside 95% CIs). Report it: it shows the sim is consistent and the N-effect is not a sim artefact.
+- [x] RETRACTED: the earlier "1-(1-p)^N matches the simulation" claim. It matched because v1 drew misreads per robot (a bug). Fixed in `sim_v2.py`.
+- [x] Model corrected (`sim_v2.py`): shared misread per hold, 30 Hz rebroadcast + latching as RAIST publishes, Gilbert-Elliott bursts. Closed-form Markov result matches simulation within sampling error. v1 results moved to `superseded_v1/`.
+- [x] Latency claim corrected: 11.5 ms is localhost processing + stack (a lower bound), not comparable to RAIST's 45 ms Wi-Fi estimate.
 - [x] Recognition reported per command (15-frame vote) everywhere: 84.1%; per-frame 83.4% only as secondary.
-- [x] FMEA occurrence scores updated to final data (old rationale quoted the placeholder matrix). Ranking: dropped STOP 378, scaling 200, misread STOP 189, braking 84, nuisance 36.
+- [x] FMEA regenerated on `sim_v2` at a stated reference condition (0.3 s bursts, 10% loss) - update REF in `make_fmea.py` once Wi-Fi is measured.
 - [x] Gazebo summary fixed: a parked robot's wheel jitter (0.012 m/s, <1 mm) was counted as "moving". Now uses >1 cm displacement. Result unchanged: robots 1 and 5 violate.
+
+## Must do before submission (data)
+- [ ] **Measure the real Wi-Fi burst statistics** (see below) and set the reference condition. The headline depends on it.
+- [ ] **Dedicated STOP dataset**: the STOP misread rate rests on 2 events, both from one person in one condition (CI 0.35-4.5%). Record ~60 STOP holds per person with the same protocol; if the 2 events were a labelling slip the true rate may be ~0.
 
 ## Must do before submission (humans)
 - [ ] **Consent.** Confirm every person in BOTH recording sessions (31 Oct night, 1 Nov counterbalanced) signed/initialled consent. Without it you cannot publish or release the dataset.
 - [ ] **Ethics statement.** Ask COEP whether the gesture study needs formal approval or an exemption letter. Springer journals require a statement on human participants and informed consent.
 - [ ] **Repo visibility.** The GitHub repo is PUBLIC now and holds participant data. Either make it private until acceptance, or keep it public deliberately and cite it as the data availability link (anonymised P01-P08 only - already true).
 - [ ] **Overlap with RAIST 2026.** Cite it as prior work; write all text fresh (Springer runs a similarity check). Do not reuse RAIST figures (hand-landmark photo, workflow, star topology) unless redrawn and cited.
-- [ ] **Gesture mapping changed since RAIST.** RAIST: fist = WAIT, 4 gestures. This study: fist = CIRCLE, thumbs-up = WAIT, OK-sign = CLUSTER, 6 gestures. State this explicitly or a reviewer comparing the two papers will flag it.
+- [ ] **Gesture vocabulary changed since RAIST.** RAIST: 4 gestures, fist = WAIT, no thumbs-up. This study: 6 gestures, fist = CIRCLE, thumbs-up = WAIT, OK-sign = CLUSTER. The 47% CIRCLE-WAIT confusion and 22% CLUSTER->STOP are properties of these chosen poses. Explain why the vocabulary grew and admit this.
 - [ ] **Correct the RAIST reference errors in the new bibliography:**
   - Suresh & Martínez: IFAC-PapersOnLine 51(34):83-88, 2019 (arXiv 1804.08676, not 1803.01104)
   - Kakish, Vedartham & Berman: arXiv 2102.02439 (not 2103.06847)
@@ -21,7 +27,8 @@
   - Alonso-Mora et al. 2015 full title "...and its application to an interactive display", ICRA pp. 5948-5953
   - Şiean et al. 2023 has 5 authors; IJACSA 14(4)
   - Wameed & Alkamachi: OpenAlex lists 2023 and title "Hand Gestures Robotic Control Based on Computer Vision" - check the year
-  - RAIST abstract says 95.0%, its Table 2 gives 96.25% - do not repeat either number; cite RAIST for the system only
+  - RAIST abstract says 95.0%, its Table 2 gives 96.25% (20 trials/gesture) - state this in one neutral line
+  - RAIST's arXiv IDs (1803.01104, 2103.06847) do not resolve to those papers in search; the scholarly index records for the exact papers give 1804.08676 and 2102.02439 (with DOIs) - cite the DOIs
 - [ ] **Read two papers fully:** Robotica 2026 gesture-HSI formation (closest competitor) and "Uncertainty-aware hand gesture recognition for safety-critical and emergency HRI" (Sens. Actuators A 2024).
 - [ ] **Authorship and corresponding author** agreed (RAIST had 5 authors, faculty corresponding).
 - [ ] Optional: same queries in Scopus via COEP login.
