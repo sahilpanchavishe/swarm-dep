@@ -1,0 +1,5 @@
+model,hold_acc,stop_misread,stop_misread_sd
+GRU,0.8934,0.1522,0.0947
+LSTM,0.8557,0.1905,0.1496
+BiGRU,0.878,0.1221,0.0671
+BiLSTM,0.8867,0.1388,0.1116

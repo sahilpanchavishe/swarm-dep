@@ -1,9 +1,9 @@
 model,hold_acc,stop_misread,stop_misread_sd_across_folds
 rule-based(ours),0.8394,0.0156,0.0413
 KNN(k=5),0.8078,0.2076,0.1301
-SVM(RBF),0.933,0.1176,0.081
-RandomForest,0.8985,0.1807,0.0853
-XGBoost,0.9367,0.1223,0.078
-"MLP(128,64)",0.9402,0.1284,0.0977
+SVM(RBF),0.9334,0.1143,0.0809
+RandomForest,0.8975,0.1807,0.0853
+XGBoost,0.9372,0.1223,0.078
+"MLP(128,64)",0.9322,0.134,0.0888
 hold-SVM(RBF),0.884,0.1145,0.0912
-hold-XGBoost,0.8915,0.1148,0.1012
+hold-XGBoost,0.8906,0.1148,0.1012
