@@ -4,7 +4,7 @@
 import csv, json, itertools, math
 from multiprocessing import Pool
 from sim_v2 import run_episode_v2, analytic_violation
-PM = json.load(open("data/misread_vs_window.json"))["stop"][0]["p"]
+PM = json.load(open("data/stop_misread_primary.json"))["stop"][0]["p"]   # dedicated held-out STOP dataset
 SEEDS = 400
 GRID = list(itertools.product([0.0, 0.5], [0.033, 0.1, 0.3, 1.0],
                               [0.0, 0.05, 0.1, 0.2, 0.3, 0.4], [8, 16, 32]))

@@ -35,15 +35,14 @@ for ax, b in zip(axs, ("0.1", "0.3", "1.0")):
 axs[0].set_ylabel("rate (%)"); axs[0].legend(fontsize=8)
 plt.tight_layout(); plt.savefig("figures/v2_failsafe_timeout.png", dpi=200); plt.close()
 
-# 3. confirmation window: STOP misread flat, delay grows
-M = json.load(open("data/misread_vs_window.json"))
-W = [e["W"] for e in M["stop"]]
+# 3. confirmation window: STOP misread flat, delay grows (dedicated held-out set = primary, original set = supplementary)
+M = json.load(open("data/misread_vs_window.json")); P = json.load(open("data/stop_misread_primary.json"))
 fig, ax = plt.subplots(figsize=(6, 3.6))
-ax.errorbar([1000 * e["delay_s"] for e in M["stop"]], [100 * e["p"] for e in M["stop"]],
-            yerr=[[100 * (e["p"] - e["ci"][0]) for e in M["stop"]], [100 * (e["ci"][1] - e["p"]) for e in M["stop"]]],
-            fmt="o-", color="#c0392b", label="STOP hold misread (95% CI)")
-ax.plot([1000 * e["delay_s"] for e in M["stop"]], [100 * e["all_err"] for e in M["stop"]], "s--", color="grey", label="all-gesture error")
-ax.set_xlabel("confirmation delay = window / 30 fps (ms)"); ax.set_ylabel("error (%)"); ax.grid(alpha=0.3); ax.legend(fontsize=8)
+for D, col, lab, fmt in ((P, "#c0392b", f"dedicated STOP set (n={P['stop'][0]['n']})", "o-"), (M, "#2a78c8", f"original set (n={M['stop'][0]['n']})", "s--")):
+    ax.errorbar([1000 * e["delay_s"] for e in D["stop"]], [100 * e["p"] for e in D["stop"]],
+                yerr=[[100 * (e["p"] - e["ci"][0]) for e in D["stop"]], [100 * (e["ci"][1] - e["p"]) for e in D["stop"]]],
+                fmt=fmt, color=col, capsize=2, label="STOP hold misread, " + lab)
+ax.set_xlabel("confirmation delay = window / 30 fps (ms)"); ax.set_ylabel("STOP misread (%) with 95% CI"); ax.grid(alpha=0.3); ax.legend(fontsize=7)
 ax.set_title("Waiting longer does not reduce STOP misreads")
 plt.tight_layout(); plt.savefig("figures/v2_confirmation_window.png", dpi=200); plt.close()
 print("saved figures/v2_*.png")

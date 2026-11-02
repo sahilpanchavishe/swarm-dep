@@ -9,7 +9,7 @@ from multiprocessing import Pool
 from sim_v2 import run_episode_v2
 from robot import V_MAX, A_MAX
 from safety import T_STOP
-PM = json.load(open("data/misread_vs_window.json"))["stop"][0]["p"]
+PM = json.load(open("data/stop_misread_primary.json"))["stop"][0]["p"]   # dedicated held-out STOP dataset
 SLACK = T_STOP - 0.033 - V_MAX / A_MAX
 N, SEEDS = 8, 300
 GRID = list(itertools.product([0.1, 0.3, 1.0], [0.05, 0.1, 0.2],

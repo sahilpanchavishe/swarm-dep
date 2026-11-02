@@ -10,7 +10,7 @@ from robot import Robot, V_MAX, A_MAX
 from safety import T_STOP, V_STOPPED
 from sim_v2 import DT, RATE_HZ
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "data/wifi_runs"
-PM = json.load(open("data/misread_vs_window.json"))["stop"][0]["p"]
+PM = json.load(open("data/stop_misread_primary.json"))["stop"][0]["p"]   # dedicated held-out STOP dataset
 SESS = ["session1_quiet", "session2_busy", "session3_far"]; NPKT = 18000
 SLACK = T_STOP - 0.033 - V_MAX / A_MAX          # fail-safe timeout bound (0.234 s)
 

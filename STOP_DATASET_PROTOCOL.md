@@ -1,6 +1,6 @@
 # Dedicated STOP dataset (tightens the safety-critical number)
 
-Why: the STOP misread rate (1.27%) rests on 2 holds, both P08 in dim light, read as LINE on every
+Why (original motivation): the STOP misread rate (1.27%) rested on 2 holds, both P08 in dim light, read as LINE on every
 frame. 95% CI is 0.35-4.5%. If those 2 were a labelling slip the true rate may be ~0; if not, it is
 a real pose problem. Either way the paper needs more STOP holds.
 
@@ -18,3 +18,7 @@ Protocol
 
 Analysis: `python misread_vs_window.py` after pointing its glob at the new folder (or both folders).
 Report k/n and the Wilson 95% CI. If k = 0 of ~480, the 95% upper bound is ~0.8%.
+
+
+## Result (recorded 2 Nov 2026)
+481 STOP holds from P01-P08: 3 misreads = 0.62% (95% CI 0.21-1.82%). Errors: P04 near_dim read as CIRCLE, P06 far_bright as LINE, P08 near_bright as CLUSTER. The original P08 near_dim errors were not reproduced (0/20). Run `python3 analyze_stop_dataset.py` (and `make_stop_primary.py` to refresh `data/stop_misread_primary.json`).

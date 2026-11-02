@@ -4,7 +4,7 @@
 import csv, json, itertools, math
 from multiprocessing import Pool
 from sim_v2 import run_episode_relay
-PM = json.load(open("data/misread_vs_window.json"))["stop"][0]["p"]
+PM = json.load(open("data/stop_misread_primary.json"))["stop"][0]["p"]   # dedicated held-out STOP dataset
 SEEDS = 300
 GRID = [(relay, f, b, l, N) for relay in (False, True)
         for f in (0.0, 0.25, 0.5, 0.75, 1.0)

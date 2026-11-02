@@ -30,20 +30,31 @@ new method. Never call it a "novel framework" — that invites those three as co
   Dim lighting degrades recognition, especially subtle gestures (CLUSTER, WAIT); distance is fine.
 - **Dependability (corrected model `sim_v2.py`, 1 Nov 2026):** one shared misread per STOP hold,
   STOP rebroadcast at 30 Hz with latching (as RAIST), Gilbert-Elliott burst loss.
-  - 0% loss: violation = P(STOP misread) = 1.27% for every swarm size (no N effect).
-  - Short independent drops: rebroadcast defeats them (stays at 1.27% up to 40% loss).
-  - Long bursts break it and swarm size returns: 0.3 s bursts, 10% loss -> 27.7% / 49.9% / 72.6%
+  - 0% loss: violation = P(STOP misread) = 0.62% (dedicated held-out set, 3/481, 95% CI 0.21-1.82%; original set 2/157 = 1.27%) for every swarm size (no N effect).
+  - Short independent drops: rebroadcast defeats them (stays at the misread floor up to 40% loss).
+  - Long bursts break it and swarm size returns: 0.3 s bursts, 10% loss -> 27.2% / 49.6% / 72.4%
     for N = 8 / 16 / 32 (closed-form Markov result matches simulation).
   - The answer depends on the real burst statistics -> measure them on the actual Wi-Fi.
 - **Fail-safe timeout:** analytic bound timeout <= T_stop - t_rec - v_max/a_max = 0.23 s removes
-  loss-driven violations; the shared misread (1.27%) remains. Cost: nuisance stops of 18-38% per
+  loss-driven violations; the shared misread (0.62%) remains. Cost: nuisance stops of 18-38% per
   robot per 3 s at 10% bursty loss -> under bursty Wi-Fi the fail-safe buys safety with availability.
-- **Confirmation window:** waiting 33 -> 833 ms does not change STOP misreads (both misread holds are
-  pose-level: P08, dim, read as LINE on every frame). Don't delay STOP for voting.
+- **Confirmation window:** waiting 33 -> 833 ms does not change STOP misreads (the errors are pose-level and
+  persist for the first 10+ frames). Don't delay STOP for voting.
 - **Peer relay of STOP (`run_relay_study.py`):** robots that hold STOP rebroadcast it to neighbours.
   If bursts are path fading, relay removes every loss-driven violation and safety no longer depends on
-  swarm size (0.3 s bursts, 10% loss, N=32: 75.6% -> 1.3%). If bursts are the robot's own receiver
-  going deaf, relay gives nothing. At a 50/50 split: 72.7% -> 46.4%. Relay never fixes the shared misread.
+  swarm size (0.3 s bursts, 10% loss, N=32: 75.5% -> 0.6%). If bursts are the robot's own receiver
+  going deaf, relay gives nothing. At a 50/50 split: 72.5% -> 46.0%. Relay never fixes the shared misread.
+- **Dedicated STOP dataset (2 Nov, `data/gesture_recordings_stop`, `analyze_stop_dataset.py`):** 481 STOP holds, 8 people,
+  second person confirmed each pose. STOP misread 3/481 = 0.62% (95% CI 0.21-1.82%); the 3 errors are different people,
+  conditions and wrong answers (CIRCLE, LINE, CLUSTER); the original P08 dim-light errors did not recur (0/20). Dim vs other
+  conditions not distinguishable (p=0.34). This set was not used to tune the rules, so it is the out-of-sample estimate
+  (primary); the original 2/157 is supplementary. OK-sign (CLUSTER) read as STOP: 16/167 here vs 45/186 originally.
+- **Measured Wi-Fi (2 Nov, `data/wifi_runs`, `wifi/analysis`, `wifi-measurement-2026-11-02.md`):** sender-hosted hotspot, 2 Mac
+  receivers, 3 x 10 min. Loss 2-9% nearby, 42% at 8 m through a wall; bursts far heavier-tailed than an i.i.d. model predicts.
+- **Trace-driven study (`run_trace_study.py`, `TRACE_STUDY_RESULTS.md`):** replaying the measured traces, the fail-safe timeout
+  removes all loss-driven violations (total = 0.62%) but trips ~27 times/min/robot at 8 m through a wall: safety is bought with
+  availability, so range / link-quality monitoring is needed.
+- **Classifier comparison (`CLASSIFIER_COMPARISON.md`):** 14 models; higher overall accuracy does not mean safer STOP.
 - **FMEA:** regenerated on `sim_v2` at a stated reference Wi-Fi condition (placeholder until measured).
 - **Superseded:** v1 results (N-effect at 0% loss, 0.4-0.5 s timeout) are in `superseded_v1/` with the reason.
 

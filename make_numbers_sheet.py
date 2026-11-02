@@ -58,15 +58,27 @@ for i in range(len(cs)):
         L.append(f"  - {cs[i]} vs {cs[j]}: z={zz:.2f}, p={p:.4f}")
 
 # --- STOP channel (per hold: one camera, one classifier, one shared broadcast) ---
-mw = json.load(open("data/misread_vs_window.json"))
+mw = json.load(open("data/misread_vs_window.json"))            # original dataset (thresholds were tuned on it)
+pm = json.load(open("data/stop_misread_primary.json"))         # dedicated held-out STOP dataset = PRIMARY
 L.append("\n## STOP channel (per gesture hold, shared by all robots)")
+L.append(f"- PRIMARY: dedicated held-out STOP dataset, {len(pm['participants'])} participants, holds {pm['n_holds']}; second person confirmed each pose")
+for e in pm["stop"]:
+    if e["W"] in (1, 10, 25):
+        L.append(f"  - window {e['W']} frames ({1000*e['delay_s']:.0f} ms): STOP misread {e['k']}/{e['n']} = {100*e['p']:.2f}% (95% CI {100*e['ci'][0]:.2f}-{100*e['ci'][1]:.2f})")
+for er in pm["errors"]:
+    L.append(f"  - error: {er['participant']} {er['condition']}: read as {er['read_as']} (frames {er['frames']})")
+L.append("  - errors are spread over different people, conditions and wrong answers; dim vs other conditions not distinguishable (pooled 3/216 vs 2/422, Fisher p=0.34); confirmation window up to 10 frames does not remove them")
+fs = pm["priority"][0]["false_stop"]
+L.append(f"  - false STOP at W=1: LINE {fs['LINE'][0]}/{fs['LINE'][1]}, CLUSTER (OK-sign) {fs['CLUSTER'][0]}/{fs['CLUSTER'][1]}; original dataset CLUSTER 45/186 (differs by protocol: second-person pose check only in the dedicated set)")
+L.append(f"  - this set was NOT used to tune the classifier thresholds, so it is an out-of-sample estimate")
+L.append("- SUPPLEMENTARY: original dataset (rule thresholds tuned on it)")
 for e in mw["stop"]:
     if e["W"] in (1, 15):
-        L.append(f"- window {e['W']} frames ({1000*e['delay_s']:.0f} ms): STOP misread {e['k']}/{e['n']} = {100*e['p']:.2f}% (95% CI {100*e['ci'][0]:.2f}-{100*e['ci'][1]:.2f}); all-gesture error {100*e['all_err']:.1f}%")
-L.append("- Both misread STOP holds: participant P08, near_dim, read as LINE on every frame -> pose-level (or labelling) error; no temporal window or STOP-priority rule removes it")
+        L.append(f"  - window {e['W']} frames ({1000*e['delay_s']:.0f} ms): STOP misread {e['k']}/{e['n']} = {100*e['p']:.2f}% (95% CI {100*e['ci'][0]:.2f}-{100*e['ci'][1]:.2f}); all-gesture error {100*e['all_err']:.1f}%")
+L.append("  - both original errors: P08, near_dim, read as LINE on every frame; NOT reproduced in the dedicated set (P08 near_dim 0/20)")
 for e in mw["priority"]:
     if e["W"] in (1, 5, 15):
-        L.append(f"- STOP-priority (any STOP frame in first {e['W']}): missed STOP {100*e['missed']:.2f}%, false STOP on other gestures {100*e['false_stop']:.1f}%")
+        L.append(f"  - STOP-priority (any STOP frame in first {e['W']}), original: missed STOP {100*e['missed']:.2f}%, false STOP on other gestures {100*e['false_stop']:.1f}%")
 
 # --- corrected dependability sweep (sim_v2: shared misread, 30 Hz rebroadcast, Gilbert-Elliott) ---
 R = list(csv.DictReader(open("data/study_v2.csv")))
@@ -111,6 +123,27 @@ if os.path.exists("data/relay_study.csv"):
             f"N={N} {100*float(gq(0,0.0,b,'0.1',N)['total_violation']):.1f}% -> {100*float(gq(1,0.0,b,'0.1',N)['total_violation']):.1f}%"
             for N in ("8", "16", "32")))
     L.append("- Relay cannot fix the shared misread (nobody receives STOP) and cannot reach a robot whose own receiver is deaf")
+
+# --- sensitivity to the STOP misread value ---
+sens = pm["sensitivity_p"]
+L.append("\n## Sensitivity of total violation to the STOP misread (total = p + (1-p) * P_loss; P_loss from simulation)")
+L.append(f"- p values: primary {100*sens['primary']:.2f}%, original dataset {100*sens['original_dataset']:.2f}%, primary upper 95% bound {100*sens['primary_upper95']:.2f}%")
+for b_, l_, N_ in (("0.3", "0.1", "8"), ("0.3", "0.1", "32")):
+    r_ = [r for r in R if r["common"] == "0.0" and r["burst_s"] == b_ and r["loss"] == l_ and r["N"] == N_][0]
+    pl_ = float(r_["p_loss_violation"])
+    L.append(f"- burst {b_} s, loss {float(l_)*100:.0f}%, N={N_}: P_loss {100*pl_:.1f}% -> total " + ", ".join(
+        f"{100*(p_+(1-p_)*pl_):.1f}% at p={100*p_:.2f}%" for p_ in (sens["primary"], sens["original_dataset"], sens["primary_upper95"])))
+L.append("- with the fail-safe timeout every loss-driven violation is removed, so total = p: " + ", ".join(
+    f"{100*p_:.2f}%" for p_ in (sens["primary"], sens["original_dataset"], sens["primary_upper95"])))
+
+# --- measured Wi-Fi traces replayed (run_trace_study.py) ---
+if os.path.exists("data/trace_study.csv"):
+    T = list(csv.DictReader(open("data/trace_study.csv")))
+    L.append("\n## Measured Wi-Fi traces replayed through the model (sender-hosted hotspot, 2 Mac receivers, 3 sessions x 10 min; 500 episodes per cell)")
+    for r in T:
+        if r["N"] == "8":
+            L.append(f"- {r['receiver']} {r['session']}, timeout {r['timeout_s']}: P_loss {100*float(r['p_loss_violation']):.1f}% (+-{100*float(r['ci95']):.1f}), total {100*float(r['total_violation']):.2f}%, fail-safe trips/min/robot {r['failsafe_trips_per_min_per_robot']}")
+    L.append("- see wifi-measurement-2026-11-02.md for loss rates, burst lengths, longest outages and caveats")
 
 # --- latency ---
 lat = json.load(open("data/latency_summary.json"))

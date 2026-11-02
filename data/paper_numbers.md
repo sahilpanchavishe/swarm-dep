@@ -11,39 +11,71 @@
   - near_bright vs near_dim: z=1.89, p=0.0587
 
 ## STOP channel (per gesture hold, shared by all robots)
-- window 1 frames (33 ms): STOP misread 2/157 = 1.27% (95% CI 0.35-4.53); all-gesture error 17.5%
-- window 15 frames (500 ms): STOP misread 2/151 = 1.32% (95% CI 0.36-4.70); all-gesture error 15.6%
-- Both misread STOP holds: participant P08, near_dim, read as LINE on every frame -> pose-level (or labelling) error; no temporal window or STOP-priority rule removes it
-- STOP-priority (any STOP frame in first 1): missed STOP 1.27%, false STOP on other gestures 5.6%
-- STOP-priority (any STOP frame in first 5): missed STOP 1.31%, false STOP on other gestures 7.6%
-- STOP-priority (any STOP frame in first 15): missed STOP 1.32%, false STOP on other gestures 9.3%
+- PRIMARY: dedicated held-out STOP dataset, 8 participants, holds {'STOP': 481, 'LINE': 169, 'CLUSTER': 167}; second person confirmed each pose
+  - window 1 frames (33 ms): STOP misread 3/481 = 0.62% (95% CI 0.21-1.82)
+  - window 10 frames (333 ms): STOP misread 3/479 = 0.63% (95% CI 0.21-1.83)
+  - window 25 frames (833 ms): STOP misread 3/479 = 0.63% (95% CI 0.21-1.83)
+  - error: P04 near_dim: read as CIRCLE (frames {'CIRCLE': 17, 'STOP': 13})
+  - error: P06 far_bright: read as LINE (frames {'LINE': 24, 'SPLIT': 1})
+  - error: P08 near_bright: read as CLUSTER (frames {'CLUSTER': 23, 'STOP': 7})
+  - errors are spread over different people, conditions and wrong answers; dim vs other conditions not distinguishable (pooled 3/216 vs 2/422, Fisher p=0.34); confirmation window up to 10 frames does not remove them
+  - false STOP at W=1: LINE 0/169, CLUSTER (OK-sign) 16/167; original dataset CLUSTER 45/186 (differs by protocol: second-person pose check only in the dedicated set)
+  - this set was NOT used to tune the classifier thresholds, so it is an out-of-sample estimate
+- SUPPLEMENTARY: original dataset (rule thresholds tuned on it)
+  - window 1 frames (33 ms): STOP misread 2/157 = 1.27% (95% CI 0.35-4.53); all-gesture error 17.5%
+  - window 15 frames (500 ms): STOP misread 2/151 = 1.32% (95% CI 0.36-4.70); all-gesture error 15.6%
+  - both original errors: P08, near_dim, read as LINE on every frame; NOT reproduced in the dedicated set (P08 near_dim 0/20)
+  - STOP-priority (any STOP frame in first 1), original: missed STOP 1.27%, false STOP on other gestures 5.6%
+  - STOP-priority (any STOP frame in first 5), original: missed STOP 1.31%, false STOP on other gestures 7.6%
+  - STOP-priority (any STOP frame in first 15), original: missed STOP 1.32%, false STOP on other gestures 9.3%
 
 ## Dependability (sim_v2: shared misread, 30 Hz rebroadcast + latching, Gilbert-Elliott bursts, 400 seeds)
-- 0% loss: total violation = P(misread) = 1.27% for every N (no swarm-size effect)
+- 0% loss: total violation = P(misread) = 0.62% for every N (no swarm-size effect)
 - Independent drops (mean burst 33 ms): violation stays at the misread floor up to 40% loss - rebroadcast defeats i.i.d. loss
-- burst 0.1 s, loss 10%: N=8 3.0% (analytic 4.3), N=16 7.4% (analytic 7.3), N=32 9.7% (analytic 12.9)
-- burst 0.1 s, loss 20%: N=8 6.5% (analytic 7.3), N=16 14.4% (analytic 12.9), N=32 20.0% (analytic 23.2)
-- burst 0.3 s, loss 10%: N=8 27.7% (analytic 28.2), N=16 49.9% (analytic 47.7), N=32 72.6% (analytic 72.3)
-- burst 0.3 s, loss 20%: N=8 46.9% (analytic 48.4), N=16 74.6% (analytic 73.0), N=32 91.4% (analytic 92.6)
-- burst 1.0 s, loss 10%: N=8 43.0% (analytic 47.6), N=16 71.6% (analytic 72.2), N=32 90.6% (analytic 92.2)
-- burst 1.0 s, loss 20%: N=8 69.6% (analytic 73.7), N=16 92.8% (analytic 93.0), N=32 99.5% (analytic 99.5)
+- burst 0.1 s, loss 10%: N=8 2.4% (analytic 3.7), N=16 6.8% (analytic 6.7), N=32 9.1% (analytic 12.3)
+- burst 0.1 s, loss 20%: N=8 5.8% (analytic 6.7), N=16 13.8% (analytic 12.3), N=32 19.5% (analytic 22.7)
+- burst 0.3 s, loss 10%: N=8 27.2% (analytic 27.7), N=16 49.6% (analytic 47.4), N=32 72.4% (analytic 72.2)
+- burst 0.3 s, loss 20%: N=8 46.6% (analytic 48.1), N=16 74.4% (analytic 72.9), N=32 91.3% (analytic 92.6)
+- burst 1.0 s, loss 10%: N=8 42.6% (analytic 47.3), N=16 71.4% (analytic 72.1), N=32 90.6% (analytic 92.2)
+- burst 1.0 s, loss 20%: N=8 69.4% (analytic 73.6), N=16 92.8% (analytic 93.0), N=32 99.5% (analytic 99.5)
   - reference (0.3 s, 10%) N=8 vs N=16: z=-6.56, p=5.5e-11
   - reference (0.3 s, 10%) N=16 vs N=32: z=-6.66, p=2.7e-11
   - reference (0.3 s, 10%) N=8 vs N=32: z=-12.87, p=6.6e-38
-- Correlation matters: at 0.3 s/10%, N=32 independent 72.6% vs half-shared bursts 46.9%
+- Correlation matters: at 0.3 s/10%, N=32 independent 72.4% vs half-shared bursts 46.6%
 
 ## Fail-safe timeout (N=8; analytic bound = T_STOP - t_rec - V_MAX/A_MAX = 0.234 s)
-- burst 0.1 s, loss 10%: T=none: viol 2.6%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 74.2%; T=0.15: viol 1.3%, nuisance 49.7%; T=0.2: viol 1.3%, nuisance 31.2%; T=0.25: viol 1.3%, nuisance 18.3%; T=0.3: viol 1.3%, nuisance 11.0%; T=0.4: viol 2.3%, nuisance 3.3%; T=0.5: viol 2.6%, nuisance 0.7%; T=0.7: viol 2.6%, nuisance 0.0%
-- burst 0.3 s, loss 10%: T=none: viol 26.9%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 59.9%; T=0.15: viol 1.3%, nuisance 52.2%; T=0.2: viol 1.3%, nuisance 45.6%; T=0.25: viol 1.3%, nuisance 38.3%; T=0.3: viol 1.3%, nuisance 32.9%; T=0.4: viol 8.2%, nuisance 24.9%; T=0.5: viol 11.2%, nuisance 17.6%; T=0.7: viol 19.7%, nuisance 7.8%
-- burst 1.0 s, loss 10%: T=none: viol 41.8%, nuisance 0.0%; T=0.1: viol 1.3%, nuisance 32.7%; T=0.15: viol 1.3%, nuisance 30.8%; T=0.2: viol 1.3%, nuisance 29.2%; T=0.25: viol 1.3%, nuisance 27.7%; T=0.3: viol 1.3%, nuisance 26.3%; T=0.4: viol 3.6%, nuisance 23.7%; T=0.5: viol 5.9%, nuisance 20.7%; T=0.7: viol 12.8%, nuisance 16.2%
+- burst 0.1 s, loss 10%: T=none: viol 1.9%, nuisance 0.0%; T=0.1: viol 0.6%, nuisance 74.2%; T=0.15: viol 0.6%, nuisance 49.7%; T=0.2: viol 0.6%, nuisance 31.2%; T=0.25: viol 0.6%, nuisance 18.3%; T=0.3: viol 0.6%, nuisance 11.0%; T=0.4: viol 1.6%, nuisance 3.3%; T=0.5: viol 1.9%, nuisance 0.7%; T=0.7: viol 1.9%, nuisance 0.0%
+- burst 0.3 s, loss 10%: T=none: viol 26.5%, nuisance 0.0%; T=0.1: viol 0.6%, nuisance 59.9%; T=0.15: viol 0.6%, nuisance 52.2%; T=0.2: viol 0.6%, nuisance 45.6%; T=0.25: viol 0.6%, nuisance 38.3%; T=0.3: viol 0.6%, nuisance 32.9%; T=0.4: viol 7.6%, nuisance 24.9%; T=0.5: viol 10.6%, nuisance 17.6%; T=0.7: viol 19.2%, nuisance 7.8%
+- burst 1.0 s, loss 10%: T=none: viol 41.4%, nuisance 0.0%; T=0.1: viol 0.6%, nuisance 32.7%; T=0.15: viol 0.6%, nuisance 30.8%; T=0.2: viol 0.6%, nuisance 29.2%; T=0.25: viol 0.6%, nuisance 27.7%; T=0.3: viol 0.6%, nuisance 26.3%; T=0.4: viol 2.9%, nuisance 23.7%; T=0.5: viol 5.3%, nuisance 20.7%; T=0.7: viol 12.2%, nuisance 16.2%
 
 ## Peer relay of STOP vs broadcast only (300 seeds; misread floor added exactly)
-- 0.3 s bursts, 10% loss, 0% of loss at receiver: N=8 broadcast 26.9% -> relay 1.3%; N=16 broadcast 47.0% -> relay 1.3%; N=32 broadcast 75.6% -> relay 1.3%
-- 0.3 s bursts, 10% loss, 50% of loss at receiver: N=8 broadcast 26.6% -> relay 18.4%; N=16 broadcast 51.3% -> relay 28.9%; N=32 broadcast 72.7% -> relay 46.4%
-- 0.3 s bursts, 10% loss, 100% of loss at receiver: N=8 broadcast 26.9% -> relay 26.9%; N=16 broadcast 46.7% -> relay 46.7%; N=32 broadcast 71.4% -> relay 71.4%
-- 0.1 s bursts, 10% loss, path fading only: N=8 4.6% -> 1.3%; N=16 5.5% -> 1.3%; N=32 10.8% -> 1.3%
-- 1.0 s bursts, 10% loss, path fading only: N=8 43.4% -> 1.3%; N=16 70.0% -> 1.6%; N=32 92.1% -> 1.6%
+- 0.3 s bursts, 10% loss, 0% of loss at receiver: N=8 broadcast 26.5% -> relay 0.6%; N=16 broadcast 46.7% -> relay 0.6%; N=32 broadcast 75.5% -> relay 0.6%
+- 0.3 s bursts, 10% loss, 50% of loss at receiver: N=8 broadcast 26.1% -> relay 17.8%; N=16 broadcast 51.0% -> relay 28.4%; N=32 broadcast 72.5% -> relay 46.0%
+- 0.3 s bursts, 10% loss, 100% of loss at receiver: N=8 broadcast 26.5% -> relay 26.5%; N=16 broadcast 46.3% -> relay 46.3%; N=32 broadcast 71.2% -> relay 71.2%
+- 0.1 s bursts, 10% loss, path fading only: N=8 3.9% -> 0.6%; N=16 4.9% -> 0.6%; N=32 10.2% -> 0.6%
+- 1.0 s bursts, 10% loss, path fading only: N=8 43.0% -> 0.6%; N=16 69.9% -> 0.9%; N=32 92.0% -> 0.9%
 - Relay cannot fix the shared misread (nobody receives STOP) and cannot reach a robot whose own receiver is deaf
+
+## Sensitivity of total violation to the STOP misread (total = p + (1-p) * P_loss; P_loss from simulation)
+- p values: primary 0.62%, original dataset 1.27%, primary upper 95% bound 1.82%
+- burst 0.3 s, loss 10%, N=8: P_loss 26.8% -> total 27.2% at p=0.62%, 27.7% at p=1.27%, 28.1% at p=1.82%
+- burst 0.3 s, loss 10%, N=32: P_loss 72.2% -> total 72.4% at p=0.62%, 72.6% at p=1.27%, 72.8% at p=1.82%
+- with the fail-safe timeout every loss-driven violation is removed, so total = p: 0.62%, 1.27%, 1.82%
+
+## Measured Wi-Fi traces replayed through the model (sender-hosted hotspot, 2 Mac receivers, 3 sessions x 10 min; 500 episodes per cell)
+- R2 session1_quiet, timeout none: P_loss 1.0% (+-0.9), total 1.62%, fail-safe trips/min/robot 0.0
+- R2 session1_quiet, timeout 0.234: P_loss 0.0% (+-0.0), total 0.62%, fail-safe trips/min/robot 0.7
+- R2 session2_busy, timeout none: P_loss 0.2% (+-0.4), total 0.82%, fail-safe trips/min/robot 0.0
+- R2 session2_busy, timeout 0.234: P_loss 0.0% (+-0.0), total 0.62%, fail-safe trips/min/robot 1.0
+- R2 session3_far, timeout none: P_loss 10.4% (+-2.7), total 10.96%, fail-safe trips/min/robot 0.0
+- R2 session3_far, timeout 0.234: P_loss 0.0% (+-0.0), total 0.62%, fail-safe trips/min/robot 1.0
+- R4 session1_quiet, timeout none: P_loss 2.4% (+-1.3), total 3.01%, fail-safe trips/min/robot 0.0
+- R4 session1_quiet, timeout 0.234: P_loss 0.0% (+-0.0), total 0.62%, fail-safe trips/min/robot 0.7
+- R4 session2_busy, timeout none: P_loss 2.8% (+-1.5), total 3.41%, fail-safe trips/min/robot 0.0
+- R4 session2_busy, timeout 0.234: P_loss 0.0% (+-0.0), total 0.62%, fail-safe trips/min/robot 2.8
+- R4 session3_far, timeout none: P_loss 52.8% (+-4.4), total 53.09%, fail-safe trips/min/robot 0.0
+- R4 session3_far, timeout 0.234: P_loss 0.0% (+-0.0), total 0.62%, fail-safe trips/min/robot 27.4
+- see wifi-measurement-2026-11-02.md for loss rates, burst lengths, longest outages and caveats
 
 ## Command latency (localhost UDP, 500 packets)
 - median 11.5 ms, mean 12.36 ms, SD 6.84, range 1.49-27.36 ms

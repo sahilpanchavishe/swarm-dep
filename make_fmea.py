@@ -1,11 +1,12 @@
 # make_fmea.py - FMEA for the gesture-commanded swarm (corrected model, sim_v2).
 # S, O, D on 1-10 scales; RPN = S*O*D. S and D are engineering judgements (rationale given).
 # O is anchored to measured/simulated rates at a stated REFERENCE condition. The reference
-# Wi-Fi condition is a placeholder until the burst statistics are measured on the real router.
+# Wi-Fi condition is still the grid reference point; measured traces are in run_trace_study.py / TRACE_STUDY_RESULTS.md.
 import csv, json
 REF = {"burst_s": "0.3", "loss": "0.1", "N": "8"}     # <- replace with measured Wi-Fi values
-mw = json.load(open("data/misread_vs_window.json"))
-pm = mw["stop"][0]; pr = [e for e in mw["priority"] if e["W"] == 1][0]
+mw = json.load(open("data/misread_vs_window.json"))           # original dataset: false-STOP over all 5 other gestures
+prim = json.load(open("data/stop_misread_primary.json"))      # dedicated held-out STOP dataset: STOP misread
+pm = prim["stop"][0]; pr = [e for e in mw["priority"] if e["W"] == 1][0]
 R = {(r["common"], r["burst_s"], r["loss"], r["N"]): r for r in csv.DictReader(open("data/study_v2.csv"))}
 ref = R[("0.0", REF["burst_s"], REF["loss"], REF["N"])]
 ref32 = R[("0.0", REF["burst_s"], REF["loss"], "32")]
@@ -22,13 +23,13 @@ rows = [
   f"P={100*pl:.1f}% of N=8 episodes at ref ({REF['burst_s']} s bursts, {float(REF['loss'])*100:.0f}% loss); detectable by heartbeat loss"),
  ("STOP misread by recogniser (shared by whole swarm)",
   "All robots receive a motion command instead of STOP", 9, occ(pm["p"]), 9,
-  f"{pm['k']}/{pm['n']} STOP holds misread ({100*pm['p']:.2f}%, CI {100*pm['ci'][0]:.1f}-{100*pm['ci'][1]:.1f}%); packets arrive normally so no network monitor or timeout can detect it"),
+  f"{pm['k']}/{pm['n']} STOP holds misread in the dedicated held-out dataset ({100*pm['p']:.2f}%, CI {100*pm['ci'][0]:.1f}-{100*pm['ci'][1]:.1f}%; original dataset 2/157 = 1.27%); errors spread over 3 people/conditions; packets arrive normally so no network monitor or timeout can detect it"),
  ("Swarm-size amplification of loss bursts",
   "More robots, more chances one is inside a long burst", 8, occ(float(ref32["p_loss_violation"])), 5,
   f"loss-driven violation {100*pl:.1f}% (N=8) -> {100*float(ref32['p_loss_violation']):.1f}% (N=32) at ref, independent channels; smaller if bursts are shared"),
  ("Spurious STOP (other gesture read as STOP)",
   "Swarm halts when the operator meant a formation command - availability loss, safe side", 3, occ(pr["false_stop"]), 2,
-  f"false STOP {100*pr['false_stop']:.1f}% of non-STOP holds; mostly CLUSTER (OK-sign) read as open palm"),
+  f"false STOP {100*pr['false_stop']:.1f}% of non-STOP holds (original dataset); mostly CLUSTER (OK-sign) read as open palm: {prim['priority'][0]['false_stop']['CLUSTER'][0]}/{prim['priority'][0]['false_stop']['CLUSTER'][1]} in the dedicated set, 45/186 in the original"),
  ("Fail-safe nuisance stop (heartbeat timeout fires in a harmless burst)",
   "Robot stops needlessly; swarm availability drops", 3, 8, 2,
   "under bursty loss, timeouts short enough to be safe also fire in ordinary bursts (design_rule_v2.csv)"),

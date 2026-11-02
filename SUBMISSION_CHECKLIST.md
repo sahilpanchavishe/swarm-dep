@@ -15,7 +15,7 @@
 ## Must do before submission (data)
 - [ ] **Measure the real Wi-Fi burst statistics** (see below) and set the reference condition. The headline depends on it.
 - [ ] **Where do bursts happen?** Relay's benefit depends on it. In the Wi-Fi sessions, place two receivers side by side (< 0.5 m) and two far apart: if side-by-side receivers lose the same packets, loss is environmental/path; if they don't, it is receiver-specific. `fit_wifi.py` reports the overlap.
-- [ ] **Dedicated STOP dataset**: the STOP misread rate rests on 2 events, both from one person in one condition (CI 0.35-4.5%). Record ~60 STOP holds per person with the same protocol; if the 2 events were a labelling slip the true rate may be ~0.
+- [x] **Dedicated STOP dataset** (2 Nov): 481 STOP holds, 8 people, 3 misreads = 0.62% (95% CI 0.21-1.82%), errors spread over 3 people/conditions; original P08 dim errors not reproduced. Primary STOP value in `data/stop_misread_primary.json`. Do NOT tune rules on this set.
 
 ## Must do before submission (humans)
 - [ ] **Consent.** Confirm every person in BOTH recording sessions (31 Oct night, 1 Nov counterbalanced) signed/initialled consent. Without it you cannot publish or release the dataset.
