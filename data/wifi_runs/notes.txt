@@ -1,0 +1,8 @@
+Date: 2026-11-02. Sender: Windows laptop hosting Mobile Hotspot (2.4 GHz), also connected as a client to an iPhone hotspot for internet.
+30 Hz UDP broadcast to 192.168.137.255, 18000 packets per session (10 min).
+Receivers used: R2, R4 (Macs).
+R3 (Windows) excluded: received 0 packets in setup test.
+R1 (Windows) excluded: received about 20% of packets even at 2-3 m (receiver-side broadcast problem).
+Session 1 quiet: laptops side by side, max 30 cm apart.
+Session 2 busy: R2 3 m, R4 2.5 m from sender; 6 devices each streaming YouTube.
+Session 3 far: R2 same position as session 2; R4 in another room, 8 m from sender.
