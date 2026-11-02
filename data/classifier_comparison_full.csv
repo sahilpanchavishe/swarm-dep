@@ -1,0 +1,15 @@
+model,family,hold_acc,stop_misread,note
+rule-based(ours),explainable-rule,0.839,0.0156,safety-critical class hard-coded
+1D-CNN,temporal-cnn,0.954,0.0742,best trained model; still ~5x rule on STOP
+SVM(RBF),kernel,0.933,0.1143,frame-vote
+temporal-XGBoost,boosting,0.891,0.1148,whole-gesture summary
+BiGRU,recurrent,0.878,0.1221,
+XGBoost,boosting,0.937,0.1223,frame-vote
+MLP,feedforward-nn,0.932,0.1340,frame-vote
+BiLSTM,recurrent,0.887,0.1388,
+GRU,recurrent,0.893,0.1522,
+temporal-SVM,kernel,0.884,0.1145,whole-gesture summary
+RandomForest,ensemble,0.897,0.1807,frame-vote
+LSTM,recurrent,0.856,0.1905,
+KNN,instance,0.808,0.2076,frame-vote
+ST-GCN,skeleton-gnn,0.564,,OVERFIT on ~1088 holds (56% acc) - cautionary note only; STOP number not informative
