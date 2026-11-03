@@ -1,0 +1,2219 @@
+FIELD_NAME in config:
+            signer = get_signer_from_authentication_type(config)
+
+        else:
+            signer = Signer(
+                tenancy=config["tenancy"],
+                user=config["user"],
+                fingerprint=config["fingerprint"],
+                private_key_file_location=config.get("key_file"),
+                pass_phrase=get_config_value_or_default(config, "pass_phrase"),
+                private_key_content=config.get("key_content")
+            )
+
+        base_client_init_kwargs = {
+            'regional_client': True,
+            'service_endpoint': kwargs.get('service_endpoint'),
+            'base_path': '/',
+            'service_endpoint_template': 'https://limits.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
+            'service_uses_dualstack_endpoints_by_default': False,
+            'skip_deserialization': kwargs.get('skip_deserialization', False),
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled'),
+            'client_level_dualstack_endpoints_enabled': kwargs.get('client_level_dualstack_endpoints_enabled')
+        }
+        if 'timeout' in kwargs:
+            base_client_init_kwargs['timeout'] = kwargs.get('timeout')
+        if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
+            base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
+        if 'enable_strict_url_encoding' in kwargs:
+            base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
+        self.base_client = BaseClient("quotas", config, signer, limits_type_mapping, **base_client_init_kwargs)
+        self.retry_strategy = kwargs.get('retry_strategy')
+        self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+
+    def add_quota_lock(self, quota_id, add_lock_details, **kwargs):
+        """
+        Adds a lock to a resource.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param oci.limits.models.AddLockDetails add_lock_details: (required)
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/add_quota_lock.py.html>`__ to see an example of how to use add_quota_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['quotaId']
+        resource_path = "/20181025/quotas/{quotaId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_quota_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/AddQuotaLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_quota_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_quota(self, create_quota_details, **kwargs):
+        """
+        Creates a new quota with the details supplied.
+
+
+        :param oci.limits.models.CreateQuotaDetails create_quota_details: (required)
+            Request object for creating a new quota.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            can be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/create_quota.py.html>`__ to see an example of how to use create_quota API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/20181025/quotas"
+        method = "POST"
+        operation_name = "create_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/CreateQuota"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_quota got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_quota_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_quota_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_quota(self, quota_id, **kwargs):
+        """
+        Deletes the quota corresponding to the given OCID.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/delete_quota.py.html>`__ to see an example of how to use delete_quota API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['quotaId']
+        resource_path = "/20181025/quotas/{quotaId}"
+        method = "DELETE"
+        operation_name = "delete_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/DeleteQuota"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "is_lock_override"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_quota got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_quota(self, quota_id, **kwargs):
+        """
+        Gets the quota for the OCID specified.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/get_quota.py.html>`__ to see an example of how to use get_quota API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['quotaId']
+        resource_path = "/20181025/quotas/{quotaId}"
+        method = "GET"
+        operation_name = "get_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/GetQuota"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_quota got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_quotas(self, compartment_id, **kwargs):
+        """
+        Lists all quotas on resources from the given compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str name: (optional)
+            name
+
+        :param str lifecycle_state: (optional)
+            Filters returned quotas based on the given state.
+
+            Allowed values are: "ACTIVE"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
+
+            Allowed values are: "NAME", "TIMECREATED"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.QuotaSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/list_quotas.py.html>`__ to see an example of how to use list_quotas API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/20181025/quotas"
+        method = "GET"
+        operation_name = "list_quotas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/QuotaSummary/ListQuotas"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "page",
+            "limit",
+            "name",
+            "lifecycle_state",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_quotas got unknown kwargs: {extra_kwargs!r}")
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME", "TIMECREATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "name": kwargs.get("name", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[QuotaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[QuotaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_quota_lock(self, quota_id, remove_lock_details, **kwargs):
+        """
+        Remove a lock from a resource.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param oci.limits.models.RemoveLockDetails remove_lock_details: (required)
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/remove_quota_lock.py.html>`__ to see an example of how to use remove_quota_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['quotaId']
+        resource_path = "/20181025/quotas/{quotaId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_quota_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/RemoveQuotaLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_quota_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_quota(self, quota_id, update_quota_details, **kwargs):
+        """
+        Updates the quota corresponding to given OCID with the details supplied.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param oci.limits.models.UpdateQuotaDetails update_quota_details: (required)
+            Request object for updating a quota.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/update_quota.py.html>`__ to see an example of how to use update_quota API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['quotaId']
+        resource_path = "/20181025/quotas/{quotaId}"
+        method = "PUT"
+        operation_name = "update_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "is_lock_override"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_quota got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_quota_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=update_quota_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Û
+    òd?j (  „                   Û¯   ï S r SSKrSSKJr  SSKJrJr  SSKJ	r	J
+r
+  / SQrS r\R                  " SSS	9S
+ 5       rSS jr\
+" SSS9\R                  " SSS	9S 5       5       r\	" S5      \
+" SSS9SS j5       5       rg)aP  Functions for reading and writing graphs in the *sparse6* format.
+
+The *sparse6* file format is a space-efficient format for large sparse
+graphs. For small graphs or large dense graphs, use the *graph6* file
+format.
+
+For more information, see the `sparse6`_ homepage.
+
+.. _sparse6: https://users.cecs.anu.edu.au/~bdm/data/formats.html
+
+È    N)⁄NetworkXError)⁄	data_to_n⁄	n_to_data)⁄not_implemented_for⁄	open_file)⁄from_sparse6_bytes⁄read_sparse6⁄to_sparse6_bytes⁄write_sparse6c              #   Û  ^#   ï [        U 5      nUS:º  a  [        S5      eU(       a  Sv ï  Sv ï  [        U5       H&  n[        R	                  [        US-   5      5      v ï  M(     SmST-  U:  a  TS-  mST-  U:  a  M  U4S jn[        S U R                  5        5       5      n/ nS	nU HΩ  u  pöXò:X  a*  UR                  S	5        UR                  U" U
+5      5        M4  XòS-   :X  a/  US-  nUR                  S5        UR                  U" U
+5      5        Mk  U	nUR                  S5        UR                  U" U	5      5        UR                  S	5        UR                  U" U
+5      5        Mø     TS
+:  aX  UST-  :X  aO  [        U5      * S
+-  T:º  a<  XÉS-
+  :  a4  UR                  S	5        UR                  S/[        U5      * S
+-  -  5        O"UR                  S/[        U5      * S
+-  -  5        [        S	[        U5      S
+5       Vs/ s HD  nX{S	-      S-  X{S-      S-  -   X{S-      S-  -   X{S-      S-  -   X{S-      S-  -   X{S-      S	-  -   PMF     nnU H&  n[        R	                  [        US-   5      5      v ï  M(     Sv ï  gs  snf 7f)aÌ  Yield bytes in the sparse6 encoding of a graph.
+
+`G` is an undirected simple graph. `nodes` is the list of nodes for
+which the node-induced subgraph will be encoded; if `nodes` is the
+list of all nodes in the graph, the entire graph will be
+encoded. `header` is a Boolean that specifies whether to generate
+the header ``b'>>sparse6<<'`` before the remaining data.
+
+This function generates `bytes` objects in the following order:
+
+1. the header (if requested),
+2. the encoding of the number of nodes,
+3. each character, one-at-a-time, in the encoding of the requested
+   node-induced subgraph,
+4. a newline character.
+
+This function raises :exc:`ValueError` if the graph is too large for
+the graph6 format (that is, greater than ``2 ** 36`` nodes).
+
+l       @ z?sparse6 is only defined if number of nodes is less than 2 ** 36Û   >>sparse6<<Û   :È?   È   c                 Ûn   >ï [        T5       Vs/ s H  oSTS-
+  U-
+  -  -  (       a  SOSPM     sn$ s  snf )zBig endian k-bit encoding of xr   r   )⁄range)⁄x⁄i⁄ks     Ä⁄aC:\Users\izadb\Downloads\New folder\trakr_mpc_env\Lib\site-packages\networkx/readwrite/sparse6.py⁄enc⁄$_generate_sparse6_bytes.<locals>.enc;   s6   ¯Ä ‰<A¿!ºH”E∫H∞qò!††A°®°	—*◊*ë∞“2πH—E–E˘“Es   è 2c              3   ÛR   #   ï U  H  u  p[        X5      [        X5      4v ï  M     g 7f)N)⁄max⁄min)⁄.0⁄u⁄vs      r   ⁄	<genexpr>⁄*_generate_sparse6_bytes.<locals>.<genexpr>?   s   È Ä –@≤i©d®aîCòìIús†1õy’)≤i˘s   Ç%'r   È   È   È   È   È   Û   
+N)⁄len⁄
+ValueErrorr   ⁄str⁄encode⁄chr⁄sorted⁄edges⁄append⁄extendr   )⁄G⁄nodes⁄header⁄n⁄dr   r-   ⁄bits⁄curvr   r   r   ⁄datar   s                @r   ⁄_generate_sparse6_bytesr8      sá  ¯È Ä Ù* 	àAãÄAÿàEÉz‹ÿMÛ
+ 	
+ˆ ÿ“ÿ
+ÇJ‹êqé\à‹èjâjúòQ†ôVõ”%‘%Ò  	
+ÄAÿ
+àqâ&ê1ã*ÿ	àQâà àqâ&ê1ç*ıFÙ —@∞a∑g±g¥i”@”@ÄEÿÄDÿÄD€âàÿã9ÿèKâKòåNÿèKâKôòAõ÷ÿòë(ã]ÿêAâIàDÿèKâKòåNÿèKâKôòAõ÷‡àDÿèKâKòåNÿèKâKôòAõ‘ÿèKâKòåNÿèKâKôòAõ÷Ò  	à1ÉuêêqòAëvì§c®$£i†Z∞1—$4∏”#:∏t»1¡uª~
+ 	èâêAåÿèâêQêCúS†õYòJ®!—+—,’-‡èâêQêCúS†õYòJ®!—+—,‘-Ù êqú#òdõ)†Q‘'ÛÚ (àA 
+ê!âeâò—	ÿêAëâ;ò!—Ò	‡êAëâ;ò!—Ò	 êAëâ;ò!—Ò	 êAëâ;ò!—Ò		
+ êAëâ;ò!—Ù	Ò ( 	 Û à‹èjâjúòQ†ôVõ”%‘%Ò ‡
+ÉK˘Ú˘s   ÉA:J¡?FJ»AJ…8JT)⁄graphs⁄returns_graphc                 Ûl  ^
+^ï U R                  S5      (       a  U SS n U R                  S5      (       d  [        S5      eU SS  Vs/ s H  oS-
+  PM	     nn[        U5      u  nm
+SmST-  U:  a  TS-  mST-  U:  a  M  U
+U4S jnS	n[        R                  " 5       nUR                  [        U5      5        S
+nU" 5        HN  u  pâUS:X  a  US-  nXì:º  d  XS:º  a    O6Xï:î  a  U	nM%  UR                  Xï5      (       a  SnUR                  Xï5        MP     U(       d  [        R                  " U5      nU$ s  snf )aˆ  Read an undirected graph in sparse6 format from string.
+
+Parameters
+----------
+string : string
+   Data in sparse6 format
+
+Returns
+-------
+G : Graph
+
+Raises
+------
+NetworkXError
+    If the string is unable to be parsed in sparse6 format
+
+Examples
+--------
+>>> G = nx.from_sparse6_bytes(b":A_")
+>>> sorted(G.edges())
+[(0, 1), (0, 1), (0, 1)]
+
+See Also
+--------
+read_sparse6, write_sparse6
+
+References
+----------
+.. [1] Sparse6 specification
+       <https://users.cecs.anu.edu.au/~bdm/data/formats.html>
+
+r   È   Nr   z!Expected leading colon in sparse6r   r   c               3   Û>  >#   ï [        T5      n SnSn US:  a   [        U 5      nSnUS-  nX-	  S-  nUSU-  S-
+  -  nUnUT:  a#   [        U 5      nSnUS-  U-   nUS-  nUT:  a  M#  XET-
+  -	  nUT-
+  nX44v ï  Mi  ! [         a     gf = f! [         a     gf = f7f)z6Returns stream of pairs b[i], x[i] for sparse6 format.Nr   r   r!   )⁄iter⁄next⁄StopIteration)⁄chunksr4   ⁄dLen⁄br   ⁄xLenr7   r   s         ÄÄr   ⁄	parseData⁄%from_sparse6_bytes.<locals>.parseDatañ   sÊ   ¯È Ä ‰êdìàÿàÿà‡ÿêaãx‹òVõêA êÿêAâIàDÿëòaëàA‡êaò4ëi†1ë_—%àAÿàDÿòì(‹òVõêA êÿò!ëVòqëLêÿòë	ê òï( òQëhëàAÿò!ë8àDÿê$äJÒ- ¯Ù %Û Ÿ˚Ù %Û Ÿ¸sQ   ÉBõA= ¶!B¡B ¡B¡*B¡=
+B
+¬B¬	B
+¬
+B¬
+B¬B¬B¬Br   FT)
+⁄
+startswithr   r   ⁄nx⁄
+MultiGraph⁄add_nodes_fromr   ⁄has_edge⁄add_edge⁄Graph)⁄string⁄c⁄charsr3   rE   r   r0   ⁄
+multigraphrC   r   r7   r   s             @@r   r   r   i   s.  ˘Ä D ◊—ò◊(—(ÿòòêàÿ◊—òT◊"—"‹–?”@–@‡#†A†BôZ”(öZòêåVôZÄE–(‹ò”ÅGÄAÄtÿ	ÄAÿ
+àqâ&ê1ã*ÿ	àQâà àqâ&ê1ç*ˆ< 	
+ÄA‰
+èäãÄAÿ◊—îUò1ìX‘‡ÄJŸñâàÿêã6ÿêâFàA‡ã6êQìVŸÿãUÿäA‡èzâzò!◊—ÿ!ê
+ÿèJâJêq÷Ò ˆ ‹èHäHêQãKàÿÄH˘Úq )s   ¡D1c                 Ûä   ï Ub  U R                  U5      n [        R                  " U SS9n SR                  [	        XU5      5      $ )a{  Convert an undirected graph to bytes in sparse6 format.
+
+Parameters
+----------
+G : Graph (undirected)
+
+nodes: list or iterable
+   Nodes are labeled 0...n-1 in the order provided.  If None the ordering
+   given by ``G.nodes()`` is used.
+
+header: bool
+   If True add '>>sparse6<<' bytes to head of data.
+
+Raises
+------
+NetworkXNotImplemented
+    If the graph is directed.
+
+ValueError
+    If the graph has at least ``2 ** 36`` nodes; the sparse6 format
+    is only defined for graphs of order less than ``2 ** 36``.
+
+Examples
+--------
+>>> nx.to_sparse6_bytes(nx.path_graph(2))
+b'>>sparse6<<:An\n'
+
+See Also
+--------
+to_sparse6_bytes, read_sparse6, write_sparse6_bytes
+
+Notes
+-----
+The returned bytes end with a newline character.
+
+The format does not support edge or node labels.
+
+References
+----------
+.. [1] Graph6 specification
+       <https://users.cecs.anu.edu.au/~bdm/data/formats.html>
+
+r,   ©⁄orderingÛ    )⁄subgraphrH   ⁄convert_node_labels_to_integers⁄joinr8   )r0   r1   r2   s      r   r
+   r
+   À   sB   Ä X —ÿèJâJêu”à‹
+◊*“*®1∞x—@ÄAÿè8â8‘+®A∞f”=”>–>rU   ⁄rb)⁄modec                 Ûº   ï / nU  H?  nUR                  5       n[        U5      (       d  M%  UR                  [        U5      5        MA     [        U5      S:X  a  US   $ U$ )a¶  Read an undirected graph in sparse6 format from path.
+
+Parameters
+----------
+path : file or string
+   Filename or file handle to read.
+   Filenames ending in .gz or .bz2 will be decompressed.
+
+Returns
+-------
+G : Graph/Multigraph or list of Graphs/MultiGraphs
+   If the file contains multiple lines then a list of graphs is returned
+
+Raises
+------
+NetworkXError
+    If the string is unable to be parsed in sparse6 format
+
+Examples
+--------
+You can read a sparse6 file by giving the path to the file::
+
+    >>> import tempfile
+    >>> with tempfile.NamedTemporaryFile(delete=False) as f:
+    ...     _ = f.write(b">>sparse6<<:An\n")
+    ...     _ = f.seek(0)
+    ...     G = nx.read_sparse6(f.name)
+    >>> list(G.edges())
+    [(0, 1)]
+
+You can also read a sparse6 file by giving an open file-like object::
+
+    >>> import tempfile
+    >>> with tempfile.NamedTemporaryFile() as f:
+    ...     _ = f.write(b">>sparse6<<:An\n")
+    ...     _ = f.seek(0)
+    ...     G = nx.read_sparse6(f)
+    >>> list(G.edges())
+    [(0, 1)]
+
+See Also
+--------
+read_sparse6, from_sparse6_bytes
+
+References
+----------
+.. [1] Sparse6 specification
+       <https://users.cecs.anu.edu.au/~bdm/data/formats.html>
+
+r   r   )⁄stripr'   r.   r   )⁄path⁄glist⁄lines      r   r	   r	   ˝   sX   Ä j ÄE€àÿèzâzã|à‹ê4èyâyŸÿèâ‘'®”-÷.Ò	 Ù
+ à5ÉzêQÉÿêQâxà‡àrU   ⁄directedr   ⁄wbc                 Ûû   ï Ub  U R                  U5      n [        R                  " U SS9n [        XU5       H  nUR	                  U5        M     g)a∏  Write graph G to given path in sparse6 format.
+
+Parameters
+----------
+G : Graph (undirected)
+
+path : file or string
+   File or filename to write.
+   Filenames ending in .gz or .bz2 will be compressed.
+
+nodes: list or iterable
+   Nodes are labeled 0...n-1 in the order provided.  If None the ordering
+   given by G.nodes() is used.
+
+header: bool
+   If True add '>>sparse6<<' string to head of data
+
+Raises
+------
+NetworkXError
+    If the graph is directed
+
+Examples
+--------
+You can write a sparse6 file by giving the path to the file::
+
+    >>> import tempfile
+    >>> with tempfile.NamedTemporaryFile(delete=False) as f:
+    ...     nx.write_sparse6(nx.path_graph(2), f.name)
+    ...     print(f.read())
+    b'>>sparse6<<:An\n'
+
+You can also write a sparse6 file by giving an open file-like object::
+
+    >>> with tempfile.NamedTemporaryFile() as f:
+    ...     nx.write_sparse6(nx.path_graph(2), f)
+    ...     _ = f.seek(0)
+    ...     print(f.read())
+    b'>>sparse6<<:An\n'
+
+See Also
+--------
+read_sparse6, from_sparse6_bytes
+
+Notes
+-----
+The format does not support edge or node labels.
+
+References
+----------
+.. [1] Sparse6 specification
+       <https://users.cecs.anu.edu.au/~bdm/data/formats.html>
+
+Nr,   rS   )rV   rH   rW   r8   ⁄write)r0   r]   r1   r2   rC   s        r   r   r   >  sG   Ä r —ÿèJâJêu”à‹
+◊*“*®1∞x—@ÄA‹$†Q®v÷6àÿè
+â
+ê1éÚ 7rU   )NT)⁄__doc__⁄networkxrH   ⁄networkx.exceptionr   ⁄networkx.readwrite.graph6r   r   ⁄networkx.utilsr   r   ⁄__all__r8   ⁄_dispatchabler   r
+   r	   r   © rU   r   ⁄<module>rl      sß   Ò
+Û › ,ﬂ :ﬂ 9‚
+UÄÚOd ◊“ò®T—2Ò^Û 3^ÙB/?Òd à1ê4—ÿ◊“ò®T—2Ò<Û 3Û <Ò~ êZ” Ÿ
+à1ê4—Û;Û Û !Ò;rU                                                                                                                                                                                                                                      MZê       ˇˇ  ∏       @                                   Ä   ∫ ¥	Õ!∏LÕ!This program cannot be run in DOS mode.
+$       PE  L X‹<i        ‡ !           Æ+       @    @                       Ä     ‹Ç   @Ö                           `+  K    @  ∏             `)   `                                                                       H           .text   ¥                           `.rsrc   ∏   @                    @  @.reloc      `                    @  B                ê+      H     <)  $  	       P   i  π(  Ä                                   e  Œ Ôæ   ë   lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet          PADPADPû∫5Å√¬çiµë¢DT®Ú⁄ÈàÛ˜˘HÌ7¸èíB;%Q Ì1oí=a	„S—P∫]I„fñƒi  o  ≤  Î  n    ÿ  ∑  —   U   <  Ç         1  q  PC l i e n t P r o x y T y p e A r g u m e n t M u s t B e A n I n t e r f a c e     (C o u l d N o t G e t P r o c e s s I d    JE r r o r _ I n v a l i d E x t e r n a l C l i e n t P r o c e s s P i d Y   ,F a i l e d T o V a l i d a t e C l i e n t ∑   *F o r m a t t e r N o t S u p p o r t e d ˆ   8M e s s a g e D e l i m i t e r N o t S u p p o r t e d 8  DN a m e d P i p e C l i e n t C o u l d N o t B e V a l i d a t e d í  N o t I n i t i a l i z e d ¡  2P i p e N o t O w n e d B y C u r r e n t U s e r Ì  (P r o t o c o l N o t S u p p o r t e d %  .S e r v i c e A c t i v a t i o n F a i l e d M  >S e r v i c e M o n i k e r _ A l r e a d y P r o f f e r e d Ä  4S e t D e s c r i p t o r P r o p e r t y F i r s t ˚  T o o M a n y S e r v i c e s ?  2U s e O t h e r D e s c r i p t o r I n s t e a d î  "{0}" non √® un'interfaccia.9Non √® stato possibile ottenere l'ID processo del client.\{0} '{1}' non √® stato specificato nella richiesta di servizio o non contiene un PID valido.=Non √® stato possibile convalidare il client che si connette.@Il formattatore "{0}" non √® supportato per il protocollo "{1}".XLo schema del delimitatore di messaggio "{0}" non √® supportato per il protocollo "{1}".-Impossibile convalidare il client named pipe.*Questa istanza non √® stata inizializzata.6Questa pipe non √® di propriet√† dell'utente corrente.&Il protocollo "{0}" non √® supportato.1L'attivazione del servizio "{0}" non √® riuscita.yIl servizio "{0}" √® gi√† stato proposto. Eliminare il risultato dell'ultima factory proposta prima di proporne un altra.BLa propriet√† ''{0}'' deve essere impostata prima sul descrittore.S√à stato trovato pi√π di un servizio per "{0}", ma ne √® consentito al massimo uno.^Il formattatore ''{formatter}'' non √® supportato da questo descrittore. Usa {descriptorType}./v^V>ÎBõ(Á∫ÊÖÉôÅ‘ƒŸå{P∆xπˆ†j*Q◊K≥ _F‘Îπ‰’\º˝…™(Ô/ﬁ∏‡xCc”¯-§=UoP1gÂ'ñöÈ:∞∆ír)ä‡LΩ¨≈ÖOhù†.è†Ún+>ê,ïŒ¥gÇo‘âJL·R:€1œ/ybô·í   BSJB         v4.0.30319     l   d   #~  –   ò   #Strings    h     #US p     #GUID   Ä  §   #Blob               ˙%3                 j                 Ä   
+         
+ 3        6      <Module> Microsoft.ServiceHub.Framework.resources it Microsoft.ServiceHub.Framework.Strings.it.resources Microsoft.ServiceHub.Framework.resources.dll         JJ &ûOìúÏœ†< Ä† $  Ä  î      $  RSA1     —˙WƒÆŸ£.Ñ™Æ˝ÈË˝jÏèá˚vlÉLôí≤;ÁöŸ’‹¡›ö“6!êr<˘Äïƒ·wè∆wO)Ë2íÍÏ‰Ë!¿•ÔËÒd\Lì¡´ô(]b,™e,˙÷=t]o-ÂÒ~^Øƒñ=&äCe m¿ì4MZ“ì à+          û+                          ê+        _CorDllMain mscoree.dll     ˇ%  @                                                                                                 Ä                  0  Ä               	  H   X@  `          `4   V S _ V E R S I O N _ I N F O     ΩÔ˛   
+  Áù# 
+    #                          D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞¿   S t r i n g F i l e I n f o   ú   0 4 1 0 0 4 b 0   b %  C o m m e n t s   F r a m e w o r k   d i   S e r v i c e H u b   d i s t r i b u i t o .     4 
+  C o m p a n y N a m e     M i c r o s o f t   f   F i l e D e s c r i p t i o n     M i c r o s o f t . S e r v i c e H u b . F r a m e w o r k     <   F i l e V e r s i o n     4 . 1 0 . 3 5 . 4 0 4 2 3   z -  I n t e r n a l N a m e   M i c r o s o f t . S e r v i c e H u b . F r a m e w o r k . r e s o u r c e s . d l l     ñ 9  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   T u t t i   i   d i r i t t i   s o n o   r i s e r v a t i .     Ç -  O r i g i n a l F i l e n a m e   M i c r o s o f t . S e r v i c e H u b . F r a m e w o r k . r e s o u r c e s . d l l     ^   P r o d u c t N a m e     M i c r o s o f t . S e r v i c e H u b . F r a m e w o r k     P   P r o d u c t V e r s i o n   4 . 1 0 . 3 5 + 9 d e 7 6 9 9 4 0 c . R R                                                                                                                                                                                                                                                                                                                                                  ∞;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      `)    0Ç)P	*ÜHÜ˜†Ç)A0Ç)=10	`ÜHe 0\
++Ç7†N0L0
++Ç70	 †¢Ä 010	`ÜHe  P˚≤VvÈ*DèYÎä*^!∫Á{Ï€•I0lDî‘~}†Ç÷0ÇΩ0Ç•†3   HüÅﬂ°∞∑w     0	*ÜHÜ˜ 0Åà10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft Root Certificate Authority 20100240808213623Z350623220401Z0_10	UUS10U
+Microsoft Corporation100.U'Microsoft Windows Code Signing PCA 20240Ç"0	*ÜHÜ˜ Ç 0Ç
+Ç ö}k}'¡v*.Æ„’4ˇÃ+mÓ¸T¯ £˚∞dâÙøh(e;9_R]F?\Ö≥özéõãáÃ^z] iÑç_0Oio=NAÑ›W}©É»`H˘?uóI◊ÔçGıW∏âÛ¿,÷ïoQ≥áèFl`vÇmNdBP{˚Íü9ƒ tPÄ‹çÛb◊Û_kŒ√;∏3ö
+Ïä9bá◊7Õ7˛L∞πAÇÚÖSú5ƒ3´Ω¨=ÿ4≤"™]Å©π¸Í\µzcíÖŸÖøΩ•üayLÕ]5·:ÖÛ{zc0·˘AZoÅsXP»DûúK¡'9’˚nnﬁ˚é8Qé8˘e–‚Ôju–ﬁ˝NRxäF˚‚nh∏œ¥§ªŸ≤V¥¯éPlÙ–:9±˘–L%±,ﬂ3º⁄Ï»UNÅ`’?;}‚OÿJÍºOF
+Évãø¯aB¡˜ı ì%fN’g+ÿÀ^$Nîƒe~ä<úﬁu`ÚÉŸ÷°Ï+^Ùs˝G°GíæV_“g˝q-æ˘%TQ££¡IùÊﬂ;UΩf3˜»ßW≤ß&±ôy •¿pª)l:≠§ISâÁ O°°,∞ô1¬ßÎÆ˚Â
+t1ÂK@Ì±àÕ—	ŒπÀ”u+æ 9(…u’™ø_ÿ/x‰µ”ÊºJ u0\5Ö:†√™ﬂ§£é	(• £ÇF0ÇB0UˇÜ0	+Ç7 0UÇﬂ◊å≥◊4É⁄´≠eπØ∏Ï0	+Ç7
+ S u b C A0Uˇ0ˇ0U#0Ä’ˆVÀèË¢\bh—=îê[◊Œöƒ0VUO0M0K†I†GÜEhttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z+N0L0J+0Ü>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0	*ÜHÜ˜ Ç C_¯ﬂ?ªÈîå;\ıªhùëÕT4Å1 L´πÍ«úµE¨’pj3!ÓıŒò˝A~Lﬂ"Á∫0))âá?á¯Õ¿E)•Œ∫EÊåŒ'ëTøXÊ•◊ˇŸñÍ¶±óˇTx*:“öjè;:ä7o¥Sn>¡ƒÑº|‚$¡ÖêÑü.9`˚q“¨1èài ïïjcG∂ªÿ·®û7_„öÏß
+àÏßeNø/k∏—ÜõÁÃo¿Ly¬Ni(áƒeûF5gÍÑÿ[q∂Õ¡›åÁZI}∑ã!?≠2Áæ⁄Keí¡M‘¶Gc“:‘sé•QI!!w¸Ã\∆yMx˝Já*˛g4¯€?#πÆ~ñãú∂•ÃƒvÃã°‡ZÃ±∏Ì9PXGdñ˜M»—r•lÒ ÍØ§qâˆ∫1áŒg∞Bú’0·')Î¬Ç©*E¢¢…]lëﬂ•ÒNtX◊è1øAœ=|öóÀ˘±æm5êﬂà˘î!≥9#ù0&8á d4;°±qÙèyò!=NﬂQù’OÒŒQV‰ô~Â¥Äøy .‰cº~ÔúxDÃ…ª€£·÷„Û¢Ö1~`¥‚ë¿µm~iÀàLHõÅ‹Ì}√UK†‘4Â.'º˙5ñˇÍªrwŒ>]êTæ*ñ õïDˆæd)ñUw0Ç0Ç˘†3   áºÇnÖ°ÆS®     á0	*ÜHÜ˜ 0_10	UUS10U
+Microsoft Corporation100.U'Microsoft Windows Code Signing PCA 20240250508182454Z260506182454Z0t10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation10UMicrosoft Corporation0Ç"0	*ÜHÜ˜ Ç 0Ç
+Ç ¥&˚Õ
+Ø^K∑Eùª∂·•ªì#E∑Sã£”ëçqû&a≤o+∞LÎ¸ÿ*Ô±‰ú•|Üë\a¶ú°•áÙt(B◊f-∂B®∏åE,9à$s»nuq€hmQ⁄(ŒôÔÓOC_tA«”‰n/aÁ5whÉá1∆áÚ°ëœQ;Àÿ¸√iÓÁp„D(FÓ@≥°¥°ë√)QìÚ`≈ ∂†åá^^è˜Ì·ùzrµÄô!0'C±≈hı[¥y∞Í8N)V@)˜&2º¶9∫bC#5ñ¯¿ﬁc©¨òö ß≤¬‰ﬁ∞j≤ÿM∏p$ñÂöP"ÉÒ@∏˝7“u(}Y¢∫ƒ/—sÑ)9Ï‚öEø	‡WY+4ƒGº_cE˙øKá`Ë’ŒΩ)“M¥…èf<ÁõVuu*êQÕÄ§Ÿ£ì‚∏nÌÜ"`∞}VWè◊^öC
+Çt†õ≈%ÇÃ=ì7∂ã‘Ö¥;ÕÀto¡«<d5ë*©¨Èu‡ëS#–é¸&sÖñ‡y}gwVq{uEän4Ä$1i{Ä4—c. Z õ15«W3÷<Ñ¶Hº=òÿ∞®›G«üjÚ∆b‡f·íÿx+¯∑	±J*m6v'§…—ﬁÛ⁄¯‰¬î+s”=2©+Àl'‘aù;Íà⁄◊- £ÇØ0Ç´0UˇÄ0U%0
++Ç7=+0Uˇ0 0U&G®¢=UxVµ{¯rçëêM§®0EU>0<§:0810UMicrosoft Corporation10U230865+5045810U#0ÄÇﬂ◊å≥◊4É⁄´≠eπØ∏Ï0jUc0a0_†]†[ÜYhttp://www.microsoft.com/pkiops/crl/Microsoft%20Windows%20Code%20Signing%20PCA%202024.crl0w+k0i0g+0Ü[http://www.microsoft.com/pkiops/certs/Microsoft%20Windows%20Code%20Signing%20PCA%202024.crt0	*ÜHÜ˜ Ç ~ÀÚÕë8{˚ÿ^1Ò"¥øÔÖNË-0·ªó˜ÓâQpﬁöha≠r~Àõ<˛¨£>OÕêyê7Àæ^U]„µÊdNpB‰ü$m‹Í]9ÚπjC94ÊÁÄ◊Ÿup≈≈#	®£Úú/î–ÊΩ…8Ä}Ëi›M∏*”ˆÄÊ.·»∑wHæ-†Umëîs8‚»µ+! Ò=ÉÙê=(£¡-Æ”±i≥Ï]IÙˇîW~≤:l‚7©ò|ÑU¨"w«ªD®+∫,∂»$ı‰W%Ÿ–ﬁ÷|E†"ßC#v2H¬¿Ÿv≥äáŒÅLÛÕµ•ÉN˙¯kÍ¡mFfÁ U˘-xéd@
+˚n˘˝ØÑI‰R„˝¯w^‹LÙÈMLD´æ∫'=·R_7âßE.¢1+»ëáÖôbÉ)Ñ(Àü„¡%Ó|ûÚˇkèÓ@åm"Nc=`ÖU?ìó Mä™˝]ƒÀ2(ÿ≠∑
+A∆rÇD›	/ËKjfÒ¥Æü»Œ¶l*ÇÕ≠)”%Cyù#]ë+≥õ£;‚H˛zˇ«Ω“Úß¿Gn;6Ó?÷|`p0YUÀ¬'(˙f
+ûÙZ,[iqe¶åΩ®T][ˇQJìa‚{LI¿£…2î]$ÌÒ»&UÙºXëôª"¿£Köf∆d óÚ≥º)Ø;1ÇÌ0ÇÈ0v0_10	UUS10U
+Microsoft Corporation100.U'Microsoft Windows Code Signing PCA 20243   áºÇnÖ°ÆS®     á0	`ÜHe †ÅÆ0	*ÜHÜ˜	1
++Ç70
++Ç710
++Ç70/	*ÜHÜ˜	1" Å⁄'˚=úª∆<ıÂULŸyxÈ;p†+d	ºs0B
++Ç71402†Ä M i c r o s o f t°Ähttp://www.microsoft.com0	*ÜHÜ˜ Ç \d} /|pOöAx wã"ÜD÷ÈÍí˚ëâ–óJ^E˜Ñûﬁ‚Å®ÿ4_Ê≠—¬>gõΩ85!iÔΩU…"oÓCs¥§˛”GsêùÕ¸{3ªRØDÃ hà∂â‚=‚ì§Wõ~}D.ÈÙ™d„NN—H°ï\Hté4€ß	/Ó-Æ`mâ4‡ åﬂxvæª¢•éê¿´ﬁ≠M«ËRS©^V‚Äˆ¨˘2ä?êíá<Q˝´Pª";n¶®9ûvCª¥>()ç"K ;s2™Î$`„∫º¢Àr~A(–∏Kf€!ßÌˆ†8‚’wa`Ktæ«3¸øü"äX„¨‡;ùT^ê‰J:-¶Å” y≤mX?≤ûne∂∏¥ùëg⁄õÒH_FN[G‰=*€⁄ëz5D˛:≥ÇbAÌ{πÃ:têAŸf^É1ÀÒŒ.Ø∫i˙rÚ+±£´\∫Rπjçõ(&:ØØ6Kú4ˇoÁ˝∑¶§57»©\~z•r|Ôò@îßôp^I∆@˜¥Ò=◊_qÜqwmû˘+1RKÔ≈yS"5@¿|ùqÚ4”&y∫œã©jÉKïˇGº2„≠îÖy4Ωeãah©mdÎê%1UDaÅJF¢∆à8<‚ç““ tœmQ>œƒˆ≤∂úâZÔÎ`W@¡nS—I˛°Çó0Çì
++Ç71ÇÉ0Ç	*ÜHÜ˜†Çp0Çl10	`ÜHe 0ÇR*ÜHÜ˜	†ÇAÇ=0Ç9
++ÑY
+010	`ÜHe  ÏT∑⁄£»…i ∑Œ(ñ|ÎûÈ
+ª˚qn’Lƒqi;4êê20251213032523.521Z0ÄÙ†Å—§ÅŒ0ÅÀ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:3703-05E0-D9471%0#UMicrosoft Time-Stamp Service†ÇÌ0Ç 0Ç†3  
+G≤ŸÓ≤≥   
+0	*ÜHÜ˜ 0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100250130194257Z260422194257Z0ÅÀ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:3703-05E0-D9471%0#UMicrosoft Time-Stamp Service0Ç"0	*ÜHÜ˜ Ç 0Ç
+Ç ≤Ï‹ñ˚ú ì“…”EÍﬂD‹N705ü4O-∏Rhù§¬r@‘øè|@c {˙2km›˘è‚	ù’‚*Òç»ÎlÚ ﬂ 9øì~SÕHNΩ≈—?ÁŸú¥∞Û~rGú)6ƒg±ÖÏºT-2éaçò'Æg¢Ë8¬g,a™aê√[éÉ÷E∂.˛å≈zoÚ|ìÚçPjó]:Ò∑áü ÒŒB§÷7Ú˜ª„r˚≥º¯;ﬁØ™ÅOéÀ∫_=ì‘xª ãøí∆Õ z£cÉ‰bÀº¯í`wséV«‰€m˜Hî
+µòi#ªázN3jtœπ†π◊üò`k@H5£Á˚t‚Œ˜5f5˝∞XÏ=MüH—¸È"|xö¥±d≤√êsF3}$¥Çåﬁ*Ç∏QÙ!’2ì}„˝_óÑ˙>â…˚˙&°ej÷.0´ˆgÀ¢¶π≈pB§Î!PNÙ≠o‡âï¡=>wËçX.yé⁄°⁄ÄÛÊ^N±‘ú%-¢ùµz[§˘´˛s„ß5È)ÊÁiçY
+¯òóG∞π‰SC_P
+˙ØU*ƒ™◊'˘F,"òé«fYxÄ¯Ê©X¥˛πß3Z 	∑?%úM"mÇ‚∏£{cà®Â≤SW	æΩ[§ûT/˜‹/ˇÓ©«mÍ £ÇI0ÇE0UØAèÄ2=ˆ<[˙´∞ﬂµú$0U#0Äüß] ^b]ÉÙÂ“eßS5Èr0_UX0V0T†R†PÜNhttp://www.microsoft.com/pkiops/crl/Microsoft%20Time-Stamp%20PCA%202010(1).crl0l+`0^0\+0ÜPhttp://www.microsoft.com/pkiops/certs/Microsoft%20Time-Stamp%20PCA%202010(1).crt0Uˇ0 0U%ˇ0
++0UˇÄ0	*ÜHÜ˜ Ç ∞ìs÷–,£9™ó√Æ±7^ÌÍvˇ≈]IﬁèJ"ívØŸDyD!ÿÜrlyÈ∞x≈⁄C^~ô¿á`g}®§<Ìô#ÊwÚê ¡5ÿ‹cré¿ºFu{˘}FH∞Â†¶π@Õ†Q›]Å1êìw0[P%0ﬂ&¯ÄO+ûì˚ß§è$≤BAqÕ2bŸa_“§}|V llè®Œ π∫‰ﬂ~µpëGÜ	GBx⁄zôLd†Rê∆&@Djçpyá„ê∑Ö⁄ù‘GœË«ÉY…⁄`˘ºÙ˝rÙÀw∫9D,˙dä8¬u&qá;∂3tôXö˘ÓÊ>/ã≤õ»8}N¶á⁄û…:,5¿ª‹î1b¨'Ä>ïYêaûóÙ_4Ã*gÍ“/@∫9ÿœ<y[gƒÅó£FÓä‘`ÄJlÌ6V	î £©ß÷Fá”™BaWÚvøﬁ◊ﬁªÉΩ˙n:‰(R’@¡z√∞mç8ØV 9)’π‚R≥?¯¯‰A‚¢Á´è∆6÷£Pz+)áË£¿ iqæP–¬çƒv»-&πÙ¸Dƒ»åOﬂÕº»b¨™‰Ñœ2ÕZ|˘iˇYô·¯ÛO_¿ãm#çIíËòı~°ò…ãbˇc~/º‚æœ,dKÔAPµ@?®-˚&áhkñãè›Ω≤È*Îˇû†–0Çq0ÇY†3   ≈ÁkûõIô     0	*ÜHÜ˜ 0Åà10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft Root Certificate Authority 20100210930182225Z300930183225Z0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100Ç"0	*ÜHÜ˜ Ç 0Ç
+Ç ‰·¶LÁ¥r!y¢À◊$yΩ’Ç”˝Óú“©lNu» 5WˆlJ‡‚Ωπ>`3ˇ\O«f˜ïSqZ‚~JZ˛∏6gÖF#µçœw2¿Ë`}jRÉD∑¶éFkÛ≈vıÜP‹¡D»q\Q17†
+8nçÌ◊ÿ&S|9azƒ™˝riØ´¨ˆ6æ5&d⁄ò;∫{3≠Ä[~åùR˛∂Ëb%‹jœ]Ù˛éSœ÷ÏÖVMÔ›ºç§„ëè≤9,QúÈpi 6-pé1»5(Ω„¥á$√‡…è~µTè‹˙Uòmh;öFΩÌ§Æz)7¨ÀÎÉEÁFn 2’¿Ü0\O,‚b≤Õπ‚çà‰ñ¨Jªæq©[g`ﬁ¯íë=˝ œs}AöFuÕƒ_4›â÷˝• }~¸ŸûEﬂ∂r/€}_Ä∫€™~6Ï6Lˆ+n®QËø£—s¶M7tî4ÇÚ∑GÌßËô|?L€Ø^¬Û’ÿs=CN¡39LéºBh.ÍÑQF‚—ΩjZas g¢^◊(v‚3r◊ß ¬˙
+◊co…6dã[†¶É!]_0tëîîÿπP˘âaÛ65ÑG€‹—˝≤‘≈kˆ\RQ]€%∫ØPzl≈rÔç˘RƒÖì¿<€7«?x´E∂ıá^⁄èûri∆Æ{∑∑>j‚.≠ £Ç›0ÇŸ0	+Ç7 0#	+Ç7*ßR˛dƒöæÇë<F5)œˇ/Ó0Uüß] ^b]ÉÙÂ“eßS5Èr0\U U0S0Q+Ç7LÉ}0A0?+3http://www.microsoft.com/pkiops/Docs/Repository.htm0U%0
++0	+Ç7
+ S u b C A0UÜ0Uˇ0ˇ0U#0Ä’ˆVÀèË¢\bh—=îê[◊Œöƒ0VUO0M0K†I†GÜEhttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z+N0L0J+0Ü>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0	*ÜHÜ˜ Ç ùU}¸*≠·,g1$[·ûrK¸©oÍ\∂>NGdx±ìó=13µ9◊¬q6?⁄dl|–u9mª1‰¬è˚l—°î"ÓÈfg:SM›ò∫∂xÿ6.ú©ÇV ∞æâËi‡∫	Ó{ﬂjoæ)Ànÿ?HuŸﬁmÇım#T‰xSu$Wπ›üÛé=∆Ûhﬂeˆ§V™˜ï∂(U'–$Ω@†ø∂]='‡@ñ8¨˜˘)â√º∞TÖB≥¸ûãâÁjÅ¬ÅBRuä6¬√as.,k{n?,	xÈë≤©[ﬂI£tºÏëÄ“=ÊJ>f;OªÜ˙2ŸñÙèˆëˆŒ∆t˝ˆLro´u0≈4∞zÿP˛
+X›@<«TmùctH,±NG-¡qød˘$æsm é	Ω≥WITdŸs◊[DéZëkü§(‹g($∫8Kön˚!TkjEG©Ò∑Æ»Ëâ^Où“–LvµWT	±iD~|°als˛
+ªÏAf=i˝À¡AI~~ìæÀ¯;‰∑ø¥Œ>•1QÑºø¡Ç¢{âçp˛Áµ–(âè6⁄∫L˘õˇ
+È4¯$5g+‡∏Êåô÷·"Í'B=%îÊtt[j—û>Ì~†13}ºÀÈ{ø8pD—êÒ»´:ä:bŸpcSMçÓÇm•¡qj¥U3X≥°pfÚ°ÇP0Ç80Å˘°Å—§ÅŒ0ÅÀ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:3703-05E0-D9471%0#UMicrosoft Time-Stamp Service¢#
+0+ — ≈Iîõ*ØwV{∑RB`õëÂa†ÅÉ0ÅÄ§~0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100	*ÜHÜ˜  ÏÁd0"20251212211516Z20251213211516Z0w0=
++ÑY
+1/0-0
+ ÏÁd 0
+ Zˇ0 ö0
+ ÏËU‰ 06
++ÑY
+1(0&0
++ÑY
+†
+0 ° °
+0 Ü†0	*ÜHÜ˜ Ç P\BÖ…î©S§,dëGËÊí˘˝≈}˜på≥ãºÚ)†ÒÕ7àëü'{r√Áú[∂¡–§¨~m√°±?[bÆÊk8◊Œ˙@1…Èª=Ñ◊÷_z„ ?Ä_(nõ‹ÕcÄ°ãp-)‰Rà¢åã$U•dˆìΩm8A¶ñ@·ÁÉ¸†Dπ9EÉpÌ¶`ŒÆŸ(7˛ﬂ√˝∆ óÅ94 ;éy+à√òïPv1T06ÇäÇÏ¥≈¢ë˜Â Òêt¿ß{™ºe¯È-A·‹“Ü?±√\(Z$ü?ú+HœÊy¡Z(SÁªÑ‚øK’£/º
+ ∞‚w°e@—ûı7J"5Öä1Ç0Ç	0Åì0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20103  
+G≤ŸÓ≤≥   
+0	`ÜHe †ÇJ0	*ÜHÜ˜	1*ÜHÜ˜	0/	*ÜHÜ˜	1" 	ì÷ ´´ÿ?CzÃ*d≥êE=µjwÆÍ˘≤	80Å˙*ÜHÜ˜	/1ÅÍ0ÅÁ0Å‰0ÅΩ MöÀ¸¥zíø_vt‹§‹ñäÑÚÔH]];≥«Hp˜‰ö0Åò0ÅÄ§~0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20103  
+G≤ŸÓ≤≥   
+0" hêhw9k\‚uÇl…—p÷+Ã3E2≈Fº>A“Ñ“R0	*ÜHÜ˜ Ç 'ë√{•ÚJ^Çl≠EêJÍ£ÄSˇ˚ô’=ŸÃ‹D¨mB6))é7Ÿêiƒgˆ¸†<ÍÇá¿DwÏ≥∏R8ıÊb‰<!¢É¬eC£wâéÑxÂß\
+∆·:º*6Ôãªï
+§Õ°°ÜÌJ
+>¬kÆÙ§…cµÉ_äDˇ¨ﬁq+gÿ¯?óˇ≥ºQ1Ïe∂ÿ·69?Aî{⁄WÍSÇy˙onCÈÊrù–ÍjuÄ⁄‹û?‘ﬁ?(3™VjkjÁJ∂∂V®@›¡≥õhˇ2Œ>,É	\Ì(˙”·à+π;è“‹+6Ω6rI‰6’ïGéúKÅ*øJé'ô]Ω[£áY⁄Ò=Iòàà’ág™∏3pLèˇDìtbΩî8áëS˘ƒÅm≤Æ„;ù™7	jôYÍA¯Õ›h∑@Ö'0SÏTO‘L.$UØ˚Ï|W≥ñiÚ˙ÓUZ¶6ôŸàÓ€4)O£¿Õìê1‚√Ní€Íñ“ã∆øQÎ¿Ü Sh€ôNOO3*ær∏KÆc?”í«≥!gö∫O‚õÍ'®~ïçÀ2™‚œ⁄≥Éº],´çÕ?K±{õ’MÔÅQ©
+ßYBL˜5‘…€”Vñâ	∫g´bó°YÛìgÊù1∏ñÆNÿﬂIπ¯ª[\bµ∂a¨:“¨§7G˛Ê]JåÕrÒÎ                                                                                                                                                                    Û
+    òd?j∑  „                   Û–   ï S r SSKrSSKJr  / SQr\" S5      SS j5       rS r\" S5      SS	 j5       rS
+ r	\" S5      SS j5       r
+\" S5      SS j5       r\" S5      SS j5       rg)zS
+Utilities for generating random numbers, random sequences, and
+random selections.
+È    N)⁄py_random_state)⁄powerlaw_sequence⁄is_valid_tree_degree_sequence⁄zipf_rv⁄cumulative_distribution⁄discrete_sequence⁄random_weighted_sample⁄weighted_choiceÈ   c                 Ûf   ï [        U 5       Vs/ s H  o2R                  US-
+  5      PM     sn$ s  snf )zC
+Return sample sequence of length n from a power law distribution.
+È   )⁄range⁄paretovariate)⁄n⁄exponent⁄seed⁄is       ⁄eC:\Users\izadb\Downloads\New folder\trakr_mpc_env\Lib\site-packages\networkx/utils/random_sequence.pyr   r      s-   Ä Ù
+ 7<∏A¥h”?≤h∞◊—òx®!ô|÷,±h—?–?˘“?s   é.c                 Ûû   ï [        U 5      n[        U5      n[        U5      nSU-  U-
+  S:w  a  gUS/:w  a  [        S U 5       5      (       a  gg)aË  Check if a degree sequence is valid for a tree.
+
+Two conditions must be met for a degree sequence to be valid for a tree:
+
+1. The number of nodes must be one more than the number of edges.
+2. The degree sequence must be trivial or have only strictly positive
+   node degrees.
+
+Parameters
+----------
+degree_sequence : iterable
+    Iterable of node degrees.
+
+Returns
+-------
+bool
+    Whether the degree sequence is valid for a tree.
+str
+    Reason for invalidity, or dummy string if valid.
+r   )Fz1tree must have one more node than number of edgesr   c              3   Û*   #   ï U  H	  oS :*  v ï  M     g7f)r   N© )⁄.0⁄ds     r   ⁄	<genexpr>⁄0is_valid_tree_degree_sequence.<locals>.<genexpr><   s   È Ä –0™C†q†ûF™C˘s   Ç)Fz8nontrivial tree must have strictly positive node degrees)T⁄ )⁄list⁄len⁄sum⁄any)⁄degree_sequence⁄seq⁄number_of_nodes⁄twice_number_of_edgess       r   r   r   !   sV   Ä Ù* à”
+ÄC‹ò#ìhÄO‹†õH–‡à?—–2—2∞a”7ÿIÿ	êêãú—0©C”0◊0—0ÿPÿÛ    r   c                 Û  ï US:  a  [        S5      eU S::  a  [        S5      eU S-
+  nSU-  n SUR                  5       -
+  nUR                  5       n[        XSU-  * -  -  5      nSSU-  -   U-  nXg-  US-
+  -  US-
+  -  XÑ-  ::  a   U$ M]  )aÁ  Returns a random value chosen from the Zipf distribution.
+
+The return value is an integer drawn from the probability distribution
+
+.. math::
+
+    p(x)=\frac{x^{-\alpha}}{\zeta(\alpha, x_{\min})},
+
+where $\zeta(\alpha, x_{\min})$ is the Hurwitz zeta function.
+
+Parameters
+----------
+alpha : float
+  Exponent value of the distribution
+xmin : int
+  Minimum value
+seed : integer, random_state, or None (default)
+    Indicator of random number generation state.
+    See :ref:`Randomness<randomness>`.
+
+Returns
+-------
+x : int
+  Random value from Zipf distribution
+
+Raises
+------
+ValueError:
+  If xmin < 1 or
+  If alpha <= 1
+
+Notes
+-----
+The rejection algorithm generates random values for a the power-law
+distribution in uniformly bounded expected time dependent on
+parameters.  See [1]_ for details on its operation.
+
+Examples
+--------
+>>> nx.utils.zipf_rv(alpha=2, xmin=3, seed=42)
+8
+
+References
+----------
+.. [1] Luc Devroye, Non-Uniform Random Variate Generation,
+   Springer-Verlag, New York, 1986.
+r   zxmin < 1za <= 1.0g      ?r   )⁄
+ValueError⁄random⁄int)	⁄alpha⁄xminr   ⁄a1⁄b⁄u⁄v⁄x⁄ts	            r   r   r   A   sÆ   Ä b àaÉx‹ò”$–$ÿêÉz‹ò”$–$ÿ	êâÄBÿ	à2âÄAÿ
+ÿê$ó+ë+ì-—àÿèKâKãMà‹êòc†BôhòK—'—'”(àÿêCò!ëGâ_†—#àÿâ5êAòëG—††C°—(®A©E”1ÿÿÄHÒ r%   c                 Û|   ï S/nSnU  H  nX#-  nUR                  U5        M     U Vs/ s H  o3U-  PM	     sn$ s  snf )zFReturns normalized cumulative distribution from discrete distribution.g        )⁄append)⁄distribution⁄cdf⁄
+cumulative⁄elements       r   r   r   Ç   sK   Ä  à%ÄCÿÄJ€àÿ—à
+ÿè
+â
+ê:÷Ò  Ò 14”4≤†Wêj‘ ±—4–4˘“4s   ®9È   c                 Û  ï SSK nUb  UnO%Ub  [        U5      nO[        R                  " S5      e[	        U 5       Vs/ s H  ocR                  5       PM     nnU Vs/ s H  oÑR                  XX5      S-
+  PM     n	nU	$ s  snf s  snf )a  
+Return sample sequence of length n from a given discrete distribution
+or discrete cumulative distribution.
+
+One of the following must be specified.
+
+distribution = histogram of values, will be normalized
+
+cdistribution = normalized discrete cumulative distribution
+
+r   Nz8discrete_sequence: distribution or cdistribution missingr   )⁄bisectr   ⁄nx⁄NetworkXErrorr   r(   ⁄bisect_left)
+r   r4   ⁄cdistributionr   r:   r5   r   ⁄inputseq⁄sr"   s
+             r   r   r   ç   sâ   Ä Û ‡— ÿâÿ	—	!‹%†l”3â‰◊“ÿFÛ
+ 	
+Ù
+ (-®Q§x”0¢x†!óëñ°xÄH–0Ò 4<”
+<≤8®a◊—òc”%®‘)±8ÄC–
+<ÿÄJ˘Ú	 1˘Ú =s   ΩA=¡Bc                 Û‘   ï U[        U 5      :î  a  [        S5      e[        5       n[        U5      U:  a+  UR                  [	        X5      5        [        U5      U:  a  M+  [        U5      $ )zxReturns k items without replacement from a weighted sample.
+
+The input is a dictionary of items with weights as values.
+zsample larger than population)r   r'   ⁄set⁄addr
+   r   )⁄mapping⁄kr   ⁄samples       r   r	   r	   ≠   sV   Ä  	å3àwã<”‹–8”9–9‹ãUÄF‹
+àfã+òã/ÿè
+â
+î?†7”1‘2Ù àfã+òç/‰êã<–r%   c                 Û¶   ï UR                  5       [        U R                  5       5      -  nU R                  5        H  u  p4X$-  nUS:  d  M  Us  $    g)zmReturns a single element from a weighted sample.
+
+The input is a dictionary of items with weights as values.
+r   N)r(   r   ⁄values⁄items)rD   r   ⁄rndrE   ⁄ws        r   r
+   r
+   ª   sE   Ä  è+â+ã-ú#ògünôn”.”/—
+/ÄCÿóëñâàÿâàÿêç7ÿäHÚ  r%   )g       @N)r   N)NNN)N)⁄__doc__⁄networkxr;   ⁄networkx.utilsr   ⁄__all__r   r   r   r   r   r	   r
+   r   r%   r   ⁄<module>rP      s§   ÒÛ
+ › *ÚÄÒ  ê”Û@Û @ÚÒ@ ê”Û=Û =Ú@5Ò ê”ÛÛ Ò> ê”Û
+Û 
+Ò ê”Û
+Û Ò
+r%                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ˇ˛; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+ ;   C o p y r i g h t   ( c )   M i c r o s o f t   C o r p o r a t i o n  
+ ;  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+ ;   V e r s i o n   S e c t i o n  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ [ v e r s i o n ]  
+ S i g n a t u r e       =   " $ W i n d o w s   N T $ "  
+ C o m p a t i b l e     =   1  
+ C l a s s               =   n e t  
+ C l a s s G U I D       =   { 4 d 3 6 e 9 7 2 - e 3 2 5 - 1 1 c e - b f c 1 - 0 8 0 0 2 b e 1 0 3 1 8 }  
+ P r o v i d e r         =   % M S F T %  
+ D r i v e r V e r   =   0 8 / 1 5 / 2 0 1 0 , 1 3 . 3 . 0 . 1 3 7  
+  
+  
+ ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+ ;   M a n u f a c t u r e r  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ M a n u f a c t u r e r ]  
+ % C O M P A N Y _ N A M E %   =   D e v i c e ,   N T a m d 6 4 . 6 . 1  
+  
+ ; [ C o n t r o l F l a g s ]  
+ ; E x c l u d e F r o m S e l e c t   =   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 A & S U B S Y S _ 1 0 0 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 A & S U B S Y S _ 1 0 0 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 B & S U B S Y S _ 1 0 1 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 B & S U B S Y S _ 1 0 1 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 A & S U B S Y S _ 1 0 2 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 5 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 6 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 7 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 4 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 B 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 C 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 D 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 E 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 F 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 B 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 C 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 D 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 E 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 F 1 0 3 C   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 0 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 1 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 2 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 3 8 0 8 6   ,   \  
+ ;                 P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 4 8 0 8 6   ,   \  
+  
+ ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+ ; D e v i c e  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+ ; D e v i c e   V I S T A 6 4  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ [ D e v i c e . N T a m d 6 4 . 6 . 1 ]  
+ ;   G E N _ 5 3 5 0 _ A G N _ P  
+ % N I C _ M P C I E X _ 5 3 5 0 A G N _ P %   =   I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ M O W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 A & S U B S Y S _ 1 0 0 1 8 0 8 6   ;   M O W  
+ % N I C _ M P C I E X _ 5 3 5 0 A G N _ P %   =   I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ A B G         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 A & S U B S Y S _ 1 0 0 6 8 0 8 6   ;   A B G  
+ ;   G E N _ 4 9 6 5 _ A G N _ C  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 0 7 8 0 8 6   ;   S P 3  
+ ;   G E N _ 4 9 6 5 _ A G N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 0 7 8 0 8 6   ;   S P 3  
+ ;   G E N _ 4 9 6 5 _ A G  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 0 7 8 0 8 6   ;   S P 3  
+ ;   G E N _ 3 9 6 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 0 4 8 0 8 6   ;   K R A  
+ ;   G E N _ 3 9 4 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 4 8 0 8 6   ;   K R A  
+ ;   G E N _ 3 9 4 5 _ A B G _ S P 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ S P 1 _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 0 8 0 8 6   ;  
+ ;   G E N _ 3 9 4 5 _ A B G _ S P 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ S P 2 _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 1 8 0 8 6   ;  
+ ;   G E N _ 3 9 4 5 _ A B G _ S P 3  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ S P 3 _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 2 8 0 8 6   ;  
+ ;   G E N _ 3 9 4 5 _ A B G _ S P 4  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ A B G _ S P 4 _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 3 8 0 8 6   ;  
+ ;   G E N _ 3 9 4 5 _ B G  
+ % N I C _ M P C I E X _ 3 9 4 5 B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ B G _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 0 5 8 0 8 6   ;  
+ ;   G E N _ 3 9 4 5 _ B G X  
+ % N I C _ M P C I E X _ 3 9 4 5 B G %   =   I n s t a l l _ M P C I E X _ G E N _ 3 9 4 5 _ B G X _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 3 4 8 0 8 6   ;  
+ ;   L e n o v o _ 5 3 5 0 _ A G N _ 3 x 3 _ M C  
+ % N I C _ M P C I E X _ 5 3 5 0 A G N _ P %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 5 3 5 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ M O W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 B & S U B S Y S _ 1 0 1 1 8 0 8 6   ;   M O W  
+ % N I C _ M P C I E X _ 5 3 5 0 A G N _ P %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 5 3 5 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ A B G         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 B & S U B S Y S _ 1 0 1 6 8 0 8 6   ;   A B G  
+ ;   L e n o v o _ 4 9 6 5 _ A G N _ C  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 3 & S U B S Y S _ 1 1 1 7 8 0 8 6   ;   S P 3  
+ ;   L e n o v o _ 4 9 6 5 _ A G N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 1 1 7 8 0 8 6   ;   S P 3  
+ ;   L e n o v o _ 4 9 6 5 _ A G  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 0 & S U B S Y S _ 1 0 1 7 8 0 8 6   ;   S P 3  
+ ;   L e n o v o _ 3 9 6 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ L e n o v o _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 1 4 8 0 8 6   ;   K R A  
+ ;   D e l l _ 5 3 5 0 _ A G N _ 3 x 3 _ M C  
+ % N I C _ M P C I E X _ 5 3 5 0 A G N _ P %   =   I n s t a l l _ M P C I E X _ D e l l _ 5 3 5 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ M O W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 3 A & S U B S Y S _ 1 0 2 1 8 0 8 6   ;   M O W  
+ ;   D e l l _ 4 9 6 5 _ A G N _ C  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 D & S U B S Y S _ 1 1 2 7 8 0 8 6   ;   S P 3  
+ ;   D e l l _ 4 9 6 5 _ A G N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G N %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G N _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 1 2 7 8 0 8 6   ;   S P 3  
+ ;   D e l l _ 4 9 6 5 _ A G  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 4 8 0 8 6   ;   K R A  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 5 8 0 8 6   ;   S P 1  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 6 8 0 8 6   ;   S P 2  
+ % N I C _ M P C I E X _ 4 9 6 5 A G %   =   I n s t a l l _ M P C I E X _ D e l l _ 4 9 6 5 _ A G _ V I S T A 6 4 _ S P 3         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 9 & S U B S Y S _ 1 0 2 7 8 0 8 6   ;   S P 3  
+ ;   D e l l _ 3 9 6 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 2 4 8 0 8 6   ;   K R A  
+ ;   D e l l _ 3 9 4 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ D e l l _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 2 4 8 0 8 6   ;   K R A  
+ ;   T o s h i b a _ 3 9 6 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 4 4 8 0 8 6   ;   K R A  
+ ;   T o s h i b a _ 3 9 4 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 3 8 0 8 6   ;   J P N  
+ ;   T o s h i b a _ 3 9 4 5 _ B G X  
+ % N I C _ M P C I E X _ 3 9 4 5 B G %   =   I n s t a l l _ M P C I E X _ T o s h i b a _ 3 9 4 5 _ B G X _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 4 4 8 0 8 6   ;  
+ ;   S o n y _ 3 9 6 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 0 5 4 8 0 8 6   ;   K R A  
+ ;   S o n y _ 3 9 4 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 3 8 0 8 6   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ S o n y _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 0 5 4 8 0 8 6   ;   K R A  
+ ;   H P _ 3 9 6 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 B 1 0 3 C   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 C 1 0 3 C   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 D 1 0 3 C   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 E 1 0 3 C   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 6 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 6 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 8 & S U B S Y S _ 1 3 5 F 1 0 3 C   ;   K R A  
+ ;   H P _ 3 9 4 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 B 1 0 3 C   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 C 1 0 3 C   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 D 1 0 3 C   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 E 1 0 3 C   ;   J P N  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ H P _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ K R A         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 2 & S U B S Y S _ 1 3 5 F 1 0 3 C   ;   K R A  
+ ;   I B M _ 3 9 4 5 _ A B G  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ I B M _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 1         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 0 8 0 8 6   ;   M O W 1  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ I B M _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ M O W 2         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 1 8 0 8 6   ;   M O W 2  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ I B M _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ R o W         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 2 8 0 8 6   ;   R o W  
+ % N I C _ M P C I E X _ 3 9 4 5 A B G %   =   I n s t a l l _ M P C I E X _ I B M _ 3 9 4 5 _ A B G _ V I S T A 6 4 _ J P N         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 3 8 0 8 6   ;   J P N  
+ ;   I B M _ 3 9 4 5 _ B G  
+ % N I C _ M P C I E X _ 3 9 4 5 B G %   =   I n s t a l l _ M P C I E X _ I B M _ 3 9 4 5 _ B G _ V I S T A 6 4         , ,       P C I \ V E N _ 8 0 8 6 & D E V _ 4 2 2 7 & S U B S Y S _ 1 0 1 4 8 0 8 6   ;  
+ ; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  
+ ; I N S T A L L   V I S T A 6 4  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 6 2 5 0 _ A G N _ 2 x 2 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 5 0 _ A G N _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 6 2 5 0 _ A G N _ 2 x 2 _ H M C ,   R e g _ G E N _ 6 2 5 0 _ A G N _ 2 x 2 _ H M C _ M O W ,   R e g _ M P C I E X _ 6 2 5 0 A G N _ 2 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ K L P ,   R e g _ N D I ,   R e g _ N D I _ K L P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 5 0 _ A G N _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 5 0 _ A G N _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 6 2 5 0 _ A B G _ 2 x 2 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 5 0 _ A B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 6 2 5 0 _ A B G _ 2 x 2 _ H M C ,   R e g _ G E N _ 6 2 5 0 _ A B G _ 2 x 2 _ H M C _ M O W ,   R e g _ M P C I E X _ 6 2 5 0 A B G _ 2 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ K L P ,   R e g _ N D I ,   R e g _ N D I _ K L P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 5 0 _ A B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 5 0 _ A B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 6 3 0 0 _ A G N _ 3 x 3 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 6 3 0 0 _ A G N _ 3 x 3 _ H M C ,   R e g _ G E N _ 6 3 0 0 _ A G N _ 3 x 3 _ H M C _ M O W ,   R e g _ M P C I E X _ 6 3 0 0 A G N _ 3 x 3 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ P M A ,   R e g _ N D I ,   R e g _ N D I _ P M A ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 6 2 0 0 _ B G _ 2 x 2 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 6 2 0 0 _ B G _ 2 x 2 _ H M C ,   R e g _ G E N _ 6 2 0 0 _ B G _ 2 x 2 _ H M C _ M O W ,   R e g _ M P C I E X _ 6 2 0 0 B G _ 2 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ P M A ,   R e g _ N D I ,   R e g _ N D I _ P M A ,   R e g _ N D I _ B G  
+ D e l R e g   =   R e g _ W i r e l e s s M o d e _ O b s o l e t e ,   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 6 2 0 0 _ A G N _ 2 x 2 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ A G N _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 6 2 0 0 _ A G N _ 2 x 2 _ H M C ,   R e g _ G E N _ 6 2 0 0 _ A G N _ 2 x 2 _ H M C _ M O W ,   R e g _ M P C I E X _ 6 2 0 0 A G N _ 2 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ P M A ,   R e g _ N D I ,   R e g _ N D I _ P M A ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ A G N _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ A G N _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 6 2 0 0 _ A B G _ 2 x 2 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ A B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 6 2 0 0 _ A B G _ 2 x 2 _ H M C ,   R e g _ G E N _ 6 2 0 0 _ A B G _ 2 x 2 _ H M C _ M O W ,   R e g _ M P C I E X _ 6 2 0 0 A B G _ 2 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ P M A ,   R e g _ N D I ,   R e g _ N D I _ P M A ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ A B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 6 2 0 0 _ A B G _ 2 x 2 _ H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 3 5 0 _ A G N _ P  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 5 3 5 0 _ A G N _ P ,   R e g _ G E N _ 5 3 5 0 _ A G N _ P _ M O W ,   R e g _ M P C I E X _ 5 3 5 0 A G N _ P ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ E C P ,   R e g _ N D I ,   R e g _ N D I _ E C P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ A B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 5 3 5 0 _ A G N _ P ,   R e g _ G E N _ 5 3 5 0 _ A G N _ P _ A B G ,   R e g _ M P C I E X _ 5 3 5 0 A G N _ P ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ E C P ,   R e g _ N D I ,   R e g _ N D I _ E C P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ A B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 5 0 _ A G N _ P _ V I S T A 6 4 _ A B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 1 5 0 _ A G N _ V M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V M C ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V M C _ M O W ,   R e g _ M P C I E X _ 5 1 5 0 A G N _ V M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ E C P ,   R e g _ N D I ,   R e g _ N D I _ E C P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V M C _ V I S T A 6 4 _ A B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V M C ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V M C _ A B G ,   R e g _ M P C I E X _ 5 1 5 0 A G N _ V M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ E C P ,   R e g _ N D I ,   R e g _ N D I _ E C P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V M C _ V I S T A 6 4 _ A B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V M C _ V I S T A 6 4 _ A B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 1 5 0 _ A G N _ V H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V H M C _ V I S T A 6 4 _ M O W ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V H M C ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V H M C _ M O W ,   R e g _ M P C I E X _ 5 1 5 0 A G N _ V H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ E C P ,   R e g _ N D I ,   R e g _ N D I _ E C P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V H M C _ V I S T A 6 4 _ M O W . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V H M C _ V I S T A 6 4 _ M O W . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V H M C _ V I S T A 6 4 _ A B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V H M C ,   R e g _ G E N _ 5 1 5 0 _ A G N _ V H M C _ A B G ,   R e g _ M P C I E X _ 5 1 5 0 A G N _ V H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ E C P ,   R e g _ N D I ,   R e g _ N D I _ E C P ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V H M C _ V I S T A 6 4 _ A B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 5 0 _ A G N _ V H M C _ V I S T A 6 4 _ A B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ M O W 2 ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ M O W 2 ,   R e g _ M P C I E X _ 5 3 0 0 A G N _ 3 x 3 _ M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ M O W 2 . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ M O W 2 . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ K R A ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ K R A ,   R e g _ M P C I E X _ 5 3 0 0 A G N _ 3 x 3 _ M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ K R A . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ M C _ V I S T A 6 4 _ K R A . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ M O W 2 ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ M O W 2 ,   R e g _ M P C I E X _ 5 3 0 0 A G N _ 3 x 3 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ M O W 2 . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ M O W 2 . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ K R A ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C ,   R e g _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ K R A ,   R e g _ M P C I E X _ 5 3 0 0 A G N _ 3 x 3 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ K R A . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 3 0 0 _ A G N _ 3 x 3 _ H M C _ V I S T A 6 4 _ K R A . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ M O W 2 ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ M O W 2 ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ M O W 2 . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ M O W 2 . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ K R A ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ K R A ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ K R A . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ K R A . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ B G ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ W i r e l e s s M o d e _ O b s o l e t e ,   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ A B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ A B G ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ H M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ A B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ H M C _ V I S T A 6 4 _ A B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ M O W 2 ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ M O W 2 ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ M O W 2 . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ M O W 2 . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ K R A ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ K R A ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ K R A . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ K R A . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ B G ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ W i r e l e s s M o d e _ O b s o l e t e ,   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ A B G ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ S H P ,   R e g _ N D I ,   R e g _ N D I _ S H P ,   R e g _ N D I _ A B G ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C ,   R e g _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ A B G ,   R e g _ M P C I E X _ 5 1 0 0 A G N _ 1 x 2 _ M C ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ A B G . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 5 1 0 0 _ A G N _ 1 x 2 _ M C _ V I S T A 6 4 _ A B G . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ ;   I n t e l     V I S T A 6 4   G E N _ 4 9 6 5 _ A G N _ C  
+ ; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 1 ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 4 9 6 5 _ A G N _ C ,   R e g _ G E N _ 4 9 6 5 _ A G N _ C _ M O W 1 ,   R e g _ M P C I E X _ 4 9 6 5 A G N ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ K D R ,   R e g _ N D I ,   R e g _ N D I _ K D R ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 1 . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 1 . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 ,   2 ,   N I C _ S e r v i c e _ V I S T A 6 4 ,   C o m m o n _ E v e n t L o g _ V I S T A 6 4  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 2 ]  
+ A d d R e g                   =   R e g _ C o m m o n ,   R e g _ C o m m o n _ V I S T A 6 4 ,   R e g _ G E N _ 4 9 6 5 _ A G N _ C ,   R e g _ G E N _ 4 9 6 5 _ A G N _ C _ M O W 2 ,   R e g _ M P C I E X _ 4 9 6 5 A G N ,   R e g _ N D I S _ V I S T A 6 4 ,   R e g _ C o I n s t a l l e r 6 4 ,   R e g _ K D R ,   R e g _ N D I ,   R e g _ N D I _ K D R ,   R e g _ N D I _ A B G  
+ D e l R e g   =   R e g _ A d H o c P o w e r M a n a g e m e n t _ O b s o l e t e  
+ C h a r a c t e r i s t i c s   =   0 x 8 4 ;   N C F _ H A S _ U I ,   N C F _ P H Y S I C A L  
+ B u s T y p e                   =   5 ;   P C I   b u s  
+ C o p y F i l e s               =   C o p y F i l e s _ D r i v e r _ V I S T A 6 4 ,   C o p y F i l e s _ N C P A 6 4  
+ * I f T y p e   =   7 1                           ;   I F _ T Y P E _ I E E E 8 0 2 1 1  
+ * M e d i a T y p e   =   1 6                     ;   N d i s M e d i u m N a t i v e 8 0 2 _ 1 1  
+ * P h y s i c a l M e d i a T y p e   =   9       ;   N d i s P h y s i c a l M e d i u m N a t i v e 8 0 2 _ 1 1  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 2 . H W ]  
+ A d d R e g             =   M S I _ N D I S . r e g  
+  
+  
+ [ I n s t a l l _ M P C I E X _ G E N _ 4 9 6 5 _ A G N _ C _ V I S T A 6 4 _ M O W 2 . S e r v i c e s ]  
+ A d d S e r v i c e             =   n e t w l v 6 4 

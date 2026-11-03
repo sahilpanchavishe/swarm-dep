@@ -1,0 +1,1534 @@
+video-comp-picker-description{padding-top:14px;display:flex;flex-direction:column}.panel-video-license-option{flex:1}.panel-recent-search-overlay{position:absolute;width:100%;z-index:10;bottom:0;left:0;right:0;background:rgba(50,50,50,0.5);font-size:11px}.panel-recent-search-overlay .panel-recent-search-overlay-content{position:relative;background:#323232;height:auto;width:100%;line-height:22px;cursor:pointer;padding-bottom:2px;max-height:calc(100% - 25px);overflow-y:auto;box-shadow:0px 5px 10px rgba(0,0,0,0.2)}.panel-recent-search-overlay .panel-recent-search-overlay-header{box-sizing:border-box;display:flex;width:100%;height:22px;padding-left:12px;padding-right:12px}.panel-recent-search-overlay .panel-recent-search-overlay-header-text{flex:1;font-weight:bold;pointer-events:none;cursor:none}.panel-recent-search-overlay .panel-recent-search-overlay-list-item{box-sizing:border-box;padding-left:16px;padding-right:12px;min-height:22px;display:flex}.panel-recent-search-overlay .panel-recent-search-overlay-list-item:hover{background:rgba(30,30,30,0.9)}.panel-recent-search-overlay .panel-recent-search-overlay-list-item .recent-search-text-wrapper{display:flex;align-items:center;width:calc(100% - 10px)}.panel-recent-search-overlay .panel-recent-search-overlay-list-item .recent-search-text-wrapper .recent-search-text{width:100%;padding:5px 4px 5px 0px;line-height:normal;word-break:break-word}.panel-recent-search-overlay .panel-recent-search-overlay-list-item .clear-recent-search-icon{height:22px;align-items:center;display:flex;opacity:.35}.panel-recent-search-overlay .panel-recent-search-overlay-list-item .clear-recent-search-icon .panel-icon{margin-top:-2px}.panel-recent-search-overlay .panel-recent-search-overlay-list-item .clear-recent-search-icon:hover{opacity:1}.panel-recent-search-overlay .panel-recent-search-overlay-header-clear-all{opacity:.35}.panel-recent-search-overlay .panel-recent-search-overlay-header-clear-all:hover{opacity:1}.panel-recent-search-overlay .panel-recent-search-overlay-subdivider{pointer-events:none;height:1px;margin:2px 12px;background-color:#262626}.panel-dialog.panel-dialog-save-cloud-doc .panel-dialog-footer,.panel-dialog.panel-dialog-save-cloud-doc .panel-dialog-footer-fullscreen{flex-direction:column-reverse}.panel-dialog.panel-dialog-save-cloud-doc .panel-dialog-footer .panel-dialog-button,.panel-dialog.panel-dialog-save-cloud-doc .panel-dialog-footer-fullscreen .panel-dialog-button{margin:8px 0}.panel-dialog-illustrated-message{display:flex;flex-direction:column;align-items:center;justify-content:center}.panel-dialog-illustrated-message .panel-dialog-illustrated-message-image{width:124px;height:100px;background-position:center;margin-bottom:20px;background-size:100%}.panel-dialog-illustrated-message .panel-dialog-illustrated-message-image.SPRK{background-image:url("+v+")}.panel-dialog-illustrated-message .panel-dialog-illustrated-message-heading{font-size:18px;font-weight:bold;color:var(--spectrum-global-color-gray-900);margin-bottom:8px}.panel-dialog-illustrated-message .panel-dialog-illustrated-message-description{text-align:center;font-size:14px;font-weight:normal;color:var(--spectrum-global-color-gray-800)}.panel-dialog.panel-dialog-create-publish-library{width:550px !important}.panel-dialog.panel-dialog-create-publish-library .panel-dialog-footer,.panel-dialog.panel-dialog-create-publish-library .panel-dialog-footer-fullscreen{display:none !important}.panel-dialog.panel-dialog-create-publish-library .dialog-bullet-item{margin-left:0 !important}.panel-dialog.panel-dialog-create-publish-library .dialog-bullet-item:before{padding-right:4px !important}.panel-dialog.panel-dialog-create-publish-library .create-publish-body{display:flex;flex-direction:row}.panel-dialog.panel-dialog-create-publish-library .create-publish-section{flex:1;text-align:left;display:flex;flex-direction:column;justify-content:center;padding:12px}.panel-dialog.panel-dialog-create-publish-library .create-publish-section.publish{background-color:var(--spectrum-global-color-gray-200);border-radius:4px}.panel-dialog.panel-dialog-create-publish-library .create-publish-section.upgrade{background-color:var(--spectrum-global-color-gray-200);border-radius:4px 4px 0 0}.panel-dialog.panel-dialog-create-publish-library .create-publish-section.upgrade:after{background-image:linear-gradient(to right, #303857 10%, #fe3b84 10%, #fe3b84 50%, #303857 50%, #303857 75%, #febcca 75%);background-size:100% 100%;content:'';height:5px;position:absolute;bottom:0px;left:50%;right:0px}.panel-dialog.panel-dialog-create-publish-library .create-publish-section-header{display:flex;flex-direction:row;justify-content:left;align-items:center}.panel-dialog.panel-dialog-create-publish-library .create-publish-section-header .create-publish-section-header-label{margin-right:8px;padding:2px 4px}.panel-dialog.panel-dialog-create-publish-library .create-publish-section-message{padding:12px 0;font-style:italic;font-size:12px;text-align:left}.panel-dialog.panel-dialog-create-publish-library .create-publish-section-action{padding:12px 0;display:flex;flex-direction:row;align-items:center;justify-content:center}.panel-dialog.panel-dialog-create-publish-library .create-publish-section-action .panel-dialog-button.disabled{cursor:initial;background-color:var(--spectrum-global-color-gray-200);border-color:var(--spectrum-global-color-gray-500);color:var(--spectrum-global-color-gray-500)}body:not(.windows) .panel-dialog.panel-dialog-relink-document-library .panel-dialog-button.primary{order:1}body:not(.windows) .panel-dialog.panel-dialog-relink-document-library .panel-dialog-button.primary .cta:not(.warning){background-color:var(--spectrum-global-color-gray-800);border-color:var(--spectrum-global-color-gray-800);margin-right:0}body:not(.windows) .panel-dialog.panel-dialog-relink-document-library .panel-dialog-button:last-child.secondary{margin-right:8px}.orphaned-library-list{overflow-y:scroll;background-color:#ffffff;border:1px solid #474747;width:100%;padding-top:5px;height:200px}.orphaned-library-list .orphaned-library-list-item{display:flex;height:40px}.orphaned-library-list .orphaned-library-list-item.selected{background-color:var(--spectrum-global-color-gray-200)}.orphaned-library-list .orphaned-library-list-item:hover{background-color:var(--spectrum-global-color-gray-200)}.orphaned-library-list .library-list-item{background-color:transparent;border-style:none;height:100%;width:100%;justify-content:space-between;font-size:12px}.orphaned-library-list .library-list-item-name-container{flex:4;padding-left:20px}.orphaned-library-list .library-list-item-icon-container{flex:2}.orphaned-library-list .library-list-item-icon-container .library-list-item-sharing-container{display:flex;flex-wrap:nowrap}.orphaned-library-list .library-list-item-modified{flex:1;padding-left:12px}.panel-dialog-promote .panel-dialog-contents,.panel-dialog-create .panel-dialog-contents{overflow-x:visible;overflow-y:visible}.panel-dialog-resolve-broken-links .resolve-broken-links-info{width:100%}.panel-dialog-resolve-broken-links .panel-dialog-section-label{margin-top:12px;margin-bottom:2px;color:var(--spectrum-global-color-gray-600);font-size:12px}.panel-dialog-resolve-broken-links .panel-dialog-section-label-step{margin-top:12px;margin-bottom:6px;display:flex;flex-direction:row;align-items:center}.panel-dialog-resolve-broken-links .panel-dialog-section-label-step .open-sources-info-icon{margin:0 8px;cursor:pointer}.panel-dialog-resolve-broken-links .panel-dialog-step-counter-container .panel-dialog-label-step-counter{position:absolute}.panel-dialog-resolve-broken-links .panel-dialog-step-counter-container .panel-dialog-section-label-step{margin-left:15px}.panel-dialog-resolve-broken-links.panel-dialog .resolve-broken-links-resolution-bullet-list{margin-top:12px}.panel-dialog-resolve-broken-links.panel-dialog .resolve-broken-links-resolution-bullet-list .dialog-bullet-item{display:flex;flex-direction:row;align-items:center;margin-left:0;margin-top:0}.panel-dialog-resolve-broken-links.panel-dialog .resolve-broken-links-resolution-bullet-list .dialog-bullet-item:before{content:'\\2043';padding-right:4px}.panel-dialog-resolve-broken-links.panel-dialog .resolve-broken-links-resolution-bullet-list .dialog-bullet-item .panel-dialog-section-label-step{margin:0}.panel-dialog-resolve-broken-links .source-list{display:flex;flex-direction:column;overflow-y:auto;max-height:112px;background-color:var(--spectrum-global-color-gray-100);border:1px solid var(--spectrum-global-color-gray-500);border-radius:4px}.panel-dialog-resolve-broken-links .source-list .source-list-item{min-height:36px;margin:0 8px;display:flex;flex-direction:row;align-items:center;justify-content:space-between}.panel-dialog-resolve-broken-links .source-list .source-list-item .source-name-container{display:flex;flex-direction:row}.panel-dialog-resolve-broken-links .source-list .source-list-item .source-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.panel-dialog-resolve-broken-links .source-list .source-list-item.is-file:not(.disabled) .source-name{text-decoration:underline;cursor:pointer}.panel-dialog-resolve-broken-links .source-list .source-list-item .source-icon{margin:0 8px}.loading-container{display:flex;flex-direction:row;justify-content:center;align-items:center}.loading-container .loading{width:auto}.panel-dialog-relink-orphan-asset .relink-orphan-asset-message{display:flex;flex-direction:row;align-items:center;margin-bottom:12px}.panel-dialog-relink-orphan-asset .relink-orphan-asset-message .relink-orphan-asset-thumbnail{height:24px;width:24px;margin-right:8px;flex-shrink:0}.panel-dialog-relink-orphan-asset .loading-container{height:200px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container{overflow-y:scroll;background-color:#ffffff;border:1px solid #474747;width:100%;padding-top:5px;overflow-y:hidden;border-radius:4px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .library-list-item-container{width:100%}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header{overflow-y:hidden}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header .library-list-column-header{font-weight:normal}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header .broken-links-column-header-container{display:flex;flex-direction:row;align-items:center}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header .broken-links-column-header-container .panel-icon{padding-left:8px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header.orphaned-library-list{height:40px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header .orphaned-library-list-item:hover{background-color:initial}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header .library-list-item{cursor:default}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-asset-library-list-header .library-list-item .library-list-item-sharing{padding-left:20px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list{border:none;padding:0}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list .orphaned-library-list-item{margin-left:20px;margin-right:20px;border-radius:4px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list .library-list-item-name-container,.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list .library-list-item-icon-container,.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list .library-list-item-modified,.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list .library-list-item-broken-links{flex:1;margin-left:20px}.panel-dialog-relink-orphan-asset .orphaned-asset-library-list-container .orphaned-library-list .library-list-item-name-container{padding-left:0;margin-left:0}.panel-dialog-relink-orphan-asset .orphaned-asset-relink-additional-container{display:flex;flex-direction:row;align-items:center;margin-top:12px}.panel-dialog-relink-orphan-asset .orphaned-asset-relink-additional-container.disabled{color:var(--spectrum-global-color-gray-500)}.panel-dialog-relink-orphan-asset .orphaned-asset-relink-additional-container .spectrum-Checkbox{margin-right:0}img{-webkit-user-drag:none}.panel-core-overlay-icon-warning{height:16px;width:16px;font-size:16px}.panel-core-overlay-icon-syncing{height:16px;width:16px;font-size:12px;padding:unset}.panel-core-overlay-icon-warning-list,.panel-core-overlay-icon-syncing-list{text-align:center;font-size:16px;line-height:16px;padding-left:0.5px;padding-top:1px}.panel-core-overlay-icon-syncing-list{animation:rotating 2s linear infinite}input.panel-search-input:hover::-webkit-input-placeholder{color:#e2e2e2}input.panel-search-input::-webkit-input-placeholder{font-style:italic}.locale_ja-JP input.panel-search-input::-webkit-input-placeholder,.locale_ko-KR input.panel-search-input::-webkit-input-placeholder,.locale_zh-TW input.panel-search-input::-webkit-input-placeholder,.locale_zh-CN input.panel-search-input::-webkit-input-placeholder{font-style:normal}.panel-core-overlay-dimmed-top-right{border-radius:10px;position:absolute;top:5px;right:5px;display:flex;align-items:center;justify-content:center;margin:0;width:20px;height:20px}.panel-core-overlay-dimmed-center{border-radius:10px;display:flex;flex-direction:row;align-items:center;position:absolute;top:-1px;left:0px;width:100%;height:100%;justify-content:center}.spectrum-Checkbox{display:inline-flex;align-items:flex-start;position:relative;min-height:32px;max-width:100%;margin-right:16px;vertical-align:top}.spectrum-Checkbox-input{font-family:inherit;font-size:100%;line-height:1.15;margin:0;overflow:visible;box-sizing:border-box;padding:0;position:absolute;top:0;left:-8px;width:calc(100% + 16px);height:100%;opacity:.0001;z-index:1;cursor:pointer}.spectrum-Checkbox-input:disabled{cursor:default}.spectrum-Checkbox-input:checked+.spectrum-Checkbox-box{border-width:7px}.spectrum-Checkbox-input:checked+.spectrum-Checkbox-box .spectrum-Checkbox-checkmark{transform:scale(1);opacity:1}.is-indeterminate.spectrum-Checkbox .spectrum-Checkbox-box,.is-indeterminate.spectrum-Checkbox .spectrum-Checkbox-input:checked+.spectrum-Checkbox-box{border-width:7px}.is-indeterminate.spectrum-Checkbox .spectrum-Checkbox-box .spectrum-Checkbox-checkmark,.is-indeterminate.spectrum-Checkbox .spectrum-Checkbox-input:checked+.spectrum-Checkbox-box .spectrum-Checkbox-checkmark{display:none}.is-indeterminate.spectrum-Checkbox .spectrum-Checkbox-box .spectrum-Checkbox-partialCheckmark,.is-indeterminate.spectrum-Checkbox .spectrum-Checkbox-input:checked+.spectrum-Checkbox-box .spectrum-Checkbox-partialCheckmark{display:block;transform:scale(1);opacity:1}.spectrum-Checkbox-label{margin-left:10px;margin-top:5px;font-size:14px;font-weight:400;line-height:1.49;transition:color 130ms ease-in-out}.spectrum-Checkbox-box{position:relative;box-sizing:border-box;width:14px;height:14px;margin:9px 0;flex-grow:0;flex-shrink:0;border-radius:2px;border-width:2px;border-style:solid;transition:border 130ms ease-in-out, box-shadow 130ms ease-in-out}.spectrum-Checkbox-checkmark,.spectrum-Checkbox-partialCheckmark{position:absolute;top:50%;left:50%;margin-top:-5px;margin-left:-5px;opacity:0;transform:scale(0);transition:opacity 130ms ease-in-out, transform 130ms ease-in-out}.spectrum-Checkbox-partialCheckmark{display:none}.panel-menu,.panel-library-dropdown-menu,.panel-dropdown-menu,.panel-select-menu,.panel-search-types,.panel-group-menu,.panel-insert-menu{background-color:#323232;border-top:1px solid #262626;border-left:1px solid #262626;border-bottom:1px solid #262626;border-right:1px solid #262626;border-radius:4px;box-shadow:0px 5px 10px rgba(0,0,0,0.2)}.panel-menu.condensed,.condensed.panel-library-dropdown-menu,.condensed.panel-dropdown-menu,.condensed.panel-select-menu,.condensed.panel-search-types,.condensed.panel-group-menu,.condensed.panel-insert-menu{overflow:auto}.panel-menu-item,.panel-select-menu-item,.panel-select-menu-header,.panel-select-menu-footer,.panel-group-menu-item,.panel-insert-menu-item{display:flex;flex-direction:row;align-items:center;color:#fff;padding-left:10px;padding-right:10px;font-size:11px;min-width:100px;height:24px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.panel-menu-item:hover,.panel-select-menu-item:hover,.panel-select-menu-header:hover,.panel-select-menu-footer:hover,.panel-group-menu-item:hover,.panel-insert-menu-item:hover{background:rgba(30,30,30,0.9)}.panel-menu-item.disabled,.disabled.panel-select-menu-item,.disabled.panel-select-menu-header,.disabled.panel-select-menu-footer,.disabled.panel-group-menu-item,.disabled.panel-insert-menu-item{pointer-events:none;opacity:0.4}.panel-menu-item.condensed,.condensed.panel-select-menu-item,.condensed.panel-select-menu-header,.condensed.panel-select-menu-footer,.condensed.panel-group-menu-item,.condensed.panel-insert-menu-item{font-size:11px;font-weight:bold;height:24px;padding-left:5px;padding-right:5px}.panel-menu-icon{display:flex;justify-content:center;width:12px;max-height:14px;height:auto;margin-top:2px}.panel-menu-icon.panel-menu-create-icon{margin-top:0}.panel-menu-label{flex:1 1 auto;min-width:0%;max-width:100%;overflow:hidden;white-space:pre;-webkit-user-select:none;user-select:none;text-overflow:ellipsis;cursor:default;-ms-overflow-style:none;scrollbar-width:none}.panel-menu-label::-webkit-scrollbar{display:none}.panel-select-label{display:flex;flex-direction:row;align-items:center}.panel-select-label .panel-menu-icon{height:20px;width:20px;text-align:center;margin-top:0px}.panel-menu-label-selected{flex:1 1 auto;-webkit-user-select:none;user-select:none;cursor:default}.panel-icon{font-size:0;text-align:center;display:inline-block}.panel-menu-subdivider,.panel-select-subdivider,.panel-group-menu-subdivider{height:1px;border-bottom:1px solid 1px;margin:4px 10px;background-color:#262626}.panel-menu-subdivider+.panel-select-menu-header,.panel-select-subdivider+.panel-select-menu-header,.panel-group-menu-subdivider+.panel-select-menu-header{padding-top:12px}.panel-library-dropdown-menu,.panel-dropdown-menu,.panel-select-menu,.panel-search-types,.panel-group-menu{min-width:148px;max-width:fit-content;overflow-y:auto;z-index:100;padding-bottom:8px;padding-top:8px}.panel-select-menu,.panel-search-types,.panel-group-menu{width:max-content}.panel-select-menu-label,.panel-group-menu-label{flex:1 1 auto;padding-left:5px;min-width:0%;max-width:100%;overflow-x:auto;white-space:pre;-ms-overflow-style:none;scrollbar-width:none}.panel-select-menu-label::-webkit-scrollbar,.panel-group-menu-label::-webkit-scrollbar{display:none}.panel-select-menu-label-text{display:inline-block}.library-dropdown-name,.panel-dropdown-name{display:flex;flex:1;flex-direction:row;max-width:100%;align-items:center;font-size:11px}.library-dropdown-name .panel-menu-icon,.panel-dropdown-name .panel-menu-icon{max-height:17px;margin:-2px 5px 0px 5px}.library-dropdown-name .panel-select-menu-label,.library-dropdown-name .panel-group-menu-label,.panel-dropdown-name .panel-select-menu-label,.panel-dropdown-name .panel-group-menu-label{flex-grow:1;max-width:calc(100% - 20px)}.library-dropdown-name.dropdown-name-with-icon,.panel-dropdown-name.dropdown-name-with-icon{max-width:calc(100% - 11px)}.panel-custom-label-dropdown{border:0px;background:transparent;padding:0px}.panel-select-menu-item,.panel-select-menu-header,.panel-select-menu-footer,.panel-group-menu-item{height:24px;padding-left:12px;padding-right:12px;font-weight:normal;font-size:11px}.panel-select-menu-item:hover,.panel-select-menu-header:hover,.panel-select-menu-footer:hover,.panel-group-menu-item:hover{background:rgba(30,30,30,0.9)}.panel-select-menu-item:focus,.panel-select-menu-header:focus,.panel-select-menu-footer:focus,.panel-group-menu-item:focus{outline:unset}.panel-select-menu-item.is-divider,.is-divider.panel-select-menu-header,.is-divider.panel-select-menu-footer,.is-divider.panel-group-menu-item{border-top:1px solid #262626;margin:4px 12px;height:1px}.panel-select-menu-header{line-height:11px;font-size:9px;letter-spacing:.12em;min-height:9px;height:auto;margin:5px 0px 7px 0px;font-weight:500;word-break:break-word;white-space:normal}.panel-select-menu-header:hover{background:transparent}.panel-select-menu-header:focus{outline:transparent}.panel-select-menu-footer{text-decoration:underline;height:auto;word-break:break-word;white-space:normal}.panel-select-menu-current-library{color:dimgray}.panel-select-menu-current-library:hover{background:rgba(0,0,0,0)}.panel-select-menu-current-library-recent{background:#474747}.panel-select-menu-current-library-recent:hover{background:#474747}.panel-select-header{height:19px}.panel-select-header-text{opacity:0.5;position:relative;left:-5px}.panel-select-divider,.panel-group-menu-divider{width:100%;background-color:#262626;height:1px;border-bottom:1px solid 1px;margin-bottom:2px}.panel-group-menu{min-width:200px;display:table;padding-bottom:8px;padding-top:8px;white-space:pre;box-sizing:content-box}.panel-group-menu .panel-menu-icon{max-height:unset}.panel-group-menu-label{margin-left:5px;padding-left:0px;overflow-x:scroll;-ms-overflow-style:none;scrollbar-width:none;cursor:default}.panel-group-menu-label::-webkit-scrollbar{display:none}.panel-group-menu-item .panel-menu-icon{margin-right:6px;flex-shrink:0}.panel-group-menu-item .panel-group-menu-label{margin-left:0;padding-right:6px;white-space:normal}.panel-group-menu-item.disabled{pointer-events:auto}.panel-group-menu-scroll-container{overflow-y:auto}.panel-group-menu-divider{margin-top:2px;margin-bottom:0px}.panel-insert-menu{position:absolute;right:0px;padding:5px 0;bottom:25px;z-index:5;font-size:11px}.panel-insert-menu .panel-menu-icon{max-height:unset;width:16px}.panel-insert-menu .panel-group-menu-subdivider{margin-left:0px;margin-right:0px}.panel-insert-menu .panel-group-menu-scroll-container{padding-bottom:0px}.add-library-button-container,.insert-menu-container{position:relative}.add-library-button-container .panel-group-menu-item,.insert-menu-container .panel-group-menu-item{height:auto;min-height:24px;line-height:1.5}.panel-insert-menu-item{text-align:left}.panel-insert-menu-item:hover{background:rgba(30,30,30,0.9);cursor:pointer}.panel-dialog-share-checkbox-area .panel-menu-icon{margin-top:0px;height:12px;width:12px;min-width:12px;border:solid 2px var(--spectrum-global-color-gray-600);border-radius:2px;color:#323232;margin-right:8px}.panel-dialog-share-checkbox-area .is-selected>.panel-menu-icon{background-color:#2680eb;border:0px}.panel-dialog-share-checkbox-area .is-selected>.panel-menu-icon:hover{background-color:#1473e6}.panel-search-filters-dropdown .panel-dropdown-menu{max-width:calc(100vw - (2 * 12px))}.panel-search-filters-dropdown .panel-select-menu-item,.panel-search-filters-dropdown .panel-select-menu-header,.panel-search-filters-dropdown .panel-select-menu-footer,.panel-search-filters-dropdown .panel-group-menu-item{flex-direction:row}.panel-search-filters-dropdown .panel-select-menu-header{flex-direction:row}.panel-search-source-dropdown .panel-dropdown-menu,.panel-sort-dropdown .panel-dropdown-menu{position:absolute;right:0px;width:auto}.panel-sort-dropdown.left-align .panel-dropdown-menu{left:0px}.left-align-correction{padding-left:-4px;margin-left:-4px}.dropdown-label-wrapper{display:flex;flex-direction:row;align-items:center}.dropdown-label-wrapper .panel-icon{margin-right:8px}.panel-group-path-view-autocomplete .panel-dropdown-menu{width:100%;max-width:100%;top:0}.panel-group-path-view-autocomplete .panel-select-menu-header{font-size:11px;letter-spacing:normal}.panel-group-path-view-autocomplete .panel-select-menu-item.is-selected,.panel-group-path-view-autocomplete .is-selected.panel-select-menu-header,.panel-group-path-view-autocomplete .is-selected.panel-select-menu-footer,.panel-group-path-view-autocomplete .is-selected.panel-group-menu-item{background:#2a2a2a}.panel-group-path-view-autocomplete .panel-select-menu-item .panel-menu-icon,.panel-group-path-view-autocomplete .panel-select-menu-header .panel-menu-icon,.panel-group-path-view-autocomplete .panel-select-menu-footer .panel-menu-icon,.panel-group-path-view-autocomplete .panel-group-menu-item .panel-menu-icon{display:none}.panel-group-path-view-autocomplete .panel-select-menu-item .path-view-autocomplete-item,.panel-group-path-view-autocomplete .panel-select-menu-header .path-view-autocomplete-item,.panel-group-path-view-autocomplete .panel-select-menu-footer .path-view-autocomplete-item,.panel-group-path-view-autocomplete .panel-group-menu-item .path-view-autocomplete-item{display:flex;flex-direction:row;align-items:center;justify-content:space-between}.panel-group-path-view-autocomplete .panel-select-menu-item .path-view-autocomplete-item .panel-group-container-text,.panel-group-path-view-autocomplete .panel-select-menu-header .path-view-autocomplete-item .panel-group-container-text,.panel-group-path-view-autocomplete .panel-select-menu-footer .path-view-autocomplete-item .panel-group-container-text,.panel-group-path-view-autocomplete .panel-group-menu-item .path-view-autocomplete-item .panel-group-container-text{width:100%}.panel-group-path-view-autocomplete .panel-select-menu-item .path-view-autocomplete-item .panel-group-container-text.is-editing,.panel-group-path-view-autocomplete .panel-select-menu-header .path-view-autocomplete-item .panel-group-container-text.is-editing,.panel-group-path-view-autocomplete .panel-select-menu-footer .path-view-autocomplete-item .panel-group-container-text.is-editing,.panel-group-path-view-autocomplete .panel-group-menu-item .path-view-autocomplete-item .panel-group-container-text.is-editing{height:20px;width:100%;padding:0 5px;border-radius:4px;border:1px solid var(--spectrum-global-color-blue-500);background-color:var(--spectrum-global-color-gray-50);display:flex;flex-direction:row;justify-content:space-between;align-items:center}.panel-group-path-view-autocomplete .panel-select-menu-item .path-view-autocomplete-item .panel-group-container-text.is-editing input,.panel-group-path-view-autocomplete .panel-select-menu-header .path-view-autocomplete-item .panel-group-container-text.is-editing input,.panel-group-path-view-autocomplete .panel-select-menu-footer .path-view-autocomplete-item .panel-group-container-text.is-editing input,.panel-group-path-view-autocomplete .panel-group-menu-item .path-view-autocomplete-item .panel-group-container-text.is-editing input{border:0;height:18px;line-height:normal;padding:0;position:relative;-webkit-appearance:none;appearance:none}.panel-group-path-view-autocomplete .panel-select-menu-item .path-view-autocomplete-item .panel-icon,.panel-group-path-view-autocomplete .panel-select-menu-header .path-view-autocomplete-item .panel-icon,.panel-group-path-view-autocomplete .panel-select-menu-footer .path-view-autocomplete-item .panel-icon,.panel-group-path-view-autocomplete .panel-group-menu-item .path-view-autocomplete-item .panel-icon{color:#d6d6d6;cursor:pointer}.panel-group-path-view-autocomplete .panel-select-menu-item .path-view-autocomplete-item.is-renaming .panel-icon,.panel-group-path-view-autocomplete .panel-select-menu-header .path-view-autocomplete-item.is-renaming .panel-icon,.panel-group-path-view-autocomplete .panel-select-menu-footer .path-view-autocomplete-item.is-renaming .panel-icon,.panel-group-path-view-autocomplete .panel-group-menu-item .path-view-autocomplete-item.is-renaming .panel-icon{display:none}.spectrum-Dialog{visibility:hidden;opacity:0;transition:transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 0ms linear 130ms;pointer-events:none}.spectrum-Dialog.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog.panel-dropdown-menu{visibility:visible;opacity:1;transition-delay:0ms;pointer-events:auto}.spectrum-Dialog{display:flex;flex-direction:column;position:fixed;left:50%;top:50%;transform:translateX(-50%) translateY(-50%) translateY(20px);z-index:2;box-sizing:border-box;max-width:90vw;max-height:90vh;width:fit-content;min-width:288px;padding:40px;border-radius:4px;outline:none;transition:opacity 130ms cubic-bezier(0.5, 0, 1, 1) 0ms,visibility 0ms linear 130ms,transform 0ms linear 130ms}.spectrum-Dialog.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog.panel-dropdown-menu{transition:transform 250ms cubic-bezier(0, 0, 0.4, 1) 160ms,opacity 250ms cubic-bezier(0, 0, 0.4, 1) 160ms;transform:translate(-50%, calc(-50% + -2vh))}.spectrum-Dialog .spectrum-Dialog-closeButton{display:none}.spectrum-Dialog--small{width:400px}.spectrum-Dialog--medium{width:480px}.spectrum-Dialog--large{width:640px}.spectrum-Dialog-hero{height:128px;margin-left:-40px;margin-right:-40px;margin-top:-40px;margin-bottom:40px;border-top-left-radius:4px;border-top-right-radius:4px;background-size:cover;background-position:center center}.spectrum-Dialog-header,.react-spectrum-provider .panel-dialog .panel-dialog-header{display:flex;align-items:center;position:relative;box-sizing:border-box;width:100%;flex-shrink:0;border-radius:4px 4px 0 0;outline:none;padding-bottom:30px}.spectrum-Dialog-header::after,.react-spectrum-provider .panel-dialog .panel-dialog-header::after{position:absolute;bottom:16px;left:0;right:0;content:'';height:2px}.spectrum-Dialog-wrapper{position:fixed;left:0;top:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;height:100%;visibility:hidden;pointer-events:none;z-index:2;transition:visibility 0ms linear 130ms}.spectrum-Dialog-wrapper.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog-wrapper.panel-dropdown-menu{visibility:visible}.spectrum-Dialog-wrapper .spectrum-Dialog:not(.spectrum-Dialog--fullscreen):not(.spectrum-Dialog--fullscreenTakeover){pointer-events:auto;position:relative;left:auto;top:auto;transform:translateY(20px);margin-top:-2vh}.spectrum-Dialog-wrapper .spectrum-Dialog:not(.spectrum-Dialog--fullscreen):not(.spectrum-Dialog--fullscreenTakeover).is-open,.spectrum-Dialog-wrapper .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog.panel-dropdown-menu:not(.spectrum-Dialog--fullscreen):not(.spectrum-Dialog--fullscreenTakeover),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog-wrapper .spectrum-Dialog.panel-dropdown-menu:not(.spectrum-Dialog--fullscreen):not(.spectrum-Dialog--fullscreenTakeover){transform:translateY(0)}@media only screen and (max-device-width: 400px), only screen and (max-device-height: 350px){.spectrum-Dialog--responsive{width:100%;height:100%;max-width:100%;max-height:100%;border-radius:0}.spectrum-Dialog-wrapper .spectrum-Dialog--responsive{margin-top:0}}.spectrum-Dialog--noDivider .spectrum-Dialog-header::after,.spectrum-Dialog--noDivider .react-spectrum-provider .panel-dialog .panel-dialog-header::after,.react-spectrum-provider .panel-dialog .spectrum-Dialog--noDivider .panel-dialog-header::after{display:none}.spectrum-Dialog--dismissible .spectrum-Dialog-footer,.spectrum-Dialog--dismissible .react-spectrum-provider .panel-dialog .panel-dialog-footer,.react-spectrum-provider .panel-dialog .spectrum-Dialog--dismissible .panel-dialog-footer,.spectrum-Dialog--dismissible .react-spectrum-provider .panel-dialog .panel-dialog-footer-fullscreen,.react-spectrum-provider .panel-dialog .spectrum-Dialog--dismissible .panel-dialog-footer-fullscreen{display:none}.spectrum-Dialog--dismissible .spectrum-Dialog-closeButton{display:initial}.spectrum-Dialog-closeButton{position:absolute;top:-28px;right:-28px}.spectrum-Dialog-typeIcon{display:block}.spectrum-Dialog-content,.react-spectrum-provider .panel-dialog .panel-dialog-contents{display:block;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1 1 auto;outline:none;font-size:14px;font-weight:400;line-height:1.5}@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){.spectrum-Dialog-content,.react-spectrum-provider .panel-dialog .panel-dialog-contents{max-height:70vh}}.spectrum-Dialog-footer,.react-spectrum-provider .panel-dialog .panel-dialog-footer,.react-spectrum-provider .panel-dialog .panel-dialog-footer-fullscreen{border-radius:0 0 4px 4px;padding-top:28px;flex:0 1 auto;flex-wrap:wrap;display:flex;justify-content:flex-end;outline:none;margin:-8px;margin-top:0}.spectrum-Dialog-footer>*,.react-spectrum-provider .panel-dialog .panel-dialog-footer>*,.react-spectrum-provider .panel-dialog .panel-dialog-footer-fullscreen>*,.spectrum-Dialog-footer>.spectrum-Button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-footer>.spectrum-Button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-footer-fullscreen>.spectrum-Button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>sp-button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>sp-button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>sp-button+.spectrum-Button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>.spectrum-Button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>.spectrum-Button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>.spectrum-Button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>sp-button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>sp-button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>sp-button+button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>.spectrum-Button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>.spectrum-Button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>.spectrum-Button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .spectrum-Dialog-footer>sp-button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer>sp-button+sp-button,.react-spectrum-provider .panel-dialog .panel-dialog-button .panel-dialog-footer-fullscreen>sp-button+sp-button{margin:8px}.spectrum-Dialog-title,.react-spectrum-provider .panel-dialog .panel-dialog-header .panel-dialog-title{flex:1 1 auto;margin:0;font-size:18px;font-weight:700;line-height:1.3;outline:none}.spectrum-Dialog--alert{width:480px}.spectrum-Dialog--fullscreen{left:32px;top:32px;right:32px;bottom:32px;transform:translate(0, 20px)}.spectrum-Dialog--fullscreen.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog--fullscreen.panel-dropdown-menu{transform:translate(0, 0)}.spectrum-Dialog--fullscreen,.spectrum-Dialog--fullscreenTakeover{width:auto;max-height:none;max-width:none;padding-top:30px}.spectrum-Dialog--fullscreen .spectrum-Dialog-header,.spectrum-Dialog--fullscreen .react-spectrum-provider .panel-dialog .panel-dialog-header,.react-spectrum-provider .panel-dialog .spectrum-Dialog--fullscreen .panel-dialog-header,.spectrum-Dialog--fullscreenTakeover .spectrum-Dialog-header,.spectrum-Dialog--fullscreenTakeover .react-spectrum-provider .panel-dialog .panel-dialog-header,.react-spectrum-provider .panel-dialog .spectrum-Dialog--fullscreenTakeover .panel-dialog-header{flex-shrink:0}.spectrum-Dialog--fullscreen .spectrum-Dialog-title,.spectrum-Dialog--fullscreen .react-spectrum-provider .panel-dialog .panel-dialog-header .panel-dialog-title,.react-spectrum-provider .panel-dialog .panel-dialog-header .spectrum-Dialog--fullscreen .panel-dialog-title,.spectrum-Dialog--fullscreenTakeover .spectrum-Dialog-title,.spectrum-Dialog--fullscreenTakeover .react-spectrum-provider .panel-dialog .panel-dialog-header .panel-dialog-title,.react-spectrum-provider .panel-dialog .panel-dialog-header .spectrum-Dialog--fullscreenTakeover .panel-dialog-title{font-size:28px;font-weight:100}.spectrum-Dialog--fullscreen .spectrum-Dialog-content,.spectrum-Dialog--fullscreen .react-spectrum-provider .panel-dialog .panel-dialog-contents,.react-spectrum-provider .panel-dialog .spectrum-Dialog--fullscreen .panel-dialog-contents,.spectrum-Dialog--fullscreenTakeover .spectrum-Dialog-content,.spectrum-Dialog--fullscreenTakeover .react-spectrum-provider .panel-dialog .panel-dialog-contents,.react-spectrum-provider .panel-dialog .spectrum-Dialog--fullscreenTakeover .panel-dialog-contents{max-height:none}.spectrum-Dialog--fullscreenTakeover{position:fixed;left:0;right:0;top:0;bottom:0;box-sizing:border-box;border:none;border-radius:0}.spectrum-Dialog--fullscreenTakeover,.spectrum-Dialog--fullscreenTakeover.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dialog--fullscreenTakeover.panel-dropdown-menu{transform:none}.spectrum-Dropdown,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select{position:relative;display:inline-block;max-width:100%;width:192px;min-width:48px}.spectrum-Dropdown select,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select select{-webkit-appearance:none;appearance:none;-ms-appearance:none}.spectrum-Dropdown select::-ms-expand,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select select::-ms-expand{display:none}.spectrum-Dropdown select::-ms-value,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select select::-ms-value{background-color:transparent}.spectrum-Dropdown select+.spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select select+.spectrum-Dropdown-icon,.spectrum-Dropdown .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area select+.panel-menu-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dropdown select+.panel-menu-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select select+.panel-menu-icon{position:absolute;right:12px;top:50%;margin-top:-3px}.spectrum-Dropdown-trigger,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name{position:relative;width:100%;display:flex;justify-content:space-between;align-items:center}.spectrum-Dropdown-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label{flex:1 1 auto;white-space:nowrap;overflow:hidden;height:30px;line-height:30px;font-size:14px;text-overflow:ellipsis;text-align:left}.spectrum-Dropdown-label.is-placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-placeholder.panel-select-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-placeholder.panel-group-menu-label{font-weight:400;font-style:italic;transition:color 130ms ease-in-out}.spectrum-Dropdown-label+.spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label+.spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label+.spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dropdown-label+.panel-menu-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label+.panel-menu-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label+.panel-menu-icon{margin-left:12px}.spectrum-Icon+.spectrum-Dropdown-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Icon+.panel-select-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Icon+.panel-group-menu-label{margin-left:8px}.spectrum-Dropdown-label ~ .spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label ~ .spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label ~ .spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dropdown-label ~ .panel-menu-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label ~ .panel-menu-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label ~ .panel-menu-icon{margin-left:12px}.spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-menu-icon{display:inline-block;position:relative;vertical-align:top;transition:color 130ms ease-out;margin-top:12px;margin-bottom:12px;opacity:1}.spectrum-Dropdown-trigger .spectrum-Icon:not(.spectrum-Dropdown-icon),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name .spectrum-Icon:not(.spectrum-Dropdown-icon){margin-top:6px;margin-bottom:6px}.spectrum-Dropdown-trigger .spectrum-Dropdown-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name .spectrum-Dropdown-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.spectrum-Dropdown-trigger .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dropdown-trigger .panel-select-menu-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name .panel-select-menu-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.spectrum-Dropdown-trigger .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Dropdown-trigger .panel-group-menu-label+.spectrum-Icon:not(.spectrum-Dropdown-icon),.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name .panel-group-menu-label+.spectrum-Icon:not(.spectrum-Dropdown-icon){margin-left:12px}.spectrum-Icon+.spectrum-Dropdown-icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Icon+.panel-menu-icon{margin-left:8px}.spectrum-Dropdown--quiet{width:auto;min-width:48px}.spectrum-Dropdown-popover,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{max-width:240px}.spectrum-Dropdown-popover--quiet,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{margin-left:-13px}.spectrum-Menu,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{display:inline-block;box-sizing:border-box;margin:4px 0;padding:0;list-style-type:none;overflow:auto}.spectrum-Menu>.spectrum-Menu-sectionHeading,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu>.spectrum-Menu-sectionHeading{margin-top:3px;margin-bottom:3px}.spectrum-Menu.is-selectable .spectrum-Menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .spectrum-Menu-item,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .panel-select-menu-item,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .panel-select-menu-header,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .panel-select-menu-footer,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .panel-group-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .panel-group-menu-item{padding-right:32px}.spectrum-Menu.is-selectable .spectrum-Menu-item.is-selected,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .spectrum-Menu-item.is-selected,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .is-selected.panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .is-selected.panel-select-menu-item,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .is-selected.panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .is-selected.panel-select-menu-header,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .is-selected.panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .is-selected.panel-select-menu-footer,.spectrum-Menu.is-selectable .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-group-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu.is-selectable .is-selected.panel-group-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selectable.panel-dropdown-menu .is-selected.panel-group-menu-item{padding-right:11px}.spectrum-Menu-checkmark{transform:scale(1);opacity:1}.spectrum-Menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item{cursor:pointer;position:relative;display:flex;align-items:center;box-sizing:border-box;padding:7px 12px 7px 10px;margin:0;border-left:2px solid transparent;min-height:32px;font-size:14px;font-weight:400;font-style:normal;text-decoration:none}.spectrum-Menu-item:focus,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item:focus,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header:focus,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer:focus,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item:focus{outline:none}.spectrum-Menu-item.is-selected,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-group-menu-item{padding-right:11px}.spectrum-Menu-item.is-selected .spectrum-Menu-checkmark,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-item .spectrum-Menu-checkmark,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-header .spectrum-Menu-checkmark,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-footer .spectrum-Menu-checkmark,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-group-menu-item .spectrum-Menu-checkmark{display:block}.spectrum-Menu-item .spectrum-Icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item .spectrum-Icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header .spectrum-Icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer .spectrum-Icon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item .spectrum-Icon,.spectrum-Menu-item .spectrum-Menu-itemIcon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item .spectrum-Menu-itemIcon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header .spectrum-Menu-itemIcon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer .spectrum-Menu-itemIcon,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item .spectrum-Menu-itemIcon{flex-shrink:0;align-self:flex-start}.spectrum-Menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header .spectrum-Icon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer .spectrum-Icon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item .spectrum-Icon+.spectrum-Menu-itemLabel,.spectrum-Menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item .spectrum-Menu-itemIcon+.spectrum-Menu-itemLabel{margin-left:8px;width:calc(100% - 50px)}.spectrum-Menu-itemLabel{flex:1 1 auto;line-height:1.3;hyphens:auto;overflow-wrap:break-word;width:calc(100% - 24px)}.spectrum-Menu-itemLabel--wrapping{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.spectrum-Menu-checkmark{display:none;align-self:flex-start}.spectrum-Menu-checkmark,.spectrum-Menu-chevron{flex-grow:0;margin-left:12px;margin-top:4px}.spectrum-Menu-divider{box-sizing:content-box;overflow:visible;height:2px;margin:1.5px 12px;padding:0 0;border:none}.spectrum-Menu-sectionHeading{display:block;margin:6px 0 0 0;padding:0 36px 0 12px;font-size:11px;font-weight:400;line-height:20px;text-transform:uppercase;letter-spacing:0.06em}.spectrum-Menu .spectrum-Menu,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu .spectrum-Menu,.spectrum-Menu .react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Menu .panel-dropdown-menu,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu .panel-dropdown-menu{display:block}.spectrum-Popover,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{visibility:hidden;opacity:0;transition:transform 130ms ease-in-out, opacity 130ms ease-in-out, visibility 0ms linear 130ms;pointer-events:none}.spectrum-Popover.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{visibility:visible;opacity:1;transition-delay:0ms;pointer-events:auto}.spectrum-Popover--bottom.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{transform:translateY(6px)}.spectrum-Popover--top.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Popover--top.panel-dropdown-menu{transform:translateY(-6px)}.spectrum-Popover--right.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Popover--right.panel-dropdown-menu{transform:translateX(6px)}.spectrum-Popover--left.is-open,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Popover--left.panel-dropdown-menu{transform:translateX(-6px)}.spectrum-Popover,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{display:inline-flex;flex-direction:column;box-sizing:border-box;min-width:32px;min-height:32px;position:absolute;border-style:solid;border-width:1px;border-radius:4px;outline:none}.spectrum-Popover-tip{position:absolute;overflow:hidden;width:21px;height:11px}.spectrum-Popover-tip::after{content:'';width:20px;height:20px;border-width:1px;border-style:solid;position:absolute;transform:rotate(45deg);top:-18px;left:-1px}.spectrum-Popover--dialog{min-width:270px;padding:30px 29px}.spectrum-Popover--left.spectrum-Popover--withTip{margin-right:13px}.spectrum-Popover--left .spectrum-Popover-tip{right:-16px;transform:rotate(-90deg)}.spectrum-Popover--right.spectrum-Popover--withTip{margin-left:13px}.spectrum-Popover--right .spectrum-Popover-tip{left:-16px;transform:rotate(90deg)}.spectrum-Popover--left .spectrum-Popover-tip,.spectrum-Popover--right .spectrum-Popover-tip{top:50%;margin-top:-6px}.spectrum-Popover--bottom.spectrum-Popover--withTip,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Popover--withTip.panel-dropdown-menu{margin-top:13px}.spectrum-Popover--bottom .spectrum-Popover-tip,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu .spectrum-Popover-tip{top:-11px;transform:rotate(180deg)}.spectrum-Popover--top.spectrum-Popover--withTip{margin-bottom:13px}.spectrum-Popover--top .spectrum-Popover-tip{bottom:-11px}.spectrum-Popover--bottom .spectrum-Popover-tip,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu .spectrum-Popover-tip,.spectrum-Popover--top .spectrum-Popover-tip{left:50%;margin-left:-12px}.spectrum-Textfield,.react-spectrum-provider .panel-dialog .panel-dialog-input{box-sizing:border-box;border:1px solid;border-radius:4px;padding:5px 11px 7px 11px;text-indent:0;min-width:48px;height:32px;width:192px;vertical-align:top;margin:0;overflow:visible;font-family:'adobe-clean-ux', 'adobe-clean', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;font-size:14px;line-height:1.5;text-overflow:ellipsis;transition:border-color 130ms ease-in-out, box-shadow 130ms ease-in-out;outline:none;-webkit-appearance:none;-moz-appearance:textfield}.spectrum-Textfield::-webkit-input-placeholder, .react-spectrum-provider .panel-dialog .panel-dialog-input::-webkit-input-placeholder{font-weight:400;font-style:italic;-webkit-transition:color 130ms ease-in-out;transition:color 130ms ease-in-out;opacity:1}.spectrum-Textfield::placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-input::placeholder{font-weight:400;font-style:italic;transition:color 130ms ease-in-out;opacity:1}.spectrum-Textfield:lang(ja)::-webkit-input-placeholder, .react-spectrum-provider .panel-dialog .panel-dialog-input:lang(ja)::-webkit-input-placeholder, .spectrum-Textfield:lang(zh)::-webkit-input-placeholder, .react-spectrum-provider .panel-dialog .panel-dialog-input:lang(zh)::-webkit-input-placeholder, .spectrum-Textfield:lang(ko)::-webkit-input-placeholder, .react-spectrum-provider .panel-dialog .panel-dialog-input:lang(ko)::-webkit-input-placeholder{font-style:normal}.spectrum-Textfield:lang(ja)::placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-input:lang(ja)::placeholder,.spectrum-Textfield:lang(zh)::placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-input:lang(zh)::placeholder,.spectrum-Textfield:lang(ko)::placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-input:lang(ko)::placeholder{font-style:normal}.spectrum-Textfield:hover::-webkit-input-placeholder, .react-spectrum-provider .panel-dialog .panel-dialog-input:hover::-webkit-input-placeholder{font-weight:400}.spectrum-Textfield:hover::placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-input:hover::placeholder{font-weight:400}.spectrum-Textfield:disabled,.react-spectrum-provider .panel-dialog .panel-dialog-input:disabled{resize:none;opacity:1}.spectrum-Textfield:disabled::-webkit-input-placeholder, .react-spectrum-provider .panel-dialog .panel-dialog-input:disabled::-webkit-input-placeholder{font-weight:400}.spectrum-Textfield:disabled::placeholder,.react-spectrum-provider .panel-dialog .panel-dialog-input:disabled::placeholder{font-weight:400}.spectrum-Textfield::-ms-clear,.react-spectrum-provider .panel-dialog .panel-dialog-input::-ms-clear{width:0;height:0}.spectrum-Textfield::-webkit-inner-spin-button,.react-spectrum-provider .panel-dialog .panel-dialog-input::-webkit-inner-spin-button,.spectrum-Textfield::-webkit-outer-spin-button,.react-spectrum-provider .panel-dialog .panel-dialog-input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.spectrum-Textfield:-moz-ui-invalid,.react-spectrum-provider .panel-dialog .panel-dialog-input:-moz-ui-invalid{box-shadow:none}.spectrum-Textfield.is-invalid,.react-spectrum-provider .panel-dialog .is-invalid.panel-dialog-input,.spectrum-Textfield:invalid,.react-spectrum-provider .panel-dialog .panel-dialog-input:invalid,.spectrum-Textfield.is-valid,.react-spectrum-provider .panel-dialog .is-valid.panel-dialog-input{background-repeat:no-repeat}.spectrum-Textfield.is-invalid,.react-spectrum-provider .panel-dialog .is-invalid.panel-dialog-input,.spectrum-Textfield:invalid,.react-spectrum-provider .panel-dialog .panel-dialog-input:invalid{background-size:18px 18px;background-position:calc(100% - 11px) 50%;padding-right:41px}.spectrum-Textfield.is-valid,.react-spectrum-provider .panel-dialog .is-valid.panel-dialog-input{background-size:12px 12px;background-position:calc(100% - 11px) 50%;padding-right:35px}.spectrum-Textfield--multiline{height:auto;min-height:56px;padding:5px 11px 8px 11px;overflow:auto}.spectrum-Textfield--multiline.is-invalid,.spectrum-Textfield--multiline:invalid,.spectrum-Textfield--multiline.is-valid{background-position:calc(100% - 9px) calc(100% - 9px)}.spectrum-Textfield--quiet{border-radius:0px;border-width:0 0 1px 0;padding-left:0;padding-right:0;resize:none;overflow-y:hidden}.spectrum-Textfield--quiet.is-invalid,.spectrum-Textfield--quiet:invalid,.spectrum-Textfield--quiet.is-valid{background-position:100% 50%}.spectrum-Textfield--quiet.spectrum-Textfield--multiline{height:32px;min-height:32px}.spectrum-Icon,.spectrum-UIIcon{display:inline-block;color:inherit;fill:currentColor;pointer-events:none}.spectrum-Icon:not(:root),.spectrum-UIIcon:not(:root){overflow:hidden}.spectrum-Icon--sizeXXS,.spectrum-Icon--sizeXXS img,.spectrum-Icon--sizeXXS svg{height:9px;width:9px}.spectrum-Icon--sizeXS,.spectrum-Icon--sizeXS img,.spectrum-Icon--sizeXS svg{height:12px;width:12px}.spectrum-Icon--sizeS,.spectrum-Icon--sizeS img,.spectrum-Icon--sizeS svg{height:18px;width:18px}.spectrum-Icon--sizeM,.spectrum-Icon--sizeM img,.spectrum-Icon--sizeM svg{height:24px;width:24px}.spectrum-Icon--sizeL,.spectrum-Icon--sizeL img,.spectrum-Icon--sizeL svg{height:36px;width:36px}.spectrum-Icon--sizeXL,.spectrum-Icon--sizeXL img,.spectrum-Icon--sizeXL svg{height:48px;width:48px}.spectrum-Icon--sizeXXL,.spectrum-Icon--sizeXXL img,.spectrum-Icon--sizeXXL svg{height:72px;width:72px}.spectrum--medium .spectrum-UIIcon--large{display:none}.spectrum--medium .spectrum-UIIcon--medium{display:inline}.spectrum--large .spectrum-UIIcon--medium{display:none}.spectrum--large .spectrum-UIIcon--large{display:inline}.spectrum--large{--ui-icon-large-display: block;--ui-icon-medium-display: none}.spectrum--medium{--ui-icon-medium-display: block;--ui-icon-large-display: none}.spectrum-UIIcon--large{display:var(--ui-icon-large-display)}.spectrum-UIIcon--medium{display:var(--ui-icon-medium-display)}.spectrum-UIIcon-AlertMedium{width:18px;height:18px}.spectrum-UIIcon-AlertSmall{width:14px;height:14px}.spectrum-UIIcon-ArrowDownSmall{width:8px;height:10px}.spectrum-UIIcon-ArrowLeftMedium{width:14px;height:10px}.spectrum-UIIcon-Asterisk{width:8px;height:8px}.spectrum-UIIcon-CheckmarkMedium{width:12px;height:12px}.spectrum-UIIcon-CheckmarkSmall{width:10px;height:10px}.spectrum-UIIcon-ChevronDownMedium{width:10px;height:6px}.spectrum-UIIcon-ChevronDownSmall{width:8px;height:6px}.spectrum-UIIcon-ChevronLeftLarge{width:12px;height:16px}.spectrum-UIIcon-ChevronLeftMedium{width:6px;height:10px}.spectrum-UIIcon-ChevronRightLarge{width:12px;height:16px}.spectrum-UIIcon-ChevronRightMedium{width:6px;height:10px}.spectrum-UIIcon-ChevronRightSmall{width:6px;height:8px}.spectrum-UIIcon-ChevronUpSmall{width:8px;height:6px}.spectrum-UIIcon-CornerTriangle{width:5px;height:5px}.spectrum-UIIcon-CrossLarge{width:12px;height:12px}.spectrum-UIIcon-CrossMedium{width:8px;height:8px}.spectrum-UIIcon-CrossSmall{width:8px;height:8px}.spectrum-UIIcon-DashSmall{width:10px;height:10px}.spectrum-UIIcon-DoubleGripper{width:16px;height:4px}.spectrum-UIIcon-FolderBreadcrumb{width:18px;height:18px}.spectrum-UIIcon-HelpMedium{width:18px;height:18px}.spectrum-UIIcon-HelpSmall{width:14px;height:14px}.spectrum-UIIcon-InfoMedium{width:18px;height:18px}.spectrum-UIIcon-InfoSmall{width:14px;height:14px}.spectrum-UIIcon-Magnifier{width:16px;height:16px}.spectrum-UIIcon-SkipLeft{width:9px;height:10px}.spectrum-UIIcon-SkipRight{width:9px;height:10px}.spectrum-UIIcon-Star{width:18px;height:18px}.spectrum-UIIcon-StarOutline{width:18px;height:18px}.spectrum-UIIcon-SuccessMedium{width:18px;height:18px}.spectrum-UIIcon-SuccessSmall{width:14px;height:14px}.spectrum-UIIcon-TripleGripper{width:10px;height:7px}.react-spectrum-provider .manager-root{height:var(--cc-libraries-manager-height);width:var(--cc-libraries-manager-width)}.react-spectrum-provider input[type=\"text\"]{line-height:auto;height:auto;border:0;color:unset}.react-spectrum-provider .panel-dialog{position:relative;background-color:unset;width:400px}.react-spectrum-provider .panel-dialog.panel-dialog-save-cloud-doc{width:350px}.react-spectrum-provider .panel-dialog.panel-dialog-save-cloud-doc .panel-dialog-button button.secondary{background-color:transparent;border-color:transparent;color:var(--spectrum-global-color-gray-700)}.react-spectrum-provider .panel-dialog.panel-dialog-save-cloud-doc .panel-dialog-button button.secondary:hover{background-color:var(--spectrum-global-color-gray-200);border-color:var(--spectrum-global-color-gray-200);color:var(--spectrum-global-color-gray-800)}.react-spectrum-provider .panel-dialog .panel-dialog-window,.react-spectrum-provider .panel-dialog .panel-dialog-window-fullscreen{background-color:var(--spectrum-global-color-gray-100);position:relative;box-shadow:unset;padding:0;width:100%;border-bottom:0}.react-spectrum-provider .panel-dialog .panel-dialog-divider-container{position:relative}.react-spectrum-provider .panel-dialog .panel-dialog-divider{border:0}.react-spectrum-provider .panel-dialog .panel-dialog-header{height:60px}.react-spectrum-provider .panel-dialog .panel-dialog-header:after{background-color:var(--spectrum-global-color-gray-300)}.react-spectrum-provider .panel-dialog .panel-dialog-header .panel-dialog-title{color:var(--spectrum-global-color-gray-900)}.react-spectrum-provider .panel-dialog .panel-dialog-input{-webkit-appearance:none;appearance:none;border-color:var(--spectrum-global-color-gray-300);background-color:var(--spectrum-global-color-gray-50)}.react-spectrum-provider .panel-dialog .panel-dialog-input:hover{border-color:var(--spectrum-global-color-gray-400)}.react-spectrum-provider .panel-dialog .panel-dialog-input:hover::-webkit-input-placeholder{font-weight:400}.react-spectrum-provider .panel-dialog .panel-dialog-input:hover::placeholder{font-weight:400}.react-spectrum-provider .panel-dialog .panel-dialog-input:focus{background-color:var(--spectrum-global-color-gray-50);border-color:var(--spectrum-global-color-blue-500)}.react-spectrum-provider .panel-dialog .panel-dialog-warning{border-bottom:0}.react-spectrum-provider .panel-dialog .panel-dialog-warning input[type=\"text\"],.react-spectrum-provider .panel-dialog .panel-dialog-warning input:focus{border:1px solid var(--spectrum-global-color-red-600)}.react-spectrum-provider .panel-dialog .panel-dialog-warning .panel-icon{position:absolute;right:12px;top:68px}.react-spectrum-provider .panel-dialog .panel-dialog-footer,.react-spectrum-provider .panel-dialog .panel-dialog-footer-fullscreen{background-color:var(--spectrum-global-color-gray-100);margin-left:0}.react-spectrum-provider .panel-dialog .panel-dialog-button button,.react-spectrum-provider .panel-dialog .panel-dialog-button sp-button{-webkit-appearance:none;appearance:none;padding-top:4px;padding-bottom:4px}.react-spectrum-provider .panel-dialog .panel-dialog-button button.disabled,.react-spectrum-provider .panel-dialog .panel-dialog-button sp-button.disabled{cursor:default}.react-spectrum-provider .panel-dialog .panel-dialog-button button.secondary:focus,.react-spectrum-provider .panel-dialog .panel-dialog-button sp-button.secondary:focus{background-color:var(--spectrum-global-color-gray-700)}.react-spectrum-provider .panel-dialog .panel-dialog-button sp-button{font-size:12px}.react-spectrum-provider .panel-dialog .panel-dialog-share-learn-more{display:flex;flex-direction:row;align-items:center;position:absolute;bottom:9px;left:0;padding-left:0}.react-spectrum-provider .panel-dialog .panel-dialog-button:last-child{margin-right:0}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select{background-image:none;height:32px;width:100%;max-width:100%;padding-left:0;position:absolute}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name{cursor:pointer;width:100%;height:100%;padding:0 8px}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select:focus{outline-style:auto;outline-color:var(--spectrum-global-color-blue-500)}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-label{padding:0 8px}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-menu-icon{display:flex;color:var(--spectrum-global-color-blue-500)}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-name .panel-menu-icon{color:var(--spectrum-global-color-gray-700)}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-dropdown-menu{max-width:100%;width:400px;background-color:var(--spectrum-global-color-gray-50);margin-left:0;margin-top:10px;padding-left:0}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item .panel-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-header .panel-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-footer .panel-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-group-menu-item .panel-menu-label{cursor:pointer}.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .panel-select-menu-item.is-selected .panel-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-header .panel-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-select-menu-footer .panel-menu-label,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .is-selected.panel-group-menu-item .panel-menu-label{color:var(--spectrum-global-color-blue-500)}.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area{flex-direction:row;align-items:center}.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area .panel-select-menu-item,.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area .panel-select-menu-header,.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area .panel-select-menu-footer,.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area .panel-group-menu-item{cursor:pointer}.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area .panel-menu-label{font-size:13px;margin-left:5px}.react-spectrum-provider .panel-dialog .panel-dialog-share-checkbox-area .spectrum-Checkbox-label{font-size:14px;line-height:1.5}.react-spectrum-provider .panel-dialog .dialog-warning{margin-bottom:2px}.react-spectrum-provider .panel-dialog .dialog-warning .panel-icon{margin-right:6px}.react-spectrum-provider .panel-dialog .dialog-warning svg{width:14px;height:14px}.react-spectrum-provider .panel-dialog .dialog-warning.destructive{margin-bottom:12px}.react-spectrum-provider .panel-dialog .dialog-bullet-item{margin-left:20px;display:list-item;list-style-type:disc;list-style-position:inside}.react-spectrum-provider .panel-dialog .uxp-bullet-list{display:flex;flex-direction:column}.react-spectrum-provider .panel-dialog .uxp-bullet-list .dialog-bullet-item{margin-top:12px}.react-spectrum-provider .panel-dialog .uxp-bullet-list .dialog-bullet-item:before{padding-right:12px;content:'\\2022'}.react-spectrum-provider .panel-dialog .promote-team-message-wrapper{max-width:400px}.react-spectrum-provider .panel-dialog .warning-message-title,.react-spectrum-provider .panel-dialog .promote-team-message-title{color:var(--spectrum-global-color-gray-900)}.react-spectrum-provider .panel-dialog .panel-importExport{font-size:inherit}.react-spectrum-provider .panel-dialog .panel-dialog-window>.panel-dialog-contents,.react-spectrum-provider .panel-dialog .panel-dialog-window-fullscreen>.panel-dialog-contents{overflow:visible}.react-spectrum-provider .panel-dialog.wide{width:540px}.react-spectrum-provider .panel-dialog.panel-dialog-create .uxp-imgButton{display:flex;align-items:center;justify-content:center}.react-spectrum-provider .spectrum-Tooltip-label{max-width:200px}.react-spectrum-provider .spectrum-ActionButton{font-family:inherit}.react-spectrum-provider .spectrum-ActionButton+.spectrum-ActionButton{margin-left:0}.react-spectrum-provider .react-spectrum-ToastContainer{position:fixed;top:0;left:0;right:0;display:flex;flex-direction:column;align-items:center}.react-spectrum-provider .react-spectrum-ToastContainer--bottom-center{flex-direction:column-reverse;top:unset;bottom:16px;align-items:center}.react-spectrum-provider .spectrum-Dialog.manager-dialog-shareLibrary{padding:0}.react-spectrum-provider .spectrum-Underlay.is-open.is-tour,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Underlay.is-tour.panel-dropdown-menu{opacity:0;z-index:auto}.react-spectrum-provider .spectrum-Underlay.is-open.is-tour .spectrum-Dialog,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Underlay.is-tour.panel-dropdown-menu .spectrum-Dialog{visibility:hidden}.react-spectrum-provider .spectrum-Underlay.is-open.is-tour .spectrum-Dialog *,.react-spectrum-provider .panel-dialog .panel-dialog-share-select-area .spectrum-Underlay.is-tour.panel-dropdown-menu .spectrum-Dialog *{visibility:visible}.application-dialog-container .spectrum-Dialog{max-width:100%;max-height:100%;transform:none;position:relative;left:0;top:0}.panel-brush-item .panel-item-img-scale,.panel-list-brush-item-thumb .panel-item-img-scale{background-color:#fff}.panel-brush-item-img,.panel-brush-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#fff}.panel-brush-item-img-loading{display:block;opacity:0.4}.panel-list-brush-item-img,.panel-list-brush-item-img-loading{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#fff}.panel-list-brush-item-img:hover,.panel-list-brush-item-img.selected,.panel-list-brush-item-img-loading:hover,.panel-list-brush-item-img-loading.selected{background-size:contain}.panel-list-react-brush-item{object-fit:cover}.panel-list-react-brush-item:hover{object-fit:contain}.panel-list-react-brush-item .panel-thumbnail-disabled{background-color:rgba(73,73,73,0.3)}.panel-list-brush-item-thumb{flex:0 0 36px;height:36px;border-radius:2px;overflow:hidden;display:flex;flex-direction:row;align-items:center;justify-content:center;flex-shrink:0;margin-right:10px;border:1px solid #1e1e1e}.panel-list-brush-item-thumb:not(.thumbnail-view):hover,.panel-list-brush-item-thumb:not(.thumbnail-view).selected{flex:0 0 82px}.panel-thumbnail-large-item-background{background-color:#fff}.panel-characterstyle-item,.panel-paragraphstyle-item,.panel-textstyle-item{background:#fff;color:#000}.panel-characterstyle-item.panel-group-view-item .element-badges-container,.panel-paragraphstyle-item.panel-group-view-item .element-badges-container,.panel-textstyle-item.panel-group-view-item .element-badges-container{height:auto}.panel-characterstyle-item.disabled-item,.panel-paragraphstyle-item.disabled-item,.panel-textstyle-item.disabled-item{background-color:rgba(255,255,255,0.3)}.panel-characterstyle-item.disabled-item .panel-textstyle-color,.panel-paragraphstyle-item.disabled-item .panel-textstyle-color,.panel-textstyle-item.disabled-item .panel-textstyle-color{opacity:.3}.panel-textstyle-item-name{text-align:center;font-size:32px;color:#000;background:#fff;line-height:54px}.panel-list-textstyle-item-name{text-align:center;height:30px;width:32px;font-size:20px;color:#000;background:#fff;line-height:28px}.panel-textstyle-color{position:absolute;width:16px;height:16px;top:4px;left:4px;margin-right:0px}.panel-textstyle-color.inline{position:relative;display:inline-block;width:7px;height:7px;top:0;left:0;margin-right:4px}.panel-textstyle-color.contrast{border:1px solid #474747}.panel-textstyle-rendition-container{display:flex;flex-direction:column;align-items:flex-start;height:100%;max-width:100%;justify-content:flex-end;padding:0px 4px;text-align:left}.panel-textstyle-rendition-container.center{text-align:center;align-items:center;justify-content:center;padding:8px}.panel-list-textstyle-thumb .panel-textstyle-rendition-container{padding:0px}.panel-textstyle-rendition-container.contrast{background-color:#ddd}.panel-textstyle-rendition-container.disabled-item{opacity:0.3}.panel-textstyle-rendition-name{width:100%;padding-bottom:5px;margin-bottom:-5px;color:#000000;font-size:14px}.panel-grid-item .panel-textstyle-rendition-name,.thumbnail-large-view .panel-textstyle-rendition-name{text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.panel-textstyle-rendition-details{font-size:11px;height:16px;line-height:16px;color:#959595;margin-top:4px;overflow:hidden}.missing-rendition-icon{color:#000000}.missing-rendition-icon.panel-list-icon-missing-rendition{color:#e1e1e1;margin-left:5px;margin-right:5px}.panel-textstyle-list-item-size,.panel-textstyle-list-item-color{flex:0 0 auto;font-size:11px;margin-left:5px;margin-right:5px}.panel-textstyle-list-item-color{position:absolute;top:0px;left:0px;font-size:10px;z-index:5;width:100%;height:6px;margin:0}.panel-textstyle-list-item-color.contrast{border:1px solid #474747}.panel-textstyle-item-img,.panel-textstyle-item-img-loading{max-height:30px;max-width:100%;margin-top:2px;background-size:contain;background-origin:content-box;padding:0% 20%;background-position:center center;background-repeat:no-repeat}.panel-grid-textstyle-thumbnail-holder{width:100%;height:100%;text-align:center}.panel-thumbnail-large-textstyle-thumbnail-holder{display:flex;justify-content:center;align-items:center;width:100%;height:100%;background-color:#fff}.panel-grid-textstyle-thumbnail{display:inline-block;width:100%;height:100%}.panel-list-textstyle-thumb{background-color:#fff;position:relative;border-radius:2px;overflow:hidden;width:100%}.panel-list-textstyle-thumb.disabled-item{opacity:.3}.panel-list-textstyle-thumb.disabled-item .panel-textstyle-rendition-container{opacity:1}.panel-list-textstyle-item-img.panel-thumbnail-disabled{opacity:1;background-color:transparent}.panel-missing-font-overlay-list{position:relative;flex:0 0 12px;display:inline-block;margin-left:5px;margin-right:5px}.panel-list-textstyle-item-name-container{flex:1 1 auto;min-width:0px}.panel-list-img-name-container{flex:1 1 auto;min-width:0px;display:flex;flex-direction:row;align-items:center;position:relative;margin-left:0px}.panel-list-textstyle-item-img{width:20px;height:20px;background-size:contain;background-origin:content-box;background-position:center center;background-repeat:no-repeat}.panel-thumbnail-color-item-thumb,.panel-list-color-item-thumb{flex:0 0 36px;height:36px;border-radius:2px;min-width:36px;margin-right:10px;border:1px solid #1e1e1e;overflow:hidden}.panel-thumbnail-color-item-thumb.opacity:not(.disabled),.panel-list-color-item-thumb.opacity:not(.disabled){background-color:#c4c4c4;background-image:linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5),linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);background-size:6px 6px;background-position:0 0,3px 3px;background-clip:border-box}.panel-grid-color-item-thumb,.panel-thumbnail-large-color-item-thumb{width:100%;height:100%}.panel-grid-color-item-thumb.opacity:not(.disabled),.panel-thumbnail-large-color-item-thumb.opacity:not(.disabled){background-color:#c4c4c4;background-image:linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5),linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);background-size:6px 6px;background-position:0 0,3px 3px;background-clip:border-box}.panel-color-item-content{width:100%;height:100%}.panel-colortheme-container{display:flex}.panel-colortheme-item{float:left;height:45px;width:205px;position:relative;margin-right:2px;margin-bottom:2px}.panel-colortheme-item-color{height:100%;flex-grow:1;position:relative;cursor:pointer}.panel-colortheme-item-color-inner{height:29px;position:absolute;z-index:20;top:0;width:100%;cursor:pointer}.panel-colortheme-item-color-container{width:40px;display:inline-block}.panel-list-colortheme-item{cursor:default}.panel-list-colortheme-item-color{width:20%;height:100%;display:inline-block;flex-grow:1}.panel-list-colortheme-item-color.interactive{cursor:pointer}.panel-list-colortheme-item-color-inner{width:100%;height:28px;display:inline-block;cursor:pointer;margin:1px 0}.panel-list-colortheme-item-thumb{flex-shrink:0;flex-grow:0;border-radius:2px;overflow:hidden}.panel-list-colortheme-item-thumb.interactive:hover,.panel-list-colortheme-item-thumb.interactive.selected{min-width:82px}.panel-list-colortheme-item-name{cursor:pointer}.panel-component-item{background-color:#494949}.panel-component-item.panel-grid-item img{padding:6px}.panel-capsule-item{display:flex;align-items:center;width:103px;height:78px;margin-right:2px;margin-bottom:2px;float:left;cursor:pointer;position:relative;border:1px solid #1e1e1e;background-color:#494949}.panel-capsule-list-item-filetype{flex:0 0 auto;background:#1d1d1d;border-radius:2px;margin-right:3px;padding:2px 5px 1px 5px;font-size:9px;text-align:center;color:#fff;font-weight:normal}.panel-image-item,.panel-graphic-item{background-color:#494949}.panel-image-item.disabled-item,.panel-graphic-item.disabled-item{background-color:rgba(73,73,73,0.3)}.panel-image-list-item-filetype,.panel-component-list-item-filetype,.panel-video-list-item-filetype,.panel-audio-list-item-filetype{flex:0 0 auto;background:#1d1d1d;border-radius:2px;margin-right:3px;padding:2px 5px 1px 5px;font-size:9px;text-align:center;color:#fff;font-weight:normal}.grouped>.panel-image-list-item-filetype,.grouped>.panel-component-list-item-filetype,.grouped>.panel-video-list-item-filetype,.grouped>.panel-audio-list-item-filetype{margin-right:0px}.missing-rendition-icon{color:#000000}.panel-layerstyle-item{background-color:#b2b2b2}.panel-layerstyle-item-img,.panel-layerstyle-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-layerstyle-item-img-loading{display:block;opacity:0.4}.panel-list-layerstyle-item-img,.panel-list-layerstyle-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-look-item{width:103px;height:78px;margin-right:2px;margin-bottom:2px;background-color:#494949;float:left;cursor:pointer;position:relative;border:1px solid #1e1e1e}.missing-rendition-icon{color:#000000}.panel-look-item-img,.panel-look-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-look-item-img-loading{display:block;opacity:0.4}.panel-list-look-item-img,.panel-list-look-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-list-look-item-img.panel-thumbnail-disabled{background-color:rgba(73,73,73,0.3)}.panel-unsupported-item-img,.panel-unsupported-item-img-loading{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}.panel-unsupported-item-img-loading{display:block;opacity:0.4}.panel-list-unsupported-item-img,.panel-list-unsupported-item-img-loading{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}.panel-list-unsupported-item-thumb{width:32px;height:32px;display:flex;flex-direction:row;align-items:center;justify-content:center;margin-right:10px;border:1px solid #1e1e1e}.panel-video-item{background-color:#494949}.panel-video-item.disabled-item,.panel-list-video-item-img.panel-thumbnail-disabled{background-color:rgba(73,73,73,0.3)}.missing-rendition-icon{color:#000000}.panel-video-item-img,.panel-video-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-video-item-img-loading{display:block;opacity:0.4}.panel-list-video-item-img,.panel-list-video-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-video-badge{position:absolute;bottom:0px;right:0px;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;border-radius:0px;border-top-left-radius:2px;background:transparent}.panel-video-badge-icon{background:#c2ccd0;width:15px;height:10px;display:flex;flex-direction:row;align-items:center;justify-content:center}.panel-video-badge-duration{padding:0px 4px;background:#494949;color:#fff;height:16px;line-height:16px;border-top-left-radius:4px}.panel-video-badge-icon-triangle{width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #303030}.panel-list-item.disabled-item .panel-video-list-item-filetype{opacity:.3}.panel-3d-item .panel-item-img-scale{background-color:#707070}.panel-3d-item.disabled-item{background-color:rgba(112,112,112,0.3)}.missing-rendition-icon{color:#000000}.panel-3d-item-img,.panel-3d-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-3d-item-img-loading{display:block;opacity:0.4}.panel-list-3d-item-img,.panel-list-3d-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-list-3d-item-img.panel-thumbnail-disabled{background-color:#707070}.panel-list-3d-item-thumb{position:relative}.panel-light-item{width:103px;height:78px;margin-right:2px;margin-bottom:2px;background-color:#494949;float:left;cursor:pointer;position:relative;border:1px solid #1e1e1e}.missing-rendition-icon{color:#000000}.panel-light-item-img,.panel-light-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-light-item-img-loading{display:block;opacity:0.4}.panel-list-light-item-img,.panel-list-light-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-list-light-item-img.panel-thumbnail-disabled{background-color:rgba(73,73,73,0.3)}.panel-list-light-item-thumb{position:relative}.panel-material-item{background-color:#707070}.missing-rendition-icon{color:#000000}.panel-material-item-img,.panel-material-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-material-item-img-loading{display:block;opacity:0.4}.panel-list-material-item-img,.panel-list-material-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-list-material-item-img.panel-thumbnail-disabled{background-color:rgba(112,112,112,0.3)}.panel-list-material-item-thumb{position:relative}.panel-pattern-item{background-color:#494949}.missing-rendition-icon{color:#000000}.panel-pattern-item-img,.panel-pattern-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-pattern-item-img-loading{display:block;opacity:0.4}.panel-list-pattern-item-img,.panel-list-pattern-item-img-loading{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat}.panel-pattern-list-item-filetype{flex:0 0 auto;background:#1d1d1d;border-radius:2px;margin-right:3px;padding:2px 5px 1px 5px;font-size:9px;text-align:center;color:#fff;font-weight:normal}.panel-template-item{display:flex;align-items:center;width:103px;height:78px;margin-right:2px;margin-bottom:2px;float:left;cursor:pointer;position:relative;background-color:#494949}.panel-template-item-img-holder{top:50%;left:50%;transform:translate(-50.5%, -50%);position:absolute;background-color:#494949}.panel-template-item.disabled-item{background-color:rgba(73,73,73,0.3)}.panel-template-item.disabled-item .panel-template-item-img-holder{background-color:transparent}.panel-template-item-img{width:100%;height:100%;float:left}.panel-list-template-item-thumb{position:relative;background-color:#d3d3d3}.panel-thumbnail-disabled .panel-template-item-img-holder{background-color:transparent}.panel-list-item.disabled-item .panel-list-template-item-thumb{background-color:rgba(73,73,73,0.3)}.panel-list-item.disabled-item .panel-template-list-item-filetype{opacity:.3}.panel-template-list-item-filetype{flex:0 0 auto;background:#1d1d1d;border-radius:2px;margin-right:3px;padding:2px 5px 1px 5px;font-size:9px;text-align:center;color:#fff;font-weight:normal}.panel-template-list-item-filetype-disabled{opacity:0.5}.panel-text-item{background:#494949;color:#000}.panel-text-item.disabled-item{background-color:rgba(73,73,73,0.3)}.panel-text-item.light-text,.panel-list-item.light-text .panel-list-text-thumb{background-color:#cdcdcd}.panel-text-item-name{text-align:center;font-size:32px;color:#000;background:#494949;line-height:54px}.panel-list-text-item-name{text-align:center;height:30px;width:32px;font-size:20px;color:#000;background:#494949;line-height:28px}.panel-text-color{position:absolute;width:10px;height:6px;top:2px;right:2px}.missing-rendition-icon{color:#000000}.panel-text-list-item-size,.panel-text-list-item-color{flex:0 0 auto;font-size:11px;margin-left:5px;margin-right:5px}.panel-text-list-item-color{flex:0 0 8px;display:inline-block;width:8px;height:8px}.panel-text-item-img{width:100%;height:100%;background-size:cover;background-origin:content-box;padding:0% 0%;background-position:0% 0%;background-repeat:no-repeat}.panel-text-item-img-loading{width:100%;height:100%;background-size:cover;background-origin:content-box;padding:0% 0%;background-position:0% 0%;background-repeat:no-repeat}.panel-list-text-thumb{background-color:#494949;position:relative}.disabled-item .panel-text-list-item-color,.disabled-item .panel-text-list-item-filetype{opacity:.3}.panel-list-text-thumb.disabled-item{background-color:rgba(73,73,73,0.3)}.panel-list-text-item-name-container{flex:1 1 auto;min-width:0px}.panel-list-text-item-img{width:100%;height:100%;background-size:cover;background-origin:content-box;padding:0% 0%;background-position:center center;background-repeat:no-repeat}.panel-list-text-item-info{padding-top:3px;font-size:10px;font-style:italic;color:#d6d6d6;overflow-x:hidden;white-space:nowrap;text-overflow:ellipsis}.disabled-item:not(.selected) .panel-list-text-item-info{opacity:0.3235}.disabled-item.selected .panel-list-text-item-info{opacity:0.4}.panel-text-list-item-filetype{flex:0 0 auto;background:#1d1d1d;border-radius:2px;margin-right:3px;padding:2px 5px 1px 5px;font-size:9px;text-align:center;color:#fff;font-weight:normal}.panel-animation-item{background-color:#494949}.panel-animation-item-img-holder{top:50%;left:50%;transform:translate(-50.5%, -50%);position:absolute;background-color:#494949}.panel-animation-item.disabled-item{background-color:rgba(73,73,73,0.3)}.panel-animation-item.disabled-item .panel-animation-item-img-holder{background-color:transparent}.panel-animation-item-img{width:100%;height:100%;float:left}.panel-list-animation-item-thumb{position:relative;background-color:#494949}.panel-list-item.disabled-item .panel-animation-item-img-holder.panel-thumbnail-disabled{background-color:transparent;background-image:none}.panel-list-item.disabled-item .panel-list-animation-item-thumb{background-color:rgba(73,73,73,0.3)}.panel-list-item.disabled-item .panel-animation-list-item-filetype{opacity:.3}.panel-animation-list-item-filetype{flex:0 0 auto;background:#1d1d1d;border-radius:2px;margin-right:3px;padding:2px 5px 1px 5px;font-size:9px;text-align:center;color:#fff;font-weight:normal}.color-design-library-stock-item-licensed-background-color{color:#5b9bd3}.color-design-library-stock-item-icon-color{color:#323232}.panel-dl-stock-empty,.panel-dl-stock-loading,.panel-dl-stock-error{margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;height:calc(100% - 60px);font-size:12px;padding-right:8px;padding-top:10px}.panel-dl-stock-icon{font-size:50px;opacity:.3;margin-top:10px;margin-bottom:10px}.panel-dl-stock-message,.panel-dl-stock-loading-message,.panel-stock-loading-message,.panel-stock-noresults-tips-container{font-size:11px;line-height:15px;max-width:250px;text-align:center;opacity:0.7;margin-bottom:20px}.panel-dl-stock-loading{margin-top:60px;min-height:100px}.panel-dl-stock-loading-icon{margin-top:10px;margin-bottom:10px}.panel-dl-stock-error{height:100%}.panel-dl-stock-no-connection-icon{font-size:40px;margin-bottom:10px;opacity:0.5}.panel-dl-stock-content{width:100%;display:flex;flex-direction:row;flex-wrap:wrap}.panel-dl-stock-content-item{position:relative;margin:2px;text-align:center;border:1px solid #1e1e1e}.panel-dl-stock-content-item:hover{border:1px solid #fff}.panel-dl-stock-content-item-img{display:block}.panel-dl-stock-content-item-hover{position:absolute;z-index:1;top:7px;left:7px;display:flex;flex-direction:row;flex-wrap:wrap}.panel-dl-stock-content-item-hover-vertical{position:absolute;z-index:1;top:7px;left:7px;display:flex;flex-direction:column;flex-wrap:wrap}.panel-dl-stock-content-item-hover-vertical .search-asset-icon{margin:0px 0px 7px 0px}.panel-dl-stock-content-item-action,.panel-dl-stock-content-item-licensed{cursor:pointer;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:0;border-radius:15px;background-color:#fff;margin:0px 7px 0px 0px}.panel-dl-stock-content-item-action:hover,.panel-dl-stock-content-item-licensed:hover{opacity:0.7}.panel-dl-stock-content-item-action.disabled,.disabled.panel-dl-stock-content-item-licensed{background-color:rgba(255,255,255,0.6);cursor:default}.panel-dl-stock-content-item-licensed-container{position:absolute;bottom:8px;right:0}.panel-dl-stock-content-item-licensed{cursor:default;background-color:transparent;margin:0;overflow:hidden;border-radius:0}.panel-dl-stock-content-item-icon,.panel-dl-stock-content-item-icon-licensed,.panel-dl-stock-content-item-icon-unlicensed-mini{cursor:pointer;display:flex;font-size:18px;color:#323232}.panel-dl-stock-content-item-icon.disabled,.disabled.panel-dl-stock-content-item-icon-licensed,.disabled.panel-dl-stock-content-item-icon-unlicensed-mini{cursor:default;opacity:0.6}.panel-dl-stock-content-item-icon-licensed,.panel-dl-stock-content-item-icon-unlicensed-mini{cursor:default;color:#2680eb}.panel-dl-stock-content-item-icon-licensed:hover,.panel-dl-stock-content-item-icon-unlicensed-mini:hover{opacity:1}.panel-dl-stock-content-item-icon-unlicensed-mini{color:#323232;cursor:pointer;font-size:12px;opacity:0.7}.panel-dl-stock-content-item-icon-unlicensed-mini:hover{opacity:1;fill:#000}.panel-dl-stock-content-item-icon-unlicensed-mini.disabled{opacity:0.5;pointer-events:none}.panel-dl-stock-content-item-icon-unlicensed-mini.disabled:hover{opacity:0.7;color:#323232}.panel-dl-stock-content-video-bar,.panel-dl-stock-content-footer-bar{position:absolute;left:0px;right:0px;opacity:0.9;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;border:0px;background:transparent;cursor:default}.panel-dl-stock-content-footer-bar{bottom:0px}.panel-dl-stock-content-video-bar{cursor:pointer;bottom:4px;transition:opacity 0.5s ease-in-out}.panel-dl-stock-content-video-slider{border:1px solid #0a0a0a;background:#227ea7;height:4px;width:100%;position:relative}.panel-dl-stock-content-video-slider-handle{border-left:1px solid #0a0a0a;border-right:1px solid #0a0a0a;background:#4f4f4f;width:4px;height:100%;position:absolute;left:0}.panel-dl-stock-content-footer-bar-rect{background-color:rgba(50,50,50,0.5);width:100%;min-height:20px;max-height:100%;display:flex}.panel-dl-stock-badge-video .panel-dl-stock-content-footer-bar-rect{margin-bottom:4px}.panel-dl-stock-content-video-bar-duration{padding:4px;margin-right:auto;text-align:left;color:#ffffff}.panel-dl-stock-content-video-bar-license,.panel-dl-stock-content-footer-bar-text{padding:4px;font-weight:bold;color:#ffffff}.panel-dl-stock-content-footer-bar-text{margin-left:auto;margin-right:auto}.panel-dl-stock-content-footer-bar-text-editorial{text-align:center}.panel-dl-stock-tips,.panel-dl-stock-view-on-web{width:100%;text-align:center;font-size:11px;padding:15px;margin:5px 5px 5px 2px}.panel-dl-stock-view-on-web{cursor:pointer;margin-bottom:5px}.panel-dl-stock-view-on-web:hover{opacity:0.6}.panel-dl-stock-view-on-web-message{font-weight:800}.panel-stock-search-result-header{cursor:pointer;display:flex;flex-direction:row;align-items:center}.panel-stock-search-header-label{display:inline-block;padding-left:5px}.panel-stock-search-header-icon{display:inline-block}.panel-stock-search-result-arrow{display:inline-block;transform-origin:center}.panel-dl-stock-option-label{float:left;padding-left:4px;vertical-align:baseline}.purchase-dialog{width:100%;height:100%}.purchase-dialog-icon{position:absolute;right:16px;top:8px;z-index:30;font-size:18px}.purchase-dialog-icon img{height:16px;width:16px}.purchase-dialog-divider{position:absolute;top:32px;left:15px;right:15px;border-bottom:1px solid #444444;margin-bottom:10px;z-index:40}.purchase-dialog-spinner{position:absolute;top:50%;left:50%;margin-top:-20px;margin-left:-10px;z-index:20}.purchase-dl-dropdown-container{margin-top:70px;top:10px;padding-left:10px;padding-right:10px}.panel-stock-message-container{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}.panel-stock-loading-message{padding-top:10px}.panel-stock-noresults-message{text-align:center;font-size:11px;opacity:0.7;margin-bottom:20px}.panel-stock-noresults-tips-container{margin-bottom:6px;opacity:0.9}.panel-stock-noresults-tips-header{font-weight:bold;margin-bottom:14px}.panel-stock-search-tips-container,.panel-stock-noresults-tips-container,.panel-stock-search-more-button-container{width:100%;text-align:center;font-size:11px;padding:15px}.panel-stock-search-more-button-container{cursor:pointer}.panel-stock-search-more-button-container:hover{opacity:0.6}.panel-stock-search-more-button-text{font-weight:800}.panel-stock-search-result-container{position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid #1e1e1e;box-sizing:content-box}.panel-stock-search-result-container:hover{border:1px solid #fff}.panel-stock-search-result-image{width:100%;height:100%;object-fit:cover}.panel-stock-search-result-children-container{position:absolute;left:0;right:0;top:0;bottom:0}.panel-stock-search-result-video{width:100%;height:100%}.panel-stock-search-result-video:hover+.panel-stock-search-result-video-footer{opacity:0}.panel-stock-search-result-video-footer{position:absolute;left:0px;right:0px;bottom:0px;opacity:0.9;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;border:0px;background:transparent;cursor:default;transition:opacity 0.5s ease-in-out}.panel-stock-search-result-video-footer-container{width:100%;height:20px;background-color:rgba(50,50,50,0.5);display:flex}.panel-stock-search-result-video-footer-text,.panel-stock-search-result-video-footer-duration,.panel-stock-search-result-video-footer-license{color:#ffffff;padding:4px}.panel-stock-search-result-video-footer-duration{margin-right:auto;text-align:left}.panel-stock-search-result-video-footer-license{font-weight:bold}.panel-stock-search-result-virtual-scroll:focus{outline:none}.stock-loading-spinner{text-align:center}.panel-thumbnail-gradient-item-thumb,.panel-list-gradient-item-thumb{flex:0 0 36px;height:36px;width:36px;border-radius:2px;margin-right:8px;border:1px solid #1e1e1e;overflow:hidden}.panel-thumbnail-gradient-item-thumb:not(.disabled),.panel-list-gradient-item-thumb:not(.disabled){background-color:#c4c4c4;background-image:linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5),linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);background-size:6px 6px;background-position:0 0,3px 3px;background-clip:border-box}.panel-grid-gradient-item-thumb,.panel-thumbnail-large-gradient-item-thumb{width:100%;height:100%;overflow:hidden}.panel-grid-gradient-item-thumb:not(.disabled),.panel-thumbnail-large-gradient-item-thumb:not(.disabled){background-color:#c4c4c4;background-image:linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5),linear-gradient(225deg, #f5f5f5 25%, transparent 25%, transparent 75%, #f5f5f5 75%, #f5f5f5);background-size:6px 6px;background-position:0 0,3px 3px;background-clip:border-box}.panel-grid-gradient-item-thumb img,.panel-thumbnail-large-gradient-item-thumb img{width:100%}.panel-gradient-item-content{width:100%;height:100%}.panel-audio-item{background-color:#494949}.panel-list-item.disabled-item .panel-audio-list-item-filetype{opacity:.3}.error.ng-leave{animation:fadeOut 0.5s}.error.ng-leave.ng-leave-active{opacity:0}.panel-dialog-window,.panel-dialog-window-fullscreen{animation:fadeInDown 0.2s}\n",""]),e.exports=g},14281:(e,o,t)=>{var r=[],a=[];function n(e){e=e||document.querySelector("head");var o=r.indexOf(e);if(-1===o){var t={refs:0,node:e};return r.push(e),a.push(t),t}return a[o]}var i=t(49308),l={hmr:!0};"string"==typeof i&&(i=[[e.id,i,""]]),i.locals&&(o.locals=i.locals),o.use=function(e){var o=n(e);if(!o.refs++){var r=Object.assign({},l,{insertInto:function(){return o.node}});o.dispose=t(8583)(i,r)}},o.unuse=function(e){var o=n(e);o.refs>0&&!--o.refs&&(o.dispose(),o.dispose=null)}},8583:e=>{function o(e,o){e.insertInto().appendChild(o)}function t(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}function r(e,o){Object.keys(o).forEach((function(t){e.setAttribute(t,o[t])}))}function a(e,o){var t=o.css,r=o.media;if(r&&e.setAttribute("media",r),e.styleSheet)e.styleSheet.cssText=t;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(t))}}function n(e,o,t){var r=t.css,a=t.sourceMap;a&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */");var n=new Blob([r],{type:"text/css"}),i=e.href;e.href=URL.createObjectURL(n),i&&URL.revokeObjectURL(i)}e.exports=function(e,i){(i=i||{}).attrs="object"==typeof i.attrs?i.attrs:{};var l=function(e,o){for(var t=[],r={},a=0;a<e.length;a++){var n=e[a],i=o.base?n[0]+o.base:n[0],l={css:n[1],media:n[2],sourceMap:n[3]};r[i]?r[i].parts.push(l):t.push(r[i]={id:i,parts:[l]})}return t}(e,i),p=[].concat.apply([],l.map((function(e){return e.parts}))).map((function(e){return function(e,i){var l,p,c;e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(l=function(e){var t=document.createElement("link");void 0===e.attrs.type&&(e.attrs.type="text/css");return e.attrs.rel="stylesheet",r(t,e.attrs),o(e,t),t}(i),p=n.bind(null,l,i),c=function(){t(l),l.href&&URL.revokeObjectURL(l.href)}):(l=function(e){var t=document.createElement("style");void 0===e.attrs.type&&(e.attrs.type="text/css");return r(t,e.attrs),o(e,t),t}(i),p=a.bind(null,l),c=function(){t(l)});return p(e),c}(e,i)}));return function(){p.forEach((function(e){e()}))}}},11987:(e,o,t)=>{"use strict";e.exports=t.p+"resources/CreativeCloud_icon.svg"},61448:(e,o,t)=>{"use strict";e.exports=t.p+"resources/MissingLinkedElement_Light.svg"},35349:(e,o,t)=>{"use strict";e.exports=t.p+"resources/NewUserEmpty_dark.svg"},17839:(e,o,t)=>{"use strict";e.exports=t.p+"resources/NewUserEmpty_light.svg"},13233:(e,o,t)=>{"use strict";e.exports=t.p+"resources/ScrollDownArrow_darker.svg"},5202:(e,o,t)=>{"use strict";e.exports=t.p+"resources/ScrollUpArrow_darker.svg"},61036:(e,o,t)=>{"use strict";e.exports=t.p+"resources/UploadToCloud_SPRK.svg"}}]);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Û
+    π:jÍ0  „                   Û¢   ï S r SSKrSSKJrJr  SSKJrJrJ	r	  SSK
+Jr  SSKJr  SSKJrJrJrJrJrJrJrJrJrJrJrJr  S	 rS
+ rS r SS jrg)a	  
+Dogleg algorithm with rectangular trust regions for least-squares minimization.
+
+The description of the algorithm can be found in [Voglis]_. The algorithm does
+trust-region iterations, but the shape of trust regions is rectangular as
+opposed to conventional elliptical. The intersection of a trust region and
+an initial feasible region is again some rectangle. Thus, on each iteration a
+bound-constrained quadratic optimization problem is solved.
+
+A quadratic problem is solved by well-known dogleg approach, where the
+function is minimized along piecewise-linear "dogleg" path [NumOpt]_,
+Chapter 4. If Jacobian is not rank-deficient then the function is decreasing
+along this path, and optimization amounts to simply following along this
+path as long as a point stays within the bounds. A constrained Cauchy step
+(along the anti-gradient) is considered for safety in rank deficient cases,
+in this situations the convergence might be slow.
+
+If during iterations some variable hit the initial bound and the component
+of anti-gradient points outside the feasible region, then a next dogleg step
+won't make any progress. At this state such variables satisfy first-order
+optimality conditions and they are excluded before computing a next dogleg
+step.
+
+Gauss-Newton step can be computed exactly by `numpy.linalg.lstsq` (for dense
+Jacobian matrices) or by iterative procedure `scipy.sparse.linalg.lsmr` (for
+dense and sparse matrices, or Jacobian being LinearOperator). The second
+option allows to solve very large problems (up to couple of millions of
+residuals on a regular PC), provided the Jacobian matrix is sufficiently
+sparse. But note that dogbox is not very good for solving problems with
+large number of constraints, because of variables exclusion-inclusion on each
+iteration (a required number of function evaluations might be high or accuracy
+of a solution will be poor), thus its large-scale usage is probably limited
+to unconstrained problems.
+
+References
+----------
+.. [Voglis] C. Voglis and I. E. Lagaris, "A Rectangular Trust Region Dogleg
+            Approach for Unconstrained and Bound Constrained Nonlinear
+            Optimization", WSEAS International Conference on Applied
+            Mathematics, Corfu, Greece, 2004.
+.. [NumOpt] J. Nocedal and S. J. Wright, "Numerical optimization, 2nd edition".
+È    N)⁄lstsq⁄norm)⁄LinearOperator⁄aslinearoperator⁄lsmr)⁄OptimizeResult)⁄_call_callback_maybe_haltÈ   )⁄step_size_to_bound⁄	in_bounds⁄update_tr_radius⁄evaluate_quadratic⁄build_quadratic_1d⁄minimize_quadratic_1d⁄compute_grad⁄compute_jac_scale⁄check_termination⁄scale_for_robust_loss_function⁄print_header_nonlinear⁄print_iteration_nonlinearc                 Ûd   ^ ^^ï T R                   u  p4U UU4S jnU UU4S jn[        X44XV[        S9$ )z†Compute LinearOperator to use in LSMR by dogbox algorithm.
+
+`active_set` mask is used to excluded active variables from computations
+of matrix-vector products.
+c                 Ûr   >ï U R                  5       R                  5       nSUT'   TR                  U T-  5      $ ©Nr   )⁄ravel⁄copy⁄matvec)⁄x⁄x_free⁄Jop⁄
+active_set⁄ds     ÄÄÄ⁄bC:\Users\izadb\Downloads\Quadruped-PyMPC-main\venv\Lib\site-packages\scipy/optimize/_lsq/dogbox.pyr   ⁄lsmr_operator.<locals>.matvecB   s2   ¯Ä ÿóëìóë”!àÿààz—ÿèzâzò!òaô%” – Û    c                 Û:   >ï TTR                  U 5      -  nSUT'   U$ r   )⁄rmatvec)r   ⁄rr   r    r!   s     ÄÄÄr"   r&   ⁄lsmr_operator.<locals>.rmatvecG   s#   ¯Ä ÿêóëòAì—àÿàà*âÿàr$   )r   r&   ⁄dtype)⁄shaper   ⁄float)r   r!   r    ⁄m⁄nr   r&   s   ```    r"   ⁄lsmr_operatorr.   :   s-   ˙Ä  è9â9ÅDÄA˜!˜
+Ù
+ ò1ò&®Ã—N–Nr$   c                 Û(  ï X -
+  nX0-
+  n[         R                  " XA* 5      n[         R                  " XQ5      n[         R                  " Xd5      n[         R                  " Xu5      n	[         R                  " Xa* 5      n
+[         R                  " Xq5      nXgXâX´4$ )a„  Find intersection of trust-region bounds and initial bounds.
+
+Returns
+-------
+lb_total, ub_total : ndarray with shape of x
+    Lower and upper bounds of the intersection region.
+orig_l, orig_u : ndarray of bool with shape of x
+    True means that an original bound is taken as a corresponding bound
+    in the intersection region.
+tr_l, tr_u : ndarray of bool with shape of x
+    True means that a trust-region bound is taken as a corresponding bound
+    in the intersection region.
+)⁄np⁄maximum⁄minimum⁄equal)r   ⁄	tr_bounds⁄lb⁄ub⁄lb_centered⁄ub_centered⁄lb_total⁄ub_total⁄orig_l⁄orig_u⁄tr_l⁄tr_us               r"   ⁄find_intersectionr?   O   sw   Ä  ë&ÄKÿë&ÄK‰èzäzò+†z”2ÄH‹èzäzò+”1ÄH‰èXäXêh”,ÄF‹èXäXêh”,ÄF‰è8ä8êHòj”)ÄD‹è8ä8êH”(ÄD‡òv®t–9–9r$   c                 Û¶  ï [        XXg5      u  pâp´pÕ[        R                  " U [        S9n[	        XU	5      (       a  XS4$ [        [        R                  " U 5      U* Xâ5      u  nn[        X4SU5      S   * U-  nUU-
+  n[        UUXâ5      u  nnSUUS:  U
+-  '   SUUS:Ñ  U-  '   [        R                  " US:  U-  US:Ñ  U-  -  5      nUUU-  -   UU4$ )a∆  Find dogleg step in a rectangular region.
+
+Returns
+-------
+step : ndarray, shape (n,)
+    Computed dogleg step.
+bound_hits : ndarray of int, shape (n,)
+    Each component shows whether a corresponding variable hits the
+    initial bound after the step is taken:
+        *  0 - a variable doesn't hit the bound.
+        * -1 - lower bound is hit.
+        *  1 - upper bound is hit.
+tr_hit : bool
+    Whether the step hit the boundary of the trust-region.
+©r)   Fr   Èˇˇˇˇr
+   )r?   r0   ⁄
+zeros_like⁄intr   r   r   ⁄any)r   ⁄newton_step⁄g⁄a⁄br4   r5   r6   r9   r:   r;   r<   r=   r>   ⁄
+bound_hits⁄	to_bounds⁄_⁄cauchy_step⁄	step_diff⁄	step_size⁄hits⁄tr_hits                         r"   ⁄dogleg_steprR   l   s   Ä Ù  6Gÿ	êbÛ6—2ÄHò®Ù óíòq¨—,ÄJ‰ê®◊1—1ÿ®–-–-‰%§bßm¢m∞A”&6∏∏∏H”OÅLÄIàqÙ )®®q∞)”<∏Q—?–?¿!—CÄK‡òk—)ÄI‹(®∞iÿ)1Û=ÅOÄIàt‡&(ÄJêêqëòF—"—#ÿ&'ÄJêêqëòF—"—#‹èVäVêTòAëX†—%®∞©∞T—(9—9”:ÄF‡ò†Y—.—.∞
+∏F–B–Br$   c                 ÛÚ  ï UnUR                  5       nSnUnSnUb5  U" U5      nS[        R                  " US   5      -  n[        UUU5      u  nnOS[        R                  " UU5      -  n[        UU5      n[        U[        5      =(       a    US:H  nU(       a  [        U5      u  nnOUSU-  nn[        UU-  [        R                  S9nUS:X  a  Sn[        R                  " U[        S9nSU[        R                  " X%5      '   SU[        R                  " X&5      '   Un[        R                  " U5      nU
+c  UR                  S	-  n
+S n Sn!S n"S n#US
+:X  a
+  [!        5          UU-  S:  n$U$) n%UU%   n&UR                  5       n'SUU$'   [        U[        R                  S9n(U(U	:  a  Sn US
+:X  a  [#        U!UUU#U"U(5        U c  UU
+:X  a  GOõUU%   n)UU%   n*UU%   n+UU%   n,US:X  a*  US S 2U%4   n-[%        U-U* SS9S   n.['        U-U&U&* 5      u  n/n0OHUS:X  aB  [)        U5      n1[+        U1UU$5      n2[-        U2U40 UD6S   U%   * n.U.U,-  n.['        U1UU* 5      u  n/n0Sn#U#S::  GaL  UU
+:  GaE  UU,-  n3[/        U)W.U&W/W0U3U*U+5      u  n4n5n6UR1                  S5        U4UU%'   US:X  a  [3        W-U&U45      * n7OUS:X  a  [3        W1UU5      * n7[        R4                  " UU-   XV5      n8U " U85      n9US-  n[        UU-  [        R                  S9n:[        R6                  " [        R8                  " U95      5      (       d  SU:-  nM‡  Ub  U" U9SS9n;OS[        R                  " U9U95      -  n;UU;-
+  n#[;        UU#W7U:U65      u  nn<[        U5      n"[=        U#UU"[        U5      U<Xx5      n U b  OU#S::  a	  UU
+:  a  GME  U#S:î  aÄ  W5UU%'   W8nUS:H  n=UU=   UU='   US:H  n=UU=   UU='   W9nUR                  5       nW;nU" U5      nUS-  nUb  U" U5      n[        UUU5      u  nn[        UU5      nU(       a  [        UU5      u  nnOSn"Sn#U!S-  n!Ub%  [?        UUU!US9n>W;U>S'   [A        UU>5      (       a  Sn OGM  U c  Sn [?        UUUUU'U(UUUU S9
+$ )Nr
+   g      ‡?r   ⁄jac)⁄ordg      ?rA   rB   Èd   È   T⁄exact)⁄rcondr   g      øg        g      –?)⁄	cost_only)r   ⁄fun⁄nit⁄nfev⁄costÈ˛ˇˇˇ)
+r   r^   r[   rT   ⁄grad⁄
+optimality⁄active_maskr]   ⁄njev⁄status)!r   r0   ⁄sumr   ⁄dotr   ⁄
+isinstance⁄strr   r   ⁄infrC   rD   r3   ⁄
+empty_like⁄sizer   r   r   r   r   r.   r   rR   ⁄fillr   ⁄clip⁄all⁄isfiniter   r   r   r	   )?r[   rT   ⁄x0⁄f0⁄J0r5   r6   ⁄ftol⁄xtol⁄gtol⁄max_nfev⁄x_scale⁄loss_function⁄	tr_solver⁄
+tr_options⁄verbose⁄callback⁄f⁄f_truer]   ⁄Jrc   ⁄rhor^   rG   ⁄	jac_scale⁄scale⁄	scale_inv⁄Delta⁄on_boundr   ⁄step⁄termination_status⁄	iteration⁄	step_norm⁄actual_reductionr    ⁄free_set⁄g_free⁄g_full⁄g_normr   ⁄lb_free⁄ub_free⁄
+scale_free⁄J_freerF   rH   rI   r   ⁄lsmr_opr4   ⁄	step_free⁄on_bound_freerQ   ⁄predicted_reduction⁄x_new⁄f_new⁄step_h_norm⁄cost_new⁄ratio⁄mask⁄intermediate_results?                                                                  r"   ⁄dogboxrû   ó   s_  Ä ‡
+ÄAÿèVâVãXÄFÿÄD‡
+ÄAÿÄD‡— ŸòA”àÿîRóVíVòC†ôFì^—#à‹-®a∞∞C”8âàâ1‡îRóVíVòAòqì\—!à‰êQò”ÄA‰ò7§C”(◊=®W∏—-=ÄIﬁ‹,®Q”/—àây‡"†A®°Kàyà‰êêië§RßV°V—,ÄEÿêÉzÿà‰è}ä}òR§s—+ÄHÿ!#ÄHåRèXäXêb”—ÿ!"ÄHåRèXäXêb”—‡
+ÄA‹è=ä=ò”ÄD‡—ÿó7ë7òSë=à‡–ÿÄIÿÄIÿ–‡ê!É|‹‘ ‡
+ÿ†ë\†A—%à
+ÿê;à‡ê8ëàÿóëìàÿàà*â‰êaúRüVôV—$àÿêDã=ÿ!"–‡êaã<‹%†i∞∞t–=Mÿ&/∞Ù9 —)®T∞X”-=Ÿ‡ê8ëàÿêXë,àÿêXë,àÿò8ë_à
+ ò”ÿíqò(ê{ë^àF‹†®®∞"—5∞a—8àKÙ &†f®f∞v∞g”>âDàAâqÿò&” ‹"†1”%àCÙ $†C®∞
+”;àG‹†®—9®j—9∏!—<∏X—F–FàKÿò:—%àKÙ &†c®1®q®b”1âDàAàq‡–ÿ†!‘#®®x¨ÿ†
+—*àI‰/:ÿò†V®Q∞∞9∏g¿wÛ0P—,àIê}†f èIâIêcåNÿ&àDêâN‡òG”#‹'9∏&¿&ÿ:CÛ(E 'E—#‡òf”$‹'9∏#∏q¿$”'G–&G–#Ù óGíGòA†ôH†b”-àE·òìJàEÿêAâIàD‰òt†i—/¥R∑V±V—<àK‰ó6í6ú"ü+ö+†e”,◊-—-ÿò{—*êŸ —(Ÿ(®∏$—?ë‡§ß¢®®u”!5—5êÿ#†hô–‰+ÿ–'–)<ÿòVÛâLàEê5Ù
+ òTõ
+àI‹!2ÿ †$®	¥4∏≥7∏E¿4Û"O– "—-ÿY †!”#®®xÆ\ òa”ÿ!.àHêX—‡àA‡òrë>àDÿòëhàAàdâGÿòqë=àDÿòëhàAàdâG‡àAÿóVëVìXàF‡àD·êAìàAÿêAâIàD‡—(Ÿ#†A”&ê‹5∞a∏∏C”@ëêê1‰òQ†”"àAÊ‹#4∞Q∏	”#B— êêy¯‡àIÿ –‡êQâà	 —‹"0ÿò†	∞Ò#6–‡*2–†—'‰(ÿ–-˜Ò  &(–"ÿÚ[ ^ —!ÿ–‰ÿ
+ê$òF®∞¿6ÿ†4®d–;MÒO Or$   )N)⁄__doc__⁄numpyr0   ⁄numpy.linalgr   r   ⁄scipy.sparse.linalgr   r   r   ⁄scipy.optimizer   ⁄scipy._lib._utilr	   ⁄commonr   r   r   r   r   r   r   r   r   r   r   r   r.   r?   rR   rû   © r$   r"   ⁄<module>rß      sS   Ò)ÛT ﬂ $Á F— F› )› 6˜7˜ 7˜ 7Û 7ÚOÚ*:Ú:(CX DHıBOr$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          // This file is part of Eigen, a lightweight C++ template library
+// for linear algebra.
+//
+// Copyright (C) 2009 Gael Guennebaud <gael.guennebaud@inria.fr>
+//
+// This Source Code Form is subject to the terms of the Mozilla
+// Public License v. 2.0. If a copy of the MPL was not distributed
+// with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+#ifndef EIGEN_ARRAYBASE_H
+#define EIGEN_ARRAYBASE_H
+
+namespace Eigen { 
+
+template<typename ExpressionType> class MatrixWrapper;
+
+/** \class ArrayBase
+  * \ingroup Core_Module
+  *
+  * \brief Base class for all 1D and 2D array, and related expressions
+  *
+  * An array is similar to a dense vector or matrix. While matrices are mathematical
+  * objects with well defined linear algebra operators, an array is just a collection
+  * of scalar values arranged in a one or two dimensionnal fashion. As the main consequence,
+  * all operations applied to an array are performed coefficient wise. Furthermore,
+  * arrays support scalar math functions of the c++ standard library (e.g., std::sin(x)), and convenient
+  * constructors allowing to easily write generic code working for both scalar values
+  * and arrays.
+  *
+  * This class is the base that is inherited by all array expression types.
+  *
+  * \tparam Derived is the derived type, e.g., an array or an expression type.
+  *
+  * This class can be extended with the help of the plugin mechanism described on the page
+  * \ref TopicCustomizing_Plugins by defining the preprocessor symbol \c EIGEN_ARRAYBASE_PLUGIN.
+  *
+  * \sa class MatrixBase, \ref TopicClassHierarchy
+  */
+template<typename Derived> class ArrayBase
+  : public DenseBase<Derived>
+{
+  public:
+#ifndef EIGEN_PARSED_BY_DOXYGEN
+    /** The base class for a given storage type. */
+    typedef ArrayBase StorageBaseType;
+
+    typedef ArrayBase Eigen_BaseClassForSpecializationOfGlobalMathFuncImpl;
+
+    typedef typename internal::traits<Derived>::StorageKind StorageKind;
+    typedef typename internal::traits<Derived>::Scalar Scalar;
+    typedef typename internal::packet_traits<Scalar>::type PacketScalar;
+    typedef typename NumTraits<Scalar>::Real RealScalar;
+
+    typedef DenseBase<Derived> Base;
+    using Base::RowsAtCompileTime;
+    using Base::ColsAtCompileTime;
+    using Base::SizeAtCompileTime;
+    using Base::MaxRowsAtCompileTime;
+    using Base::MaxColsAtCompileTime;
+    using Base::MaxSizeAtCompileTime;
+    using Base::IsVectorAtCompileTime;
+    using Base::Flags;
+    
+    using Base::derived;
+    using Base::const_cast_derived;
+    using Base::rows;
+    using Base::cols;
+    using Base::size;
+    using Base::coeff;
+    using Base::coeffRef;
+    using Base::lazyAssign;
+    using Base::operator-;
+    using Base::operator=;
+    using Base::operator+=;
+    using Base::operator-=;
+    using Base::operator*=;
+    using Base::operator/=;
+
+    typedef typename Base::CoeffReturnType CoeffReturnType;
+
+#endif // not EIGEN_PARSED_BY_DOXYGEN
+
+#ifndef EIGEN_PARSED_BY_DOXYGEN
+    typedef typename Base::PlainObject PlainObject;
+
+    /** \internal Represents a matrix with all coefficients equal to one another*/
+    typedef CwiseNullaryOp<internal::scalar_constant_op<Scalar>,PlainObject> ConstantReturnType;
+#endif // not EIGEN_PARSED_BY_DOXYGEN
+
+#define EIGEN_CURRENT_STORAGE_BASE_CLASS Eigen::ArrayBase
+#define EIGEN_DOC_UNARY_ADDONS(X,Y)
+#   include "../plugins/MatrixCwiseUnaryOps.h"
+#   include "../plugins/ArrayCwiseUnaryOps.h"
+#   include "../plugins/CommonCwiseBinaryOps.h"
+#   include "../plugins/MatrixCwiseBinaryOps.h"
+#   include "../plugins/ArrayCwiseBinaryOps.h"
+#   ifdef EIGEN_ARRAYBASE_PLUGIN
+#     include EIGEN_ARRAYBASE_PLUGIN
+#   endif
+#undef EIGEN_CURRENT_STORAGE_BASE_CLASS
+#undef EIGEN_DOC_UNARY_ADDONS
+
+    /** Special case of the template operator=, in order to prevent the compiler
+      * from generating a default operator= (issue hit with g++ 4.1)
+      */
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator=(const ArrayBase& other)
+    {
+      internal::call_assignment(derived(), other.derived());
+      return derived();
+    }
+    
+    /** Set all the entries to \a value.
+      * \sa DenseBase::setConstant(), DenseBase::fill() */
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator=(const Scalar &value)
+    { Base::setConstant(value); return derived(); }
+
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator+=(const Scalar& scalar);
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator-=(const Scalar& scalar);
+
+    template<typename OtherDerived>
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator+=(const ArrayBase<OtherDerived>& other);
+    template<typename OtherDerived>
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator-=(const ArrayBase<OtherDerived>& other);
+
+    template<typename OtherDerived>
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator*=(const ArrayBase<OtherDerived>& other);
+
+    template<typename OtherDerived>
+    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    Derived& operator/=(const ArrayBase<OtherDerived>& other);
+
+  public:
+    EIGEN_DEVICE_FUNC
+    ArrayBase<Derived>& array() { return *this; }
+    EIGEN_DEVICE_FUNC
+    const ArrayBase<Derived>& array() const { return *this; }
+
+    /** \returns an \link Eigen::MatrixBase Matrix \endlink expression of this array
+      * \sa MatrixBase::array() */
+    EIGEN_DEVICE_FUNC
+    MatrixWrapper<Derived> matrix() { return MatrixWrapper<Derived>(derived()); }
+    EIGEN_DEVICE_FUNC
+    const MatrixWrapper<const Derived> matrix() const { return MatrixWrapper<const Derived>(derived()); }
+
+//     template<typename Dest>
+//     inline void evalTo(Dest& dst) const { dst = matrix(); }
+
+  protected:
+    EIGEN_DEFAULT_COPY_CONSTRUCTOR(ArrayBase)
+    EIGEN_DEFAULT_EMPTY_CONSTRUCTOR_AND_DESTRUCTOR(ArrayBase)
+
+  private:
+    explicit ArrayBase(Index);
+    ArrayBase(Index,Index);
+    template<typename OtherDerived> explicit ArrayBase(const ArrayBase<OtherDerived>&);
+  protected:
+    // mixing arrays and matrices is not legal
+    template<typename OtherDerived> Derived& operator+=(const MatrixBase<OtherDerived>& )
+    {EIGEN_STATIC_ASSERT(std::ptrdiff_t(sizeof(typename OtherDerived::Scalar))==-1,YOU_CANNOT_MIX_ARRAYS_AND_MATRICES); return *this;}
+    // mixing arrays and matrices is not legal
+    template<typename OtherDerived> Derived& operator-=(const MatrixBase<OtherDerived>& )
+    {EIGEN_STATIC_ASSERT(std::ptrdiff_t(sizeof(typename OtherDerived::Scalar))==-1,YOU_CANNOT_MIX_ARRAYS_AND_MATRICES); return *this;}
+};
+
+/** replaces \c *this by \c *this - \a other.
+  *
+  * \returns a reference to \c *this
+  */
+template<typename Derived>
+template<typename OtherDerived>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Derived &
+ArrayBase<Derived>::operator-=(const ArrayBase<OtherDerived> &other)
+{
+  call_assignment(derived(), other.derived(), internal::sub_assign_op<Scalar,typename OtherDerived::Scalar>());
+  return derived();
+}
+
+/** replaces \c *this by \c *this + \a other.
+  *
+  * \returns a reference to \c *this
+  */
+template<typename Derived>
+template<typename OtherDerived>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Derived &
+ArrayBase<Derived>::operator+=(const ArrayBase<OtherDerived>& other)
+{
+  call_assignment(derived(), other.derived(), internal::add_assign_op<Scalar,typename OtherDerived::Scalar>());
+  return derived();
+}
+
+/** replaces \c *this by \c *this * \a other coefficient wise.
+  *
+  * \returns a reference to \c *this
+  */
+template<typename Derived>
+template<typename OtherDerived>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Derived &
+ArrayBase<Derived>::operator*=(const ArrayBase<OtherDerived>& other)
+{
+  call_assignment(derived(), other.derived(), internal::mul_assign_op<Scalar,typename OtherDerived::Scalar>());
+  return derived();
+}
+
+/** replaces \c *this by \c *this / \a other coefficient wise.
+  *
+  * \returns a reference to \c *this
+  */
+template<typename Derived>
+template<typename OtherDerived>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Derived &
+ArrayBase<Derived>::operator/=(const ArrayBase<OtherDerived>& other)
+{
+  call_assignment(derived(), other.derived(), internal::div_assign_op<Scalar,typename OtherDerived::Scalar>());
+  return derived();
+}
+
+} // end namespace Eigen
+
+#endif // EIGEN_ARRAYBASE_H
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       // This file is part of Eigen, a lightweight C++ template library
+// for linear algebra.
+//
+// Copyright (C) 2009-2010 Gael Guennebaud <gael.guennebaud@inria.fr>
+//
+// This Source Code Form is subject to the terms of the Mozilla
+// Public License v. 2.0. If a copy of the MPL was not distributed
+// with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+#ifndef EIGEN_ARRAYWRAPPER_H
+#define EIGEN_ARRAYWRAPPER_H
+
+namespace Eigen {
+
+/** \class ArrayWrapper
+  * \ingroup Core_Module
+  *
+  * \brief Expression of a mathematical vector or matrix as an array object
+  *
+  * This class is the return type of MatrixBase::array(), and most of the time
+  * this is the only way it is use.
+  *
+  * \sa MatrixBase::array(), class MatrixWrapper
+  */
+
+namespace internal {
+template<typename ExpressionType>
+struct traits<ArrayWrapper<ExpressionType> >
+  : public traits<typename remove_all<typename ExpressionType::Nested>::type >
+{
+  typedef ArrayXpr XprKind;
+  // Let's remove NestByRefBit
+  enum {
+    Flags0 = traits<typename remove_all<typename ExpressionType::Nested>::type >::Flags,
+    LvalueBitFlag = is_lvalue<ExpressionType>::value ? LvalueBit : 0,
+    Flags = (Flags0 & ~(NestByRefBit | LvalueBit)) | LvalueBitFlag
+  };
+};
+}
+
+template<typename ExpressionType>
+class ArrayWrapper : public ArrayBase<ArrayWrapper<ExpressionType> >
+{
+  public:
+    typedef ArrayBase<ArrayWrapper> Base;
+    EIGEN_DENSE_PUBLIC_INTERFACE(ArrayWrapper)
+    EIGEN_INHERIT_ASSIGNMENT_OPERATORS(ArrayWrapper)
+    typedef typename internal::remove_all<ExpressionType>::type NestedExpression;
+
+    typedef typename internal::conditional<
+                       internal::is_lvalue<ExpressionType>::value,
+                       Scalar,
+                       const Scalar
+                     >::type ScalarWithConstIfNotLvalue;
+
+    typedef typename internal::ref_selector<ExpressionType>::non_const_type NestedExpressionType;
+
+    using Base::coeffRef;
+
+    EIGEN_DEVICE_FUNC
+    explicit EIGEN_STRONG_INLINE ArrayWrapper(ExpressionType& matrix) : m_expression(matrix) {}
+
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index rows() const EIGEN_NOEXCEPT { return m_expression.rows(); }
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index cols() const EIGEN_NOEXCEPT { return m_expression.cols(); }
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index outerStride() const EIGEN_NOEXCEPT { return m_expression.outerStride(); }
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index innerStride() const EIGEN_NOEXCEPT { return m_expression.innerStride(); }
+
+    EIGEN_DEVICE_FUNC
+    inline ScalarWithConstIfNotLvalue* data() { return m_expression.data(); }
+    EIGEN_DEVICE_FUNC
+    inline const Scalar* data() const { return m_expression.data(); }
+
+    EIGEN_DEVICE_FUNC
+    inline const Scalar& coeffRef(Index rowId, Index colId) const
+    {
+      return m_expression.coeffRef(rowId, colId);
+    }
+
+    EIGEN_DEVICE_FUNC
+    inline const Scalar& coeffRef(Index index) const
+    {
+      return m_expression.coeffRef(index);
+    }
+
+    template<typename Dest>
+    EIGEN_DEVICE_FUNC
+    inline void evalTo(Dest& dst) const { dst = m_expression; }
+
+    EIGEN_DEVICE_FUNC
+    const typename internal::remove_all<NestedExpressionType>::type&
+    nestedExpression() const
+    {
+      return m_expression;
+    }
+
+    /** Forwards the resizing request to the nested expression
+      * \sa DenseBase::resize(Index)  */
+    EIGEN_DEVICE_FUNC
+    void resize(Index newSize) { m_expression.resize(newSize); }
+    /** Forwards the resizing request to the nested expression
+      * \sa DenseBase::resize(Index,Index)*/
+    EIGEN_DEVICE_FUNC
+    void resize(Index rows, Index cols) { m_expression.resize(rows,cols); }
+
+  protected:
+    NestedExpressionType m_expression;
+};
+
+/** \class MatrixWrapper
+  * \ingroup Core_Module
+  *
+  * \brief Expression of an array as a mathematical vector or matrix
+  *
+  * This class is the return type of ArrayBase::matrix(), and most of the time
+  * this is the only way it is use.
+  *
+  * \sa MatrixBase::matrix(), class ArrayWrapper
+  */
+
+namespace internal {
+template<typename ExpressionType>
+struct traits<MatrixWrapper<ExpressionType> >
+ : public traits<typename remove_all<typename ExpressionType::Nested>::type >
+{
+  typedef MatrixXpr XprKind;
+  // Let's remove NestByRefBit
+  enum {
+    Flags0 = traits<typename remove_all<typename ExpressionType::Nested>::type >::Flags,
+    LvalueBitFlag = is_lvalue<ExpressionType>::value ? LvalueBit : 0,
+    Flags = (Flags0 & ~(NestByRefBit | LvalueBit)) | LvalueBitFlag
+  };
+};
+}
+
+template<typename ExpressionType>
+class MatrixWrapper : public MatrixBase<MatrixWrapper<ExpressionType> >
+{
+  public:
+    typedef MatrixBase<MatrixWrapper<ExpressionType> > Base;
+    EIGEN_DENSE_PUBLIC_INTERFACE(MatrixWrapper)
+    EIGEN_INHERIT_ASSIGNMENT_OPERATORS(MatrixWrapper)
+    typedef typename internal::remove_all<ExpressionType>::type NestedExpression;
+
+    typedef typename internal::conditional<
+                       internal::is_lvalue<ExpressionType>::value,
+                       Scalar,
+                       const Scalar
+                     >::type ScalarWithConstIfNotLvalue;
+
+    typedef typename internal::ref_selector<ExpressionType>::non_const_type NestedExpressionType;
+
+    using Base::coeffRef;
+
+    EIGEN_DEVICE_FUNC
+    explicit inline MatrixWrapper(ExpressionType& matrix) : m_expression(matrix) {}
+
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index rows() const EIGEN_NOEXCEPT { return m_expression.rows(); }
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index cols() const EIGEN_NOEXCEPT { return m_expression.cols(); }
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index outerStride() const EIGEN_NOEXCEPT { return m_expression.outerStride(); }
+    EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+    inline Index innerStride() const EIGEN_NOEXCEPT { return m_expression.innerStride(); }
+
+    EIGEN_DEVICE_FUNC
+    inline ScalarWithConstIfNotLvalue* data() { return m_expression.data(); }
+    EIGEN_DEVICE_FUNC
+    inline const Scalar* data() const { return m_expression.data(); }
+
+    EIGEN_DEVICE_FUNC
+    inline const Scalar& coeffRef(Index rowId, Index colId) const
+    {
+      return m_expression.derived().coeffRef(rowId, colId);
+    }
+
+    EIGEN_DEVICE_FUNC
+    inline const Scalar& coeffRef(Index index) const
+    {
+      return m_expression.coeffRef(index);
+    }
+
+    EIGEN_DEVICE_FUNC
+    const typename internal::remove_all<NestedExpressionType>::type&
+    nestedExpression() const
+    {
+      return m_expression;
+    }
+
+    /** Forwards the resizing request to the nested expression
+      * \sa DenseBase::resize(Index)  */
+    EIGEN_DEVICE_FUNC
+    void resize(Index newSize) { m_expression.resize(newSize); }
+    /** Forwards the resizing request to the nested expression
+      * \sa DenseBase::resize(Index,Index)*/
+    EIGEN_DEVICE_FUNC
+    void resize(Index rows, Index cols) { m_expression.resize(rows,cols); }
+
+  protected:
+    NestedExpressionType m_expression;
+};
+
+} // end namespace Eigen
+
+#endif // EIGEN_ARRAYWRAPPER_H
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      // This file is part of Eigen, a lightweight C++ template library
+// for linear algebra.
+//
+// Copyright (C) 2011 Benoit Jacob <jacob.benoit.1@gmail.com>
+// Copyright (C) 2011-2014 Gael Guennebaud <gael.guennebaud@inria.fr>
+// Copyright (C) 2011-2012 Jitse Niesen <jitse@maths.leeds.ac.uk>
+//
+// This Source Code Form is subject to the terms of the Mozilla
+// Public License v. 2.0. If a copy of the MPL was not distributed
+// with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+#ifndef EIGEN_ASSIGN_EVALUATOR_H
+#define EIGEN_ASSIGN_EVALUATOR_H
+
+namespace Eigen {
+
+// This implementation is based on Assign.h
+
+namespace internal {
+
+/***************************************************************************
+* Part 1 : the logic deciding a strategy for traversal and unrolling       *
+***************************************************************************/
+
+// copy_using_evaluator_traits is based on assign_traits
+
+template <typename DstEvaluator, typename SrcEvaluator, typename AssignFunc, int MaxPacketSize = -1>
+struct copy_using_evaluator_traits
+{
+  typedef typename DstEvaluator::XprType Dst;
+  typedef typename Dst::Scalar DstScalar;
+
+  enum {
+    DstFlags = DstEvaluator::Flags,
+    SrcFlags = SrcEvaluator::Flags
+  };
+
+public:
+  enum {
+    DstAlignment = DstEvaluator::Alignment,
+    SrcAlignment = SrcEvaluator::Alignment,
+    DstHasDirectAccess = (DstFlags & DirectAccessBit) == DirectAccessBit,
+    JointAlignment = EIGEN_PLAIN_ENUM_MIN(DstAlignment,SrcAlignment)
+  };
+
+private:
+  enum {
+    InnerSize = int(Dst::IsVectorAtCompileTime) ? int(Dst::SizeAtCompileTime)
+              : int(DstFlags)&RowMajorBit ? int(Dst::ColsAtCompileTime)
+              : int(Dst::RowsAtCompileTime),
+    InnerMaxSize = int(Dst::IsVectorAtCompileTime) ? int(Dst::MaxSizeAtCompileTime)
+              : int(DstFlags)&RowMajorBit ? int(Dst::MaxColsAtCompileTime)
+              : int(Dst::MaxRowsAtCompileTime),
+    RestrictedInnerSize = EIGEN_SIZE_MIN_PREFER_FIXED(InnerSize,MaxPacketSize),
+    RestrictedLinearSize = EIGEN_SIZE_MIN_PREFER_FIXED(Dst::SizeAtCompileTime,MaxPacketSize),
+    OuterStride = int(outer_stride_at_compile_time<Dst>::ret),
+    MaxSizeAtCompileTime = Dst::SizeAtCompileTime
+  };
+
+  // TODO distinguish between linear traversal and inner-traversals
+  typedef typename find_best_packet<DstScalar,RestrictedLinearSize>::type LinearPacketType;
+  typedef typename find_best_packet<DstScalar,RestrictedInnerSize>::type InnerPacketType;
+
+  enum {
+    LinearPacketSize = unpacket_traits<LinearPacketType>::size,
+    InnerPacketSize = unpacket_traits<InnerPacketType>::size
+  };
+
+public:
+  enum {
+    LinearRequiredAlignment = unpacket_traits<LinearPacketType>::alignment,
+    InnerRequiredAlignment = unpacket_traits<InnerPacketType>::alignment
+  };
+
+private:
+  enum {
+    DstIsRowMajor = DstFlags&RowMajorBit,
+    SrcIsRowMajor = SrcFlags&RowMajorBit,
+    StorageOrdersAgree = (int(DstIsRowMajor) == int(SrcIsRowMajor)),
+    MightVectorize = bool(StorageOrdersAgree)
+                  && (int(DstFlags) & int(SrcFlags) & ActualPacketAccessBit)
+                  && bool(functor_traits<AssignFunc>::PacketAccess),
+    MayInnerVectorize  = MightVectorize
+                       && int(InnerSize)!=Dynamic && int(InnerSize)%int(InnerPacketSize)==0
+                       && int(OuterStride)!=Dynamic && int(OuterStride)%int(InnerPacketSize)==0
+                       && (EIGEN_UNALIGNED_VECTORIZE  || int(JointAlignment)>=int(InnerRequiredAlignment)),
+    MayLinearize = bool(StorageOrdersAgree) && (int(DstFlags) & int(SrcFlags) & LinearAccessBit),
+    MayLinearVectorize = bool(MightVectorize) && bool(MayLinearize) && bool(DstHasDirectAccess)
+                       && (EIGEN_UNALIGNED_VECTORIZE || (int(DstAlignment)>=int(LinearRequiredAlignment)) || MaxSizeAtCompileTime == Dynamic),
+      /* If the destination isn't aligned, we have to do runtime checks and we don't unroll,
+         so it's only good for large enough sizes. */
+    MaySliceVectorize  = bool(MightVectorize) && bool(DstHasDirectAccess)
+                       && (int(InnerMaxSize)==Dynamic || int(InnerMaxSize)>=(EIGEN_UNALIGNED_VECTORIZE?InnerPacketSize:(3*InnerPacketSize)))
+      /* slice vectorization can be slow, so we only want it if the slices are big, which is
+         indicated by InnerMaxSize rather than InnerSize, think of the case of a dynamic block
+         in a fixed-size matrix
+         However, with EIGEN_UNALIGNED_VECTORIZE and unrolling, slice vectorization is still worth it */
+  };
+
+public:
+  enum {
+    Traversal =  int(Dst::SizeAtCompileTime) == 0 ? int(AllAtOnceTraversal) // If compile-size is zero, traversing will fail at compile-time.
+              : (int(MayLinearVectorize) && (LinearPacketSize>InnerPacketSize)) ? int(LinearVectorizedTraversal)
+              : int(MayInnerVectorize)   ? int(InnerVectorizedTraversal)
+              : int(MayLinearVectorize)  ? int(LinearVectorizedTraversal)
+              : int(MaySliceVectorize)   ? int(SliceVectorizedTraversal)
+              : int(MayLinearize)        ? int(LinearTraversal)
+                                         : int(DefaultTraversal),
+    Vectorized = int(Traversal) == InnerVectorizedTraversal
+              || int(Traversal) == LinearVectorizedTraversal
+              || int(Traversal) == SliceVectorizedTraversal
+  };
+
+  typedef typename conditional<int(Traversal)==LinearVectorizedTraversal, LinearPacketType, InnerPacketType>::type PacketType;
+
+private:
+  enum {
+    ActualPacketSize    = int(Traversal)==LinearVectorizedTraversal ? LinearPacketSize
+                        : Vectorized ? InnerPacketSize
+                        : 1,
+    UnrollingLimit      = EIGEN_UNROLLING_LIMIT * ActualPacketSize,
+    MayUnrollCompletely = int(Dst::SizeAtCompileTime) != Dynamic
+                       && int(Dst::SizeAtCompileTime) * (int(DstEvaluator::CoeffReadCost)+int(SrcEvaluator::CoeffReadCost)) <= int(UnrollingLimit),
+    MayUnrollInner      = int(InnerSize) != Dynamic
+                       && int(InnerSize) * (int(DstEvaluator::CoeffReadCost)+int(SrcEvaluator::CoeffReadCost)) <= int(UnrollingLimit)
+  };
+
+public:
+  enum {
+    Unrolling = (int(Traversal) == int(InnerVectorizedTraversal) || int(Traversal) == int(DefaultTraversal))
+                ? (
+                    int(MayUnrollCompletely) ? int(CompleteUnrolling)
+                  : int(MayUnrollInner)      ? int(InnerUnrolling)
+                                             : int(NoUnrolling)
+                  )
+              : int(Traversal) == int(LinearVectorizedTraversal)
+                ? ( bool(MayUnrollCompletely) && ( EIGEN_UNALIGNED_VECTORIZE || (int(DstAlignment)>=int(LinearRequiredAlignment)))
+                          ? int(CompleteUnrolling)
+                          : int(NoUnrolling) )
+              : int(Traversal) == int(LinearTraversal)
+                ? ( bool(MayUnrollCompletely) ? int(CompleteUnrolling)
+                                              : int(NoUnrolling) )
+#if EIGEN_UNALIGNED_VECTORIZE
+              : int(Traversal) == int(SliceVectorizedTraversal)
+                ? ( bool(MayUnrollInner) ? int(InnerUnrolling)
+                                         : int(NoUnrolling) )
+#endif
+              : int(NoUnrolling)
+  };
+
+#ifdef EIGEN_DEBUG_ASSIGN
+  static void debug()
+  {
+    std::cerr << "DstXpr: " << typeid(typename DstEvaluator::XprType).name() << std::endl;
+    std::cerr << "SrcXpr: " << typeid(typename SrcEvaluator::XprType).name() << std::endl;
+    std::cerr.setf(std::ios::hex, std::ios::basefield);
+    std::cerr << "DstFlags" << " = " << DstFlags << " (" << demangle_flags(DstFlags) << " )" << std::endl;
+    std::cerr << "SrcFlags" << " = " << SrcFlags << " (" << demangle_flags(SrcFlags) << " )" << std::endl;
+    std::cerr.unsetf(std::ios::hex);
+    EIGEN_DEBUG_VAR(DstAlignment)
+    EIGEN_DEBUG_VAR(SrcAlignment)
+    EIGEN_DEBUG_VAR(LinearRequiredAlignment)
+    EIGEN_DEBUG_VAR(InnerRequiredAlignment)
+    EIGEN_DEBUG_VAR(JointAlignment)
+    EIGEN_DEBUG_VAR(InnerSize)
+    EIGEN_DEBUG_VAR(InnerMaxSize)
+    EIGEN_DEBUG_VAR(LinearPacketSize)
+    EIGEN_DEBUG_VAR(InnerPacketSize)
+    EIGEN_DEBUG_VAR(ActualPacketSize)
+    EIGEN_DEBUG_VAR(StorageOrdersAgree)
+    EIGEN_DEBUG_VAR(MightVectorize)
+    EIGEN_DEBUG_VAR(MayLinearize)
+    EIGEN_DEBUG_VAR(MayInnerVectorize)
+    EIGEN_DEBUG_VAR(MayLinearVectorize)
+    EIGEN_DEBUG_VAR(MaySliceVectorize)
+    std::cerr << "Traversal" << " = " << Traversal << " (" << demangle_traversal(Traversal) << ")" << std::endl;
+    EIGEN_DEBUG_VAR(SrcEvaluator::CoeffReadCost)
+    EIGEN_DEBUG_VAR(DstEvaluator::CoeffReadCost)
+    EIGEN_DEBUG_VAR(Dst::SizeAtCompileTime)
+    EIGEN_DEBUG_VAR(UnrollingLimit)
+    EIGEN_DEBUG_VAR(MayUnrollCompletely)
+    EIGEN_DEBUG_VAR(MayUnrollInner)
+    std::cerr << "Unrolling" << " = " << Unrolling << " (" << demangle_unrolling(Unrolling) << ")" << std::endl;
+    std::cerr << std::endl;
+  }
+#endif
+};
+
+/***************************************************************************
+* Part 2 : meta-unrollers
+***************************************************************************/
+
+/************************
+*** Default traversal ***
+************************/
+
+template<typename Kernel, int Index, int Stop>
+struct copy_using_evaluator_DefaultTraversal_CompleteUnrolling
+{
+  // FIXME: this is not very clean, perhaps this information should be provided by the kernel?
+  typedef typename Kernel::DstEvaluatorType DstEvaluatorType;
+  typedef typename DstEvaluatorType::XprType DstXprType;
+
+  enum {
+    outer = Index / DstXprType::InnerSizeAtCompileTime,
+    inner = Index % DstXprType::InnerSizeAtCompileTime
+  };
+
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    kernel.assignCoeffByOuterInner(outer, inner);
+    copy_using_evaluator_DefaultTraversal_CompleteUnrolling<Kernel, Index+1, Stop>::run(kernel);
+  }
+};
+
+template<typename Kernel, int Stop>
+struct copy_using_evaluator_DefaultTraversal_CompleteUnrolling<Kernel, Stop, Stop>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel&) { }
+};
+
+template<typename Kernel, int Index_, int Stop>
+struct copy_using_evaluator_DefaultTraversal_InnerUnrolling
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel, Index outer)
+  {
+    kernel.assignCoeffByOuterInner(outer, Index_);
+    copy_using_evaluator_DefaultTraversal_InnerUnrolling<Kernel, Index_+1, Stop>::run(kernel, outer);
+  }
+};
+
+template<typename Kernel, int Stop>
+struct copy_using_evaluator_DefaultTraversal_InnerUnrolling<Kernel, Stop, Stop>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel&, Index) { }
+};
+
+/***********************
+*** Linear traversal ***
+***********************/
+
+template<typename Kernel, int Index, int Stop>
+struct copy_using_evaluator_LinearTraversal_CompleteUnrolling
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel& kernel)
+  {
+    kernel.assignCoeff(Index);
+    copy_using_evaluator_LinearTraversal_CompleteUnrolling<Kernel, Index+1, Stop>::run(kernel);
+  }
+};
+
+template<typename Kernel, int Stop>
+struct copy_using_evaluator_LinearTraversal_CompleteUnrolling<Kernel, Stop, Stop>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel&) { }
+};
+
+/**************************
+*** Inner vectorization ***
+**************************/
+
+template<typename Kernel, int Index, int Stop>
+struct copy_using_evaluator_innervec_CompleteUnrolling
+{
+  // FIXME: this is not very clean, perhaps this information should be provided by the kernel?
+  typedef typename Kernel::DstEvaluatorType DstEvaluatorType;
+  typedef typename DstEvaluatorType::XprType DstXprType;
+  typedef typename Kernel::PacketType PacketType;
+
+  enum {
+    outer = Index / DstXprType::InnerSizeAtCompileTime,
+    inner = Index % DstXprType::InnerSizeAtCompileTime,
+    SrcAlignment = Kernel::AssignmentTraits::SrcAlignment,
+    DstAlignment = Kernel::AssignmentTraits::DstAlignment
+  };
+
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    kernel.template assignPacketByOuterInner<DstAlignment, SrcAlignment, PacketType>(outer, inner);
+    enum { NextIndex = Index + unpacket_traits<PacketType>::size };
+    copy_using_evaluator_innervec_CompleteUnrolling<Kernel, NextIndex, Stop>::run(kernel);
+  }
+};
+
+template<typename Kernel, int Stop>
+struct copy_using_evaluator_innervec_CompleteUnrolling<Kernel, Stop, Stop>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel&) { }
+};
+
+template<typename Kernel, int Index_, int Stop, int SrcAlignment, int DstAlignment>
+struct copy_using_evaluator_innervec_InnerUnrolling
+{
+  typedef typename Kernel::PacketType PacketType;
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel, Index outer)
+  {
+    kernel.template assignPacketByOuterInner<DstAlignment, SrcAlignment, PacketType>(outer, Index_);
+    enum { NextIndex = Index_ + unpacket_traits<PacketType>::size };
+    copy_using_evaluator_innervec_InnerUnrolling<Kernel, NextIndex, Stop, SrcAlignment, DstAlignment>::run(kernel, outer);
+  }
+};
+
+template<typename Kernel, int Stop, int SrcAlignment, int DstAlignment>
+struct copy_using_evaluator_innervec_InnerUnrolling<Kernel, Stop, Stop, SrcAlignment, DstAlignment>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &, Index) { }
+};
+
+/***************************************************************************
+* Part 3 : implementation of all cases
+***************************************************************************/
+
+// dense_assignment_loop is based on assign_impl
+
+template<typename Kernel,
+         int Traversal = Kernel::AssignmentTraits::Traversal,
+         int Unrolling = Kernel::AssignmentTraits::Unrolling>
+struct dense_assignment_loop;
+
+/************************
+***** Special Cases *****
+************************/
+
+// Zero-sized assignment is a no-op.
+template<typename Kernel, int Unrolling>
+struct dense_assignment_loop<Kernel, AllAtOnceTraversal, Unrolling>
+{
+  EIGEN_DEVICE_FUNC static void EIGEN_STRONG_INLINE run(Kernel& /*kernel*/)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    EIGEN_STATIC_ASSERT(int(DstXprType::SizeAtCompileTime) == 0,
+      EIGEN_INTERNAL_ERROR_PLEASE_FILE_A_BUG_REPORT)
+  }
+};
+
+/************************
+*** Default traversal ***
+************************/
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, DefaultTraversal, NoUnrolling>
+{
+  EIGEN_DEVICE_FUNC static void EIGEN_STRONG_INLINE run(Kernel &kernel)
+  {
+    for(Index outer = 0; outer < kernel.outerSize(); ++outer) {
+      for(Index inner = 0; inner < kernel.innerSize(); ++inner) {
+        kernel.assignCoeffByOuterInner(outer, inner);
+      }
+    }
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, DefaultTraversal, CompleteUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    copy_using_evaluator_DefaultTraversal_CompleteUnrolling<Kernel, 0, DstXprType::SizeAtCompileTime>::run(kernel);
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, DefaultTraversal, InnerUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+
+    const Index outerSize = kernel.outerSize();
+    for(Index outer = 0; outer < outerSize; ++outer)
+      copy_using_evaluator_DefaultTraversal_InnerUnrolling<Kernel, 0, DstXprType::InnerSizeAtCompileTime>::run(kernel, outer);
+  }
+};
+
+/***************************
+*** Linear vectorization ***
+***************************/
+
+
+// The goal of unaligned_dense_assignment_loop is simply to factorize the handling
+// of the non vectorizable beginning and ending parts
+
+template <bool IsAligned = false>
+struct unaligned_dense_assignment_loop
+{
+  // if IsAligned = true, then do nothing
+  template <typename Kernel>
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel&, Index, Index) {}
+};
+
+template <>
+struct unaligned_dense_assignment_loop<false>
+{
+  // MSVC must not inline this functions. If it does, it fails to optimize the
+  // packet access path.
+  // FIXME check which version exhibits this issue
+#if EIGEN_COMP_MSVC
+  template <typename Kernel>
+  static EIGEN_DONT_INLINE void run(Kernel &kernel,
+                                    Index start,
+                                    Index end)
+#else
+  template <typename Kernel>
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel,
+                                      Index start,
+                                      Index end)
+#endif
+  {
+    for (Index index = start; index < end; ++index)
+      kernel.assignCoeff(index);
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, LinearVectorizedTraversal, NoUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    const Index size = kernel.size();
+    typedef typename Kernel::Scalar Scalar;
+    typedef typename Kernel::PacketType PacketType;
+    enum {
+      requestedAlignment = Kernel::AssignmentTraits::LinearRequiredAlignment,
+      packetSize = unpacket_traits<PacketType>::size,
+      dstIsAligned = int(Kernel::AssignmentTraits::DstAlignment)>=int(requestedAlignment),
+      dstAlignment = packet_traits<Scalar>::AlignedOnScalar ? int(requestedAlignment)
+                                                            : int(Kernel::AssignmentTraits::DstAlignment),
+      srcAlignment = Kernel::AssignmentTraits::JointAlignment
+    };
+    const Index alignedStart = dstIsAligned ? 0 : internal::first_aligned<requestedAlignment>(kernel.dstDataPtr(), size);
+    const Index alignedEnd = alignedStart + ((size-alignedStart)/packetSize)*packetSize;
+
+    unaligned_dense_assignment_loop<dstIsAligned!=0>::run(kernel, 0, alignedStart);
+
+    for(Index index = alignedStart; index < alignedEnd; index += packetSize)
+      kernel.template assignPacket<dstAlignment, srcAlignment, PacketType>(index);
+
+    unaligned_dense_assignment_loop<>::run(kernel, alignedEnd, size);
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, LinearVectorizedTraversal, CompleteUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    typedef typename Kernel::PacketType PacketType;
+
+    enum { size = DstXprType::SizeAtCompileTime,
+           packetSize =unpacket_traits<PacketType>::size,
+           alignedSize = (int(size)/packetSize)*packetSize };
+
+    copy_using_evaluator_innervec_CompleteUnrolling<Kernel, 0, alignedSize>::run(kernel);
+    copy_using_evaluator_DefaultTraversal_CompleteUnrolling<Kernel, alignedSize, size>::run(kernel);
+  }
+};
+
+/**************************
+*** Inner vectorization ***
+**************************/
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, InnerVectorizedTraversal, NoUnrolling>
+{
+  typedef typename Kernel::PacketType PacketType;
+  enum {
+    SrcAlignment = Kernel::AssignmentTraits::SrcAlignment,
+    DstAlignment = Kernel::AssignmentTraits::DstAlignment
+  };
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    const Index innerSize = kernel.innerSize();
+    const Index outerSize = kernel.outerSize();
+    const Index packetSize = unpacket_traits<PacketType>::size;
+    for(Index outer = 0; outer < outerSize; ++outer)
+      for(Index inner = 0; inner < innerSize; inner+=packetSize)
+        kernel.template assignPacketByOuterInner<DstAlignment, SrcAlignment, PacketType>(outer, inner);
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, InnerVectorizedTraversal, CompleteUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    copy_using_evaluator_innervec_CompleteUnrolling<Kernel, 0, DstXprType::SizeAtCompileTime>::run(kernel);
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, InnerVectorizedTraversal, InnerUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    typedef typename Kernel::AssignmentTraits Traits;
+    const Index outerSize = kernel.outerSize();
+    for(Index outer = 0; outer < outerSize; ++outer)
+      copy_using_evaluator_innervec_InnerUnrolling<Kernel, 0, DstXprType::InnerSizeAtCompileTime,
+                                                   Traits::SrcAlignment, Traits::DstAlignment>::run(kernel, outer);
+  }
+};
+
+/***********************
+*** Linear traversal ***
+***********************/
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, LinearTraversal, NoUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    const Index size = kernel.size();
+    for(Index i = 0; i < size; ++i)
+      kernel.assignCoeff(i);
+  }
+};
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, LinearTraversal, CompleteUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    copy_using_evaluator_LinearTraversal_CompleteUnrolling<Kernel, 0, DstXprType::SizeAtCompileTime>::run(kernel);
+  }
+};
+
+/**************************
+*** Slice vectorization ***
+***************************/
+
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, SliceVectorizedTraversal, NoUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::Scalar Scalar;
+    typedef typename Kernel::PacketType PacketType;
+    enum {
+      packetSize = unpacket_traits<PacketType>::size,
+      requestedAlignment = int(Kernel::AssignmentTraits::InnerRequiredAlignment),
+      alignable = packet_traits<Scalar>::AlignedOnScalar || int(Kernel::AssignmentTraits::DstAlignment)>=sizeof(Scalar),
+      dstIsAligned = int(Kernel::AssignmentTraits::DstAlignment)>=int(requestedAlignment),
+      dstAlignment = alignable ? int(requestedAlignment)
+                               : int(Kernel::AssignmentTraits::DstAlignment)
+    };
+    const Scalar *dst_ptr = kernel.dstDataPtr();
+    if((!bool(dstIsAligned)) && (UIntPtr(dst_ptr) % sizeof(Scalar))>0)
+    {
+      // the pointer is not aligned-on scalar, so alignment is not possible
+      return dense_assignment_loop<Kernel,DefaultTraversal,NoUnrolling>::run(kernel);
+    }
+    const Index packetAlignedMask = packetSize - 1;
+    const Index innerSize = kernel.innerSize();
+    const Index outerSize = kernel.outerSize();
+    const Index alignedStep = alignable ? (packetSize - kernel.outerStride() % packetSize) & packetAlignedMask : 0;
+    Index alignedStart = ((!alignable) || bool(dstIsAligned)) ? 0 : internal::first_aligned<requestedAlignment>(dst_ptr, innerSize);
+
+    for(Index outer = 0; outer < outerSize; ++outer)
+    {
+      const Index alignedEnd = alignedStart + ((innerSize-alignedStart) & ~packetAlignedMask);
+      // do the non-vectorizable part of the assignment
+      for(Index inner = 0; inner<alignedStart ; ++inner)
+        kernel.assignCoeffByOuterInner(outer, inner);
+
+      // do the vectorizable part of the assignment
+      for(Index inner = alignedStart; inner<alignedEnd; inner+=packetSize)
+        kernel.template assignPacketByOuterInner<dstAlignment, Unaligned, PacketType>(outer, inner);
+
+      // do the non-vectorizable part of the assignment
+      for(Index inner = alignedEnd; inner<innerSize ; ++inner)
+        kernel.assignCoeffByOuterInner(outer, inner);
+
+      alignedStart = numext::mini((alignedStart+alignedStep)%packetSize, innerSize);
+    }
+  }
+};
+
+#if EIGEN_UNALIGNED_VECTORIZE
+template<typename Kernel>
+struct dense_assignment_loop<Kernel, SliceVectorizedTraversal, InnerUnrolling>
+{
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE void run(Kernel &kernel)
+  {
+    typedef typename Kernel::DstEvaluatorType::XprType DstXprType;
+    typedef typename Kernel::PacketType PacketType;
+
+    enum { innerSize = DstXprType::InnerSizeAtCompileTime,
+           packetSize =unpacket_traits<PacketType>::size,
+           vectorizableSize = (int(innerSize) / int(packetSize)) * int(packetSize),
+           size = DstXprType::SizeAtCompileTime };
+
+    for(Index outer = 0; outer < kernel.outerSize(); ++outer)
+    {
+      copy_using_evaluator_innervec_InnerUnrolling<Kernel, 0, vectorizableSize, 0, 0>::run(kernel, outer);
+      copy_using_evaluator_DefaultTraversal_InnerUnrolling<Kernel, vectorizableSize, innerSize>::run(kernel, outer);
+    }
+  }
+};
+#endif
+
+
+/***************************************************************************
+* Part 4 : Generic dense assignment kernel
+***************************************************************************/
+
+// This class generalize the assignment of a coefficient (or packet) from one dense evaluator
+// to another dense writable evaluator.
+// It is parametrized by the two evaluators, and the actual assignment functor.
+// This abstraction level permits to keep the evaluation loops as simple and as generic as possible.
+// One can customize the assignment using this generic dense_assignment_kernel with different
+// functors, or by completely overloading it, by-passing a functor.
+template<typename DstEvaluatorTypeT, typename SrcEvaluatorTypeT, typename Functor, int Version = Specialized>
+class generic_dense_assignment_kernel
+{
+protected:
+  typedef typename DstEvaluatorTypeT::XprType DstXprType;
+  typedef typename SrcEvaluatorTypeT::XprType SrcXprType;
+public:
+
+  typedef DstEvaluatorTypeT DstEvaluatorType;
+  typedef SrcEvaluatorTypeT SrcEvaluatorType;
+  typedef typename DstEvaluatorType::Scalar Scalar;
+  typedef copy_using_evaluator_traits<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor> AssignmentTraits;
+  typedef typename AssignmentTraits::PacketType PacketType;
+
+
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+  generic_dense_assignment_kernel(DstEvaluatorType &dst, const SrcEvaluatorType &src, const Functor &func, DstXprType& dstExpr)
+    : m_dst(dst), m_src(src), m_functor(func), m_dstExpr(dstExpr)
+  {
+    #ifdef EIGEN_DEBUG_ASSIGN
+    AssignmentTraits::debug();
+    #endif
+  }
+
+  EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR Index size() const EIGEN_NOEXCEPT { return m_dstExpr.size(); }
+  EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR Index innerSize() const EIGEN_NOEXCEPT { return m_dstExpr.innerSize(); }
+  EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR Index outerSize() const EIGEN_NOEXCEPT { return m_dstExpr.outerSize(); }
+  EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR Index rows() const EIGEN_NOEXCEPT { return m_dstExpr.rows(); }
+  EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR Index cols() const EIGEN_NOEXCEPT { return m_dstExpr.cols(); }
+  EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR Index outerStride() const EIGEN_NOEXCEPT { return m_dstExpr.outerStride(); }
+
+  EIGEN_DEVICE_FUNC DstEvaluatorType& dstEvaluator() EIGEN_NOEXCEPT { return m_dst; }
+  EIGEN_DEVICE_FUNC const SrcEvaluatorType& srcEvaluator() const EIGEN_NOEXCEPT { return m_src; }
+
+  /// Assign src(row,col) to dst(row,col) through the assignment functor.
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignCoeff(Index row, Index col)
+  {
+    m_functor.assignCoeff(m_dst.coeffRef(row,col), m_src.coeff(row,col));
+  }
+
+  /// \sa assignCoeff(Index,Index)
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignCoeff(Index index)
+  {
+    m_functor.assignCoeff(m_dst.coeffRef(index), m_src.coeff(index));
+  }
+
+  /// \sa assignCoeff(Index,Index)
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignCoeffByOuterInner(Index outer, Index inner)
+  {
+    Index row = rowIndexByOuterInner(outer, inner);
+    Index col = colIndexByOuterInner(outer, inner);
+    assignCoeff(row, col);
+  }
+
+
+  template<int StoreMode, int LoadMode, typename PacketType>
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignPacket(Index row, Index col)
+  {
+    m_functor.template assignPacket<StoreMode>(&m_dst.coeffRef(row,col), m_src.template packet<LoadMode,PacketType>(row,col));
+  }
+
+  template<int StoreMode, int LoadMode, typename PacketType>
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignPacket(Index index)
+  {
+    m_functor.template assignPacket<StoreMode>(&m_dst.coeffRef(index), m_src.template packet<LoadMode,PacketType>(index));
+  }
+
+  template<int StoreMode, int LoadMode, typename PacketType>
+  EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void assignPacketByOuterInner(Index outer, Index inner)
+  {
+    Index row = rowIndexByOuterInner(outer, inner);
+    Index col = colIndexByOuterInner(outer, inner);
+    assignPacket<StoreMode,LoadMode,PacketType>(row, col);
+  }
+
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE Index rowIndexByOuterInner(Index outer, Index inner)
+  {
+    typedef typename DstEvaluatorType::ExpressionTraits Traits;
+    return int(Traits::RowsAtCompileTime) == 1 ? 0
+      : int(Traits::ColsAtCompileTime) == 1 ? inner
+      : int(DstEvaluatorType::Flags)&RowMajorBit ? outer
+      : inner;
+  }
+
+  EIGEN_DEVICE_FUNC static EIGEN_STRONG_INLINE Index colIndexByOuterInner(Index outer, Index inner)
+  {
+    typedef typename DstEvaluatorType::ExpressionTraits Traits;
+    return int(Traits::ColsAtCompileTime) == 1 ? 0
+      : int(Traits::RowsAtCompileTime) == 1 ? inner
+      : int(DstEvaluatorType::Flags)&RowMajorBit ? inner
+      : outer;
+  }
+
+  EIGEN_DEVICE_FUNC const Scalar* dstDataPtr() const
+  {
+    return m_dstExpr.data();
+  }
+
+protected:
+  DstEvaluatorType& m_dst;
+  const SrcEvaluatorType& m_src;
+  const Functor &m_functor;
+  // TODO find a way to avoid the needs of the original expression
+  DstXprType& m_dstExpr;
+};
+
+// Special kernel used when computing small products whose operands have dynamic dimensions.  It ensures that the
+// PacketSize used is no larger than 4, thereby increasing the chance that vectorized instructions will be used
+// when computing the product.
+
+template<typename DstEvaluatorTypeT, typename SrcEvaluatorTypeT, typename Functor>
+class restricted_packet_dense_assignment_kernel : public generic_dense_assignment_kernel<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor, BuiltIn>
+{
+protected:
+  typedef generic_dense_assignment_kernel<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor, BuiltIn> Base;
+ public:
+    typedef typename Base::Scalar Scalar;
+    typedef typename Base::DstXprType DstXprType;
+    typedef copy_using_evaluator_traits<DstEvaluatorTypeT, SrcEvaluatorTypeT, Functor, 4> AssignmentTraits;
+    typedef typename AssignmentTraits::PacketType PacketType;
+
+    EIGEN_DEVICE_FUNC restricted_packet_dense_assignment_kernel(DstEvaluatorTypeT &dst, const SrcEvaluatorTypeT &src, const Functor &func, DstXprType& dstExpr)
+    : Base(dst, src, func, dstExpr)
+  {
+  }
+ };
+
+/***************************************************************************
+* Part 5 : Entry point for dense rectangular assignment
+***************************************************************************/
+
+template<typename DstXprType,typename SrcXprType, typename Functor>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void resize_if_allowed(DstXprType &dst, const SrcXprType& src, const Functor &/*func*/)
+{
+  EIGEN_ONLY_USED_FOR_DEBUG(dst);
+  EIGEN_ONLY_USED_FOR_DEBUG(src);
+  eigen_assert(dst.rows() == src.rows() && dst.cols() == src.cols());
+}
+
+template<typename DstXprType,typename SrcXprType, typename T1, typename T2>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void resize_if_allowed(DstXprType &dst, const SrcXprType& src, const internal::assign_op<T1,T2> &/*func*/)
+{
+  Index dstRows = src.rows();
+  Index dstCols = src.cols();
+  if(((dst.rows()!=dstRows) || (dst.cols()!=dstCols)))
+    dst.resize(dstRows, dstCols);
+  eigen_assert(dst.rows() == dstRows && dst.cols() == dstCols);
+}
+
+template<typename DstXprType, typename SrcXprType, typename Functor>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void call_dense_assignment_loop(DstXprType& dst, const SrcXprType& src, const Functor &func)
+{
+  typedef evaluator<DstXprType> DstEvaluatorType;
+  typedef evaluator<SrcXprType> SrcEvaluatorType;
+
+  SrcEvaluatorType srcEvaluator(src);
+
+  // NOTE To properly handle A = (A*A.transpose())/s with A rectangular,
+  // we need to resize the destination after the source evaluator has been created.
+  resize_if_allowed(dst, src, func);
+
+  DstEvaluatorType dstEvaluator(dst);
+
+  typedef generic_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Functor> Kernel;
+  Kernel kernel(dstEvaluator, srcEvaluator, func, dst.const_cast_derived());
+
+  dense_assignment_loop<Kernel>::run(kernel);
+}
+
+// Specialization for filling the destination with a constant value.
+#ifndef EIGEN_GPU_COMPILE_PHASE
+template<typename DstXprType>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void call_dense_assignment_loop(DstXprType& dst, const Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<typename DstXprType::Scalar>, DstXprType>& src, const internal::assign_op<typename DstXprType::Scalar,typename DstXprType::Scalar>& func)
+{
+  resize_if_allowed(dst, src, func);
+  std::fill_n(dst.data(), dst.size(), src.functor()());
+}
+#endif
+
+template<typename DstXprType, typename SrcXprType>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE void call_dense_assignment_loop(DstXprType& dst, const SrcXprType& src)
+{
+  call_dense_assignment_loop(dst, src, internal::assign_op<typename DstXprType::Scalar,typename SrcXprType::Scalar>());
+}
+
+/***************************************************************************
+* Part 6 : Generic assignment
+***************************************************************************/
+
+// Based on the respective shapes of the destination and source,
+// the class AssignmentKind determine the kind of assignment mechanism.
+// AssignmentKind must define a Kind typedef.
+template<typename DstShape, typename SrcShape> struct AssignmentKind;
+
+// Assignment kind defined in this file:
+struct Dense2Dense {};
+struct EigenBase2EigenBase {};
+
+template<typename,typename> struct AssignmentKind { typedef EigenBase2EigenBase Kind; };
+template<> struct AssignmentKind<DenseShape,DenseShape> { typedef Dense2Dense Kind; };
+
+// This is the main assignment class
+template< typename DstXprType, typename SrcXprType, typename Functor,
+          typename Kind = typename AssignmentKind< typename evaluator_traits<DstXprType>::Shape , typename evaluator_traits<SrcXprType>::Shape >::Kind,
+          typename EnableIf = void>
+struct Assignment;
+
+
+// The only purpose of this call_assignment() function is to deal with noalias() / "assume-aliasing" and automatic transposition.
+// Indeed, I (Gael) think that this concept of "assume-aliasing" was a mistake, and it makes thing quite complicated.
+// So this intermediate function removes everything related to "assume-aliasing" such that Assignment
+// does not has to bother about these annoying details.
+
+template<typename Dst, typename Src>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment(Dst& dst, const Src& src)
+{
+  call_assignment(dst, src, internal::assign_op<typename Dst::Scalar,typename Src::Scalar>());
+}
+template<typename Dst, typename Src>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment(const Dst& dst, const Src& src)
+{
+  call_assignment(dst, src, internal::assign_op<typename Dst::Scalar,typename Src::Scalar>());
+}
+
+// Deal with "assume-aliasing"
+template<typename Dst, typename Src, typename Func>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment(Dst& dst, const Src& src, const Func& func, typename enable_if< evaluator_assume_aliasing<Src>::value, void*>::type = 0)
+{
+  typename plain_matrix_type<Src>::type tmp(src);
+  call_assignment_no_alias(dst, tmp, func);
+}
+
+template<typename Dst, typename Src, typename Func>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment(Dst& dst, const Src& src, const Func& func, typename enable_if<!evaluator_assume_aliasing<Src>::value, void*>::type = 0)
+{
+  call_assignment_no_alias(dst, src, func);
+}
+
+// by-pass "assume-aliasing"
+// When there is no aliasing, we require that 'dst' has been properly resized
+template<typename Dst, template <typename> class StorageBase, typename Src, typename Func>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment(NoAlias<Dst,StorageBase>& dst, const Src& src, const Func& func)
+{
+  call_assignment_no_alias(dst.expression(), src, func);
+}
+
+
+template<typename Dst, typename Src, typename Func>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment_no_alias(Dst& dst, const Src& src, const Func& func)
+{
+  enum {
+    NeedToTranspose = (    (int(Dst::RowsAtCompileTime) == 1 && int(Src::ColsAtCompileTime) == 1)
+                        || (int(Dst::ColsAtCompileTime) == 1 && int(Src::RowsAtCompileTime) == 1)
+                      ) && int(Dst::SizeAtCompileTime) != 1
+  };
+
+  typedef typename internal::conditional<NeedToTranspose, Transpose<Dst>, Dst>::type ActualDstTypeCleaned;
+  typedef typename internal::conditional<NeedToTranspose, Transpose<Dst>, Dst&>::type ActualDstType;
+  ActualDstType actualDst(dst);
+
+  // TODO check whether this is the right place to perform these checks:
+  EIGEN_STATIC_ASSERT_LVALUE(Dst)
+  EIGEN_STATIC_ASSERT_SAME_MATRIX_SIZE(ActualDstTypeCleaned,Src)
+  EIGEN_CHECK_BINARY_COMPATIBILIY(Func,typename ActualDstTypeCleaned::Scalar,typename Src::Scalar);
+
+  Assignment<ActualDstTypeCleaned,Src,Func>::run(actualDst, src, func);
+}
+
+template<typename Dst, typename Src, typename Func>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_restricted_packet_assignment_no_alias(Dst& dst, const Src& src, const Func& func)
+{
+    typedef evaluator<Dst> DstEvaluatorType;
+    typedef evaluator<Src> SrcEvaluatorType;
+    typedef restricted_packet_dense_assignment_kernel<DstEvaluatorType,SrcEvaluatorType,Func> Kernel;
+
+    EIGEN_STATIC_ASSERT_LVALUE(Dst)
+    EIGEN_CHECK_BINARY_COMPATIBILIY(Func,typename Dst::Scalar,typename Src::Scalar);
+
+    SrcEvaluatorType srcEvaluator(src);
+    resize_if_allowed(dst, src, func);
+
+    DstEvaluatorType dstEvaluator(dst);
+    Kernel kernel(dstEvaluator, srcEvaluator, func, dst.const_cast_derived());
+
+    dense_assignment_loop<Kernel>::run(kernel);
+}
+
+template<typename Dst, typename Src>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment_no_alias(Dst& dst, const Src& src)
+{
+  call_assignment_no_alias(dst, src, internal::assign_op<typename Dst::Scalar,typename Src::Scalar>());
+}
+
+template<typename Dst, typename Src, typename Func>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment_no_alias_no_transpose(Dst& dst, const Src& src, const Func& func)
+{
+  // TODO check whether this is the right place to perform these checks:
+  EIGEN_STATIC_ASSERT_LVALUE(Dst)
+  EIGEN_STATIC_ASSERT_SAME_MATRIX_SIZE(Dst,Src)
+  EIGEN_CHECK_BINARY_COMPATIBILIY(Func,typename Dst::Scalar,typename Src::Scalar);
+
+  Assignment<Dst,Src,Func>::run(dst, src, func);
+}
+template<typename Dst, typename Src>
+EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+void call_assignment_no_alias_no_transpose(Dst& dst, const Src& src)
+{
+  call_assignment_no_alias_no_transpose(dst, src, internal::assign_op<typename Dst::Scalar,typename Src::Scalar>());
+}
+
+// forward declaration
+template<typename Dst, typename Src> void check_for_aliasing(const Dst &dst, const Src &src);
+
+// Generic Dense to Dense assignment
+// Note that the last template argument "Weak" is needed to make it possible to perform
+// both partial specialization+SFINAE without ambiguous specialization
+template< typename DstXprType, typename SrcXprType, typename Functor, typename Weak>
+struct Assignment<DstXprType, SrcXprType, Functor, Dense2Dense, Weak>
+{
+  EIGEN_DEVICE_FUNC
+  static EIGEN_STRONG_INLINE void run(DstXprType &dst, const SrcXprType &src, const Functor &func)
+  {
+#ifndef EIGEN_NO_DEBUG
+    internal::check_for_aliasing(dst, src);
+#endif
+
+    call_dense_assignment_loop(dst, src, func);
+  }
+};
+
+// Generic assignment through evalTo.
+// TODO: not sure we have to keep that one, but it helps porting current code to new evaluator mechanism.
+// Note that the last template argument "Weak" is needed to make it possible to perform
+// both partial specialization+SFINAE without ambiguous specialization
+template< typename DstXprType, typename SrcXprType, typename Functor, typename Weak>
+struct Assignment<DstXprType, SrcXprType, Functor, EigenBase2EigenBase, Weak>
+{
+  EIGEN_DEVICE_FUNC
+  static EIGEN_STRONG_INLINE void run(DstXprType &dst, const SrcXprType &src, const internal::assign_op<typename DstXprType::Scalar,typename SrcXprType::Scalar> &/*func*/)
+  {
+    Index dstRows = src.rows();
+    Index dstCols = src.cols();
+    if((dst.rows()!=dstRows) || (dst.cols()!=dstCols))
+      dst.resize(dstRows, dstCols);
+
+    eigen_assert(dst.rows() == src.rows() && dst.cols() == src.cols());
+    src.evalTo(dst);
+  }
+
+  // NOTE The following two functions are templated to avoid their instantiation if not needed
+  //      This is needed because some expressions supports evalTo only and/or have 'void' as scalar type.
+  template<typename SrcScalarType>
+  EIGEN_DEVICE_FUNC
+  static EIGEN_STRONG_INLINE void run(DstXprType &dst, const SrcXprType &src, const internal::add_assign_op<typename DstXprType::Scalar,SrcScalarType> &/*func*/)
+  {
+    Index dstRows = src.rows();
+    Index dstCols = src.cols();
+    if((dst.rows()!=dstRows) || (dst.co

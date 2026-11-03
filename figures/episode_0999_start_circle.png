@@ -1,0 +1,1948 @@
+ okreÅ›lony dla elementu PropertyGrid.SelectedGridItem musi byÄ‡ prawidÅ‚owy.@Ustawia duÅ¼e przyciski (32x32) na pasku narzÄ™dzi PropertyGrid.BUstawia kolor obramowania i linii siatki wewnÄ…trz obszaru siatki. Karta '{0}' nie ma mapy bitowej.XWystÄ™puje, gdy wÅ‚aÅ›ciwoÅ›Ä‡ PropertySort w elemencie PropertyGrid zostanie zmieniona.kUstawia typ sortowania, ktÃ³ry bÄ™dzie uÅ¼ywany przez element PropertyGrid do wyÅ›wietlania wÅ‚aÅ›ciwoÅ›ci.5Kolekcja PropertyTabCollection jest tylko do odczytu.8WystÄ™puje, gdy karta wÅ‚aÅ›ciwoÅ›ci zostanie zmieniona.<WystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci zostanie zmieniona.Wybrano: {0}.8Kart Static nie moÅ¼na usunÄ…Ä‡ z elementu PropertyGrid.Resetuj wÅ‚aÅ›ciwoÅ›Ä‡ '{0}'=WystÄ™puje, gdy zaznaczony element siatki zostanie zmieniony.*Kolor tÅ‚a wybranych elementÃ³w z fokusem.8Kolor pierwszego obszaru wybranych elementÃ³w z fokusem.?OkreÅ›la aktualnie zaznaczony obiekt do przeglÄ…dania w siatce.BWystÄ™puje, gdy wÅ‚aÅ›ciwoÅ›Ä‡ SelectedObjects zostanie zmieniona.9Tablica â€objsâ€ musi mieÄ‡ co najmniej {0} czÅ‚onkÃ³w.kElement {0} w tablicy â€objsâ€ jest zerowy. Tablica musi rozpoczynaÄ‡ siÄ™ od co najmniej {1} czÅ‚onkÃ³w.Ustaw wÅ‚aÅ›ciwoÅ›Ä‡ â€{0}â€/Karta â€{0}â€ musi mieÄ‡ prawidÅ‚owÄ… nazwÄ™.UElement TabScope musi byÄ‡ elementem TabScopeEnum.Component lub TabScopeEnum.DocumentPropertyGridPropertyGridJUstawia, czy wyÅ›wietlaÄ‡ element ToolBar na gÃ³rze elementu PropertyGrid."Ustawia kolor tÅ‚a obszaru siatki..Kolor obramowania otaczajÄ…cego obszar siatki.,Symbol zastÄ™pczy kontrolki listy rozwijanejREdytor utworzyÅ‚ nieprawidÅ‚owy obiekt. Utworzony obiekt musi byÄ‡ typu â€{0}â€..Ustawia kolor pierwszego planu obszaru siatki.&WÅ‚aÅ›ciwoÅ›Ä‡ {0} nie istnieje w {1}.ŒJeden lub kilka wpisÃ³w jest nieprawidÅ‚owych w parametrze IDictionary. SprawdÅº, czy wszystkie wartoÅ›ci pasujÄ… do wÅ‚aÅ›ciwoÅ›ci obiektu.	RTL_FalsemOkreÅ›la, czy element RadioButton ma mieÄ‡ wyglÄ…d normalny, czy wyglÄ…d przycisku polecenia systemu Windows.SPowoduje, Å¼e stan przycisku radiowego jest zmieniany automatycznie po klikniÄ™ciu.4OkreÅ›la poÅ‚oÅ¼enie pola wyboru wewnÄ…trz formantu.8Wskazuje, czy przycisk radiowy jest zaznaczony, czy nie.gZdarzenie wywoÅ‚ywane, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Appearance elementu RadioButton zostanie zmieniona.jWystÄ™puje zawsze, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci okreÅ›lajÄ…cej zaznaczenie ('checked') zostanie zmieniona.fZdarzenie wywoÅ‚ywane, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci StartPage elementu RadioButton zostanie zmieniona.EWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci TextAlign zostanie zmienionaKolekcja jest tylko do odczytu.<Nie moÅ¼na utworzyÄ‡ listy elementÃ³w podrzÄ™dnych pola {0}.AZapisywarka zasobÃ³w zostaÅ‚a zapisana. Nie moÅ¼na jej edytowaÄ‡.*Nie znaleziono wartoÅ›ci zasobu â€{0}â€.;Metoda Restart nie jest obsÅ‚ugiwana w aplikacji tego typu.ENie moÅ¼na uzyskaÄ‡ elementu Lresult dla obiektu uÅ‚atwieÅ„ dostÄ™pu.3WÅ‚Ä…cza/wyÅ‚Ä…cza automatyczne zaznaczanie sÅ‚Ã³w.+OkreÅ›la wciÄ™cie dla punktora w formancie.TWskazuje, czy moÅ¼na cofnÄ…Ä‡ poprzedniÄ… czynnoÅ›Ä‡ w formancie edycji wzbogaconej.\WystÄ™puje, gdy zawartoÅ›Ä‡ formantu jest mniejsza lub wiÄ™ksza od rozmiarÃ³w okna formantu.DWskazuje, czy adresy URL sÄ… automatycznie formatowane jako Å‚Ä…cza.EWÅ‚Ä…cz przeciÄ…ganie/upuszczanie tekstu, obrazÃ³w oraz innych danychGWystÄ™puje, gdy zostanie klikniÄ™ty poziomy pasek przewijania formantu.€WystÄ™puje, gdy zostanie zmieniony stan konwersji IME formantu. (Tylko we wschodnioazjatyckich wersjach systemÃ³w operacyjnych).<WystÄ™puje, gdy hiperÅ‚Ä…cze w tekÅ›cie zostanie klikniÄ™te.ZWystÄ™puje, gdy uÅ¼ytkownik wykona czynnoÅ›Ä‡, ktÃ³ra zmieniÅ‚aby chroniony zakres tekstu.>OkreÅ›la zawartoÅ›Ä‡ formantu w postaci tekstu sformatowanego.PNazwa akcji do wykonania, jeÅ›li uÅ¼ytkownik ponowi wykonanie poprzedniej akcji.#OkreÅ›la wymiary prawego marginesu.1OkreÅ›la zachowanie paskÃ³w przewijania formantu.3OkreÅ›la wyrÃ³wnanie aktualnie zaznaczonego tekstu.0Ustawia kolor dla aktualnie zaznaczonego tekstu.?WÅ‚Ä…cza/wyÅ‚Ä…cza punktor przed aktualnie zaznaczonym tekstem.8WystÄ™puje, gdy zostanie zmienione aktualne zaznaczenie.4Definiuje tryb indeksu gÃ³rnego/dolnego dla znakÃ³w.0Ustawia kolor dla aktualnie zaznaczonego tekstu.6OkreÅ›la kolor czcionki aktualnie zaznaczonego tekstu.3OkreÅ›la wysuniÄ™cie aktualnie zaznaczonego tekstu.0OkreÅ›la wciÄ™cie aktualnie zaznaczonego tekstu.(WÅ‚Ä…cza/wyÅ‚Ä…cza margines zaznaczania.<WÅ‚Ä…cza/wyÅ‚Ä…cza ochronÄ™ zawartoÅ›ci zaznaczonego tekstu.SOkreÅ›la zawartoÅ›Ä‡ aktualnie zaznaczonego tekstu w postaci tekstu sformatowanego.6OkreÅ›la prawe wciÄ™cie aktualnie zaznaczonego tekstu.5OkreÅ›la pozycje tabulatorÃ³w w zaznaczonym tekÅ›cie.2WyÅ›wietla tekst aktualnie zaznaczony w formancie.Typ zaznaczenia.bNazwa akcji, ktÃ³ra zostanie wykonana, jeÅ›li uÅ¼ytkownik cofnie poprzedniÄ… czynnoÅ›Ä‡ edycyjnÄ….GWystÄ™puje, gdy zostanie klikniÄ™ty pionowy pasek przewijania formantu.MOkreÅ›la aktualny czynnik skalowania pola RichTextBox; 1.0 to widok normalny.WytnijUsuÅ„PrzeciÄ…gnij i upuÅ›Ä‡	Wklejanie
+WpisywanieBrak informacji·WartoÅ›Ä‡ â€{0}â€ nie jest prawidÅ‚owÄ… wartoÅ›ciÄ… elementu â€endâ€. WartoÅ›Ä‡ elementu â€endâ€ musi byÄ‡ wiÄ™ksza od lub rÃ³wna wartoÅ›ci elementu â€startâ€ lub wynosiÄ‡ -1.{1} - {0} - {2}bOkreÅ›la, czy okno dialogowe sprawdza, czy tworzenie okreÅ›lonego pliku zakoÅ„czy siÄ™ pomyÅ›lnie.•OkreÅ›la, czy wyÅ›wietlaÄ‡ monit, gdy ma zostaÄ‡ utworzony nowy plik. Ma zastosowanie tylko wtedy, gdy element â€ValidateNamesâ€ ma wartoÅ›Ä‡ true.IOkreÅ›la, czy okno dialogowe jest zawsze otwierane w trybie rozwiniÄ™tym.OkreÅ›la, czy wyÅ›wietlaÄ‡ monit, gdy ma zostaÄ‡ zastÄ…piony istniejÄ…cy plik. Ma zastosowanie tylko wtedy, gdy element â€ValidateNamesâ€ ma wartoÅ›Ä‡ true.Tekst nie zostaÅ‚ zapisany.\Pobiera lub ustawia wartoÅ›Ä‡ Boolean kontrolujÄ…cÄ…, czy pasek przewijania jest wÅ‚Ä…czony.•Liczba, o ktÃ³rÄ… pozycja pola przewijania zostanie zmieniona, gdy uÅ¼ytkownik kliknie pasek przewijania lub naciÅ›nie klawisz PAGE UP lub PAGE DOWN..GÃ³rna wartoÅ›Ä‡ limitu przewijanego zakresu. -Dolna wartoÅ›Ä‡ limitu przewijanego zakresu. 8WystÄ™puje, gdy uÅ¼ytkownik przeniesie pole przewijania.„Liczba, o ktÃ³rÄ… pozycja pola przewijania zostanie zmieniona, gdy uÅ¼ytkownik kliknie strzaÅ‚kÄ™ przewijania lub klawisz strzaÅ‚ki.:WartoÅ›Ä‡, ktÃ³ra reprezentuje pozycjÄ™ pola przewijania. `Pobiera lub ustawia wartoÅ›Ä‡ Boolean, ktÃ³ra kontroluje, czy pokazywany jest pasek przewijania.LWÅ‚aÅ›ciwoÅ›Ä‡ nadrzÄ™dna aktywnej kontrolki nie moÅ¼e mieÄ‡ wartoÅ›ci null.FPobiera poziomy pasek przewijania dla tego elementu ScrollableControl.WÅ‚aÅ›ciwoÅ›Ä‡ z ustawionÄ… wartoÅ›ciÄ… false nie wywoÅ‚a zdarzeÅ„ MouseEnter i MouseLeave dopÃ³ki mysz nie opuÅ›ci obszaru klienckiego i paskÃ³w przewijania.FPobiera pionowy pasek przewijania dla tego elementu ScrollableControl.-WartoÅ›Ä‡ elementu SelTabCount poza zakresem.QLiczba zaznaczonych elementÃ³w nie odpowiada rzeczywiÅ›cie zaznaczonym elementom.)Ograniczniki grupy sÄ… niezrÃ³wnowaÅ¼one.Nie moÅ¼na utworzyÄ‡ haka.$Brak ogranicznika sÅ‚owa kluczowego.3ObsÅ‚ugiwane sÄ… tylko trzy poziomy zagnieÅ¼dÅ¼eÅ„.ÙNie moÅ¼na uruchomiÄ‡ elementu SendKeys w aplikacji, poniewaÅ¼ aplikacja nie obsÅ‚uguje komunikatÃ³w systemu Windows. ZmieÅ„ aplikacjÄ™ w taki sposÃ³b, aby obsÅ‚ugiwaÅ‚a komunikaty, lub uÅ¼yj metody SendKeys.SendWait.¸Typu {0} nie moÅ¼na odczytaÄ‡ z danych w wierszu {1}, pozycja {2}. WewnÄ™trzna struktura typu mogÅ‚a zostaÄ‡ zmieniona. Zaimplementuj element ISerializable w typie lub podaj konwerter typÃ³w, ktÃ³ry moÅ¼e zapewniÄ‡ bardziej niezawodny format konwersji, taki jak tekst lub tablica bajtÃ³w. WyjÄ…tek konwersji: {3}´Nie moÅ¼na wyÅ›wietlaÄ‡ niewÅ‚Ä…czonych formularzy w postaci modalnych okien dialogowych. Przed wywoÅ‚aniem {0} ustaw wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Enabled formularza na wartoÅ›Ä‡ true.¨Formularza, ktÃ³ry jest juÅ¼ wyÅ›wietlony w trybie modalnym, nie moÅ¼na wyÅ›wietliÄ‡ jako modalnego okna dialogowego. Przed wywoÅ‚aniem {0} naleÅ¼y zamknÄ…Ä‡ formularz.ÎFormularza, ktÃ³ry nie jest formularzem najwyÅ¼szego poziomu, nie moÅ¼na wyÅ›wietliÄ‡ jako modalnego okna dialogowego. Przed wywoÅ‚aniem {0} naleÅ¼y usunÄ…Ä‡ formularz ze wszystkich formularzy nadrzÄ™dnych.¼Formularza, ktÃ³re jest juÅ¼ widoczny, nie moÅ¼na wyÅ›wietliÄ‡ jako modalnego okna dialogowego. Przed wywoÅ‚aniem {0} naleÅ¼y ustawiÄ‡ wÅ‚aÅ›ciwoÅ›Ä‡ visible formularza na wartoÅ›Ä‡ false.Sortowanie wymaga elementu IBindingList, ktÃ³ry obsÅ‚uguje sortowanie, lub elementu IBindingListView, ktÃ³ry obsÅ‚uguje sortowanie zaawansowane.Posortowano rosnÄ…co.Posortowano malejÄ…co.€Wskazuje, Å¼e okreÅ›lony panel elementu SplitContainer powinien mieÄ‡ nadal ustalony rozmiar w czasie zdarzeÅ„ zamiany rozmiaru.1OkreÅ›la, czy rozdzielacz moÅ¼e byÄ‡ przenoszony.3OkreÅ›la, czy rozdzielacz jest pionowy czy poziomy.,OkreÅ›la, czy element Panel1 jest zwiniÄ™ty..Panel Left lub Top w elemencie SplitContainer.eOkreÅ›la minimalnÄ… odlegÅ‚oÅ›Ä‡ pikseli rozdzielacza od lewej lub gÃ³rnej krawÄ™dzi elementu Panel1.,OkreÅ›la, czy element Panel2 jest zwiniÄ™ty.2Panel Right lub Bottom w elemencie SplitContainer.cOkreÅ›la minimalny odstÄ™p w pikselach rozdzielacza od prawej lub dolnej krawÄ™dzi elementu Panel2.…WysokoÅ›ci elementu SplitterPanel nie moÅ¼na ustawiÄ‡ jawnie. Ustaw zamiast tego element SplitterDistance w elemencie SplitContainer.†SzerokoÅ›ci elementu SplitterPanel nie moÅ¼na ustawiÄ‡ jawnie. Ustaw zamiast tego element SplitterDistance w elemencie SplitContainer.POkreÅ›la odlegÅ‚oÅ›Ä‡ rozdzielacza od lewej lub gÃ³rnej krawÄ™dzi (w pikselach).bOkreÅ›la liczbÄ™ pikseli, o jakÄ… rozdzielacz jest przesuwany w przyrostach. DomyÅ›lnie jest to 1.+OkreÅ›la prostokÄ…tne granice rozdzielacza. OkreÅ›la gruboÅ›Ä‡ rozdzielacza."OkreÅ›la typ obramowania formantu.wElement SplitterDistance musi znajdowaÄ‡ siÄ™ miÄ™dzy elementem Panel1MinSize a elementem Panel2MinSize elementu Width.SFormant rozdzielacza musi byÄ‡ zadokowany z lewej, z prawej, na gÃ³rze lub na dole.3OkreÅ›la minimalny rozmiar niezadokowanego obszaru.EOkreÅ›la minimalny rozmiar formantu, ktÃ³rego rozmiar jest zmieniany.PBieÅ¼Ä…ca pozycja rozdzielacza lub -1, jeÅ›li nie jest on zwiÄ…zany z formantem.2WystÄ™puje, gdy rozdzielacz zostanie przeniesiony.-WystÄ™puje, gdy rozdzielacz jest przenoszony.MNie udaÅ‚o siÄ™ uzyskaÄ‡ moduÅ‚u marshaler dla identyfikatora interfejsu {0}.>OkreÅ›la strony panelu, ktÃ³re majÄ… wyÅ›wietlaÄ‡ obramowanie.!OkreÅ›la styl obramowania panelu.<OkreÅ›la, czy element StatusStrip ma uchwyt zmiany rozmiaru.9Funkcja nie jest obsÅ‚ugiwana w tym systemie operacyjnym.ªMetoda ITypeInfo::GetDocumentation dla DISPID 0x{0:X} zwrÃ³ciÅ‚a hr=0x{1:X}, co spowoduje ignorowanie wÅ‚aÅ›ciwoÅ›ci. Musi zostaÄ‡ zwrÃ³cona wartoÅ›Ä‡ S_OK. SkÅ‚adnik={2}[Metoda ITypeInfo::GetRefTypeInfo zwrÃ³ciÅ‚a hr={0:X}, zatem nie moÅ¼na pobraÄ‡ typu danych.XMetoda ITypeInfo::GetTypeAttr zwrÃ³ciÅ‚a hr={0:X}, zatem nie moÅ¼na pobraÄ‡ typu danych.ŸOkreÅ›la, czy karty pojawiajÄ… siÄ™ u gÃ³ry, u doÅ‚u, po lewej, czy po prawej stronie formantu (karty po lewej lub po prawej sÄ… z zaÅ‚oÅ¼enia wielowierszowe).CWskazuje, czy karty sÄ… rysowane jako przyciski, czy zwykÅ‚e karty.HWskazuje, czy podpisy sÄ… rysowane przez uÅ¼ytkownika, czy przez system.TWskazuje, czy wyglÄ…d kart zmienia siÄ™, gdy przesuwa siÄ™ nad nimi wskaÅºnik myszy.2Obiekt ImageList, z ktÃ³rego karta pobiera obrazy.oOkreÅ›la szerokoÅ›Ä‡ kart o staÅ‚ej wysokoÅ›ci lub tworzonych przez wÅ‚aÅ›ciciela i wysokoÅ›Ä‡ wszystkich kart.<Wskazuje, czy jest dozwolony wiÄ™cej niÅ¼ jeden wiersz kart.\Wskazuje, ile dodatkowej przestrzeni powinno zostaÄ‡ dodane wokÃ³Å‚ tekstu/obrazu na karcie.7Liczba aktualnie wyÅ›wietlanych wierszy na pasku karty.pWskazuje, czy etykietki narzÄ™dzi dla kart, ktÃ³re majÄ… ustawione etykietki narzÄ™dzi, powinny byÄ‡ pokazywane.+Wskazuje sposÃ³b okreÅ›lania rozmiaru kart.Liczba kart na pasku kart. Parametr musi byÄ‡ typu TabPage.UWystÄ™puje po odznaczeniu strony karty jako znajdujÄ…cej siÄ™ najwyÅ¼ej strony karty.1WystÄ™puje, gdy strona karty zostanie odznaczona.‚Nie moÅ¼na dodaÄ‡ '{0}' do elementu TabControl. Tylko elementy TabPage mogÄ… byÄ‡ bezpoÅ›rednio dodawane do elementÃ³w TabControl.EWystÄ™puje po zaznaczeniu strony karty jako najwyÅ¼szej strony karty.Aktualnie zaznaczona karta.-WystÄ™puje, gdy strona karty jest wybierana. ~Nie moÅ¼na dodaÄ‡ elementu TabPage do elementu â€{0}â€. Elementy TabPage mogÄ… byÄ‡ dodawane tylko do elementÃ³w TabControl.ƒNie moÅ¼na dodaÄ‡ elementu TabPage do innego elementu TabPage. Elementy TabPage mogÄ… byÄ‡ dodawane tylko do elementÃ³w TabControl.(Elementy TabPage w elemencie TabControl.*Identyfikuje obraz wyÅ›wietlany na karcie.CTekst wyÅ›wietlany, gdy wskaÅºnik myszy jest przesuwany nad kartÄ….\OkreÅ›la, czy tÅ‚o jest rysowane przy uÅ¼yciu stylÃ³w wizualnych, jeÅ¼eli jest obsÅ‚ugiwane.APrzed uÅ¼yciem tej metody naleÅ¼y wywoÅ‚aÄ‡ element TableBegin().UÅ»adna tabela nie jest obecnie drukowana. Element TableBegin() nie zostaÅ‚ wywoÅ‚any..Wskazuje wyglÄ…d obramowaÅ„ komÃ³rek w tabeli.—Nie moÅ¼na utworzyÄ‡ dodatkowych wierszy ani kolumn. Obiekt TableLayoutPanel jest zapeÅ‚niony, a wÅ‚aÅ›ciwoÅ›Ä‡ GrowStyle ma wartoÅ›Ä‡ â€FixedSizeâ€.‘Wskazuje, czy element TableLayoutPanel zostanie rozwiniÄ™ty w celu pomieszczenia nowych komÃ³rek, gdy wszystkie istniejÄ…ce komÃ³rki sÄ… zajÄ™te.6WystÄ™puje, gdy komÃ³rka wymaga ponownego narysowania.šObiektu TableLayoutPanel nie moÅ¼na rozwinÄ…Ä‡ w celu pomieszczenia formantu, poniewaÅ¼ wÅ‚aÅ›ciwoÅ›Ä‡ GrowStyle panelu ma ustawionÄ… wartoÅ›Ä‡ FixedSize.~BezpoÅ›rednie ustawianie elementu TableLayoutSettings nie jest obsÅ‚ugiwane. UÅ¼yj zamiast tego indywidualnych wÅ‚aÅ›ciwoÅ›ci.‹Nie moÅ¼na przekonwertowaÄ‡ elementu TableLayoutSettings na ciÄ…g: w kontrolce nie moÅ¼na byÅ‚o znaleÅºÄ‡ wÅ‚aÅ›ciwoÅ›ci ciÄ…gu â€Nameâ€.$Wskazuje wiersz i kolumnÄ™ komÃ³rki.#Ustawia wiersz i kolumnÄ™ komÃ³rki.ZOkreÅ›lone wystÄ…pienie elementu TablePrintLayout zostaÅ‚o utworzone dla innego dokumentu.YTekst przycisku niestandardowego nie moÅ¼e mieÄ‡ wartoÅ›ci null ani byÄ‡ pustym ciÄ…giem.^Stan okna dialogowego zadania moÅ¼e byÄ‡ aktualizowany tylko wtedy, gdy jest ono wyÅ›wietlane.ENie moÅ¼na nawigowaÄ‡ oknem dialogowym, gdy zostaÅ‚o juÅ¼ zamkniÄ™te.hNie moÅ¼na nawigowaÄ‡ oknen=m dialogowym z poziomu programu obsÅ‚ugi zdarzeÅ„ wywoÅ‚ywanego z nawigacji.€Nie moÅ¼na nawigowaÄ‡ oknem dialogowym z poziomu zdarzenia {0} jednego z przyciskÃ³w opcji bieÅ¼Ä…cego okna dialogowego zadania.BNie moÅ¼na nawigowaÄ‡ ze strony niepowiÄ…zanej z oknem dialogowym.QNie moÅ¼na usunÄ…Ä‡ paska postÄ™pu, gdy okno dialogowe zadania jest wyÅ›wietlane.wNie moÅ¼na ustawiÄ‡ tej wÅ‚aÅ›ciwoÅ›ci lub wywoÅ‚aÄ‡ tej metody, gdy strona jest powiÄ…zana z oknem dialogowym zadania.UNie moÅ¼na ustawiÄ‡ tej wÅ‚aÅ›ciwoÅ›ci, gdy okno dialogowe zadania jest wyÅ›wietlane.€Nie moÅ¼na ustawiÄ‡ wÅ‚aÅ›ciwoÅ›ci {0} z poziomu zdarzenia {1} jednego z przyciskÃ³w opcji bieÅ¼Ä…cego okna dialogowego zadania.3Nie moÅ¼na ustawiÄ‡ tekstu przycisku standardowego.VNie moÅ¼na jednoczeÅ›nie wyÅ›wietliÄ‡ przyciskÃ³w niestandardowych i linkÃ³w poleceÅ„.cNie moÅ¼na usunÄ…Ä‡ zaznaczenia przycisku opcji, gdy jest on powiÄ…zany z oknem dialogowym zadania.„Nie moÅ¼na manipulowaÄ‡ oknem dialogowym zadania zaraz po nawigowaniu nim. Poczekaj na wystÄ…pienie zdarzenia {0} nastÄ™pnej strony.ZNie moÅ¼na zaktualizowaÄ‡ ikony z typu ikony uchwytu na typ inny niÅ¼ uchwytu i odwrotnie.LJedna z kolekcji tego elementu {0} jest juÅ¼ powiÄ…zana z wystÄ…pieniem {1}..Ta kontrolka zostaÅ‚a juÅ¼ dodana do kolekcji.MJedna z kontrolek tego elementu {0} jest juÅ¼ powiÄ…zana z wystÄ…pieniem {1}.1Ta kontrolka jest juÅ¼ czÄ™Å›ciÄ… innej kolekcji.DTa kontrolka nie jest obecnie powiÄ…zana z oknem dialogowym zadania.Nie utworzono kontrolki.8Przycisk domyÅ›lny musi istnieÄ‡ w kolekcji przyciskÃ³w.+To wystÄ…pienie {0} jest juÅ¼ wyÅ›wietlane.kNawigacja w oknie dialogowym zadania nie zostaÅ‚a jeszcze ukoÅ„czona. Zaczekaj, aÅ¼ wystÄ…pi zdarzenie {0}.:Tylko jeden przycisk opcji moÅ¼na wybraÄ‡ jako zaznaczony.=To wystÄ…pienie {0} jest juÅ¼ powiÄ…zane z wystÄ…pieniem {1}.NTekst przycisku opcji nie moÅ¼e mieÄ‡ wartoÅ›ci null ani byÄ‡ pustym ciÄ…giem.CDodano za duÅ¼o przyciskÃ³w niestandardowych lub przyciskÃ³w opcji.fStyle wizualne nie sÄ… wÅ‚Ä…czone. WywoÅ‚aj element {0} przed wyÅ›wietleniem okna dialogowego zadania.tWskazuje, czy znaki powrotu karetki sÄ… akceptowane jako dane wejÅ›ciowe dla wielowierszowych formantÃ³w edycyjnych.nWskazuje, czy znaki tabulacji sÄ… akceptowane jako dane wejÅ›ciowe dla wielowierszowych formantÃ³w edycyjnych.tElement StringCollection do uÅ¼ycia, gdy wÅ‚aÅ›ciwoÅ›Ä‡ AutoCompleteSource jest ustawiona na wartoÅ›Ä‡ CustomSource.GWskazuje zachowanie zwiÄ…zane z uzupeÅ‚nianiem tekstu w polu tekstowym.yÅ¹rÃ³dÅ‚o autouzupeÅ‚niania, ktÃ³re moÅ¼e byÄ‡ jednÄ… z wartoÅ›ci pochodzÄ…cych z wyliczania elementu AutoCompleteSource.RWartoÅ›ci AutoCompleteSource.ListItems nie moÅ¼na zastosowaÄ‡ do formantu TextBox.pWÅ‚Ä…cza automatycznÄ… zmianÄ™ rozmiaru w oparciu o rozmiar czcionki dla jednowierszowych formantÃ³w edycyjnych.GWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci AcceptsTab zostanie zmieniona.eZdarzenie wywoÅ‚ywane, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci AutoSize elementu TextBoxBase zostanie zmieniona.HWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci BorderStyle zostanie zmieniona.JWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci HideSelection zostanie zmieniona.EWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Modified zostanie zmieniona.FWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Multiline zostanie zmieniona.EWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci ReadOnly zostanie zmieniona.:Wskazuje, czy formant edycyjny powinien mieÄ‡ obramowanie.KWskazuje, czy w formancie edycyjnym moÅ¼na cofnÄ…Ä‡ poprzedniÄ… czynnoÅ›Ä‡.|Wskazuje, czy wszystkie znaki powinny pozostaÄ‡ bez zmian, czy powinny zostaÄ‡ przekonwertowane na wielkie lub maÅ‚e litery.RWskazuje, Å¼e zaznaczenie powinno byÄ‡ ukrywane, gdy formant edycyjny traci fokus.XWiersze tekstu w wielowierszowym formancie edycyjnym jako tablica wartoÅ›ci typu String.ROkreÅ›la maksymalnÄ… liczbÄ™ znakÃ³w, jakÄ… moÅ¼na wpisaÄ‡ do formantu edycyjnego.SWskazuje, czy tekst w formancie edycyjnym zostaÅ‚ zmodyfikowany przez uÅ¼ytkownika.SOkreÅ›la, czy tekst formantu edycyjnego moÅ¼e obejmowaÄ‡ wiÄ™cej niÅ¼ jeden wiersz.nWskazuje znak, ktÃ³ry ma byÄ‡ wyÅ›wietlany przy wprowadzaniu hasÅ‚a do jednowierszowych formantÃ³w edycyjnych. OkreÅ›la wÅ‚aÅ›ciwoÅ›Ä‡ PlaceholderText dla kontrolki TextBox. WÅ‚aÅ›ciwoÅ›Ä‡ PlaceholderText jest wyÅ›wietlana w kontrolce, gdy wÅ‚aÅ›ciwoÅ›Ä‡ Text ma wartoÅ›Ä‡ null lub jest pusta â€” moÅ¼e ona sÅ‚uÅ¼yÄ‡ do informowania uÅ¼ytkownika o tym, jakich danych wejÅ›ciowych oczekuje kontrolka.%Preferowana wysokoÅ›Ä‡ tego formantu.HOkreÅ›la, czy tekst w formancie edycyjnym moÅ¼e byÄ‡ zmieniony, czy nie.YWskazuje, ktÃ³re paski przewijania bÄ™dÄ… widoczne w wielowierszowym formancie edycyjnym.Aktualnie zaznaczony tekst.)DÅ‚ugoÅ›Ä‡ aktualnie zaznaczonego tekstu.(PoczÄ…tek aktualnie zaznaczonego tekstu.?Wskazuje, czy skrÃ³ty zdefiniowane dla formantu sÄ… wÅ‚Ä…czone.EWskazuje, jak powinien byÄ‡ wyrÃ³wnany tekst w formantach edycyjnych.[Wskazuje, czy tekst w edytowanym formancie ma byÄ‡ wyÅ›wietlany jako domyÅ›lny znak hasÅ‚a.ZWskazuje, czy wiersze w wielowierszowych formantach edycyjnych sÄ… automatycznie zawijane./TextFormatFlags.ModifyString jest niedozwolone.XNie moÅ¼na analizowaÄ‡ elementu Text(â€{0}â€), oczekiwano tekstu w formacie â€{1}â€.ÂBieÅ¼Ä…cy wÄ…tek musi byÄ‡ ustawiony na tryb jednowÄ…tkowego apartamentu, aby moÅ¼na byÅ‚o wykonywaÄ‡ wywoÅ‚ania OLE. Upewnij siÄ™, Å¼e w funkcji Main jest zaznaczony element STAThreadAttribute.QWystÄ…piÅ‚ bÅ‚Ä…d podczas wywoÅ‚ywania metody. WÄ…tek docelowy juÅ¼ nie istnieje.tWystÄ…piÅ‚ bÅ‚Ä…d podczas wywoÅ‚ywania metody. PÄ™tla wiadomoÅ›ci jest wymagana do zorganizowania wywoÅ‚ania wÄ…tku.&WÅ‚Ä…cza generowanie zdarzeÅ„ Elapsed.-CzÄ™stoÅ›Ä‡ zdarzeÅ„ Elapsed w milisekundach.tWartoÅ›Ä‡ â€{0}â€ nie jest prawidÅ‚owÄ… wartoÅ›ciÄ… elementu Interval. Element Interval musi byÄ‡ wiÄ™kszy od {1}.=WystÄ™puje zawsze, gdy upÅ‚ynie okreÅ›lony interwaÅ‚ czasowy.9Zbyt wiele odwoÅ‚aÅ„ do elementu ResumeUpdateMenuHandles.9UmoÅ¼liwia interakcjÄ™ kontrolki, gdy okno nie ma fokusu.NWartoÅ›ci AllowItemReorder i AllowDrop nie mogÄ… byÄ‡ jednoczeÅ›nie prawdziwe.HZezwala na zmianÄ™ kolejnoÅ›ci elementÃ³w po naciÅ›niÄ™ciu klawisza ALT.Zezwala na scalenie elementÃ³w.'OkreÅ›la kolor tÅ‚a elementu ToolStrip.GWskazuje, czy element ma przeÅ‚Ä…czaÄ‡ stan zaznaczenia po klikniÄ™ciu.7Wskazuje, czy element ToolStripButton jest wciÅ›niÄ™ty.KElement ToolStrip nie moÅ¼e siÄ™ znajdowaÄ‡ po innych elementach ToolStrip.>Wskazuje, czy moÅ¼na wysÅ‚aÄ‡ elementy do menu przeciÄ…Å¼enia.7Musisz jawnie wstawiÄ‡ element i usunÄ…Ä‡ inny element.€Dolny panel elementu ToolStripContainer. Ten obszar jest uÅ¼ywany do przenoszenia elementÃ³w ToolStrip, MenuStrip i StatusStrip.AOkreÅ›la widocznoÅ›Ä‡ dolnego panelu elementu ToolStripContainer.,Centralny panel elementu ToolStripContainer.†UdostÄ™pnia po obu stronach formularza panele, ktÃ³re mogÄ… zawieraÄ‡ jeden lub kilka formantÃ³w ToolStrip, MenuStrip lub StatusStrip.yLewy panel elementu ToolStripContainer. Ten obszar sÅ‚uÅ¼y do przenoszenia elementÃ³w ToolStrip, MenuStrip i StatusStrip.@OkreÅ›la widocznoÅ›Ä‡ lewego panelu elementu ToolStripContainer.zPrawy panel elementu ToolStripContainer. Ten obszar sÅ‚uÅ¼y do przenoszenia elementÃ³w ToolStrip, MenuStrip i StatusStrip.AOkreÅ›la widocznoÅ›Ä‡ prawego panelu elementu ToolStripContainer.{GÃ³rny panel elementu ToolStripContainer. Ten obszar sÅ‚uÅ¼y do przenoszenia elementÃ³w ToolStrip, MenuStrip i StatusStrip.BOkreÅ›la widocznoÅ›Ä‡ gÃ³rnego panelu elementu ToolStripContainer.—BezpoÅ›rednie dodawanie formantÃ³w do elementu ToolStripContainer nie jest obsÅ‚ugiwane. UÅ¼yj zamiast tego wÅ‚aÅ›ciwoÅ›ci â€ContentPanel.Controlsâ€.8WystÄ™puje przy kaÅ¼dym zaÅ‚adowaniu panelu zawartoÅ›ci.<OkreÅ›la domyÅ›lny kierunek otwierania elementÃ³w DropDowns.;Element ToolStrip nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci AutoScroll.UOkreÅ›la, czy element DropDown jest automatycznie zamykany przez akcjÄ™ uÅ¼ytkownika.COkreÅ›la, czy na przycisku rozwijanym ma byÄ‡ pokazywana strzaÅ‚ka.,WystÄ™puje po zamkniÄ™ciu elementu DropDown.4WystÄ™puje, gdy element DropDown ma byÄ‡ zamkniÄ™ty.OOkreÅ›la element ToolStripDropDown pokazywany, gdy element zostanie klikniÄ™ty..OkreÅ›la kierunek rozwijania listy rozwijanej.MOkreÅ›la element ToolStripItem wyÅ›wietlany, gdy element zostanie klikniÄ™ty.6OkreÅ›la, czy margines zaznaczania bÄ™dzie pokazywany.3OkreÅ›la, czy margines obrazu bÄ™dzie wyÅ›wietlany.)WystÄ™puje po otwarciu elementu DropDown.0WystÄ™puje podczas otwierania elementu DropDown.VOkreÅ›la element PreferredWidth elementu ToolStripDropDown podczas jego wyÅ›wietlania.2Element ToolStripDropDown nie obsÅ‚uguje raftingu.Uchwyt3OkreÅ›la orientacjÄ™ uchwytu w elemencie ToolStrip.eOkreÅ›la zewnÄ™trzne odstÄ™py uchwytu oraz dopeÅ‚nienie elementu ToolStrip i elementu wyÅ›wietlanego.4OkreÅ›la widocznoÅ›Ä‡ uchwytu w elemencie ToolStrip.1OkreÅ›la element ImageList w elemencie ToolStrip.†OkreÅ›la rozmiar obrazÃ³w w elementach. Aby kontrolowaÄ‡ skalowanie elementÃ³w, uÅ¼yj wÅ‚aÅ›ciwoÅ›ci â€ToolStripItem.ImageScalingâ€.0Element AccessibleObject przypisany do formantu."Opis akcji domyÅ›lnej w elemencie.)Opis przekazywany klientom dostÄ™pnoÅ›ci.*Nazwa przekazywana klientom dostÄ™pnoÅ›ci.)Rola przekazywana klientom dostÄ™pnoÅ›ci.WWystÄ™puje, gdy element ToolStripItem zostanie dodany do kolekcji elementÃ³w ToolStrip.EWyrÃ³wnanie elementu wzglÄ™dem elementu ToolStrip jego wÅ‚aÅ›ciciela.VWskazuje, czy element jest wyrÃ³wnywany do poczÄ…tku czy do koÅ„ca elementu ToolStrip.LOkreÅ›la, czy element otrzymuje powiadomienia o przeciÄ…ganiu i upuszczaniu.aOkreÅ›la, czy rozmiar elementu ma byÄ‡ automatycznie zmieniany na podstawie jego obrazu i tekstu.`OkreÅ›la, czy uÅ¼ywaÄ‡ wÅ‚aÅ›ciwoÅ›ci Text czy ToolTipText do wyÅ›wietlania w elemencie ToolTip.HOkreÅ›la, czy element powinien byÄ‡ umieszczony w elemencie ToolStrip.  DKolor tÅ‚a, na ktÃ³rym wyÅ›wietlane sÄ… tekst i grafika w formancie.GPobiera lub ustawia element BindingContext dla tego elementu toolstrip.LNie moÅ¼na dodaÄ‡ elementu wÅ‚aÅ›ciciela do kolekcji elementÃ³w rozwijanych.8Kolekcja elementÃ³w ToolStripItem jest tylko do odczytu.,OkreÅ›la, czy obraz i tekst sÄ… renderowane.-OkreÅ›la, czy wystÄ…pi zdarzenie DoubleClick.+OkreÅ›la tryb rysowania elementu ToolStrip.=WystÄ™puje, gdy stan wÅ‚Ä…czenia elementu zostanie zmieniony.(OkreÅ›la, czy kontrolka jest wÅ‚Ä…czona.6Czcionka uÅ¼ywana do wyÅ›wietlania tekstu w elemencie.NKolor pierwszego planu uÅ¼ywany do wyÅ›wietlania tekstu i grafiki w elemencie.<WyrÃ³wnanie obrazu, ktÃ³ry bÄ™dzie wyÅ›wietlany w elemencie./Obraz, ktÃ³ry bÄ™dzie wyÅ›wietlany w elemencie.BIndeks obrazu w elemencie ImageList do wyÅ›wietlania na elemencie.PKlucz reprezentujÄ…cy obraz w elemencie ImageList do wyÅ›wietlania na elemencie.AElement ImageList do pobrania obrazu wyÅ›wietlanego na elemencie.´OkreÅ›la, czy obraz na elemencie zmieni rozmiar, tak aby pomieÅ›ciÄ‡ siÄ™ na elemencie ToolStrip. Aby kontrolowaÄ‡ rozmiar obrazu, uÅ¼yj wartoÅ›ci â€ToolStrip.ImageScalingSizeâ€.fOkreÅ›la kolor przezroczysty na obrazie elementu dla elementÃ³w, ktÃ³re obsÅ‚ugujÄ… przezroczystoÅ›Ä‡.BOkreÅ›la odstÄ™p miÄ™dzy tym elementem a elementem przylegajÄ…cym.FWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Available zostanie zmieniona.RWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci BackColor zostanie zmieniona w elemencie.CWystÄ™puje za kaÅ¼dym razem, gdy zmienia siÄ™ kontekst powiÄ…zania.,WystÄ™puje, gdy element zostanie klikniÄ™ty.RWystÄ™puje za kaÅ¼dym razem, gdy polecenie, ktÃ³re moÅ¼na powiÄ…zaÄ‡, zmieni siÄ™.WystÄ™puje, gdy mysz przeciÄ…gnie element, a uÅ¼ytkownik zwolni mysz, wskazujÄ…c, Å¼e element ma byÄ‡ upuszczony w tym elemencie.OWystÄ™puje, gdy mysz przeciÄ…gnie element do obszary klienckiego tego elementu.hWystÄ™puje, gdy mysz przeciÄ…gnie element i nie znajduje siÄ™ juÅ¼ nad obszarem klienckim tego elementu.OWystÄ™puje, gdy mysz przeciÄ…gnie element nad obszarem klienckim tego elementu.RWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci BackColor zostanie zmieniona w elemencie.XWystÄ™puje, gdy mysz przeciÄ…ga element. System Å¼Ä…da odpowiedzi elementu na ten efekt.%WystÄ™puje, gdy formant uzyska fokus.KWystÄ™puje, gdy lokalizacja elementu ToolStripItem zostanie zaktualizowana.%WystÄ™puje, gdy formant utraci fokus.5WystÄ™puje, gdy zostanie naciÅ›niÄ™ty przycisk myszy.>WystÄ™puje, gdy mysz przejdzie do widocznej czÄ™Å›ci elementu.RWystÄ™puje, gdy mysz pozostaje statyczna wewnÄ…trz elementu przez okreÅ›lony czas.9WystÄ™puje, gdy mysz opuÅ›ci widocznÄ… czÄ™Å›Ä‡ elementu.6WystÄ™puje, gdy wskaÅºnik myszy zostanie przesuniÄ™ty.2WystÄ™puje, gdy przycisk myszy zostanie zwolniony.3WystÄ™puje, gdy element wymaga ponownego rysowania.FWystÄ™puje, gdy klient uÅ‚atwieÅ„ dostÄ™pu wywoÅ‚a pomoc dla elementu.›WystÄ™puje, gdy element zostanie przeciÄ…gniÄ™ty za pomocÄ… myszy. System Å¼Ä…da informacji, czy moÅ¼na kontynuowaÄ‡ operacjÄ™ przeciÄ…gania i upuszczania.cZdarzenie wywoÅ‚ywane, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci RightToLeft zostanie zmieniona w tym elemencie.CWystÄ™puje, gdy wÅ‚aÅ›ciwoÅ›Ä‡ Text w elemencie zostanie zmieniona.9WystÄ™puje, gdy widocznoÅ›Ä‡ elementu zostanie zmieniona.­OkreÅ›la, czy element bÄ™dzie zawsze wysyÅ‚any do przeciÄ…Å¼enia, nigdy nie bÄ™dzie wysyÅ‚any do przeciÄ…Å¼enia lub bÄ™dzie wysyÅ‚any do przeciÄ…Å¼enia zgodnie z potrzebami.«OkreÅ›la, czy element bÄ™dzie zawsze przenoszony do przeciÄ…Å¼enia, przenoszony do przeciÄ…Å¼enia zgodnie z potrzebami lub nigdy nie bÄ™dzie przenoszony do przeciÄ…Å¼enia.BWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Owner zostanie zmieniona..OkreÅ›la wewnÄ™trzne odstÄ™py w tym elemencie.YWystÄ™puje, gdy element ToolStripItem zostanie usuniÄ™ty z kolekcji elementÃ³w ToolStrip.sOkreÅ›la, czy obraz ma byÄ‡ duplikowany, gdy wÅ‚aÅ›ciwoÅ›Ä‡ RightToLeft jest rÃ³wna wÅ‚aÅ›ciwoÅ›ci RightToLeft.Yes.oWskazuje, czy element powinien byÄ‡ rysowany od prawej do lewej dla jÄ™zykÃ³w RTL z zapisem od prawej do lewej.EWystÄ™puje, gdy wartoÅ›Ä‡ wybranej wÅ‚aÅ›ciwoÅ›ci zostanie zmieniona.Rozmiar elementu.Rozmiar elementu w pikselach.=Dane zdefiniowane przez uÅ¼ytkownika, skojarzone z elementem.=WyrÃ³wnanie tekstu, ktÃ³ry bÄ™dzie wyÅ›wietlany na elemencie.$Tekst do wyÅ›wietlania na elemencie.:OkreÅ›la poÅ‚oÅ¼enie obrazu wzglÄ™dem tekstu na elemencie.1OkreÅ›la tekst do pokazania na elemencie ToolTip.0OkreÅ›la, czy element jest widoczny, czy ukryty.<Kolekcja elementÃ³w do wyÅ›wietlenia na elemencie ToolStrip.1OkreÅ›la kolor Å‚Ä…cza, gdy Å‚Ä…cze jest aktywne.2OkreÅ›la, czy etykieta zachowuje siÄ™ jak Å‚Ä…cze.!Zachowanie podkreÅ›lenia Å‚Ä…cza.OkreÅ›la kolor Å‚Ä…cza.DOkreÅ›la, czy hiperÅ‚Ä…cze powinno byÄ‡ realizowane jako odwiedzone.$OkreÅ›la kolor odwiedzonego Å‚Ä…cza.SWystÄ™puje po okreÅ›leniu ukÅ‚adu i umieszczeniu elementÃ³w na elemencie ToolStrip.0OkreÅ›la orientacjÄ™ ukÅ‚adu elementu ToolStrip.CWystÄ™puje, gdy styl ukÅ‚adu elementu ToolStrip zostanie zmieniony.-CiÄ…g do wyÅ›wietlania jako przycisk skrÃ³tu.HOkreÅ›la, jakÄ… akcjÄ™ naleÅ¼y podjÄ…Ä‡, gdy dopasowanie jest pomyÅ›lne.GOperacja jest niemoÅ¼liwa. Å¹rÃ³dÅ‚o i element docelowy sÄ… identyczne.TSÅ‚uÅ¼y do dopasowywania i pozycjonowania w elemencie ToolStrip elementu docelowego.\WywoÅ‚aj pustego konstruktora elementu ToolStripComboBox, ktÃ³ry dostarcza element ComboBox.ZWywoÅ‚aj pustego konstruktora elementu ToolStripTextBox, ktÃ³ry dostarcza element TextBox.[WystÄ™puje, gdy rozpocznie siÄ™ przenoszenie elementu ToolStrip w elemencie ToolStripPanel.ZWystÄ™puje, gdy zakoÅ„czy siÄ™ przenoszenie elementu ToolStrip w elemencie ToolStripPanel.Opcje elementu ToolBar?WystÄ™puje, gdy uchwyt przenoszenia wymaga ponownego rysowania.«WartoÅ›ci przesuniÄ™cia i dÅ‚ugoÅ›ci sÄ… spoza zakresu tablicy lub liczba przekracza liczbÄ™ elementÃ³w znajdujÄ…cych siÄ™ miedzy indeksem a koÅ„cem kolekcji ÅºrÃ³dÅ‚owej.Kolekcja wierszy w panelu. &Style rysowania stosowane do formantu.ºWÅ‚aÅ›ciwoÅ›ci RenderMode nie moÅ¼na bezpoÅ›rednio ustawiÄ‡ na wartoÅ›Ä‡ â€Customâ€, aby uÅ¼yÄ‡ niestandardowego elementu ToolStripRenderer, ustaw zamiast tego wÅ‚aÅ›ciwoÅ›Ä‡ Renderer.EWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci Renderer zostanie zmieniona.uOkreÅ›la, czy element ToolStrip ma utrwaliÄ‡ ustawienia uÅ¼ytkownika przy uÅ¼yciu elementu IPersistComponentSettings.Wiersz w dÃ³Å‚Wiersz w gÃ³rÄ™9OkreÅ›la klucz ustawieÅ„ uÅ¼ywany do zapisania ustawieÅ„.SElement DropDown jest taki sam jak element Parent ToolStrip. Nie moÅ¼na rozwinÄ…Ä‡.:OkreÅ›la, czy wyÅ›wietlaÄ‡ elementy ToolTip na elementach.`OkreÅ›la iloÅ›Ä‡ miejsca przysÅ‚ugujÄ…cÄ… czÄ™Å›ci DropDownButton elementu ToolStripSplitButton.@WystÄ™puje gdy czÄ™Å›Ä‡ przycisku podziaÅ‚u zostanie klikniÄ™ta.KWystÄ™puje gdy czÄ™Å›Ä‡ przycisku podziaÅ‚u zostanie dwukrotnie klikniÄ™ta.>WystÄ™puje, gdy wÅ‚aÅ›ciwoÅ›Ä‡ DefaultItem zostanie zmieniona.ROkreÅ›la szerokoÅ›Ä‡ sekcji podziaÅ‚u miÄ™dzy domyÅ›lnym i rozwijanym przyciskiem.'Kontener musi byÄ‡ elementem ToolStrip.>OkreÅ›la strony panelu, ktÃ³re majÄ… wyÅ›wietlaÄ‡ obramowanie.!OkreÅ›la styl obramowania panelu.3OkreÅ›la, czy element wypeÅ‚nia pozostaÅ‚e miejsce.YOkreÅ›la, czy element ToolStrip rozciÄ…ga siÄ™ od koÅ„ca do koÅ„ca w kontenerze raftingu.MWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci TextBoxTextAlign zostanie zmieniona..OkreÅ›la kierunek pisania tekstu na elemencie.jOkreÅ›la, czy element ToolTip jest aktywny. Etykietka pojawi siÄ™ tylko wtedy, jeÅ›li zostaÅ‚a aktywowana.DDodanie porady do macierzystego formantu ToolTip nie powiodÅ‚o siÄ™.sOkreÅ›la czas widocznoÅ›ci elementu ToolTip, gdy wskaÅºnik pozostaje nieruchomy wewnÄ…trz obszaru elementu ToolTip.RUstawia odpowiednie wartoÅ›ci elementÃ³w AutoPopDelay, InitialDelay i ReshowDelay.Kolor tÅ‚a formantu ToolTip.RWystÄ™puje w trybie OwnerDraw, gdy istnieje potrzeba narysowania elementu ToolTip.=WartoÅ›ci â€{0}â€ nie moÅ¼na ustawiÄ‡ tak, aby byÅ‚a pusta.(Kolor pierwszego planu formantu ToolTip.~OkreÅ›la czas, jaki wskaÅºnik musi spÄ™dziÄ‡ w bezruchu wewnÄ…trz obszaru elementu ToolTip, zanim pojawi siÄ™ element ToolTip.;Wskazuje, czy element ToolTip bÄ™dzie miaÅ‚ ksztaÅ‚t dymka.DKontroluje, czy system lub uÅ¼ytkownik rysujÄ… elementy/podelementy.8WystÄ™puje zawsze, gdy ma byÄ‡ pokazany element ToolTip. OkreÅ›la czas, jaki upÅ‚ywa przed pojawieniem siÄ™ kolejnego elementu ToolTip, gdy wskaÅºnik zostanie przeniesiony z jednego obszaru elementu ToolTip do innego.kOkreÅ›la, czy etykietka narzÄ™dzia bÄ™dzie zawsze wyÅ›wietlana, nawet gdy okno nadrzÄ™dne nie jest aktywne.[Po ustawieniu na wartoÅ›Ä‡ true Å¼adne znaki & we wÅ‚aÅ›ciwoÅ›ci Text nie sÄ… wyÅ›wietlane.!OkreÅ›la tytuÅ‚ elementu ToolTip.WOkreÅ›la element ToolTip pokazywany, gdy wskaÅºnik myszy jest przesuwany nad formantem.1OkreÅ›la ikonÄ™ pokazywanÄ… na elemencie ToolTip.fPo ustawieniu na wartoÅ›Ä‡ true animacje sÄ… uÅ¼ywane, gdy element ToolTip jest pokazywany lub ukryty.nPo ustawieniu na wartoÅ›Ä‡ true efekt zanikania jest uÅ¼ywany, gdy elementy ToolTip sÄ… pokazywane lub ukryte.<Formantu najwyÅ¼szego poziomu nie moÅ¼na dodaÄ‡ do formantu.UNie moÅ¼na ustawiÄ‡ wÅ‚aÅ›ciwoÅ›ci TopLevel na wartoÅ›Ä‡ true dla formantÃ³w ActiveX.ENie moÅ¼na zmieniÄ‡ stylu formantu nadrzÄ™dnego najwyÅ¼szego poziomu.€Wskazuje, czy rozmiar formantu bÄ™dzie zmieniany automatycznie w oparciu o obliczenie domyÅ›lnych wymiarÃ³w paskÃ³w przewijania.‰Liczba pozycji, o jakÄ… zostanie przesuniÄ™ty suwak w odpowiedzi na klikniÄ™cie myszÄ… lub naciÅ›niÄ™cie klawisza PAGE UP albo PAGE DOWN.@LargeChange: wartoÅ›Ä‡ '{0}' musi byÄ‡ wiÄ™ksza od lub rÃ³wna 0.DuÅ¼y spadekDuÅ¼y wzrost=Maksymalna wartoÅ›Ä‡ dla pozycji suwaka w elemencie TrackBar.<Minimalna wartoÅ›Ä‡ dla pozycji suwaka w elemencie TrackBar.>WystÄ™puje, gdy suwak elementu TrackBar zostanie przesuniÄ™ty.Orientacja formantu.
+StanowiskosLiczba pozycji, o jakÄ… zostanie przesuniÄ™ty suwak w odpowiedzi na wprowadzanie z klawiatury (klawisze strzaÅ‚ek).@SmallChange: wartoÅ›Ä‡ '{0}' musi byÄ‡ wiÄ™ksza od lub rÃ³wna 0.'Liczba pozycji miÄ™dzy znacznikami osi.FWskazuje, gdzie w obiekcie TrackBar majÄ… siÄ™ pojawiÄ‡ znaczniki osi.Pozycja suwaka.5Formant nie obsÅ‚uguje przezroczystych kolorÃ³w tÅ‚a.6DÅ‚ugoÅ›Ä‡ tekstu musi byÄ‡ mniejsza niÅ¼ 128 znakÃ³w.Kolor tÅ‚a wÄ™zÅ‚a drzewa.^Nie moÅ¼na wykonaÄ‡ elementu BeginEdit, poniewaÅ¼ wÅ‚aÅ›ciwoÅ›Ä‡ LabelEdit ma wartoÅ›Ä‡ false.ŒElement TreeNode jest juÅ¼ powiÄ…zany z innym elementem TreeView. NaleÅ¼y go najpierw usunÄ…Ä‡ z jego bieÅ¼Ä…cej lokalizacji lub sklonowaÄ‡.7Wskazuje, czy wÄ™zeÅ‚ drzewa jest w stanie zaznaczenia.mUtworzono odwoÅ‚anie cykliczne. Nie moÅ¼na dodaÄ‡ elementu TreeNode jako elementu potomnego wzglÄ™dem siebie.!Parametr musi byÄ‡ typu TreeNode.Kolor tÅ‚a wÄ™zÅ‚a drzewa.dWartoÅ›Ä‡ indeksu ImageList obrazu wyÅ›wietlanego, gdy wÄ™zeÅ‚ drzewa nie jest w stanie zaznaczenia.GIdentyfikuje obraz wyÅ›wietlany na wÄ™Åºle, gdy nie jest on zaznaczony.1Pozycja wÄ™zÅ‚a drzewa w kolekcji wÄ™zÅ‚a drzewa.±PeÅ‚na Å›cieÅ¼ka dostÄ™pu moÅ¼e zostaÄ‡ pobrana tylko wtedy, gdy do elementu TreeView zostanie dodany element TreeNode. Element TreeNode nie zostaÅ‚ dodany do elementu TreeView.FCzcionka uÅ¼ywana do wyÅ›wietlania tekstu na etykiecie wÄ™zÅ‚a drzewa.Nazwa obiektu. rKlucz w wartoÅ›ci listy obrazÃ³w reprezentujÄ…cy obraz wyÅ›wietlany, gdy wÄ™zeÅ‚ drzewa jest w stanie zaznaczenia.mKlucz w wartoÅ›ci ImageList reprezentujÄ…cy obraz wyÅ›wietlany, gdy wÄ™zeÅ‚ drzewa jest w stanie zaznaczenia.~Indeks w elemencie StateImageList wyÅ›wietlany, gdy element CheckBoxes jest ustawiony na wartoÅ›Ä‡ false w elemencie TreeView.RIdentyfikuje obraz wyÅ›wietlany w wÄ™Åºle w celu wskazania jego bieÅ¼Ä…cego stanu./Tekst wyÅ›wietlany na etykiecie wÄ™zÅ‚a drzewa.cTekst elementu ToolTip, ktÃ³ry bÄ™dzie wyÅ›wietlany, gdy mysz bÄ™dzie siÄ™ znajdowaÄ‡ nad wÄ™zÅ‚em.iWystÄ™puje, gdy pole wyboru w wÄ™Åºle drzewa zostanie zaznaczone lub jego zaznaczenie zostaÅ‚o usuniÄ™te.+WystÄ™puje, gdy wÄ™zeÅ‚ zostanie zwiniÄ™ty.FWystÄ™puje, gdy tekst w wÄ™Åºle zostanie zmieniony przez uÅ¼ytkownika.-WystÄ™puje, gdy wÄ™zeÅ‚ zostanie rozwiniÄ™ty./WystÄ™puje, gdy zaznaczenie zostanie zmienione.hWystÄ™puje, gdy pole wyboru w wÄ™Åºle drzewa ma zostaÄ‡ zaznaczone lub zaznaczenie ma zostaÄ‡ usuniÄ™te.-WystÄ™puje, gdy wÄ™zeÅ‚ ma zostaÄ‡ zwiniÄ™ty.HWystÄ™puje, gdy tekst w wÄ™Åºle ma zostaÄ‡ zmieniony przez uÅ¼ytkownika./WystÄ™puje, gdy wÄ™zeÅ‚ ma zostaÄ‡ rozwiniÄ™ty.1WystÄ™puje, gdy zaznaczenie ma zostaÄ‡ zmienione.BWskazywanie, czy pola wyboru zostaÅ‚y wyÅ›wietlone obok wÄ™zÅ‚Ã³w.7Kontroluje, czy system lub uÅ¼ytkownik rysujÄ… wÄ™zÅ‚y.QWystÄ™puje w trybie rysowania przez wÅ‚aÅ›ciciela, gdy trzeba narysowaÄ‡ wÄ™zeÅ‚.CWskazuje, czy wyrÃ³Å¼nienie obejmuje szerokoÅ›Ä‡ elementu TreeView.FUsuwa wyrÃ³Å¼nienie z zaznaczonego wÄ™zÅ‚a, gdy formant nie ma fokusa.KWskazuje, czy wÄ™zeÅ‚ reaguje, gdy przesuwany jest nad nim wskaÅºnik myszy.&DomyÅ›lny indeks obrazu dla wÄ™zÅ‚Ã³w.%DomyÅ›lny klucz obrazu dla wÄ™zÅ‚Ã³w.;Formant ImageList, z ktÃ³rego pobierane sÄ… obrazy wÄ™zÅ‚a.8SzerokoÅ›Ä‡ wciÄ™cia wÄ™zÅ‚Ã³w podrzÄ™dnych w pikselach.1WysokoÅ›Ä‡ kaÅ¼dego wÄ™zÅ‚a w elemencie TreeView.BWskazuje, czy uÅ¼ytkownik moÅ¼e edytowaÄ‡ tekst etykiet wÄ™zÅ‚Ã³w.3Kolor linii Å‚Ä…czÄ…cych wÄ™zÅ‚y elementu TreeView.?WystÄ™puje, gdy wÄ™zeÅ‚ zostanie klikniÄ™ty przy uÅ¼yciu myszy.JWystÄ™puje, gdy wÄ™zeÅ‚ zostanie dwukrotnie klikniÄ™ty przy uÅ¼yciu myszy.:WystÄ™puje, gdy mysz znajduje siÄ™ nad elementem TreeNode.+ModuÅ‚ porÃ³wnujÄ…cy dla elementu TreeView.&WÄ™zÅ‚y gÅ‚Ã³wne w formancie TreeView.XOgranicznik ciÄ…gu uÅ¼ywany w Å›cieÅ¼ce zwracanej przez wÅ‚aÅ›ciwoÅ›Ä‡ FullPath wÄ™zÅ‚a.šWskazuje, czy w formancie majÄ… byÄ‡ wyÅ›wietlane paski przewijania, jeÅ›li formant zawiera wiÄ™cej wÄ™zÅ‚Ã³w niÅ¼ moÅ¼na zmieÅ›ciÄ‡ w widocznym obszarze.3DomyÅ›lny indeks obrazu dla zaznaczonych wÄ™zÅ‚Ã³w.(Obraz domyÅ›lny dla wybranych wÄ™zÅ‚Ã³w.`Aktualnie zaznaczony wÄ™zeÅ‚ lub wartoÅ›Ä‡ zerowa, jeÅ›li Å¼aden wÄ™zeÅ‚ nie zostaÅ‚ zaznaczony.{Wskazuje, czy sÄ… wyÅ›wietlane linie miÄ™dzy wÄ™zÅ‚ami tego samego poziomu i miÄ™dzy wÄ™zÅ‚ami nadrzÄ™dnymi a podrzÄ™dnymi.PWskazuje, czy obok wÄ™zÅ‚Ã³w nadrzÄ™dnych sÄ… wyÅ›wietlane przyciski plus/minus.BWskazuje, czy miÄ™dzy wÄ™zÅ‚ami gÅ‚Ã³wnymi sÄ… wyÅ›wietlane linie.?Wskazuje, czy elementy ToolTip bÄ™dÄ… wyÅ›wietlane w wÄ™zÅ‚ach.$Wskazuje, czy wÄ™zÅ‚y sÄ… sortowane.WFormant ImageList uÅ¼ywany przez element TreeView w przypadku stanÃ³w niestandardowych./Pierwszy widoczny wÄ™zeÅ‚ w elemencie TreeView.1Liczba widocznych wÄ™zÅ‚Ã³w w elemencie TreeView.FNie moÅ¼na zlokalizowaÄ‡ typu {0} w danych w wierszu {1}, pozycja {2}."Nie moÅ¼na zlokalizowaÄ‡ typu {0}.;Formanty dodane do tej kolekcji muszÄ… byÄ‡ typu â€{0}â€.IFormanty dodane do tej kolekcji muszÄ… byÄ‡ typu â€{0}â€ lub â€{1}â€.#Nie moÅ¼na zainicjowaÄ‡ skÅ‚adnika.(Nie moÅ¼na skonfigurowaÄ‡ tekstu panelu."Schowek zawiera nieoczekiwany typ.<OkreÅ›lony format schowka nie jest zgodny z typem â€{0}â€.Nieznany typ ATTRIBUTE.Nieznany ukÅ‚adNie zaimplementowano.sWskazuje sposÃ³b rozmieszczenia przez formant zwiÄ™ksz-zmniejsz strzaÅ‚ek w gÃ³rÄ™ i w dÃ³Å‚ wzglÄ™dem pola edycji.5Wskazuje styl obramowania formantu zwiÄ™ksz-zmniejsz.W dÃ³Å‚˜Wskazuje, czy wartoÅ›ci w formancie zwiÄ™ksz-zmniejsz bÄ™dÄ… zwiÄ™kszane i zmniejszane przez naciskanie klawiszy STRZAÅKA W GÃ“RÄ˜ i STRZAÅKA W DÃ“Å.%Preferowana wysokoÅ›Ä‡ tego formantu.0Wskazuje, czy pole edycji jest tylko do odczytu.2Wskazuje sposÃ³b wyrÃ³wnania tekstu w polu edycji.W gÃ³rÄ™EdytujiOkreÅ›la, czy renderowanie tekstu powinno byÄ‡ zgodne z poprzednimi wydaniami formantÃ³w systemu Windows.)Wskazuje, czy panel ma mieÄ‡ obramowanie.EWystÄ™puje za kaÅ¼dym razem, gdy jest Å‚adowany formant uÅ¼ytkownika.PionowoEOperacja utworzenia uchwytu elementu Visual Style nie powiodÅ‚a siÄ™.yOperacja zwiÄ…zana z elementem Visual Styles zakoÅ„czyÅ‚a siÄ™ bÅ‚Ä™dem, poniewaÅ¼ Å¼aden styl wizualny nie jest aktywny.‘Operacja zwiÄ…zana z elementem Visual Styles zakoÅ„czyÅ‚a siÄ™ bÅ‚Ä™dem, poniewaÅ¼ style wizualne sÄ… aktualnie wyÅ‚Ä…czone w obszarze klienckim.cPodana kombinacja elementÃ³w Class, Part i State nie jest zdefiniowana w aktualnym stylu wizualnym.©Formant WebBrowser nie obsÅ‚uguje elementu AllowDrop. UÅ¼yj elementu AllowWebBrowserDrop, aby zezwoliÄ‡ elementowi WebBrowser na przetworzenie przeciÄ…gania/upuszczania.[OkreÅ›la, czy po wstÄ™pnym zaÅ‚adowaniu formant WebBrowser moÅ¼e przejÅ›Ä‡ do innej strony.QOkreÅ›la, czy formant WebBrowser bÄ™dzie otrzymywaÄ‡ powiadomienia o upuszczeniu.GFormant WebBrowser nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci BackgroundImageLayout.AFormant WebBrowser nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci BackgroundImage.lWystÄ™puje, gdy dostÄ™pnoÅ›Ä‡ poprzedniej strony w historii nawigacji przeglÄ…darki sieci Web zmieni siÄ™.  kWystÄ™puje, gdy dostÄ™pnoÅ›Ä‡ nastÄ™pnej strony w historii nawigacji przeglÄ…darki sieci Web zmieni siÄ™.  8Formant WebBrowser nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci Cursor.mWystÄ™puje, gdy dokument obsÅ‚ugiwany przez formant przeglÄ…darki sieci Web zostanie caÅ‚kowicie zaÅ‚adowany./WystÄ™puje przy kaÅ¼dej zmianie tekstu tytuÅ‚u.9Formant WebBrowser nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci Enabled.4WystÄ™puje przy kaÅ¼dej zmianie poziomu szyfrowania.&WystÄ™puje, gdy zostanie pobrany plik.GOkreÅ›la, czy formant przeglÄ…darki sieci Web dziaÅ‚a w trybie offline.UWskazuje, czy menu kontekstowe macierzystej przeglÄ…darki sieci web ma byÄ‡ uÅ¼ywane.6Nawigacja do pokrewnego adresu URL nie powiodÅ‚a siÄ™.6WystÄ™puje po wykonaniu nawigacji elementu WebBrowser.?WystÄ™puje przed wykonaniem nawigacji przez element WebBrowser.EWystÄ™puje, gdy dla elementu WebBrowser zostanie utworzone nowe okno.SPobranie elementu IWebBrowser2 z macierzystego formantu ActiveX nie powiodÅ‚o siÄ™.Klasa ObjectForScripting musi byÄ‡ widoczna dla modelu COM. SprawdÅº, czy obiekt jest publiczny, lub dodaj atrybut ComVisible do swojej klasy.:WystÄ™puje, gdy nastÄ…pi aktualizacja postÄ™pu pobierania.=Formant WebBrowser nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci RightToLeft.QOkreÅ›la, czy formant WebBrowser pokazuje bÅ‚Ä™dy skryptÃ³w w oknach dialogowych.BOkreÅ›la, czy formant WebBrowser powinien mieÄ‡ paski przewijania.OPoziom uprawnieÅ„ zabezpieczeÅ„, ktÃ³re sÄ… udzielane obsÅ‚ugiwanym dokumentom.-WystÄ™puje przy kaÅ¼dej zmianie tekstu stanu.1Formant WebBrowser nie obsÅ‚uguje wartoÅ›ci Text.BOkreÅ›la adres URL, do ktÃ³rego przeszÅ‚a przeglÄ…darka sieci Web.?Formant WebBrowser nie obsÅ‚uguje wÅ‚aÅ›ciwoÅ›ci UseWaitCursor.TOkreÅ›la, czy niektÃ³re klucze akceleratorÃ³w sÄ… wÅ‚Ä…czone w formancie WebBrowser.>SzerokoÅ›Ä‡ musi byÄ‡ wiÄ™ksza od wartoÅ›ci elementu MinWidth.>Nie moÅ¼na ustawiÄ‡ okna nadrzÄ™dnego systemu Win32 kontrolki.X{0}musi zostaÄ‡ wywoÅ‚any przed utworzeniem pierwszego obiektu IWin32Window w aplikacji.-BieÅ¼Ä…ca procedura okna nie jest oczekiwana.Ustawianie zdarzenia '{0}'Styl obramowania formantu.IWystÄ™puje za kaÅ¼dym razem, gdy czÅ‚onkostwo tej kolekcji ulega zmianie.FWystÄ™puje zawsze, gdy czÅ‚onkostwo tej kolekcji ma zostaÄ‡ zmienione.HWystÄ™puje, gdy konieczne jest narysowanie konkretnego elementu/obszaru.VWystÄ™puje za kaÅ¼dym razem, gdy konieczne jest obliczenie wysokoÅ›ci danego elementu.JWystÄ™puje, gdy wartoÅ›Ä‡ wÅ‚aÅ›ciwoÅ›ci SelectedIndex zostanie zmieniona.'Indeks aktualnie zaznaczonego elementu.bWystÄ™puje, gdy z listy rozwijanej zostanie wybrany element i lista rozwijana zostanie zamkniÄ™ta.AltWsteczCtrl(domyÅ›lna)DeleteEndEnterHomeInsert(brak)PgDnPgUpShift6WystÄ™puje, gdy wartoÅ›Ä‡ formantu zostanie zmieniona.  7  ÎÊï¾   )  —System.Resources.Extensions.DeserializingResourceReader, System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51System.Resources.Extensions.RuntimeResourceSet, System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51   1      gSystem.Drawing.SizeF, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3afSystem.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3aSystem.Windows.Forms.FormStartPosition, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089zSystem.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089gSystem.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3auSystem.Windows.Forms.Padding, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089System.Windows.Forms.TableLayoutSettings, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089PADPP*Ç‡Ò‚ Ô‹¥©é•^Z0š¦65šÔªšHb–€¥ÿŸ²2"­R8‡¯T°m‰°Õµì°ï#©·§>ĞÆó·ÄÊ¦^îİät‹áÁÓé„'¿êû¥ÆêmKí¼áLí9Ê/ócT:	^;	åIÛ¯E‚Âæ×Û-ÕÎ]/gJ7M©=®CñB‘ÎúBC‹QÅ
+–QòÉR°:‹SÁ¤.Uşà1UÑÙ¿YîeŒ^}à•py£oÈ|\»Í|q  /  ¾  û  ~  Ô  ‡   û  ±  ¥  (  ú    7   ƒ  ù  á  $    Q  Ø    ˜  R  x  4  Ú   S  _  Ê  o  á  —          ½   ·  E  ®  \   l  "  õ  A        @  ¶  ñ  2$ t h i s . A u t o S c a l e D i m e n s i o n s      $ t h i s . C l i e n t S i z e    &$ t h i s . S t a r t P o s i t i o n    $ t h i s . T e x t "   > > $ t h i s . N a m e 0   > > $ t h i s . T y p e A   &> > c a n c e l B u t t o n . N a m e µ   *> > c a n c e l B u t t o n . P a r e n t Ã   &> > c a n c e l B u t t o n . T y p e İ   *> > c a n c e l B u t t o n . Z O r d e r S  > > i t e m L i s t . N a m e V  "> > i t e m L i s t . P a r e n t `  > > i t e m L i s t . T y p e g  "> > i t e m L i s t . Z O r d e r Ş  > > o k B u t t o n . N a m e á  "> > o k B u t t o n . P a r e n t ë  > > o k B u t t o n . T y p e   "> > o k B u t t o n . Z O r d e r {  >> > o k C a n c e l T a b l e L a y o u t P a n e l . N a m e ~  B> > o k C a n c e l T a b l e L a y o u t P a n e l . P a r e n t ˜  >> > o k C a n c e l T a b l e L a y o u t P a n e l . T y p e Ÿ  B> > o k C a n c e l T a b l e L a y o u t P a n e l . Z O r d e r   &c a n c e l B u t t o n . A n c h o r "  *c a n c e l B u t t o n . A u t o S i z e 0  *c a n c e l B u t t o n . L o c a t i o n 2  &c a n c e l B u t t o n . M a r g i n :  "c a n c e l B u t t o n . S i z e G  *c a n c e l B u t t o n . T a b I n d e x P  "c a n c e l B u t t o n . T e x t U  i t e m L i s t . A n c h o r ]  .i t e m L i s t . I n t e g r a l H e i g h t x  "i t e m L i s t . L o c a t i o n z  i t e m L i s t . S i z e ƒ  "i t e m L i s t . T a b I n d e x   o k B u t t o n . A n c h o r “  "o k B u t t o n . A u t o S i z e ¡  "o k B u t t o n . L o c a t i o n £  o k B u t t o n . M a r g i n ª  o k B u t t o n . S i z e ·  "o k B u t t o n . T a b I n d e x À  o k B u t t o n . T e x t Å  >o k C a n c e l T a b l e L a y o u t P a n e l . A n c h o r É  Bo k C a n c e l T a b l e L a y o u t P a n e l . A u t o S i z e Ù  Ho k C a n c e l T a b l e L a y o u t P a n e l . C o l u m n C o u n t Û  No k C a n c e l T a b l e L a y o u t P a n e l . L a y o u t S e t t i n g s à  Bo k C a n c e l T a b l e L a y o u t P a n e l . L o c a t i o n '  Bo k C a n c e l T a b l e L a y o u t P a n e l . R o w C o u n t 2  :o k C a n c e l T a b l e L a y o u t P a n e l . S i z e 7  Bo k C a n c e l T a b l e L a y o u t P a n e l . T a b I n d e x A  @6, 13A329, 190BCenterScreenZaznacz oknoMdiWindowDialogrSystem.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089cancelButtonokCancelTableLayoutPaneltSystem.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0891itemList$thisuSystem.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0891okButtonokCancelTableLayoutPaneltSystem.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0890okCancelTableLayoutPanel$this~System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0890CLeft, RightD81, 0E
+3, 0, 0, 0A75, 23   AnulujCTop, Bottom, Left, Right D12, 12A305, 137    CLeft, RightD0, 0E
+0, 0, 3, 0A75, 23    OKCBottom, Right   FÃ<?xml version="1.0" encoding="utf-16"?><TableLayoutSettings><Controls><Control Name="okButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /><Control Name="cancelButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /></Controls><Columns Styles="Percent,50,Percent,50" /><Rows Styles="AutoSize,0" /></TableLayoutSettings>D161, 155   A156, 23        Ï4  ÎÊï¾   )  —System.Resources.Extensions.DeserializingResourceReader, System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51System.Resources.Extensions.RuntimeResourceSet, System.Resources.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51   x      fSystem.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3azSystem.Windows.Forms.AnchorStyles, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089gSystem.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3aSystem.Windows.Forms.HorizontalAlignment, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089PA®¾Æ…JdKˆNŠ§-6‹„†®Èí)•¬gÒ–$Ş–Ìš÷–K¼všô‡„šÔªš¹›¸›¨7›å7#çUÒ¡«¢÷Ä¾¢ fé¯¢ì¯Õµì°*¯(µ˜Œµ­Øà·ÒÖğ·åöw¸Ë@¹ÉÉºöÆ º¹\Í¾ZhÊÀ1«ÔÀFŞ\ÃŞÄÍ¥-É‹˜™Ê˜˜úË^¶şËC4«ÍßÅÍF¾kÏ»ºÔ¸ÀÔÍ‰ÕË BØtìOØxWß*Và…åè³cÙì ô$ôH4ö·Ö?ö©úaøÖ÷qø
+–úõæ£úk<ÈüÆÑü¬ĞúıÌ[üş3ÿ-;*R9:1ÌVvçIë¬thï|ší„¶K2O¿ÿ†Üîy)ôø ¥âO†#İš‹#í¨ô#‰i)ùÕn)Z,Bär0ïg[4v…4àï5pñ6l$¦9gq’?à}q@_úx@Êy@ß©{@ÁĞ BzéJB®CñB‘ÎúBîûCÑD³" GG‰eÚHÉ‘OöOrM&O“TQ¿
+(R°†SÑ¸UÖlWölîW+Z%W\U;€^ò/£dü¼Œf<úÕm«"äJ  ˆ  Ä  ;  #  ê  W  ˜  &  ù
+  <  X   x  /      ó  '  Ú  ›  Ş  3     •  K  ‚  Ï  .  Á    „  ï  ¾  Ÿ  l  W  İ    ¹  Ú      œ  `  %  {  Ÿ  õ  +  V  Á  N  ô  ¹  -	  d	  ›	  Ò	  Q  ˆ  ¿  ö    u  ¬  ã        ?  O    >  \  ¹  õ  	
+  @
+    w
+  ¸
+  °  `  !  ì    ì  «  è  È  ¬  œ  Ù    e  ‹  “  Ü  q      è   «   Ç  y  ë  c  µ  ‘  `  `  ó  Â  ¶  U  $  b  †  Š  =  /    $  .$ t h i s . A u t o S c a l e B a s e S i z e      $ t h i s . C l i e n t S i z e    $ t h i s . T e x t    > > $ t h i s . N a m e %   > > $ t h i s . T y p e 3   8> > a u t o T o o l S t r i p M e n u I t e m . N a m e §   8> > a u t o T o o l S t r i p M e n u I t e m . T y p e ¾   6> > c l o s e T o o l S t r i p B u t t o n . N a m e ?  6> > c l o s e T o o l S t r i p B u t t o n . T y p e U  >> > f o u r p a g e s T o o l S t r i p B u t t o n . N a m e Ô  >> > f o u r p a g e s T o o l S t r i p B u t t o n . T y p e î  :> > o n e p a g e T o o l S t r i p B u t t o n . N a m e m  :> > o n e p a g e T o o l S t r i p B u t t o n . T y p e …  $> > p a g e C o u n t e r . N a m e   (> > p a g e C o u n t e r . P a r e n t   $> > p a g e C o u n t e r . T y p e   (> > p a g e C o u n t e r . Z O r d e r •  2> > p a g e T o o l S t r i p L a b e l . N a m e ˜  2> > p a g e T o o l S t r i p L a b e l . T y p e ¬  6> > p r i n t T o o l S t r i p B u t t o n . N a m e *  6> > p r i n t T o o l S t r i p B u t t o n . T y p e @  D> > s e p a r a t o r T o o l S t r i p S e p a r a t o r . N a m e ¿  D> > s e p a r a t o r T o o l S t r i p S e p a r a t o r . T y p e Ü  F> > s e p a r a t o r T o o l S t r i p S e p a r a t o r 1 . N a m e _  F> > s e p a r a t o r T o o l S t r i p S e p a r a t o r 1 . T y p e }  <> > s i x p a g e s T o o l S t r i p B u t t o n . N a m e    <> > s i x p a g e s T o o l S t r i p B u t t o n . T y p e   @> > t h r e e p a g e s T o o l S t r i p B u t t o n . N a m e ˜  @> > t h r e e p a g e s T o o l S t r i p B u t t o n . T y p e ³  "> > t o o l S t r i p 1 . N a m e 2  &> > t o o l S t r i p 1 . P a r e n t >  "> > t o o l S t r i p 1 . T y p e E  &> > t o o l S t r i p 1 . Z O r d e r ¾  2> > t o o l S t r i p M e n u I t e m 1 . N a m e Á  2> > t o o l S t r i p M e n u I t e m 1 . T y p e Õ  2> > t o o l S t r i p M e n u I t e m 2 . N a m e V  2> > t o o l S t r i p M e n u I t e m 2 . T y p e j  2> > t o o l S t r i p M e n u I t e m 3 . N a m e ë  2> > t o o l S t r i p M e n u I t e m 3 . T y p e ÿ  2> > t o o l S t r i p M e n u I t e m 4 . N a m e €	  2> > t o o l S t r i p M e n u I t e m 4 . T y p e ”	  2> > t o o l S t r i p M e n u I t e m 5 . N a m e 
+  2> > t o o l S t r i p M e n u I t e m 5 . T y p e )
+  2> > t o o l S t r i p M e n u I t e m 6 . N a m e ª
+  2> > t o o l S t r i p M e n u I t e m 6 . T y p e ¾
+  2> > t o o l S t r i p M e n u I t e m 7 . N a m e ?  2> > t o o l S t r i p M e n u I t e m 7 . T y p e S  2> > t o o l S t r i p M e n u I t e m 8 . N a m e Ô  2> > t o o l S t r i p M e n u I t e m 8 . T y p e è  <> > t w o p a g e s T o o l S t r i p B u t t o n . N a m e i  <> > t w o p a g e s T o o l S t r i p B u t t o n . T y p e ‚  >> > z o o m T o o l S t r i p S p l i t B u t t o n . N a m e   >> > z o o m T o o l S t r i p S p l i t B u t t o n . T y p e   Va u t o T o o l S t r i p M e n u I t e m . A c c e s s i b l e D e s c r i p t i o n    Ha u t o T o o l S t r i p M e n u I t e m . A c c e s s i b l e N a m e ±  4a u t o T o o l S t r i p M e n u I t e m . T e x t ·  Tc l o s e T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n ½  Fc l o s e T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e Î  2c l o s e T o o l S t r i p B u t t o n . T e x t ×  \f o u r p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n á  Nf o u r p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e ú  :f o u r p a g e s T o o l S t r i p B u t t o n . T e x t   Xo n e p a g e T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n *  Jo n e p a g e T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e D  6o n e p a g e T o o l S t r i p B u t t o n . T e x t [  Bp a g e C o u n t e r . A c c e s s i b l e D e s c r i p t i o n r  4p a g e C o u n t e r . A c c e s s i b l e N a m e   $p a g e C o u n t e r . A n c h o r ™  (p a g e C o u n t e r . L o c a t i o n ¦   p a g e C o u n t e r . S i z e ¯  (p a g e C o u n t e r . T a b I n d e x ¸  *p a g e C o u n t e r . T e x t A l i g n ½  .p a g e T o o l S t r i p L a b e l . T e x t Å  Hp r e v i e w C o n t r o l . A c c e s s i b l e D e s c r i p t i o n Î  :p r e v i e w C o n t r o l . A c c e s s i b l e N a m e Ğ  Tp r i n t T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n à  Fp r i n t T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e ñ  2p r i n t T o o l S t r i p B u t t o n . T e x t ù  Zs i x p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n   Ls i x p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e   8s i x p a g e s T o o l S t r i p B u t t o n . T e x t 2  ^t h r e e p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n J  Pt h r e e p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e a  <t h r e e p a g e s T o o l S t r i p B u t t o n . T e x t w  2t o o l S t r i p 1 . A c c e s s i b l e N a m e   &t o o l S t r i p 1 . A u t o S i z e ¤  &t o o l S t r i p 1 . L o c a t i o n ¦  t o o l S t r i p 1 . S i z e ­  &t o o l S t r i p 1 . T a b I n d e x ·  t o o l S t r i p 1 . T e x t ¼  Pt o o l S t r i p M e n u I t e m 1 . A c c e s s i b l e D e s c r i p t i o n È  Bt o o l S t r i p M e n u I t e m 1 . A c c e s s i b l e N a m e Î  .t o o l S t r i p M e n u I t e m 1 . T e x t Ô  Pt o o l S t r i p M e n u I t e m 2 . A c c e s s i b l e D e s c r i p t i o n Ú  Bt o o l S t r i p M e n u I t e m 2 . A c c e s s i b l e N a m e à  .t o o l S t r i p M e n u I t e m 2 . T e x t æ  Pt o o l S t r i p M e n u I t e m 3 . A c c e s s i b l e D e s c r i p t i o n ì  Bt o o l S t r i p M e n u I t e m 3 . A c c e s s i b l e N a m e ò  .t o o l S t r i p M e n u I t e m 3 . T e x t ø  Pt o o l S t r i p M e n u I t e m 4 . A c c e s s i b l e D e s c r i p t i o n ş  Bt o o l S t r i p M e n u I t e m 4 . A c c e s s i b l e N a m e   .t o o l S t r i p M e n u I t e m 4 . T e x t 
+  Pt o o l S t r i p M e n u I t e m 5 . A c c e s s i b l e D e s c r i p t i o n   Bt o o l S t r i p M e n u I t e m 5 . A c c e s s i b l e N a m e   .t o o l S t r i p M e n u I t e m 5 . T e x t   Pt o o l S t r i p M e n u I t e m 6 . A c c e s s i b l e D e s c r i p t i o n   Bt o o l S t r i p M e n u I t e m 6 . A c c e s s i b l e N a m e $  .t o o l S t r i p M e n u I t e m 6 . T e x t )  Pt o o l S t r i p M e n u I t e m 7 . A c c e s s i b l e D e s c r i p t i o n .  Bt o o l S t r i p M e n u I t e m 7 . A c c e s s i b l e N a m e 3  .t o o l S t r i p M e n u I t e m 7 . T e x t 8  Pt o o l S t r i p M e n u I t e m 8 . A c c e s s i b l e D e s c r i p t i o n =  Bt o o l S t r i p M e n u I t e m 8 . A c c e s s i b l e N a m e B  .t o o l S t r i p M e n u I t e m 8 . T e x t G  Zt w o p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e D e s c r i p t i o n L  Lt w o p a g e s T o o l S t r i p B u t t o n . A c c e s s i b l e N a m e c  8t w o p a g e s T o o l S t r i p B u t t o n . T e x t y  \z o o m T o o l S t r i p S p l i t B u t t o n . A c c e s s i b l e D e s c r i p t i o n   Nz o o m T o o l S t r i p S p l i t B u t t o n . A c c e s s i b l e N a m e £  :z o o m T o o l S t r i p S p l i t B u t t o n . T e x t ®  @5, 13@483, 338PodglÄ…d wydrukuPrintpreviewrSystem.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089autoToolStripMenuItemSystem.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089closeToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089fourpagesToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089onepageToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089pageCounter$this{System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0890pageToolStripLabel|System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089printToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089separatorToolStripSeparator€System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089separatorToolStripSeparator1€System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089sixpagesToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089threepagesToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+toolStrip1$thiswSystem.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0891toolStripMenuItem1System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem2System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem3System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem4System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem5System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem6System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem7System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089toolStripMenuItem8System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089twopagesToolStripButton}System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089zoomToolStripSplitButton‚System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089Dopasuj do oknaAutoAutoZamknij to oknoZamknij&ZamknijWyÅ›wietl cztery stronyCztery strony (Ctrl+4)Cztery strony (Ctrl+4)WyÅ›wietl jednÄ… stronÄ™Jedna strona (Ctrl+1)Jedna strona (Ctrl+1)Strona w gÃ³rÄ™ i w dÃ³Å‚
+PageUpDownA
+Top, RightB419, 0@64, 20   CRight&Strona PreviewControlDrukuj dokumentDrukujDrukujWyÅ›wietl szeÅ›Ä‡ stronSzeÅ›Ä‡ stron (Ctrl+5)SzeÅ›Ä‡ stron (Ctrl+5)WyÅ›wietl trzy stronyTrzy strony (Ctrl+3)Trzy strony (Ctrl+3)PrintPreviewToolStrip B0, 0@483, 22    
+toolStrip1500%500%500%200%200%200%150%150%150%100%100%100%75%75%75%50%50%50%25%25%25%10%10%10%WyÅ›wietl dwie stronyDwie strony (Ctrl+2)Dwie strony (Ctrl+2)PowiÄ™ksz dokument	PowiÄ™ksz	PowiÄ™ksz     h]nNÆtÖ§¬
+m•e9OĞ§„N±ÆùäJUnyGl>R¿.Øå¦Éëü›X·™ÚÀëYa(øQ²çC"xÏS5€^€!é]¥é¿ñÃÆ3èÜáw`QÂ;¿yN
+îÌaÔh ÍR¬RêÖMóO0áÙÇÙ÷æ¼\jvœÑ	ÏP                            –         :–                         ,–           _CorDllMain mscoree.dll     ÿ%                                                                                                                                                                                                                                                                                                                                                                                                                                                                       €                  0  €                   H   X  Z          Z4   V S _ V E R S I O N _ I N F O     ½ïş     
+ D¥Ê  
+    ?                         D    V a r F i l e I n f o     $    T r a n s l a t i o n       °º   S t r i n g F i l e I n f o   –   0 0 0 0 0 4 b 0   B   C o m m e n t s   S y s t e m . W i n d o w s . F o r m s     L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   R   F i l e D e s c r i p t i o n     S y s t e m . W i n d o w s . F o r m s     @   F i l e V e r s i o n     1 0 . 0 . 1 2 2 6 . 4 2 3 0 8   f #  I n t e r n a l N a m e   S y s t e m . W i n d o w s . F o r m s . r e s o u r c e s . d l l     € .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   n #  O r i g i n a l F i l e n a m e   S y s t e m . W i n d o w s . F o r m s . r e s o u r c e s . d l l     @   P r o d u c t N a m e     M i c r o s o f t ®   . N E T   † 1  P r o d u c t V e r s i o n   1 0 . 0 . 1 2 + 9 5 0 1 7 c 7 1 1 e 6 a f c 1 0 8 5 1 3 3 d 4 4 0 e 4 2 b 4 b d 7 8 1 5 5 7 0 1     : 	  A s s e m b l y   V e r s i o n   1 0 . 0 . 0 . 0                                                                                                                                                                                                                                                                                                                                                      L6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      xN    0‚Ni	*†H†÷ ‚NZ0‚NV10	`†He 0\
++‚7 N0L0
++‚70	  ¢€ 010	`†He  @“òg>Éù\ßJØš<–Ü{&™n^-ArAé¿ÄÙ%| ‚©0‚ä0‚Ì 3  È$:ÈM“ˆ»    È0	*†H†÷ 0W10	UUS10U
+Microsoft Corporation1(0&UMicrosoft Code Signing PCA 20240260416185741Z270415185741Z0c10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation10U.NET0‚"0	*†H†÷ ‚ 0‚
+‚ Â_°ü;”¨¯lYÃïB° ¯P÷âÿËC`,© ¯%kd‹ÿß?…›½[€å9õFñ#   bsGÉ~1Ø­—àf»F,	0şKe‡ÛU‚y?²XNó($ä“oÆ
+,âW×<*Sfõ­úÑ:bÛjwP<S41"¤úH‰µ")wHYZ1íÑ|×6(IêSùé¯«!sEÖ\Mı BÂÌ!Ï5ú#êvbáüò(’£¡› w”:öú˜Œ°«[ ö—ª~ÂJUÒ'rıGøÕ”ê©ŸÅ´¯a€8aMµ$5
+D±ÁİHB¤N· £‚›0‚—0Uÿ€0U%0
++‚7L+0UÁÛ…?ŞWĞ×rl2ª¦ÿcWtıqò0EU>0<¤:0810UMicrosoft Corporation10U464223+5075960U#0€Y?T!Ú­Oïåæ£×-”10`UY0W0U S Q†Ohttp://www.microsoft.com/pkiops/crl/Microsoft%20Code%20Signing%20PCA%202024.crl0m+a0_0]+0†Qhttp://www.microsoft.com/pkiops/certs/Microsoft%20Code%20Signing%20PCA%202024.crt0Uÿ0 0	*†H†÷ ‚ £S'Dz¯tÿH]9H›Fâo¢À"ËwæÛñ¥şÕl/A7ØnB=áNyˆªš­İ¢g·#/ú­.å')°¼'xú¨Ø‡ÿ¶±ñÍvÈhèÆŸ6Ù¾:¢¸4šö{áıU¾Ö÷pSàxÛ!1„´ˆ‡ĞRB;ßL`zPû8!˜+`ßçìÙt!«êÏìëü^rYgº‚Ht=ùnÿœªNèÎĞ™[:öÔ½C–ÊºE‹…ƒı²ÊnáwÕ~î—¢:Ên”}V.oª–^9„étR_3Gš¦a´(ÊÊvÜ0s^BJ²ûŸ÷ˆô¯Ïwªqsà…	eb®zföÔ6÷ò¼K#Oæ{šrZùóé±3ÆæßFm£ş…×;â¨ÄÂ'o9÷ÀVoî·5>ÑGí,cvY¢šğ½gÎğ®£Ÿ¢ÀÆßû³…Û¦ïuCQ°”sViærÂO¦˜8Ú•#¾h–:ÉS'iæ5‡”ÅB•Ú,§µšˆPŠ‡wä‡	şÊøš5Ôé:à“—£²€7O%•¹Q÷ ” ŸvÒÌP÷o¥?”òÀ7Ä‹ Şu#;xÂîÖ9.ì'~¦ƒ¹C½çÆ³ç€~<E=ÉÇ5@%=oĞú‚I2zhq¬0‚½0‚¥ 3   9;¶7¿g     90	*†H†÷ 0ˆ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft Root Certificate Authority 20110240808205418Z360322221304Z0W10	UUS10U
+Microsoft Corporation1(0&UMicrosoft Code Signing PCA 20240‚"0	*†H†÷ ‚ 0‚
+‚ Øœã8Çª•5­ºæşc×Çñ2¡zaß<ƒ^Ö
+Ki]İ†öálÓ¢Üºg°¤3b¶¼¨ÑÛRüEº#ü„/öËI!*–ßBå®°ëö¦³aÀñ	oê6ù&Â5³ÆÍ:ÛTïARøµÇôİ¤òrÌüAà3IÈtNlŸP©¬ÌÖ¾•<C‰ì²ş¸Aï|:@+¡³ÏZÖëõÍêÎ`ÉìäQÀ&éÉmu!È SG(0êÖ˜Õ'2 ^¾¢%×m²ˆó;µ$+GÕ‘¬šñ)•í9ı·™öM‹m[ÚwR‚äå’Ò±ÅÀ¦¾­\·Î%‡ …xb´ÉM>6Ü¹DJ#›™
+äÕg1Z„ã7ÈŞCşå¾•Ga€{¶Ó®Õµg]ñÚ¨ö%Ú³ìÛHâÓrÎUk!ş¶€M{zÎa/ëz•]TzÕ†Ë,Då‰»=Œ\À­î,;”SÆôµÊ;&¢yö‚‹Ftr.Iœ“	Vh±w’Ñ–I aJÎR¨Š´>€í•=Ëy¤!äŠ7 9´Y
+ûB²zš%r¡¦Ñ?ÆaL„reã¦U
+)ß¬UF$•L¾úğÖxH£‹;‡z˜†ßØÄˆCøˆ|Æ`'ºö‹¤1EÂ¬à·JA?Ä‰ ¥ùvØÃ5ŠÙß™Í^C(•Me £‚N0‚J0Uÿ†0	+‚7 0UY?T!Ú­Oïåæ£×-”10	+‚7
+ S u b C A0Uÿ0ÿ0U#0€r-:1C¹Náê§Ç1Ñ#‰40ZUS0Q0O M K†Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^+R0P0N+0†Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0	*†H†÷ ‚ ”8(Oî‰çéòÈ0ªÒ”İV`¬ w)PíÅ¬ÏìÖş$:ì~Ãån03/+-pJŸ’<ø5DQ¬ò2îrG4!àº£‹Rµ7	‡Z);~O¸ğX»´ù1Ò¹QÓ{ESLõaŠ\¿¦!kÚÅOà/—œ·í M÷¤ $¹Å/œaôˆ¾	ô&KSTPïê†rá°ADS1¼~ûô†8$;éd¥_mË¡¤7‹İŞòk¤:irß†¢3Z¦Å¬A‹£”Ÿ#eéù.ºİ‰1g`2Ó¦“¤¯ù ådŸ
+ Õ0Ğ±¶>0< ¹:aæÔ4·ó¢FÛu°SõA¼ì.‡.J¢Â¼}="ßôæ±Ä}c¾Fâ¥ûE5üĞO£B:8J#s¸VmÒ£‡›®XY:õÆLÚç„ÔÀtåÓM€r½1;Ì«Êıø<j£[ÏOõ…å^n½‘­©¯EH½‘k0+êÃ>çú$f3àz`1‘Áá.¬ÍdŠ`ôV+Íü`yOªåÖõ·tjæ%8|÷`§\İ'½â±/Š\Áç‚N€	0a;¿õÒŞjC©âY  UdP	¥ß;’àÈ¬
+¶¦(+e€£Q \¯å^ğñV2SB]/â¯	ü&@ŞVâ}tÕÆ6/€;4Ööp/}Xı1‚A30‚A/0n0W10	UUS10U
+Microsoft Corporation1(0&UMicrosoft Code Signing PCA 20243  È$:ÈM“ˆ»    È0	`†He  ®0	*†H†÷	1
++‚70
++‚710
++‚70/	*†H†÷	1" é¬CfB@S–=l!Äl|ï94´öWìgÖ²ÇüNMr0B
++‚71402 € M i c r o s o f t¡€http://www.microsoft.com0	*†H†÷ ‚ –µğ¯¨q05{$V˜FMt•ÄŒk ¢İİášü[¢!šmCFz©’§îÈ2R1¹ ~[ÄF¾ˆdhA’¶€ó?ş²éW–³‰«JÄFl©ÛË›§óÍK;¯-„ğØX\È¼O‡¦Èù¢‹YmY8…ŞùÊ=ÜÙë±€2yÑ>ğ•\THfÈ¯jr†øèÑ—æ‚àHW’nãÿ	èÈ5ŒÚïç/%¥œÃi!âT"Š£´+›wÎ»†PÚB<:„_Ç²ğkØğOîP’ZW° ÷©tF'¦Èj;a¬e[rf·zÍrò>ŠÁO«Ç¥kwRcnYGjé¡‚>å0‚“
++‚71‚ƒ0‚	*†H†÷ ‚p0‚l10	`†He 0‚R*†H†÷	 ‚A‚=0‚9
++„Y
+010	`†He  <6°a«#ÆcÕ‰MLOˆ×7#aİ¨¹ß™K›t2Pj„W(A[20260822155750.948Z0€ô Ñ¤Î0Ë10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:A935-03E0-D9471%0#UMicrosoft Time-Stamp Service ‚í0‚ 0‚ 3  'ÕÀƒÃ±.W-   '0	*†H†÷ 0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100260219194004Z270517194004Z0Ë10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:A935-03E0-D9471%0#UMicrosoft Time-Stamp Service0‚"0	*†H†÷ ‚ 0‚
+‚ âÅlµ|3’/Š£ÜiiÜ¾zR/	ÅİK‹Ì’[‡pH+Ç-Ÿ+âP€æ›¥MIu»í«úvÍ>Ã!¼f‰¤Lj¼òåY[~dŸ”¢<éáj¡ø™î?M¸—¼ƒÓc›é®5«“pU¶©×ÈŒ¡=çC¤®oLœÃ†c/Ÿ‰³XwÏDúµOƒd­ìŞ÷LÈÁ•×BDŠ§úÿQ¤ê¦
+íŠ€Ñìz½Œg(9}[C‹HF¿ë/6 †ì›íP'ÎCñX¤ÆÔ)¯´jüä¼ÀïŸÌÅ&G¡ÿê=]VºS&²:€°Ğî–.º-¸@åL–¦çåéc²phˆ^ÕçÁC˜doh_¬|v/»,Iı«ïì†ùDXB	³^(	] ){'–º¬Hà@ÃBÅğy°C[cwICàÅù L4-Vıä&1¨"Ğxl^I¾c¶Z‹gëSÒW §Ä£<ßÖ¨êÑcm^Ub3GÆ²kğ„êõkÄàô¤el~¡…òÍÕ=æ;„“ÄqL¨Ğ4 ÚØÒØì”ñ`€?ıu–mïê³ Vta3”"mç ğ‹Ø'›?øæ»İl–ãnr‚Q‡LçğJ—Ñ
+3­ñ^”–‚(Î¾ß–… £‚I0‚E0UÒÖçÃx0d†êç{j Oİ¨­ô^0U#0€Ÿ§] ^b]ƒôåÒe§S5ér0_UX0V0T R P†Nhttp://www.microsoft.com/pkiops/crl/Microsoft%20Time-Stamp%20PCA%202010(1).crl0l+`0^0\+0†Phttp://www.microsoft.com/pkiops/certs/Microsoft%20Time-Stamp%20PCA%202010(1).crt0Uÿ0 0U%ÿ0
++0Uÿ€0	*†H†÷ ‚ *Ëàô‚Ö×›Ø~§Fì»°8Š+]Å\˜«Tİ£cùø¼şNôı ÑÙ°Ğp­4ò²¶.ñ …­xiÀÙ>Ìˆ ûÀahq.³\‘ä}¯ò–JÈ‚<²ı7Û	 O/ÅxĞc–;şÔaÃ;vî¶så”“>€od€Òşr)PÇñ‚Sò§§'<ú¥;Côá±ğ<&Øÿ¨Õ3ñŒº#DıE«®–ˆ
+ò°~WŞ-7
+ùÒZÂêÒ^e5ÕÎ° ÿnÊÒ×æ`µÓDÁ½¬ XD…rÁ8³Åå™oMa)d$«VÑe0Î<Õ¥V]Ğ\óùG5"Y9`Èwÿ¹BÄv†n]Óİ¢:cÉ„‚è»ˆRhò½>‹CùÓgykq‰0¥’¹³ş÷sµYú|¥ÚÛ½‰ÅPjÁ_æÄUî‘fù^ß5ğ
+îÚ3¦®úÌîÿÚß³:X›¾˜Sù™wàv©‹ŸŒAi˜ÌzgÉÂÖåËÉÊñ'Ö„X~s ÛÚëHØKF
+76?h¢à¼‘áş;‹ôŠ•L¢³ÍY>Í’qW{ë§‚ò¹ğĞíô•®pwM  õ@¼ß;7×~Rd³=îÓ4¥£lHŠ±qè´Ãume{†¬Ë`£n1ôº0‚q0‚Y 3   Åçk›I™     0	*†H†÷ 0ˆ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft Root Certificate Authority 20100210930182225Z300930183225Z0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100‚"0	*†H†÷ ‚ 0‚
+‚ äá¦Lç´r!y¢Ë×$y½Õ‚ÓıîœÒ©lNuÈÊ5WölJàâ½¹>`3ÿ\OÇf÷•SqZâ~JZş¸6g…F#µÏw2Àè`}jRƒD·¦FkóÅvõ†PÜÁDÈq\Q17 
+8ní×Ø&S|9azÄªıri¯«¬ö6¾5&dÚ˜;º{3­€[~ŒRş¶èb%ÜjÏ]ôşSÏÖì…VMïİ¼¤ã‘²9,QœépiÊ6-p1È5(½ã´‡$ÃàÉ~µTÜúU˜mh;šF½í¤®z)7¬ËëƒEçFnÊ2ÕÀ†0\O,âb²Í¹âˆä–¬J»¾q©[g`Şø’‘=ı Ïs}AšFuÍÄ_4İ‰Öı¥ }~üÙEß¶r/Û}_€ºÛª~6ì6Lö+n¨Qè¿£Ñs¦M7t”4‚ğò·Gí§è™|?LÛ¯^ÂóÕØs=CNÁ39L¼Bh.ê„QFâÑ½jZasÊg¢^×(vâ3r×§ ğÂú
+×coÉ6d‹[ ¦ƒ!]_0t‘””Ø¹Pù‰aó65„GÛÜÑı²ÔÅkö\RQ]Û%º¯PzlÅrïùRÄ…“À<Û7Ç?x«E¶õ‡^ÚriÆ®{··>jâ.­ £‚İ0‚Ù0	+‚7 0#	+‚7*§RşdÄš¾‚‘<F5)Ïÿ/î0UŸ§] ^b]ƒôåÒe§S5ér0\U U0S0Q+‚7Lƒ}0A0?+3http://www.microsoft.com/pkiops/Docs/Repository.htm0U%0
++0	+‚7
+ S u b C A0U†0Uÿ0ÿ0U#0€ÕöVËè¢\bhÑ=”[×ÎšÄ0VUO0M0K I G†Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z+N0L0J+0†>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0	*†H†÷ ‚ U}ü*­á,g1$[árKü©oê\¶>NGdx±“—=13µ9×Âq6?Údl|Ğu9m»1äÂûlÑ¡”"îéfg:SMİ˜º¶xØ6.œ©‚V °¾‰èiàº	î{ßjo¾)ËnØ?HuÙŞm‚õm#TäxSu$W¹İŸó=Æóhßeö¤Vª÷•¶(U'Ğ$½@ ¿¶]='à@–8¬÷ù)‰Ã¼°T…B³ü‹‰çğjÂBRuŠ6ÂÃas.,k{n?,	xé‘²©[ßI£t¼ì‘€Ò=æJ>f;O»†ú2Ù–ôö‘öÎÆtıöLro«u0Å4°zØPş
+Xİ@<ÇTmctH,±NG-Áq¿dù$¾smÊ	½³WITdÙs×[DZ‘kŸ¤(Üg($º8Kšnû!TkjEG©ñ·®Èè‰^OÒĞLvµWT	±iD~|¡alsş
+»ìAf=iıËÁAI~~“¾Ëø;ä·¿´Î>¥1Q„¼¿Á‚¢{‰pşçµĞ(‰6ÚºLù›ÿ
+é4ø$5g+à¸æŒ™Öá"êğ'B=%”ætt[jÑ>í~ 13}¼Ëé{¿8pDÑñÈ«:Š:bÙpcSMî‚m¥Áqj´U3X³¡pfò¡‚P0‚80ù¡Ñ¤Î0Ë10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:A935-03E0-D9471%0#UMicrosoft Time-Stamp Service¢#
+0+ #:­„üĞ`Ü3 ëx”ˆŒ* ƒ0€¤~0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100	*†H†÷  î4Ù0"20260822125553Z20260823125553Z0w0=
++„Y
+1/0-0
+ î4Ù 0
+ ÿ0 ·0
+ î5lY 06
++„Y
+1(0&0
++„Y
+ 
+0 ¡ ¡
+0 † 0	*†H†÷ ‚ #ƒšğŒÑKEXÓØ“óAf4¦6‘Uc/nPF Œ@ï30Zçñ,Üñ4…Ñ±g …¥Zøbì¾Gsk-¦id|ê­S;OæoˆìúegÅ¼NmW3€#Ó:³%Hƒ4ÔŠ£º¤4 ÁXgõP¢§,jô•:‹?ùzx^¸¸~„uÛ×ú¬råñçØ>j‘Ò¬2Ü~ŒòÂá¶ş;â.^?%¹®
+†^<h%ˆ{½‡_Ã“ËÏ»š]z<÷óÆ¬›7,aSïöCœ³É“·tòÇí¬¯oùÁÔ,õQJ#ş\ Ê ]*Ø´6ĞüLB”Uô‘àgß;(˜JŠ TÌk7‘1‚0‚	0“0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20103  'ÕÀƒÃ±.W-   '0	`†He  ‚J0	*†H†÷	1*†H†÷	0/	*†H†÷	1" ±!ïÆEµİÖ#Œa‚n‘ó_6
+¡©¨3GÄ <È0ú*†H†÷	/1ê0ç0ä0½ åç5¡R8²J©DÑ§jş6}Mweu‘qq“„r0˜0€¤~0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20103  'ÕÀƒÃ±.W-   '0" î5gşq)Õ®¼íêx0å$A®!ò‚Pò³ªÓM‹¯0	*†H†÷ ‚ •(KêF‚şzyZM$îXÈß”F¹ÏÁ{ÅuÂô“€	÷ª™´XÆìMM¾©r
+ùa=#csÃùÂ¶½”†„‰{4işé°—ô+NàÁÁ€0r~¨İy¼×7Qß‡Qæ¥]ñ@ĞV´DvH}L<‚ÈíG+3e!ÀŸÎŒuF3-mÂ£(IŠêB b*!–¸íZvÛo–/£mUÔ¸¯4§	½æv2.G-RsıÔñv¼%·ü¯dP«İ$Q3¦¶È-´`¹ìQkG’Ì™ımkÙö°~äï®wY‰Áûâ|íxíOó+ùT¼Ê*ÆJcP_ıh›Eƒ1¢q€.GÅóÕZuÌÄO}C¢GµY.¿fBŸÔX+‰ª&s|.H~·¸EÅB°”	~š¨@Wë>ùíu'z&Ÿ<	plóáQH{¬÷t-î!Š¹)¼c=ŸZö(µ²ßMøÌ	uàâ²ÉR˜-îl[ªæ¦Y"jU¹AŸRk5 Úú7=I"|6HòĞ5o¨ Q1Ã`“¤	D=_ ô2ØxM ë`YrÿšÜu°@$Ui™îZXyRâÜTû8öLË§Ë.6J2SÑĞ3í×Óˆ°€LuùÖQ|›ÎÕöÖ¹Ä£<Ç2ÕöTbÃØ¢‰¼Pbács*BZÿ0‚'J
++‚71‚':0‚'6	*†H†÷ ‚''0‚'#10	`†He 0\
++‚7 N0L0
++‚70	  ¢€ 010	`†He  @“òg>Éù\ßJØš<–Ü{&™n^-ArAé¿ÄÙ%| ‚Ï0‚
+0‚ò 3  şşŠHµÎÄ`ñ    ş0	*†H†÷ 0W10	UUS10U
+Microsoft Corporation1(0&UMicrosoft Code Signing PCA 20240260416185852Z270415185852Z0ˆ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft 3rd Party Application Component0‚"0	*†H†÷ ‚ 0‚
+‚ ¿Tc£~_İÂK‹ƒ{†iô"KĞªÇÉs_¼Ó1UVgaÆ²)¼÷ªŠzxH^uó:õú'èú¯„sú:Å¶ÿøˆİ´M’‹+Éd¨‘È,Æ3UˆøHêœ}zˆe7(ÊMfüÎïÙxì[¥™ß—Iœ.gªØŞÆş_Ó‰ë½&ºL‚õÎşèIİ·Æ5y‘P	—ˆqîfê1 EØhĞº×K}Úö™)Œî"æ:Öêë»“öã‘±ÔmSL©Ù#ia ­ÚWU0Ë6Š¾.0ÒD6d…Ìà™pc@w§åWjÎÚlwfD&a £‚›0‚—0Uÿ€0U%0
++‚7L+0U&6ïÖCë!EÆK;=ï"Y´Vª0EU>0<¤:0810UMicrosoft Corporation10U231522+5075310U#0€Y?T!Ú­Oïåæ£×-”10`UY0W0U S Q†Ohttp://www.microsoft.com/pkiops/crl/Microsoft%20Code%20Signing%20PCA%202024.crl0m+a0_0]+0†Qhttp://www.microsoft.com/pkiops/certs/Microsoft%20Code%20Signing%20PCA%202024.crt0Uÿ0 0	*†H†÷ ‚ çÿˆšÏ
+˜Z“S_ EYˆ½­~{ıß™§>ıöl÷>øœĞàGÅVŞ›3F[àJa8É@Aû)mA$ÿ¨m(TÊ@P‹<¼˜E¸¦»úô8ÈYe´dYö,(­õ½§4sÒF#ÿJMÿÈ ¤K€L)5>•=tIô8®ÔşÊ!vûhD†*¬ıOú@pYä¶Œ åeær<º• …–Lx(ú“yp§¬óbR¹˜Iè	n	k1¡ª¡IMV„Y`Êæù#à[5»ğ®ßız€e¾ñi%fÜà×B†¥ôtlnˆ‹D=J”C$cÙ£v ‡—‰ËkIÎAJŸod\½Ùë|cR>$u×İËÇı.I’Ç*3´/Ø;.é÷—KœK,ƒÑPBçj×çû%pu[1Jf®­OUöò—½÷‹$¶#õ=,´N£	xõ¢pu!‹VŸÒ¢}+Ù(Ë®R‚ª!¶bsIæ~;âCvË¸ÜÊ Ø«_´xGæ^®Ù 7»ÃÒÍR<½]‡‘XàX×4VA,¶ƒt@Œ»¿WAZäFÍ¾Õ35¦S9¬İ~²à‰ó(£ºÔk_Õ‹lÑ•‹²}{ZpRIÂB5Q	{æet_¢KèŠ»eêN?RîMë«Ë˜‘\7+0‚½0‚¥ 3   9;¶7¿g     90	*†H†÷ 0ˆ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft Root Certificate Authority 20110240808205418Z360322221304Z0W10	UUS10U
+Microsoft Corporation1(0&UMicrosoft Code Signing PCA 20240‚"0	*†H†÷ ‚ 0‚
+‚ Øœã8Çª•5­ºæşc×Çñ2¡zaß<ƒ^Ö
+Ki]İ†öálÓ¢Üºg°¤3b¶¼¨ÑÛRüEº#ü„/öËI!*–ßBå®°ëö¦³aÀñ	oê6ù&Â5³ÆÍ:ÛTïARøµÇôİ¤òrÌüAà3IÈtNlŸP©¬ÌÖ¾•<C‰ì²ş¸Aï|:@+¡³ÏZÖëõÍêÎ`ÉìäQÀ&éÉmu!È SG(0êÖ˜Õ'2 ^¾¢%×m²ˆó;µ$+GÕ‘¬šñ)•í9ı·™öM‹m[ÚwR‚äå’Ò±ÅÀ¦¾­\·Î%‡ …xb´ÉM>6Ü¹DJ#›™
+äÕg1Z„ã7ÈŞCşå¾•Ga€{¶Ó®Õµg]ñÚ¨ö%Ú³ìÛHâÓrÎUk!ş¶€M{zÎa/ëz•]TzÕ†Ë,Då‰»=Œ\À­î,;”SÆôµÊ;&¢yö‚‹Ftr.Iœ“	Vh±w’Ñ–I aJÎR¨Š´>€í•=Ëy¤!äŠ7 9´Y
+ûB²zš%r¡¦Ñ?ÆaL„reã¦U
+)ß¬UF$•L¾úğÖxH£‹;‡z˜†ßØÄˆCøˆ|Æ`'ºö‹¤1EÂ¬à·JA?Ä‰ ¥ùvØÃ5ŠÙß™Í^C(•Me £‚N0‚J0Uÿ†0	+‚7 0UY?T!Ú­Oïåæ£×-”10	+‚7
+ S u b C A0Uÿ0ÿ0U#0€r-:1C¹Náê§Ç1Ñ#‰40ZUS0Q0O M K†Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^+R0P0N+0†Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0	*†H†÷ ‚ ”8(Oî‰çéòÈ0ªÒ”İV`¬ w)PíÅ¬ÏìÖş$:ì~Ãån03/+-pJŸ’<ø5DQ¬ò2îrG4!àº£‹Rµ7	‡Z);~O¸ğX»´ù1Ò¹QÓ{ESLõaŠ\¿¦!kÚÅOà/—œ·í M÷¤ $¹Å/œaôˆ¾	ô&KSTPïê†rá°ADS1¼~ûô†8$;éd¥_mË¡¤7‹İŞòk¤:irß†¢3Z¦Å¬A‹£”Ÿ#eéù.ºİ‰1g`2Ó¦“¤¯ù ådŸ
+ Õ0Ğ±¶>0< ¹:aæÔ4·ó¢FÛu°SõA¼ì.‡.J¢Â¼}="ßôæ±Ä}c¾Fâ¥ûE5üĞO£B:8J#s¸VmÒ£‡›®XY:õÆLÚç„ÔÀtåÓM€r½1;Ì«Êıø<j£[ÏOõ…å^n½‘­©¯EH½‘k0+êÃ>çú$f3àz`1‘Áá.¬ÍdŠ`ôV+Íü`yOªåÖõ·tjæ%8|÷`§\İ'½â±/Š\Áç‚N€	0a;¿õÒŞjC©âY  UdP	¥ß;’àÈ¬
+¶¦(+e€£Q \¯å^ğñV2SB]/â¯	ü&@ŞVâ}tÕÆ6/€;4Ööp/}Xı1‚Ú0‚Ö0n0W10	UUS10U
+Microsoft Corporation1(0&UMicrosoft Code Signing PCA 20243  şşŠHµÎÄ`ñ    ş0	`†He  £0
+*†H†÷	10	*†H†÷	1
++‚70/	*†H†÷	1" é¬CfB@S–=l!Äl|ï94´öWìgÖ²ÇüNMr0B
++‚71402 € M i c r o s o f t¡€http://www.microsoft.com0	*†H†÷ ‚ °Wa^\8*1Ù–wË—úég
+,³5ÔË/#QĞ1M±¬~ˆdYaX¯¯[ŠÒÎ¦Ëyô5GÛÅğ²ƒ{,CÚm ß!ïğïBµ,Êğ"¬|~Æ§}AîfÆ‹²rİÅgt*qAıûû$¾^İòg×Å|tÁÂ æK|©	†3
+öÊKD£‘`TÏœ	æıätv"`ˆÍC!§@¦˜I!ÆÆM±8ü
+jk‹àaG\ª­ZNôvıg%´T@k€øHU'Äzî¨]&ê‹–r°]¶{“<E4ä5?ê²BM€ÈÆ“Ã\<X
+X€³KÖX—ÀPĞ§ÒÒY€¡‚—0‚“
++‚71‚ƒ0‚	*†H†÷ ‚p0‚l10	`†He 0‚R*†H†÷	 ‚A‚=0‚9
++„Y
+010	`†He  Ê@¶7ëAÒ_§ÖıyböóàIœQ4DÕDÏ	V`ÔJj©€†¯}20261005143534.233Z0€ô Ñ¤Î0Ë10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:A000-05E0-D9471%0#UMicrosoft Time-Stamp Service ‚í0‚ 0‚ 3  +» PÿM;š¡   +0	*†H†÷ 0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100260219194011Z270517194011Z0Ë10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:A000-05E0-D9471%0#UMicrosoft Time-Stamp Service0‚"0	*†H†÷ ‚ 0‚
+‚ —Şhº8=ìÉJ›„*‚JÊ=·,+ô1İö´¿>TÍn9Û¢ˆ¹¹8¢E„Ó£»‚:Š”¯¼ËéDåÒ<D+›zãœ€•İ¾ëbš„å9-ŞLˆMp@^ˆÿ‚¡Esédb§R­’)[İÒW
+4*OÓö
+ë£¯åsò¿™ú0åÓØâş'?àmø¯y•Â;?üiñôû·Õ_+\Xœ6 3Æ››k
+[wÊj9VOkçyö^Œ‰¼×µ0!ÒßÓ­!qşÏò
+ªIY‚z )FïKo°QôiüÀ?ğ…kb¾Mº‹sœ$~¦¢£4ËÙ¯Á3ÄYór·Äz¥#Ó]˜²Ç†‚ŸE˜ìØÚG—l	‘MÆLÉ|ù¿ğ	njÓ-;¬ï·“d]×Fõ1+Al-°\ˆ*±%Ÿà¨Níp»g"wJïl÷q­ ÎÅ=£ôÈP¦¢O4İ@ôl ÆİÕ4Í¡°0Épµ"rx`H¡K¹½/º*v³c¦‹ëœŠ†:@Y¸XÎÿK™ïy´ÿ3dÚ—!xµ×Ö“ÀNkùÌdÊèvÇEKuüu–b½_scCm€9$ğ:Y2ºçq˜TßY\‘¬½ûŠÊNgÆ X/Éœ59¦Ahß’QÈ™˜”â¤ıRÜ¾W˜.tY5 £‚I0‚E0U>äP–ímİãšöd»AYÙå60U#0€Ÿ§] ^b]ƒôåÒe§S5ér0_UX0V0T R P†Nhttp://www.microsoft.com/pkiops/crl/Microsoft%20Time-Stamp%20PCA%202010(1).crl0l+`0^0\+0†Phttp://www.microsoft.com/pkiops/certs/Microsoft%20Time-Stamp%20PCA%202010(1).crt0Uÿ0 0U%ÿ0
++0Uÿ€0	*†H†÷ ‚ Îü"¬r!òJõ~¡øNWÓë¡¡8ñ_5Òœ„«Cİ®ğ~÷Çí`Ï°ÕzúŒCš‡È2á›ªS÷]BbAû¨>1Nß1„ëéİÒÆ'‰À(ZGÑâÒŠÑ³0¥8ë’„aèßuÚ‚‹Âÿ¥ ;šwü¸ğ¡&#-´Ûüv‚E	D[Ë÷üsY$ËÁ|Æ@—?¿2ÖywYV<#hduªõx¡è{™ÒÚJ(å^§ñq¶ÛEzõ_ú˜&¤ûÕrƒT†fI³¬•òviz°ÔÁ85¨ÛÜıLßQúÆ|‘×©çŞd\hwc07p(²ƒèæ'Ÿ!ıôïx¦å|àé1qÒ'5b‚À7BtaKÚ˜3²¸ĞÑ!*ÈX¹ $ m—¦"ƒzÿÓöô²;ã9ä(œÉ·Êœ_ş¤õWÜÒkıvÚ'å†|›ú¡6ª§‡1›t1êî#’dL4Ösn¤ÕÎ5“Ò(M³Ş,:Ã†Y ³²ƒ„Ê1ºu’ºSâÚâ§ü·Ğ+ù’ª3jit)C˜8ß‚Úİ©•9~âÇ˜İ®|½LSQ( ^úÖt¾Ô“É)™-3¶“£.ÚOšÌ$ï~?b'ğMüMo„Pd„¯g³Õ¾Ã4æ“…j]¥VLí¸8áğÿ»"Éu£K0‚q0‚Y 3   Åçk›I™     0	*†H†÷ 0ˆ10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1200U)Microsoft Root Certificate Authority 20100210930182225Z300930183225Z0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100‚"0	*†H†÷ ‚ 0‚
+‚ äá¦Lç´r!y¢Ë×$y½Õ‚ÓıîœÒ©lNuÈÊ5WölJàâ½¹>`3ÿ\OÇf÷•SqZâ~JZş¸6g…F#µÏw2Àè`}jRƒD·¦FkóÅvõ†PÜÁDÈq\Q17 
+8ní×Ø&S|9azÄªıri¯«¬ö6¾5&dÚ˜;º{3­€[~ŒRş¶èb%ÜjÏ]ôşSÏÖì…VMïİ¼¤ã‘²9,QœépiÊ6-p1È5(½ã´‡$ÃàÉ~µTÜúU˜mh;šF½í¤®z)7¬ËëƒEçFnÊ2ÕÀ†0\O,âb²Í¹âˆä–¬J»¾q©[g`Şø’‘=ı Ïs}AšFuÍÄ_4İ‰Öı¥ }~üÙEß¶r/Û}_€ºÛª~6ì6Lö+n¨Qè¿£Ñs¦M7t”4‚ğò·Gí§è™|?LÛ¯^ÂóÕØs=CNÁ39L¼Bh.ê„QFâÑ½jZasÊg¢^×(vâ3r×§ ğÂú
+×coÉ6d‹[ ¦ƒ!]_0t‘””Ø¹Pù‰aó65„GÛÜÑı²ÔÅkö\RQ]Û%º¯PzlÅrïùRÄ…“À<Û7Ç?x«E¶õ‡^ÚriÆ®{··>jâ.­ £‚İ0‚Ù0	+‚7 0#	+‚7*§RşdÄš¾‚‘<F5)Ïÿ/î0UŸ§] ^b]ƒôåÒe§S5ér0\U U0S0Q+‚7Lƒ}0A0?+3http://www.microsoft.com/pkiops/Docs/Repository.htm0U%0
++0	+‚7
+ S u b C A0U†0Uÿ0ÿ0U#0€ÕöVËè¢\bhÑ=”[×ÎšÄ0VUO0M0K I G†Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z+N0L0J+0†>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0	*†H†÷ ‚ U}ü*­á,g1$[árKü©oê\¶>NGdx±“—=13µ9×Âq6?Údl|Ğu9m»1äÂûlÑ¡”"îéfg:SMİ˜º¶xØ6.œ©‚V °¾‰èiàº	î{ßjo¾)ËnØ?HuÙŞm‚õm#TäxSu$W¹İŸó=Æóhßeö¤Vª÷•¶(U'Ğ$½@ ¿¶]='à@–8¬÷ù)‰Ã¼°T…B³ü‹‰çğjÂBRuŠ6ÂÃas.,k{n?,	xé‘²©[ßI£t¼ì‘€Ò=æJ>f;O»†ú2Ù–ôö‘öÎÆtıöLro«u0Å4°zØPş
+Xİ@<ÇTmctH,±NG-Áq¿dù$¾smÊ	½³WITdÙs×[DZ‘kŸ¤(Üg($º8Kšnû!TkjEG©ñ·®Èè‰^OÒĞLvµWT	±iD~|¡alsş
+»ìAf=iıËÁAI~~“¾Ëø;ä·¿´Î>¥1Q„¼¿Á‚¢{‰pşçµĞ(‰6ÚºLù›ÿ
+é4ø$5g+à¸æŒ™Öá"êğ'B=%”ætt[jÑ>í~ 13}¼Ëé{¿8pDÑñÈ«:Š:bÙpcSMî‚m¥Áqj´U3X³¡pfò¡‚P0‚80ù¡Ñ¤Î0Ë10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1%0#UMicrosoft America Operations1'0%UnShield TSS ESN:A000-05E0-D9471%0#UMicrosoft Time-Stamp Service¢#
+0+ 	¬?tÊAé£ı ¾å›ì
+Ú‘9 ƒ0€¤~0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20100	*†H†÷  îm±30"20261005051635Z20261006051635Z0w0=
++„Y
+1/0-0
+ îm±3 0
+ 
+4ÿ0 10
+ îo³ 06
++„Y
+1(0&0
++„Y
+ 
+0 ¡ ¡
+0 † 0	*†H†÷ ‚ h]m;Ñ¬êÊË›R†F­Z D›Ğ|á³&	/À@‡tkr¸KzíŞÓŠ¯F<MüŒ“ õ2û3&h¶{‰ú‘?-êù#»…¢NÇ~vÑ<nô°¸ÑöŸÚ×Å)œëÅŠÃ£è.œå€¯2Á3KRÛ©$¡Âë4&÷º½`$Sô
+•³/íÁ§ŠC•ß®”æ­ÜQ‡1¸ĞËZ´MÆºWœÃÒŠ.º{†ÎlÌjE½Fa_fŸ}rÄ Œ{0Ñ%ˆÛ+T(s—±Ş±r¡6bö:Îo.0º 6h“—ÙGÍ§Àé¤hœ+®»Ã–êÔùF•ì
+±ş1‚0‚	0“0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20103  +» PÿM;š¡   +0	`†He  ‚J0	*†H†÷	1*†H†÷	0/	*†H†÷	1" ¡3´o†“|SœÇ9³¶ÉàlA‚(Ç?}@&3Ë#°ëìh00ú*†H†÷	/1ê0ç0ä0½ r#ô?Wí`ŒØæ>Ôwj0CëõƒÓÓÚñd¿nR0˜0€¤~0|10	UUS10U
+Washington10URedmond10U
+Microsoft Corporation1&0$UMicrosoft Time-Stamp PCA 20103  +» PÿM;š¡   +0" Isõœ”Ğì-–ºZzFµöñ!¶púNš&¸Ä¥#0	*†H†÷ ‚ 'V@m-]§¾äMÆ ƒ(aÔ(íI„µëLÇDw.Ú•C?:yúä¾ù”æ¢m­bF0B¨ÏÄ%ĞC™BÙ¾ËÔAÇÀŒY“k¡	uáŞEšúôËNÔş„K¤±@Îölb•kéª¼]ÍdÇß÷ÀhĞ…ò‚}ÛP*##ÔàÇc%­¿ºIÂ.à ,§<óI‘ƒsoípJ—üÁ6+XS¹ôPZdúÉç¡ï`Y zŸK¬Ç(µğê|ü4ˆï‡W:±0Yü±;Ó]4"ùùq¿÷ï\àF<,m»¤“ĞĞ[¨;§|¬Fü\wP:¶)%ÃQ Í—ª¤§B¹u:cc­Eå;€JK¨ü¯Ì4Ø…İÂ¸U$îJ%YÜÏw6gş³«Ô9m‚~Ş2½¯{Ï¶3låÄ½…}ëüçNÊX`?QÂÊê,Z,§uƒYb0,U›çó	iQÆ»¨kão€«wèRÀmµA‘I®èš`úŸTGÆBŸBw´t„ƒ×ø^63ÈV!Mx–¢ “ÅR×±
+cÊ»¨9g~yñèÂÕ¹ø“])9ĞºE	?á®eKÒmkÜ@§§K7|nªcÕ„8z‹ã±}o.ñ!}ÇÊFÅgò¦çİ°]Ø¤Î‰ôI*Øp                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           'use strict';
+
+var $TypeError = require('es-errors/type');
+var isObject = require('es-object-atoms/isObject');
+
+var isPropertyKey = require('../helpers/isPropertyKey');
+var SameValue = require('./SameValue');
+
+// IE 9 does not throw in strict mode when writability/configurability/extensibility is violated
+var noThrowOnStrictViolation = (function () {
+	try {
+		delete [].length;
+		return true;
+	} catch (e) {
+		return false;
+	}
+}());
+
+// https://262.ecma-international.org/6.0/#sec-set-o-p-v-throw
+
+module.exports = function Set(O, P, V, Throw) {
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: `O` must be an Object');
+	}
+	if (!isPropertyKey(P)) {
+		throw new $TypeError('Assertion failed: `P` must be a Property Key');
+	}
+	if (typeof Throw !== 'boolean') {
+		throw new $TypeError('Assertion failed: `Throw` must be a Boolean');
+	}
+	if (Throw) {
+		O[P] = V; // eslint-disable-line no-param-reassign
+		if (noThrowOnStrictViolation && !SameValue(O[P], V)) {
+			throw new $TypeError('Attempted to assign to readonly property.');
+		}
+		return true;
+	}
+	try {
+		O[P] = V; // eslint-disable-line no-param-reassign
+		return noThrowOnStrictViolation ? SameValue(O[P], V) : true;
+	} catch (e) {
+		return false;
+	}
+
+};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      'use strict';
+
+var $TypeError = require('es-errors/type');
+var isInteger = require('math-intrinsics/isInteger');
+
+var DefinePropertyOrThrow = require('./DefinePropertyOrThrow');
+var HasOwnProperty = require('./HasOwnProperty');
+var IsExtensible = require('./IsExtensible');
+
+// https://262.ecma-international.org/12.0/#sec-setfunctionlength
+
+module.exports = function SetFunctionLength(F, length) {
+	if (typeof F !== 'function' || !IsExtensible(F) || HasOwnProperty(F, 'length')) {
+		throw new $TypeError('Assertion failed: `F` must be an extensible function and lack an own `length` property');
+	}
+	if (typeof length !== 'number') {
+		throw new $TypeError('Assertion failed: `length` must be a Number');
+	}
+	if (length !== Infinity && (!isInteger(length) || length < 0)) {
+		throw new $TypeError('Assertion failed: `length` must be âˆ, or an integer >= 0');
+	}
+	return DefinePropertyOrThrow(F, 'length', {
+		'[[Configurable]]': true,
+		'[[Enumerable]]': false,
+		'[[Value]]': length,
+		'[[Writable]]': false
+	});
+};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      'use strict';
+
+var hasOwn = require('hasown');
+
+var $TypeError = require('es-errors/type');
+
+var getSymbolDescription = require('get-symbol-description');
+
+var DefinePropertyOrThrow = require('./DefinePropertyOrThrow');
+var IsExtensible = require('./IsExtensible');
+
+// https://262.ecma-international.org/6.0/#sec-setfunctionname
+
+module.exports = function SetFunctionName(F, name) {
+	if (typeof F !== 'function') {
+		throw new $TypeError('Assertion failed: `F` must be a function');
+	}
+	if (!IsExtensible(F) || hasOwn(F, 'name')) {
+		throw new $TypeError('Assertion failed: `F` must be extensible, and must not have a `name` own property');
+	}
+	if (typeof name !== 'symbol' && typeof name !== 'string') {
+		throw new $TypeError('Assertion failed: `name` must be a Symbol or a String');
+	}
+	if (typeof name === 'symbol') {
+		var description = getSymbolDescription(name);
+		// eslint-disable-next-line no-param-reassign
+		name = typeof description === 'undefined' ? '' : '[' + description + ']';
+	}
+	if (arguments.length > 2) {
+		var prefix = arguments[2];
+		// eslint-disable-next-line no-param-reassign
+		name = prefix + ' ' + name;
+	}
+	return DefinePropertyOrThrow(F, 'name', {
+		'[[Value]]': name,
+		'[[Writable]]': false,
+		'[[Enumerable]]': false,
+		'[[Configurable]]': true
+	});
+};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'use strict';
+
+var GetIntrinsic = require('get-intrinsic');
+
+var $SyntaxError = require('es-errors/syntax');
+var $TypeError = require('es-errors/type');
+var isObject = require('es-object-atoms/isObject');
+var $gOPD = require('gopd');
+var $preventExtensions = GetIntrinsic('%Object.preventExtensions%', true);
+var $gOPN = GetIntrinsic('%Object.getOwnPropertyNames%', true);
+
+var forEach = require('../helpers/forEach');
+
+var DefinePropertyOrThrow = require('./DefinePropertyOrThrow');
+var IsAccessorDescriptor = require('./IsAccessorDescriptor');
+var ToPropertyDescriptor = require('./ToPropertyDescriptor');
+
+// https://262.ecma-international.org/6.0/#sec-setintegritylevel
+
+module.exports = function SetIntegrityLevel(O, level) {
+	if (!isObject(O)) {
+		throw new $TypeError('Assertion failed: Type(O) is not Object');
+	}
+	if (level !== 'sealed' && level !== 'frozen') {
+		throw new $TypeError('Assertion failed: `level` must be `"sealed"` or `"frozen"`');
+	}
+	if (!$preventExtensions) {
+		throw new $SyntaxError('SetIntegrityLevel requires native `Object.preventExtensions` support');
+	}
+	var status = $preventExtensions(O);
+	if (!status) {
+		return false;
+	}
+	if (!$gOPN) {
+		throw new $SyntaxError('SetIntegrityLevel requires native `Object.getOwnPropertyNames` support');
+	}
+	var theKeys = $gOPN(O);
+	if (level === 'sealed') {
+		forEach(theKeys, function (k) {
+			DefinePropertyOrThrow(O, k, { configurable: false });
+		});
+	} else if (level === 'frozen') {
+		forEach(theKeys, function (k) {
+			var currentDesc = $gOPD(O, k);
+			if (typeof currentDesc !== 'undefined') {
+				var desc;
+				if (IsAccessorDescriptor(ToPropertyDescriptor(currentDesc))) {
+					desc = { configurable: false };
+				} else {
+					desc = { configurable: false, writable: false };
+				}
+				DefinePropertyOrThrow(O, k, desc);
+			}
+		});
+	}
+	return true;
+};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    # coding: utf-8
+"""
+
+    webencodings
+    ~~~~~~~~~~~~
+
+    This is a Python implementation of the `WHATWG Encoding standard
+    <http://encoding.spec.whatwg.org/>`. See README for details.
+
+    :copyright: Copyright 2012 by Simon Sapin
+    :license: BSD, see LICENSE for details.
+
+"""
+
+from __future__ import unicode_literals
+
+import codecs
+
+from .labels import LABELS
+
+
+VERSION = '0.5.1'
+
+
+# Some names in Encoding are not valid Python aliases. Remap these.
+PYTHON_NAMES = {
+    'iso-8859-8-i': 'iso-8859-8',
+    'x-mac-cyrillic': 'mac-cyrillic',
+    'macintosh': 'mac-roman',
+    'windows-874': 'cp874'}
+
+CACHE = {}
+
+
+def ascii_lower(string):
+    r"""Transform (only) ASCII letters to lower case: A-Z is mapped to a-z.
+
+    :param string: An Unicode string.
+    :returns: A new Unicode string.
+
+    This is used for `ASCII case-insensitive
+    <http://encoding.spec.whatwg.org/#ascii-case-insensitive>`_
+    matching of encoding labels.
+    The same matching is also used, among other things,
+    for `CSS keywords <http://dev.w3.org/csswg/css-values/#keywords>`_.
+
+    This is different from the :meth:`~py:str.lower` method of Unicode strings
+    which also affect non-ASCII characters,
+    sometimes mapping them into the ASCII range:
+
+        >>> keyword = u'Bac\N{KELVIN SIGN}ground'
+        >>> assert keyword.lower() == u'background'
+        >>> assert ascii_lower(keyword) != keyword.lower()
+        >>> assert ascii_lower(keyword) == u'bac\N{KELVIN SIGN}ground'
+
+    """
+    # This turns out to be faster than unicode.translate()
+    return string.encode('utf8').lower().decode('utf8')
+
+
+def lookup(label):
+    """
+    Look for an encoding by its label.
+    This is the specâ€™s `get an encoding
+    <http://encoding.spec.whatwg.org/#concept-encoding-get>`_ algorithm.
+    Supported labels are listed there.
+
+    :param label: A string.
+    :returns:
+        An :class:`Encoding` object, or :obj:`None` for an unknown label.
+
+    """
+    # Only strip ASCII whitespace: U+0009, U+000A, U+000C, U+000D, and U+0020.
+    label = ascii_lower(label.strip('\t\n\f\r '))
+    name = LABELS.get(label)
+    if name is None:
+        return None
+    encoding = CACHE.get(name)
+    if encoding is None:
+        if name == 'x-user-defined':
+            from .x_user_defined import codec_info
+        else:
+            python_name = PYTHON_NAMES.get(name, name)
+            # Any python_name value that gets to here should be valid.
+            codec_info = codecs.lookup(python_name)
+        encoding = Encoding(name, codec_info)
+        CACHE[name] = encoding
+    return encoding
+
+
+def _get_encoding(encoding_or_label):
+    """
+    Accept either an encoding object or label.
+
+    :param encoding: An :class:`Encoding` object or a label string.
+    :returns: An :class:`Encoding` object.
+    :raises: :exc:`~exceptions.LookupError` for an unknown label.
+
+    """
+    if hasattr(encoding_or_label, 'codec_info'):
+        return encoding_or_label
+
+    encoding = lookup(encoding_or_label)
+    if encoding is None:
+        raise LookupError('Unknown encoding label: %r' % encoding_or_label)
+    return encoding
+
+
+class Encoding(object):
+    """Reresents a character encoding such as UTF-8,
+    that can be used for decoding or encoding.
+
+    .. attribute:: name
+
+        Canonical name of the encoding
+
+    .. attribute:: codec_info
+
+        The actual implementation of the encoding,
+        a stdlib :class:`~codecs.CodecInfo` object.
+        See :func:`codecs.register`.
+
+    """
+    def __init__(self, name, codec_info):
+        self.name = name
+        self.codec_info = codec_info
+
+    def __repr__(self):
+        return '<Encoding %s>' % self.name
+
+
+#: The UTF-8 encoding. Should be used for new content and formats.
+UTF8 = lookup('utf-8')
+
+_UTF16LE = lookup('utf-16le')
+_UTF16BE = lookup('utf-16be')
+
+
+def decode(input, fallback_encoding, errors='replace'):
+    """
+    Decode a single string.
+
+    :param input: A byte string
+    :param fallback_encoding:
+        An :class:`Encoding` object or a label string.
+        The encoding to use if :obj:`input` does note have a BOM.
+    :param errors: Type of error handling. See :func:`codecs.register`.
+    :raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+    :return:
+        A ``(output, encoding)`` tuple of an Unicode string
+        and an :obj:`Encoding`.
+
+    """
+    # Fail early if `encoding` is an invalid label.
+    fallback_encoding = _get_encoding(fallback_encoding)
+    bom_encoding, input = _detect_bom(input)
+    encoding = bom_encoding or fallback_encoding
+    return encoding.codec_info.decode(input, errors)[0], encoding
+
+
+def _detect_bom(input):
+    """Return (bom_encoding, input), with any BOM removed from the input."""
+    if input.startswith(b'\xFF\xFE'):
+        return _UTF16LE, input[2:]
+    if input.startswith(b'\xFE\xFF'):
+        return _UTF16BE, input[2:]
+    if input.startswith(b'\xEF\xBB\xBF'):
+        return UTF8, input[3:]
+    return None, input
+
+
+def encode(input, encoding=UTF8, errors='strict'):
+    """
+    Encode a single string.
+
+    :param input: An Unicode string.
+    :param encoding: An :class:`Encoding` object or a label string.
+    :param errors: Type of error handling. See :func:`codecs.register`.
+    :raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+    :return: A byte string.
+
+    """
+    return _get_encoding(encoding).codec_info.encode(input, errors)[0]
+
+
+def iter_decode(input, fallback_encoding, errors='replace'):
+    """
+    "Pull"-based decoder.
+
+    :param input:
+        An iterable of byte strings.
+
+        The input is first consumed just enough to determine the encoding
+        based on the precense of a BOM,
+        then consumed on demand when the return value is.
+    :param fallback_encoding:
+        An :class:`Encoding` object or a label string.
+        The encoding to use if :obj:`input` does note have a BOM.
+    :param errors: Type of error handling. See :func:`codecs.register`.
+    :raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+    :returns:
+        An ``(output, encoding)`` tuple.
+        :obj:`output` is an iterable of Unicode strings,
+        :obj:`encoding` is the :obj:`Encoding` that is being used.
+
+    """
+
+    decoder = IncrementalDecoder(fallback_encoding, errors)
+    generator = _iter_decode_generator(input, decoder)
+    encoding = next(generator)
+    return generator, encoding
+
+
+def _iter_decode_generator(input, decoder):
+    """Return a generator that first yields the :obj:`Encoding`,
+    then yields output chukns as Unicode strings.
+
+    """
+    decode = decoder.decode
+    input = iter(input)
+    for chunck in input:
+        output = decode(chunck)
+        if output:
+            assert decoder.encoding is not None
+            yield decoder.encoding
+            yield output
+            break
+    else:
+        # Input exhausted without determining the encoding
+        output = decode(b'', final=True)
+        assert decoder.encoding is not None
+        yield decoder.encoding
+        if output:
+            yield output
+        return
+
+    for chunck in input:
+        output = decode(chunck)
+        if output:
+            yield output
+    output = decode(b'', final=True)
+    if output:
+        yield output
+
+
+def iter_encode(input, encoding=UTF8, errors='strict'):
+    """
+    â€œPullâ€-based encoder.
+
+    :param input: An iterable of Unicode strings.
+    :param encoding: An :class:`Encoding` object or a label string.
+    :param errors: Type of error handling. See :func:`codecs.register`.
+    :raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+    :returns: An iterable of byte strings.
+
+    """
+    # Fail early if `encoding` is an invalid label.
+    encode = IncrementalEncoder(encoding, errors).encode
+    return _iter_encode_generator(input, encode)
+
+
+def _iter_encode_generator(input, encode):
+    for chunck in input:
+        output = encode(chunck)
+        if output:
+            yield output
+    output = encode('', final=True)
+    if output:
+        yield output
+
+
+class IncrementalDecoder(object):
+    """
+    â€œPushâ€-based decoder.
+
+    :param fallback_encoding:
+        An :class:`Encoding` object or a label string.
+        The encoding to use if :obj:`input` does note have a BOM.
+    :param errors: Type of error handling. See :func:`codecs.register`.
+    :raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+
+    """
+    def __init__(self, fallback_encoding, errors='replace'):
+        # Fail early if `encoding` is an invalid label.
+        self._fallback_encoding = _get_encoding(fallback_encoding)
+        self._errors = errors
+        self._buffer = b''
+        self._decoder = None
+        #: The actual :class:`Encoding` that is being used,
+        #: or :obj:`None` if that is not determined yet.
+        #: (Ie. if there is not enough input yet to determine
+        #: if there is a BOM.)
+        self.encoding = None  # Not known yet.
+
+    def decode(self, input, final=False):
+        """Decode one chunk of the input.
+
+        :param input: A byte string.
+        :param final:
+            Indicate that no more input is available.
+            Must be :obj:`True` if this is the last call.
+        :returns: An Unicode string.
+
+        """
+        decoder = self._decoder
+        if decoder is not None:
+            return decoder(input, final)
+
+        input = self._buffer + input
+        encoding, input = _detect_bom(input)
+        if encoding is None:
+            if len(input) < 3 and not final:  # Not enough data yet.
+                self._buffer = input
+                return ''
+            else:  # No BOM
+                encoding = self._fallback_encoding
+        decoder = encoding.codec_info.incrementaldecoder(self._errors).decode
+        self._decoder = decoder
+        self.encoding = encoding
+        return decoder(input, final)
+
+
+class IncrementalEncoder(object):
+    """
+    â€œPushâ€-based encoder.
+
+    :param encoding: An :class:`Encoding` object or a label string.
+    :param errors: Type of error handling. See :func:`codecs.register`.
+    :raises: :exc:`~exceptions.LookupError` for an unknown encoding label.
+
+    .. method:: encode(input, final=False)
+
+        :param input: An Unicode string.
+        :param final:
+            Indicate that no more input is available.
+            Must be :obj:`True` if this is the last call.
+        :returns: A byte string.
+
+    """
+    def __init__(self, encoding=UTF8, errors='strict'):
+        encoding = _get_encoding(encoding)
+        self.encode = encoding.codec_info.incrementalencoder(errors).encode
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             /*
+LodePNG Examples
+
+Copyright (c) 2005-2012 Lode Vandevenne
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+    1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+
+    2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+
+    3. This notice may not be removed or altered from any source
+    distribution.
+*/
+
+//Compile command for Linux:
+//g++ lodepng.cpp example_sdl.cpp -lSDL2 -O3 -o showpng
+
+/*
+LodePNG SDL example
+This example displays a PNG with a checkerboard pattern to show tranparency.
+It requires the SDL2 library to compile and run.
+If multiple filenames are given to the command line, it shows all of them.
+Press any key to see next image, or esc to quit.
+*/
+
+#include "lodepng.h"
+
+#include <iostream>
+#include <SDL2/SDL.h>
+
+int show(const std::string& caption, const unsigned char* rgba, unsigned w, unsigned h) {
+  //avoid too large window size by downscaling large image
+  unsigned jump = 1;
+  if(w / 1024 >= jump) jump = w / 1024 + 1;
+  if(h / 1024 >= jump) jump = h / 1024 + 1;
+
+  size_t screenw = w / jump;
+  size_t screenh = h / jump;
+  size_t pitch = screenw * sizeof(Uint32);
+  //init SDL
+  SDL_Window* sdl_window;
+  SDL_Renderer* sdl_renderer;
+  SDL_CreateWindowAndRenderer(screenw, screenh, SDL_WINDOW_OPENGL, &sdl_window, &sdl_renderer);
+  SDL_SetWindowTitle(sdl_window, caption.c_str());
+  if(!sdl_window) {
+    std::cout << "error, no SDL screen" << std::endl;
+    return 0;
+  }
+  SDL_Texture* sdl_texture = SDL_CreateTexture(sdl_renderer, SDL_PIXELFORMAT_ARGB8888,
+                                               SDL_TEXTUREACCESS_STREAMING, screenw, screenh);
+  std::vector<Uint32> sdl_pixels(screenw * screenh * sizeof(Uint32));
+
+  //plot the pixels of the PNG file
+  for(unsigned y = 0; y + jump - 1 < h; y += jump)
+  for(unsigned x = 0; x + jump - 1 < w; x += jump) {
+    //get RGBA components
+    Uint32 r = rgba[4 * y * w + 4 * x + 0]; //red
+    Uint32 g = rgba[4 * y * w + 4 * x + 1]; //green
+    Uint32 b = rgba[4 * y * w + 4 * x + 2]; //blue
+    Uint32 a = rgba[4 * y * w + 4 * x + 3]; //alpha
+
+    //make translucency visible by placing checkerboard pattern behind image
+    int checkerColor = 191 + 64 * (((x / 16) % 2) == ((y / 16) % 2));
+    r = (a * r + (255 - a) * checkerColor) / 255;
+    g = (a * g + (255 - a) * checkerColor) / 255;
+    b = (a * b + (255 - a) * checkerColor) / 255;
+
+    //give the color value to the pixel of the screenbuffer
+    sdl_pixels[(y * screenw + x) / jump] = 65536 * r + 256 * g + b;
+  }
+
+  // render the pixels to the screen
+  SDL_UpdateTexture(sdl_texture, NULL, sdl_pixels.data(), pitch);
+  SDL_RenderClear(sdl_renderer);
+  SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
+  SDL_RenderPresent(sdl_renderer);
+
+  //pause until you press escape and meanwhile redraw screen
+  SDL_Event event;
+  int done = 0;
+  while(done == 0) {
+    while(SDL_PollEvent(&event)) {
+      if(event.type == SDL_QUIT) done = 2;
+      else if(SDL_GetKeyboardState(NULL)[SDLK_ESCAPE]) done = 2;
+      else if(event.type == SDL_KEYDOWN) done = 1; //press any other key for next image
+    }
+    SDL_Delay(5); //pause 5 ms so it consumes less processing power
+  }
+
+  SDL_Quit();
+  return done == 2 ? 1 : 0;
+}
+
+/*shows image with SDL. Returns 1 if user wants to fully quit, 0 if user wants to see next image.*/
+int showfile(const char* filename) {
+  std::cout << "showing " << filename << std::endl;
+
+  std::vector<unsigned char> buffer, image;
+  lodepng::load_file(buffer, filename); //load the image file with given filename
+  unsigned w, h;
+  unsigned error = lodepng::decode(image, w, h, buffer); //decode the png
+
+  //stop if there is an error
+  if(error) {
+    std::cout << "decoder error " << error << ": " << lodepng_error_text(error) << std::endl;
+    return 0;
+  }
+
+  return show(filename, &image[0], w, h);
+}
+
+int main(int argc, char* argv[]) {
+  if(argc <= 1) std::cout << "Please enter PNG file name(s) to display" << std::endl;
+
+  for(int i = 1; i < argc; i++) {
+    if(showfile(argv[i])) return 0;
+  }
+}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ó
+   aÇ-ã                  ój  • S SK Jr  S SKrS SKrS SKrS SKrS SKrS SKJr  S SK	J
+r
+  S SKJr  S SKJr  S SKJrJrJrJr  S SKJr  S S	KJr  S S
+KJr  SS jr\
+SS j5       r\" SSS9" \R8                  5      rSS jrSS jrSS jrSS jr SS jr!SS jr"SS jr#S S jr$      S!S jr%S"S jr&S"S jr'g)#é    )ÚannotationsN)Ú	Generator)Úcontextmanager)ÚPath)ÚNamedTemporaryFile)ÚAnyÚBinaryIOÚCallableÚcast)Úget_path_uid)Úformat_size)Úretryc                ó  • [         R                  S:X  d  [        [        S5      (       d  g[        R                  R                  U 5      (       d   eS nX:w  aš  [        R                  R                  U 5      (       aO  [        R                  " 5       S:X  a   [        U 5      nUS:H  $ [        R                  " U [        R                  5      $ U [        R                  R                  U 5      pX:w  a  Mš  g! [         a     gf = f)NÚwin32ÚgeteuidTr   F)ÚsysÚplatformÚhasattrÚosÚpathÚisabsÚlexistsr   r   ÚOSErrorÚaccessÚW_OKÚdirname)r   ÚpreviousÚpath_uids      Ú3Lib/site-packages/pip\_internal\utils\filesystem.pyÚcheck_path_ownerr       sÉ   € ô ‡||wÓ¤g¬b°)×&<Ñ&<Øä7‰7=‰=˜×ÑĞĞà€HØ
+Ó
+Ü7‰7?‰?˜4× Ñ äzŠz‹|˜qÓ ğ!Ü+¨DÓ1Hğ   1‘}Ğ$ä—y’y ¤r§w¡wÓ/Ğ/à!¤2§7¡7§?¡?°4Ó#8dğ Õ
+ğ øô ó !Ù ğ!ús   ÂC3 Ã3
+D Ã?D c              +  óÚ  #   • [        SS[        R                  R                  U 5      [        R                  R	                  U 5      SS.UD6 n[        [        U5      n Uv •  UR                  5         [        R                  " UR                  5       5         SSS5        g! UR                  5         [        R                  " UR                  5       5        f = f! , (       d  f       g= f7f)a  Return a file-like object pointing to a tmp file next to path.
+
+The file is created securely and is ensured to be written to disk
+after the context reaches its end.
+
+kwargs will be passed to tempfile.NamedTemporaryFile to control
+the way the temporary file will be opened.
+Fz.tmp)ÚdeleteÚdirÚprefixÚsuffixN© )
+r   r   r   r   Úbasenamer   r	   ÚflushÚfsyncÚfileno)r   ÚkwargsÚfÚresults       r   Úadjacent_tmp_filer.   .   s¯   é € ô 
+ğ 
+ØÜG‰GO‰O˜DÓ!Üw‰w×Ñ Ó%Øñ	
+ğ
+ ò
+ğ 
+Ü”h Ó"ˆğ	&ØŠLàL‰LŒNÜHŠHV—]‘]“_Õ%÷
+ğ 
+øğ L‰LŒNÜHŠHV—]‘]“_Õ%ú÷
+õ 
+üs6   ‚AC+ÁCÁB!Á#4CÂ	C+Â!6CÃCÃ
+C(Ã$C+é   g      Ğ?)Ústop_after_delayÚwaitc                ól  • [         R                  R                  U 5      (       dM  [         R                  R                  U 5      nX:X  a  O(Un [         R                  R                  U 5      (       d  MM  [         R                  S:X  a%  [         R
+                  " U [         R                  5      $ [        U 5      $ )z_Check if a directory is writable.
+
+Uses os.access() on POSIX, tries creating files on Windows.
+Úposix)r   r   Úisdirr   Únamer   r   Ú_test_writable_dir_win)r   Úparents     r   Útest_writable_dirr8   L   sy   € ô g‰gm‰m˜D×!Ñ!Ü—‘—‘ Ó&ˆØ‹>ØØˆô	 g‰gm‰m˜D×!Ó!ô 
+‡ww'ÓÜyŠy˜œrŸw™wÓ'Ğ'ä! $Ó'Ğ'ó    c                óô  ^• SnSm[        S5       H½  nUSR                  U4S j[        S5       5       5      -   n[        R                  R                  X5      n [        R                  " U[        R
+                  [        R                  -  [        R                  -  5      n[        R                  " U5        [        R                  " U5          g   [        S	5      e! [         a     MÙ  [         a       gf = f)
+NÚ(accesstest_deleteme_fishfingers_custard_Ú$abcdefghijklmnopqrstuvwxyz0123456789é
+   Ú c              3  óP   >#   • U  H  n[         R                  " T5      v •  M     g 7f©N)ÚrandomÚchoice)Ú.0Ú_Úalphabets     €r   Ú	<genexpr>Ú)_test_writable_dir_win.<locals>.<genexpr>d   s   øé € Ğ!LÂ8¸a¤&§-¢-°×"9Ğ"9Â8ùs   ƒ#&é   TFz3Unexpected condition testing for writable directory)ÚrangeÚjoinr   r   ÚopenÚO_RDWRÚO_CREATÚO_EXCLÚcloseÚunlinkÚFileExistsErrorÚPermissionErrorr   )r   r'   rD   r5   ÚfileÚfdrE   s         @r   r6   r6   ^   sÁ   ø€ ğ :€HØ5€HÜ2YˆØ˜"Ÿ'™'Ô!LÄ5ÈÄ8Ó!LÓLÑLˆÜw‰w|‰|˜DÓ'ˆğ	Ü—’˜œrŸy™y¬2¯:©:Ñ5¼¿	¹	ÑAÓBˆBô HŠHRŒLÜIŠIdŒOÙñ# ô( ĞGÓ
+HĞHøô ó 	ÚÜó 	ò ğ	ús   ÁACÃ
+C7Ã*	C7Ã6C7c                ó®   ^• / n[         R                  " U 5       H7  u  mp4[        R                  " XA5      nUR	                  U4S jU 5       5        M9     U$ )z‚Returns a list of absolute paths of files beneath path, recursively,
+with filenames which match the UNIX-style shell glob pattern.c              3  ód   >#   • U  H%  n[         R                  R                  TU5      v •  M'     g 7fr@   )r   r   rJ   )rC   r,   Úroots     €r   rF   Úfind_files.<locals>.<genexpr>€   s#   øé € Ğ=²W°”b—g‘g—l‘l 4¨×+Ğ+²Wùs   ƒ-0)r   ÚwalkÚfnmatchÚfilterÚextend)r   Úpatternr-   rD   ÚfilesÚmatchesrW   s         @r   Ú
+find_filesr`   z   sG   ø€ ğ €FÜŸ'š' $-‰ˆˆaÜ—.’. Ó0ˆØ‰Ô=±WÓ=Ö=ñ (ğ €Mr9   c                óŠ   • [         R                  R                  U 5      (       a  g[         R                  R                  U 5      $ ©Nr   )r   r   ÚislinkÚgetsize©r   s    r   Ú	file_sizerf   „   s+   € ä	‡ww‡~~d×ÑØÜ7‰7?‰?˜4Ó Ğ r9   c                ó*   • [        [        U 5      5      $ r@   )r   rf   re   s    r   Úformat_file_sizerh   ‹   s   € Ü”y “Ó'Ğ'r9   c                ó¶   • Sn[         R                  " U 5       H<  u  p#nU H0  n[         R                  R                  X%5      nU[	        U5      -  nM2     M>     U$ )Ng        )r   rY   r   rJ   rf   )r   ÚsizerW   Ú_dirsr^   ÚfilenameÚ	file_paths          r   Údirectory_sizern      sP   € Ø€DÜ Ÿgšg dmÑˆUÛˆHÜŸ™Ÿ™ TÓ4ˆIØ”I˜iÓ(Ñ(ŠDó ñ ,ğ €Kr9   c                ó*   • [        [        U 5      5      $ r@   )r   rn   re   s    r   Úformat_directory_sizerp   ˜   s   € Ü”~ dÓ+Ó,Ğ,r9   c                óf  • [         R                  " U 5      R                  S-  S-  n[         R                  [         R                  ;   a&  [         R                  " UR                  5       U5        g [         R                  [         R                  ;   a!  [         R                  " UR                  USS9  g g )Ni¶  i€  F)Úfollow_symlinks)r   ÚstatÚst_modeÚchmodÚsupports_fdr*   Úsupports_follow_symlinksr5   )Ú	directoryÚtarget_fileÚmodes      r   Úcopy_directory_permissionsr{   œ   s|   € ä
+Š	Ó×"Ñ" UÑ*Ø
+ñ	ğ 	ô
+ 
+‡xx”2—>‘>Ó!Ü
+Š×#Ñ#Ó% tÕ,Ü	‰”R×0Ñ0Ó	0Ü
+Š×!Ñ! 4¸Ó?ğ 
+1r9   c              #  óz  #   • / n[        5       n[        R                  " [        U 5      R	                  5       5       H^  u  pEn[        U5      nU" XF5      (       a/  UR                  UR                  SS 5        UR                  U5        UR                  U5        M`     [        USS9 H  nXƒ;  d  M
+  Uv •  M     g7f)zVYields every subdirectory of +path+ that has no files matching the
+predicate under it.NéÿÿÿÿT)Úreverse)
+Úsetr   rY   r   ÚresolveÚupdateÚparentsÚaddÚappendÚsorted)	r   Ú	predicateÚdirectoriesÚexcludedÚroot_strrD   Ú	filenamesrW   Úds	            r   Ú_subdirs_without_genericrŒ   ¨   s   é € ğ €KÜ›%€Hä"$§'¢'¬$¨t«*×*<Ñ*<Ó*>Ö"?ÑˆYÜH‹~ˆÙX×)Ñ)ğ O‰O˜DŸL™L¨¨"Ğ-Ô.ØL‰L˜ÔØ×Ñ˜4Ö ñ #@ô K¨Ô.ˆØÕØŒGò /ùs   ‚B,B;Â2	B;c                ó   • [        U S 5      $ )z?Yields every subdirectory of +path+ that has no files under it.c                ó   • [        U5      S:„  $ rb   )Úlen©rW   rŠ   s     r   Ú<lambda>Ú'subdirs_without_files.<locals>.<lambda>Â   s   € Ä#ÀiÃ.ĞSTÒBTr9   ©rŒ   re   s    r   Úsubdirs_without_filesr”   À   s   € ä# DÑ*TÓUĞUr9   c                ó   • [        U S 5      $ )zDYields every subdirectory of +path+ that has no .whl files under it.c                ó&   • [        S U 5       5      $ )Nc              3  óB   #   • U  H  oR                  S 5      v •  M     g7f)z.whlN)Úendswith)rC   Úxs     r   rF   Ú;subdirs_without_wheels.<locals>.<lambda>.<locals>.<genexpr>È   s   é € Ğ)PÂiÀ¯*©*°V×*<Ğ*<Âiùs   ‚)Úanyr   s     r   r‘   Ú(subdirs_without_wheels.<locals>.<lambda>È   s   € ¤cÑ)PÁiÓ)PÔ&Pr9   r“   re   s    r   Úsubdirs_without_wheelsr   Å   s   € ä#ØÑPóğ r9   )r   ÚstrÚreturnÚbool)r   r   r+   r   rŸ   zGenerator[BinaryIO, None, None])r   r   r]   r   rŸ   z	list[str])r   r   rŸ   zint | float)r   r   rŸ   r   )rx   r   ry   r	   rŸ   ÚNone)r   r   r†   z Callable[[str, list[str]], bool]rŸ   úGenerator[Path])r   r   rŸ   r¢   )(Ú
+__future__r   rZ   r   Úos.pathrA   r   Úcollections.abcr   Ú
+contextlibr   Úpathlibr   Útempfiler   Útypingr   r	   r
+   r   Úpip._internal.utils.compatr   Úpip._internal.utils.miscr   Úpip._internal.utils.retryr   r    r.   Úreplacer8   r6   r`   rf   rh   rn   rp   r{   rŒ   r”   r   r&   r9   r   Ú<module>r®      s´   ğİ "ã Û 	Û Û Û 
+İ %İ %İ İ 'ß 0Ó 0å 3İ 0İ +ôğ6 ó&ó ğ&ñ0  ¨Ò
+.¨r¯z©zÓ
+:€ô
+(ô$Iô8ô!ô(ôô-ô	@ğØ
+ğØ:ğàôô0Võ
+r9                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       # coding: utf-8
+
+"""
+    Kubernetes
+
+    No description provided (generated by Openapi Generator https://github.com/openapitools/openapi-generator)  # noqa: E501
+
+    The version of the OpenAPI document: release-1.36
+    Generated by: https://openapi-generator.tech
+"""
+
+
+try:
+    from inspect import getfullargspec
+except ImportError:
+    from inspect import getargspec as getfullargspec
+import pprint
+import re  # noqa: F401
+import six
+
+from kubernetes.client.configuration import Configuration
+
+
+class V1alpha1StorageVersionCondition(object):
+    """NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    """
+
+    """
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    openapi_types = {
+        'last_transition_time': 'datetime',
+        'message': 'str',
+        'observed_generation': 'int',
+        'reason': 'str',
+        'status': 'str',
+        'type': 'str'
+    }
+
+    attribute_map = {
+        'last_transition_time': 'lastTransitionTime',
+        'message': 'message',
+        'observed_generation': 'observedGeneration',
+        'reason': 'reason',
+        'status': 'status',
+        'type': 'type'
+    }
+
+    def __init__(self, last_transition_time=None, message=None, observed_generation=None, reason=None, status=None, type=None, local_vars_configuration=None):  # noqa: E501
+        """V1alpha1StorageVersionCondition - a model defined in OpenAPI"""  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration.get_default_copy()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._last_transition_time = None
+        self._message = None
+        self._observed_generation = None
+        self._reason = None
+        self._status = None
+        self._type = None
+        self.discriminator = None
+
+        if last_transition_time is not None:
+            self.last_transition_time = last_transition_time
+        self.message = message
+        if observed_generation is not None:
+            self.observed_generation = observed_generation
+        self.reason = reason
+        self.status = status
+        self.type = type
+
+    @property
+    def last_transition_time(self):
+        """Gets the last_transition_time of this V1alpha1StorageVersionCondition.  # noqa: E501
+
+        lastTransitionTime is the last time the condition transitioned from one status to another.  # noqa: E501
+
+        :return: The last_transition_time of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_transition_time
+
+    @last_transition_time.setter
+    def last_transition_time(self, last_transition_time):
+        """Sets the last_transition_time of this V1alpha1StorageVersionCondition.
+
+        lastTransitionTime is the last time the condition transitioned from one status to another.  # noqa: E501
+
+        :param last_transition_time: The last_transition_time of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :type last_transition_time: datetime
+        """
+
+        self._last_transition_time = last_transition_time
+
+    @property
+    def message(self):
+        """Gets the message of this V1alpha1StorageVersionCondition.  # noqa: E501
+
+        message is a human readable string indicating details about the transition.  # noqa: E501
+
+        :return: The message of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this V1alpha1StorageVersionCondition.
+
+        message is a human readable string indicating details about the transition.  # noqa: E501
+
+        :param message: The message of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :type message: str
+        """
+        if self.local_vars_configuration.client_side_validation and message is None:  # noqa: E501
+            raise ValueError("Invalid value for `message`, must not be `None`")  # noqa: E501
+
+        self._message = message
+
+    @property
+    def observed_generation(self):
+        """Gets the observed_generation of this V1alpha1StorageVersionCondition.  # noqa: E501
+
+        observedGeneration represents the .metadata.generation that the condition was set based upon, if field is set.  # noqa: E501
+
+        :return: The observed_generation of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :rtype: int
+        """
+        return self._observed_generation
+
+    @observed_generation.setter
+    def observed_generation(self, observed_generation):
+        """Sets the observed_generation of this V1alpha1StorageVersionCondition.
+
+        observedGeneration represents the .metadata.generation that the condition was set based upon, if field is set.  # noqa: E501
+
+        :param observed_generation: The observed_generation of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :type observed_generation: int
+        """
+
+        self._observed_generation = observed_generation
+
+    @property
+    def reason(self):
+        """Gets the reason of this V1alpha1StorageVersionCondition.  # noqa: E501
+
+        reason for the condition's last transition.  # noqa: E501
+
+        :return: The reason of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason):
+        """Sets the reason of this V1alpha1StorageVersionCondition.
+
+        reason for the condition's last transition.  # noqa: E501
+
+        :param reason: The reason of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :type reason: str
+        """
+        if self.local_vars_configuration.client_side_validation and reason is None:  # noqa: E501
+            raise ValueError("Invalid value for `reason`, must not be `None`")  # noqa: E501
+
+        self._reason = reason
+
+    @property
+    def status(self):
+        """Gets the status of this V1alpha1StorageVersionCondition.  # noqa: E501
+
+        status of the condition, one of True, False, Unknown.  # noqa: E501
+
+        :return: The status of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this V1alpha1StorageVersionCondition.
+
+        status of the condition, one of True, False, Unknown.  # noqa: E501
+
+        :param status: The status of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :type status: str
+        """
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
+
+        self._status = status
+
+    @property
+    def type(self):
+        """Gets the type of this V1alpha1StorageVersionCondition.  # noqa: E501
+
+        type of the condition.  # noqa: E501
+
+        :return: The type of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this V1alpha1StorageVersionCondition.
+
+        type of the condition.  # noqa: E501
+
+        :param type: The type of this V1alpha1StorageVersionCondition.  # noqa: E501
+        :type type: str
+        """
+        if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+
+        self._type = type
+
+    def to_dict(self, serialize=False):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        def convert(x):
+            if hasattr(x, "to_dict"):
+                args = getfullargspec(x.to_dict).args
+                if len(args) == 1:
+                    return x.to_dict()
+                else:
+                    return x.to_dict(serialize)
+            else:
+                return x
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            attr = self.attribute_map.get(attr, attr) if serialize else attr
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: convert(x),
+                    value
+                ))
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], convert(item[1])),
+                    value.items()
+                ))
+            else:
+                result[attr] = convert(value)
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, V1alpha1StorageVersionCondition):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        if not isinstance(other, V1alpha1StorageVersionCondition):
+            return True
+
+        return self.to_dict() != other.to_dict()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    # Copyright (C) 2012 Anaconda, Inc
+# SPDX-License-Identifier: BSD-3-Clause
+"""Defines S3 transport adapter for CondaSession (requests.Session)."""
+
+from __future__ import annotations
+
+from logging import LoggerAdapter, getLogger
+from tempfile import SpooledTemporaryFile
+from typing import TYPE_CHECKING
+
+from ....common.compat import ensure_binary
+from ....common.serialize import json
+from ....common.url import url_to_s3_info
+from .. import BaseAdapter, CaseInsensitiveDict, Response
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+    from typing import IO
+
+    from .. import PreparedRequest
+
+log = getLogger(__name__)
+stderrlog = LoggerAdapter(getLogger("conda.stderrlog"), extra=dict(terminator="\n"))
+
+
+class S3Adapter(BaseAdapter):
+    def send(
+        self,
+        request: PreparedRequest,
+        stream: bool = False,
+        timeout: None | float | tuple[float, float] | tuple[float, None] = None,
+        verify: bool | str = True,
+        cert: None | bytes | str | tuple[bytes | str, bytes | str] = None,
+        proxies: dict[str, str] | None = None,
+    ) -> Response:
+        resp = Response()
+        resp.status_code = 200
+        resp.url = request.url
+
+        try:
+            return self._send_boto3(resp, request)
+        except ImportError:
+            stderrlog.info(
+                "\nError: boto3 is required for S3 channels. "
+                "Please install with `conda install boto3`\n"
+                "Make sure to run `conda deactivate` if you "
+                "are in a conda environment.\n"
+            )
+            resp.status_code = 404
+            return resp
+
+    def close(self):
+        pass
+
+    def direct_download(
+        self,
+        url: str,
+        fileobj: IO[bytes],
+        progress_callback: Callable[[float], None] | None = None,
+        size: int | None = None,
+    ) -> None:
+        """
+        Download S3 object directly to file object using boto3's optimized
+        download_fileobj, which handles multipart downloads and retries.
+
+        This avoids the extra copy that occurs when using send() which buffers
+        to a SpooledTemporaryFile first.
+
+        :param url: S3 URL (s3://bucket/key)
+        :param fileobj: File object to write to (must be opened in binary write mode)
+        :param progress_callback: Optional callback(fraction) where fraction is 0.0-1.0
+        :param size: Optional content length (required for progress reporting)
+        :raises CondaError: On S3 errors or if boto3 is not installed
+        """
+        from ....exceptions import CondaError
+
+        try:
+            from boto3.session import Session
+        except ImportError:
+            raise CondaError(
+                "boto3 is required for S3 channels. "
+                "Please install with `conda install -n base boto3`"
+            )
+
+        from botocore.exceptions import BotoCoreError, ClientError
+
+        bucket_name, key_string = url_to_s3_info(url)
+        # Create separate boto3 session for thread safety
+        # https://github.com/conda/conda/issues/8993
+        session = Session()
+        s3 = session.resource("s3")
+        key = s3.Object(bucket_name, key_string[1:])
+
+        boto_callback = None
+        if progress_callback and size:
+            downloaded = [0]
+
+            def boto_callback(bytes_transferred):
+                downloaded[0] += bytes_transferred
+                progress_callback(downloaded[0] / size)
+        elif progress_callback:
+            log.debug(
+                "Progress callback provided but size unknown; progress will not be reported"
+            )
+
+        try:
+            key.download_fileobj(fileobj, Callback=boto_callback)
+        except (BotoCoreError, ClientError) as e:
+            raise CondaError(
+                "Error downloading file from S3: %(url)s\n%(exception)s",
+                url=url,
+                exception=repr(e),
+            ) from e
+
+    def _send_boto3(self, resp: Response, request: PreparedRequest) -> Response:
+        from boto3.session import Session
+        from botocore.exceptions import BotoCoreError, ClientError
+
+        bucket_name, key_string = url_to_s3_info(request.url)
+        # https://github.com/conda/conda/issues/8993
+        # creating a separate boto3 session to make this thread safe
+        session = Session()
+        # create a resource client using this thread's session object
+        s3 = session.resource("s3")
+        # finally get the S3 object
+        key = s3.Object(bucket_name, key_string[1:])
+
+        try:
+            response = key.get()
+        except (BotoCoreError, ClientError) as e:
+            resp.status_code = 404
+            message = {
+                "error": "error downloading file from s3",
+                "path": request.url,
+                "exception": repr(e),
+            }
+            resp.raw = self._write_tempfile(
+                lambda x: x.write(ensure_binary(json.dumps(message)))
+            )
+            resp.close = resp.raw.close
+            return resp
+
+        key_headers = response["ResponseMetadata"]["HTTPHeaders"]
+        resp.headers = CaseInsensitiveDict(
+            {
+                "Content-Type": key_headers.get("content-type", "text/plain"),
+                "Content-Length": key_headers["content-length"],
+                "Last-Modified": key_headers["last-modified"],
+            }
+        )
+
+        resp.raw = self._write_tempfile(key.download_fileobj)
+        resp.close = resp.raw.close
+
+        return resp
+
+    def _write_tempfile(self, writer_callable):
+        fh = SpooledTemporaryFile()
+        writer_callable(fh)
+        fh.seek(0)
+        return fh
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          # coding: utf-8
+
+"""
+    Kubernetes
+
+    No description provided (generated by Openapi Generator https://github.com/openapitools/openapi-generator)  # noqa: E501
+
+    The version of the OpenAPI document: release-1.36
+    Generated by: https://openapi-generator.tech
+"""
+
+
+try:
+    from inspect import getfullargspec
+except ImportError:
+    from inspect import getargspec as getfullargspec
+import pprint
+import re  # noqa: F401
+import six
+
+from kubernetes.client.configuration import Configuration
+
+
+class V1alpha1StorageVersionList(object):
+    """NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    """
+
+    """
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    openapi_types = {
+        'api_version': 'str',
+        'items': 'list[V1alpha1StorageVersion]',
+        'kind': 'str',
+        'metadata': 'V1ListMeta'
+    }
+
+    attribute_map = {
+        'api_version': 'apiVersion',
+        'items': 'items',
+        'kind': 'kind',
+        'metadata': 'metadata'
+    }
+
+    def __init__(self, api_version=None, items=None, kind=None, metadata=None, local_vars_configuration=None):  # noqa: E501
+        """V1alpha1StorageVersionList - a model defined in OpenAPI"""  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration.get_default_copy()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._api_version = None
+        self._items = None
+        self._kind = None
+        self._metadata = None
+        self.discriminator = None
+
+        if api_version is not None:
+            self.api_version = api_version
+        self.items = items
+        if kind is not None:
+            self.kind = kind
+        if metadata is not None:
+            self.metadata = metadata
+
+    @property
+    def api_version(self):
+        """Gets the api_version of this V1alpha1StorageVersionList.  # noqa: E501
+
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources  # noqa: E501
+
+        :return: The api_version of this V1alpha1StorageVersionList.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_version
+
+    @api_version.setter
+    def api_version(self, api_version):
+        """Sets the api_version of this V1alpha1StorageVersionList.
+
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources  # noqa: E501
+
+        :param api_version: The api_version of this V1alpha1StorageVersionList.  # noqa: E501
+        :type api_version: str
+        """
+
+        self._api_version = api_version
+
+    @property
+    def items(self):
+        """Gets the items of this V1alpha1StorageVersionList.  # noqa: E501
+
+        Items holds a list of StorageVersion  # noqa: E501
+
+        :return: The items of this V1alpha1StorageVersionList.  # noqa: E501
+        :rtype: list[V1alpha1StorageVersion]
+        """
+        return self._items
+
+    @items.setter
+    def items(self, items):
+        """Sets the items of this V1alpha1StorageVersionList.
+
+        Items holds a list of StorageVersion  # noqa: E501
+
+        :param items: The items of this V1alpha1StorageVersionList.  # noqa: E501
+        :type items: list[V1alpha1StorageVersion]
+        """
+        if self.local_vars_configuration.client_side_validation and items is None:  # noqa: E501
+            raise ValueError("Invalid value for `items`, must not be `None`")  # noqa: E501
+
+        self._items = items
+
+    @property
+    def kind(self):
+        """Gets the kind of this V1alpha1StorageVersionList.  # noqa: E501
+
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  # noqa: E501
+
+        :return: The kind of this V1alpha1StorageVersionList.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this V1alpha1StorageVersionList.
+
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  # noqa: E501
+
+        :param kind: The kind of this V1alpha1StorageVersionList.  # noqa: E501
+        :type kind: str
+        """
+
+        self._kind = kind
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this V1alpha1StorageVersionList.  # noqa: E501
+
+
+        :return: The metadata of this V1alpha1StorageVersionList.  # noqa: E501
+        :rtype: V1ListMeta
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this V1alpha1StorageVersionList.
+
+
+        :param metadata: The metadata of this V1alpha1StorageVersionList.  # noqa: E501
+        :type metadata: V1ListMeta
+        """
+
+        self._metadata = metadata
+
+    def to_dict(self, serialize=False):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        def convert(x):
+            if hasattr(x, "to_dict"):
+                args = getfullargspec(x.to_dict).args
+                if len(args) == 1:
+                    return x.to_dict()
+                else:
+                    return x.to_dict(serialize)
+            else:
+                return x
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            attr = self.attribute_map.get(attr, attr) if serialize else attr
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: convert(x),
+                    value
+                ))
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], convert(item[1])),
+                    value.items()
+                ))
+            else:
+                result[attr] = convert(value)
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, V1alpha1StorageVersionList):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        if not isinstance(other, V1alpha1StorageVersionList):
+            return True
+
+        return self.to_dict() != other.to_dict()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             # coding: utf-8
+
+"""
+    Kubernetes
+
+    No description provided (generated by Openapi Generator https://github.com/openapitools/openapi-generator)  # noqa: E501
+
+    The version of the OpenAPI document: release-1.36
+    Generated by: https://openapi-generator.tech
+"""
+
+
+try:
+    from inspect import getfullargspec
+except ImportError:
+    from inspect import getargspec as getfullargspec
+import pprint
+import re  # noqa: F401
+import six
+
+from kubernetes.client.configuration import Configuration
+
+
+class V1alpha1StorageVersion(object):
+    """NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    """
+
+    """
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    openapi_types = {
+        'api_version': 'str',
+        'kind': 'str',
+        'metadata': 'V1ObjectMeta',
+        'spec': 'object',
+        'status': 'V1alpha1StorageVersionStatus'
+    }
+
+    attribute_map = {
+        'api_version': 'apiVersion',
+        'kind': 'kind',
+        'metadata': 'metadata',
+        'spec': 'spec',
+        'status': 'status'
+    }
+
+    def __init__(self, api_version=None, kind=None, metadata=None, spec=None, status=None, local_vars_configuration=None):  # noqa: E501
+        """V1alpha1StorageVersion - a model defined in OpenAPI"""  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration.get_default_copy()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._api_version = None
+        self._kind = None
+        self._metadata = None
+        self._spec = None
+        self._status = None
+        self.discriminator = None
+
+        if api_version is not None:
+            self.api_version = api_version
+        if kind is not None:
+            self.kind = kind
+        self.metadata = metadata
+        if spec is not None:
+            self.spec = spec
+        if status is not None:
+            self.status = status
+
+    @property
+    def api_version(self):
+        """Gets the api_version of this V1alpha1StorageVersion.  # noqa: E501
+
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources  # noqa: E501
+
+        :return: The api_version of this V1alpha1StorageVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_version
+
+    @api_version.setter
+    def api_version(self, api_version):
+        """Sets the api_version of this V1alpha1StorageVersion.
+
+        APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources  # noqa: E501
+
+        :param api_version: The api_version of this V1alpha1StorageVersion.  # noqa: E501
+        :type api_version: str
+        """
+
+        self._api_version = api_version
+
+    @property
+    def kind(self):
+        """Gets the kind of this V1alpha1StorageVersion.  # noqa: E501
+
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  # noqa: E501
+
+        :return: The kind of this V1alpha1StorageVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this V1alpha1StorageVersion.
+
+        Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  # noqa: E501
+
+        :param kind: The kind of this V1alpha1StorageVersion.  # noqa: E501
+        :type kind: str
+        """
+
+        self._kind = kind
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this V1alpha1StorageVersion.  # noqa: E501
+
+
+        :return: The metadata of this V1alpha1StorageVersion.  # noqa: E501
+        :rtype: V1ObjectMeta
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this V1alpha1StorageVersion.
+
+
+        :param metadata: The metadata of this V1alpha1StorageVersion.  # noqa: E501
+        :type metadata: V1ObjectMeta
+        """
+        if self.local_vars_configuration.client_side_validation and metadata is None:  # noqa: E501
+            raise ValueError("Invalid value for `metadata`, must not be `None`")  # noqa: E501
+
+        self._metadata = metadata
+
+    @property
+    def spec(self):
+        """Gets the spec of this V1alpha1StorageVersion.  # noqa: E501
+
+        spec is an empty spec. It is here to comply with Kubernetes API style.  # noqa: E501
+
+        :return: The spec of this V1alpha1StorageVersion.  # noqa: E501
+        :rtype: object
+        """
+        return self._spec
+
+    @spec.setter
+    def spec(self, spec):
+        """Sets the spec of this V1alpha1StorageVersion.
+
+        spec is an empty spec. It is here to comply with Kubernetes API style.  # noqa: E501
+
+        :param spec: The spec of this V1alpha1StorageVersion.  # noqa: E501
+        :type spec: object
+        """
+
+        self._spec = spec
+
+    @property
+    def status(self):
+        """Gets the status of this V1alpha1StorageVersion.  # noqa: E501
+
+
+        :return: The status of this V1alpha1StorageVersion.  # noqa: E501
+        :rtype: V1alpha1StorageVersionStatus
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this V1alpha1StorageVersion.
+
+
+        :param status: The status of this V1alpha1StorageVersion.  # noqa: E501
+        :type status: V1alpha1StorageVersionStatus
+        """
+
+        self._status = status
+
+    def to_dict(self, serialize=False):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        def convert(x):
+            if hasattr(x, "to_dict"):
+                args = getfullargspec(x.to_dict).args
+                if len(args) == 1:
+                    return x.to_dict()
+                else:
+                    return x.to_dict(serialize)
+            else:
+                return x
+
+        for attr, _ in six.iteritems(self.openapi_types):
+            value = getattr(self, attr)
+            attr = self.attribute_map.get(attr, attr) if serialize else attr
+            if isinstance(value, list):
+                result[attr] = list(map(
+                    lambda x: convert(x),
+                    value
+                ))
+            elif isinstance(value, dict):
+                result[attr] = dict(map(
+                    lambda item: (item[0], convert(item[1])),
+                    value.items()
+                ))
+            else:
+                result[attr] = convert(value)
+
+        return result
+
+    def to_str(self):
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.to_dict())
+
+    def __repr__(self):
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        """Returns true if both objects are equal"""
+        if not isinstance(other, V1alpha1StorageVersion):
+            return False
+
+        return self.to_dict() == other.to_dict()
+
+    def __ne__(self, other):
+        """Returns true if both objects are not equal"""
+        if not isinstance(other, V1alpha1StorageVersion):
+            return True
+
+        return self.to_dict() != other.to_dict()
+                    # coding: utf-8
+
+"""
+    Kubernetes
+
+    No description provided (generated by Openapi Generator https://github.com/openapitools/openapi-generator)  # noqa: E501
+
+    The version of the OpenAPI document: release-1.36
+    Generated by: https://openapi-generator.tech
+"""
+
+
+try:
+    from inspect import getfullargspec
+except ImportError:
+    from inspect import getargspec as getfullargspec
+import pprint
+import re  # noqa: F401
+import six
+
+from kubernetes.client.configuration import Configuration
+
+
+class V1alpha1ServerStorageVersion(object):
+    """NOTE: This class is auto generated by OpenAPI Generator.
+    Ref: https://openapi-generator.tech
+
+    Do not edit the class manually.
+    """
+
+    """
+    Attributes:
+      openapi_types (dict): The key is attribute name
+                            and the value is attribute type.
+      attribute_map (dict): The key is attribute name
+                            and the value is json key in definition.
+    """
+    openapi_types = {
+        'api_server_id': 'str',
+        'decodable_versions': 'list[str]',
+        'encoding_version': 'str',
+        'served_versions': 'list[str]'
+    }
+
+    attribute_map = {
+        'api_server_id': 'apiServerID',
+        'decodable_versions': 'decodableVersions',
+        'encoding_version': 'encodingVersion',
+        'served_versions': 'servedVersions'
+    }
+
+    def __init__(self, api_server_id=None, decodable_versions=None, encoding_version=None, served_versions=None, local_vars_configuration=None):  # noqa: E501
+        """V1alpha1ServerStorageVersion - a model defined in OpenAPI"""  # noqa: E501
+        if local_vars_configuration is None:
+            local_vars_configuration = Configuration.get_default_copy()
+        self.local_vars_configuration = local_vars_configuration
+
+        self._api_server_id = None
+        self._decodable_versions = None
+        self._encoding_version = None
+        self._served_versions = None
+        self.discriminator = None
+
+        self.api_server_id = api_server_id
+        self.decodable_versions = decodable_versions
+        self.encoding_version = encoding_version
+        if served_versions is not None:
+            self.served_versions = served_versions
+
+    @property
+    def api_server_id(self):
+        """Gets the api_server_id of this V1alpha1ServerStorageVersion.  # noqa: E501
+
+        apiServerID is the ID of the reporting API server.  # noqa: E501
+
+        :return: The api_server_id of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_server_id
+
+    @api_server_id.setter
+    def api_server_id(self, api_server_id):
+        """Sets the api_server_id of this V1alpha1ServerStorageVersion.
+
+        apiServerID is the ID of the reporting API server.  # noqa: E501
+
+        :param api_server_id: The api_server_id of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :type api_server_id: str
+        """
+        if self.local_vars_configuration.client_side_validation and api_server_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `api_server_id`, must not be `None`")  # noqa: E501
+
+        self._api_server_id = api_server_id
+
+    @property
+    def decodable_versions(self):
+        """Gets the decodable_versions of this V1alpha1ServerStorageVersion.  # noqa: E501
+
+        decodableVersions are the encoding versions the API server can handle to decode. The API server can decode objects encoded in these versions. The encodingVersion must be included in the decodableVersions.  # noqa: E501
+
+        :return: The decodable_versions of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._decodable_versions
+
+    @decodable_versions.setter
+    def decodable_versions(self, decodable_versions):
+        """Sets the decodable_versions of this V1alpha1ServerStorageVersion.
+
+        decodableVersions are the encoding versions the API server can handle to decode. The API server can decode objects encoded in these versions. The encodingVersion must be included in the decodableVersions.  # noqa: E501
+
+        :param decodable_versions: The decodable_versions of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :type decodable_versions: list[str]
+        """
+        if self.local_vars_configuration.client_side_validation and decodable_versions is None:  # noqa: E501
+            raise ValueError("Invalid value for `decodable_versions`, must not be `None`")  # noqa: E501
+
+        self._decodable_versions = decodable_versions
+
+    @property
+    def encoding_version(self):
+        """Gets the encoding_version of this V1alpha1ServerStorageVersion.  # noqa: E501
+
+        encodingVersion the API server encodes the object to when persisting it in the backend (e.g., etcd).  # noqa: E501
+
+        :return: The encoding_version of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._encoding_version
+
+    @encoding_version.setter
+    def encoding_version(self, encoding_version):
+        """Sets the encoding_version of this V1alpha1ServerStorageVersion.
+
+        encodingVersion the API server encodes the object to when persisting it in the backend (e.g., etcd).  # noqa: E501
+
+        :param encoding_version: The encoding_version of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :type encoding_version: str
+        """
+        if self.local_vars_configuration.client_side_validation and encoding_version is None:  # noqa: E501
+            raise ValueError("Invalid value for `encoding_version`, must not be `None`")  # noqa: E501
+
+        self._encoding_version = encoding_version
+
+    @property
+    def served_versions(self):
+        """Gets the served_versions of this V1alpha1ServerStorageVersion.  # noqa: E501
+
+        servedVersions lists all versions the API server can serve. DecodableVersions must include all ServedVersions.  # noqa: E501
+
+        :return: The served_versions of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._served_versions
+
+    @served_versions.setter
+    def served_versions(self, served_versions):
+        """Sets the served_versions of this V1alpha1ServerStorageVersion.
+
+        servedVersions lists all versions the API server can serve. DecodableVersions must include all ServedVersions.  # noqa: E501
+
+        :param served_versions: The served_versions of this V1alpha1ServerStorageVersion.  # noqa: E501
+        :type served_versions: list[str]
+        """
+
+        self._served_versions = served_versions
+
+    def to_dict(self, serialize=False):
+        """Returns the model prop

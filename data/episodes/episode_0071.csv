@@ -1,0 +1,1203 @@
+   size: Sequence[int],
+    stride: Sequence[int],
+    dtype: torch.dtype = torch.float32,
+    device: str | torch.device = "cpu",
+    extra_size: int = 0,
+) -> torch.Tensor:
+    needed_size = extra_size
+    if all(s > 0 for s in size):
+        # only need to allocate if all sizes are non-zero
+        needed_size += (
+            sum((shape - 1) * stride for shape, stride in zip(size, stride)) + 1
+        )
+    if dtype.is_floating_point:
+        if dtype == torch.float4_e2m1fn_x2:
+            buffer = torch.randint(
+                0, 256, (needed_size,), dtype=torch.uint8, device=device
+            ).view(torch.float4_e2m1fn_x2)
+        elif dtype.itemsize == 1:
+            """
+            normal distribution kernel is not implemented for fp8..
+            Workaround that by creating a fp16 tensor and then cast.
+            """
+            buffer = torch.randn(needed_size, dtype=torch.float16, device=device).to(
+                dtype=dtype
+            )
+        else:
+            buffer = torch.randn(needed_size, dtype=dtype, device=device)
+    else:
+        buffer = torch.zeros(size=[needed_size], dtype=dtype, device=device)
+    return torch.as_strided(buffer, size, stride)
+
+
+_T = TypeVar("_T")
+
+
+def check_dynamic_shape_capture() -> bool:
+    # This also mirrors config from `test/dynamo/test_dynamic_shapes.py:make_dynamic_cls`
+    return not config.assume_static_by_default
+
+
+def _make_fn_with_patches(fn: Callable[_P, _T], *patches: Any) -> Callable[_P, _T]:
+    @functools.wraps(fn)
+    def _fn(*args: _P.args, **kwargs: _P.kwargs) -> _T:
+        with contextlib.ExitStack() as stack:
+            for module, attr, val in patches:
+                stack.enter_context(patch.object(module, attr, val))
+
+            return fn(*args, **kwargs)
+
+    return _fn
+
+
+def make_test_cls_with_patches(
+    cls: type,
+    cls_prefix: str,
+    fn_suffix: str,
+    *patches: Any,
+    xfail_prop: str | None = None,
+    decorator: Callable[[Callable[..., Any]], Callable[..., Any]] = lambda x: x,
+) -> type:
+    DummyTestClass = type(f"{cls_prefix}{cls.__name__}", cls.__bases__, {})
+    DummyTestClass.__qualname__ = DummyTestClass.__name__
+
+    for name in dir(cls):
+        if name.startswith("test_"):
+            fn = getattr(cls, name)
+            if not callable(fn):
+                setattr(DummyTestClass, name, getattr(cls, name))
+                continue
+            new_name = f"{name}{fn_suffix}"
+            new_fn = _make_fn_with_patches(fn, *patches)
+            new_fn.__name__ = new_name
+            if xfail_prop is not None and hasattr(fn, xfail_prop):
+                new_fn = unittest.expectedFailure(new_fn)
+            setattr(DummyTestClass, new_name, decorator(new_fn))
+        # NB: Doesn't handle slots correctly, but whatever
+        elif not hasattr(DummyTestClass, name):
+            setattr(DummyTestClass, name, getattr(cls, name))
+
+    return DummyTestClass
+
+
+# test Python 3.11+ specific features
+def skipIfNotPy311(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    if sys.version_info >= (3, 11):
+        return fn
+    # pyrefly: ignore [bad-return, bad-argument-type]
+    return unittest.skip(fn)
+
+
+def skipIfNotPy312(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    if sys.version_info >= (3, 12):
+        return fn
+    return unittest.skip("Requires Python 3.12+")(fn)
+
+
+def skipIfOnlyNotPy312(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    if sys.version_info >= (3, 13) or sys.version_info < (3, 12):
+        return unittest.skip("Requires Python 3.12")(fn)
+    return fn
+
+
+def xfailIfPy312(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    if sys.version_info >= (3, 12):
+        return unittest.expectedFailure(fn)
+    return fn
+
+
+def skipIfPy312(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    if sys.version_info >= (3, 12):
+        return unittest.skip("Not supported in Python 3.12+")(fn)
+    return fn
+
+
+# Controls tests generated in test/inductor/test_torchinductor_dynamic_shapes.py
+# and test/dynamo/test_dynamic_shapes.py
+def expectedFailureDynamic(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    fn._expected_failure_dynamic = True  # type: ignore[attr-defined]
+    return fn
+
+
+# Controls tests generated in test/inductor/test_torchinductor_codegen_dynamic_shapes.py
+def expectedFailureCodegenDynamic(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    fn._expected_failure_codegen_dynamic = True  # type: ignore[attr-defined]
+    return fn
+
+
+# Controls test generated in test/inductor/test_cpp_wrapper.py
+def expectedFailureDynamicWrapper(fn: Callable[_P, _T]) -> Callable[_P, _T]:
+    fn._expected_failure_dynamic_wrapper = True  # type: ignore[attr-defined]
+    return fn
+
+
+def reset_rng_state(use_xla: bool = False) -> None:
+    torch.manual_seed(1337)
+    random.seed(1337)
+    if np:
+        np.random.seed(1337)
+    if use_xla:
+        import torch_xla.core.xla_model as xm
+
+        xm.set_rng_state(1337, str(xm.xla_device()))
+
+
+def _skipped_function_for_test_reconstruct(
+    f: Callable[_P, _T], *args: _P.args, **kwargs: _P.kwargs
+) -> _T:
+    return f(*args, **kwargs)
+
+
+_testing_invoke_subgraph_inductor_compile_captured_gms = None
+
+
+@contextlib.contextmanager
+def _testing_capture_invoke_subgraph_inductor_compile_gms() -> Generator[
+    list[torch.fx.GraphModule]
+]:
+    """
+    Context manager to capture graph modules compiled by invoke_subgraph_inductor_compile.
+
+    Usage:
+        with _testing_capture_invoke_subgraph_inductor_compile_gms() as captured_gms:
+            # code that triggers invoke_sub <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="2.375"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.233606"
+        stCamera:RadialDistortParam2="0.933562"
+        stCamera:RadialDistortParam3="12.110753">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.004381"
+        stCamera:VignetteModelParam1="-2.288806"
+        stCamera:VignetteModelParam2="255.603073"
+        stCamera:VignetteModelParam3="-11419.84668"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="3.8"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.200399"
+        stCamera:RadialDistortParam2="0.887784"
+        stCamera:RadialDistortParam3="11.674704">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003715"
+        stCamera:VignetteModelParam1="-2.833299"
+        stCamera:VignetteModelParam2="303.219147"
+        stCamera:VignetteModelParam3="-11866.866211"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="4.75"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.189457"
+        stCamera:RadialDistortParam2="0.871427"
+        stCamera:RadialDistortParam3="11.506066">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003388"
+        stCamera:VignetteModelParam1="-3.03374"
+        stCamera:VignetteModelParam2="320.094238"
+        stCamera:VignetteModelParam3="-12061.043945"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="47.5"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.150688"
+        stCamera:RadialDistortParam2="0.806521"
+        stCamera:RadialDistortParam3="11.004965">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.002709"
+        stCamera:VignetteModelParam1="-3.311895"
+        stCamera:VignetteModelParam2="335.517975"
+        stCamera:VignetteModelParam3="-11872.892578"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="475"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.146894"
+        stCamera:RadialDistortParam2="0.80095"
+        stCamera:RadialDistortParam3="10.908072">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.002664"
+        stCamera:VignetteModelParam1="-3.317496"
+        stCamera:VignetteModelParam2="334.896698"
+        stCamera:VignetteModelParam3="-11813.56543"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="0.95"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.35977"
+        stCamera:RadialDistortParam2="1.045642"
+        stCamera:RadialDistortParam3="8.07468">
+       <stCamera:VignetteModel>
+        <rdf:Description
+         stCamera:ResidualMeanError="0.008439"
+         stCamera:VignetteModelParam1="4.652019"
+         stCamera:VignetteModelParam2="-640.213989"
+         stCamera:VignetteModelParam3="4205.726074">
+        <stCamera:VignetteModelPiecewiseParam>
+         <rdf:Seq>
+          <rdf:li>0.000000, 1.000000</rdf:li>
+          <rdf:li>0.108165, 0.985000</rdf:li>
+          <rdf:li>0.117998, 0.975000</rdf:li>
+          <rdf:li>0.127831, 0.940000</rdf:li>
+          <rdf:li>0.147498, 0.839000</rdf:li>
+          <rdf:li>0.167164, 0.711000</rdf:li>
+          <rdf:li>0.186831, 0.562000</rdf:li>
+          <rdf:li>0.196663, 0.473000</rdf:li>
+         </rdf:Seq>
+        </stCamera:VignetteModelPiecewiseParam>
+        </rdf:Description>
+       </stCamera:VignetteModel>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="9.5"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.167846"
+        stCamera:RadialDistortParam2="0.832456"
+        stCamera:RadialDistortParam3="11.281699">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003068"
+        stCamera:VignetteModelParam1="-3.192197"
+        stCamera:VignetteModelParam2="329.318146"
+        stCamera:VignetteModelParam3="-11955.442383"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="950"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.146639"
+        stCamera:RadialDistortParam2="0.803436"
+        stCamera:RadialDistortParam3="10.859006">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.002664"
+        stCamera:VignetteModelParam1="-3.317392"
+        stCamera:VignetteModelParam2="334.887299"
+        stCamera:VignetteModelParam3="-11813.404297"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="10000"
+       stCamera:ApertureValue="4.643856">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.146418"
+        stCamera:RadialDistortParam2="0.804088"
+        stCamera:RadialDistortParam3="10.828497">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.002664"
+        stCamera:VignetteModelParam1="-3.317447"
+        stCamera:VignetteModelParam2="334.892548"
+        stCamera:VignetteModelParam3="-11813.479492"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="1.14"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.328147"
+        stCamera:RadialDistortParam2="1.052763"
+        stCamera:RadialDistortParam3="10.949725">
+       <stCamera:VignetteModel>
+        <rdf:Description
+         stCamera:ResidualMeanError="0.007213"
+         stCamera:VignetteModelParam1="0.332095"
+         stCamera:VignetteModelParam2="-39.776657"
+         stCamera:VignetteModelParam3="-6101.79248">
+        <stCamera:VignetteModelPiecewiseParam>
+         <rdf:Seq>
+          <rdf:li>0.000000, 1.000000</rdf:li>
+          <rdf:li>0.137664, 0.974000</rdf:li>
+          <rdf:li>0.147498, 0.939000</rdf:li>
+          <rdf:li>0.167164, 0.831000</rdf:li>
+          <rdf:li>0.186830, 0.699000</rdf:li>
+          <rdf:li>0.196663, 0.613000</rdf:li>
+         </rdf:Seq>
+        </stCamera:VignetteModelPiecewiseParam>
+        </rdf:Description>
+       </stCamera:VignetteModel>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="15.2"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.159751"
+        stCamera:RadialDistortParam2="0.82417"
+        stCamera:RadialDistortParam3="11.056949">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.004096"
+        stCamera:VignetteModelParam1="-4.29234"
+        stCamera:VignetteModelParam2="405.453796"
+        stCamera:VignetteModelParam3="-11572.041992"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="1.9"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.255779"
+        stCamera:RadialDistortParam2="0.970252"
+        stCamera:RadialDistortParam3="12.171849">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003713"
+        stCamera:VignetteModelParam1="-3.461718"
+        stCamera:VignetteModelParam2="355.971283"
+        stCamera:VignetteModelParam3="-12111.875"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="2.375"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.233606"
+        stCamera:RadialDistortParam2="0.933562"
+        stCamera:RadialDistortParam3="12.110753">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003636"
+        stCamera:VignetteModelParam1="-3.796201"
+        stCamera:VignetteModelParam2="382.146851"
+        stCamera:VignetteModelParam3="-12221.454102"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="3.8"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.200399"
+        stCamera:RadialDistortParam2="0.887784"
+        stCamera:RadialDistortParam3="11.674704">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003639"
+        stCamera:VignetteModelParam1="-4.076022"
+        stCamera:VignetteModelParam2="399.255554"
+        stCamera:VignetteModelParam3="-12024.37793"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="4.75"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.189457"
+        stCamera:RadialDistortParam2="0.871427"
+        stCamera:RadialDistortParam3="11.506066">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.003798"
+        stCamera:VignetteModelParam1="-4.154478"
+        stCamera:VignetteModelParam2="404.128357"
+        stCamera:VignetteModelParam3="-11962.02832"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="47.5"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.150688"
+        stCamera:RadialDistortParam2="0.806521"
+        stCamera:RadialDistortParam3="11.004965">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.004121"
+        stCamera:VignetteModelParam1="-4.301546"
+        stCamera:VignetteModelParam2="403.751251"
+        stCamera:VignetteModelParam3="-11440.411133"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="475"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.146894"
+        stCamera:RadialDistortParam2="0.80095"
+        stCamera:RadialDistortParam3="10.908072">
+       <stCamera:VignetteModel
+        stCamera:ResidualMeanError="0.004149"
+        stCamera:VignetteModelParam1="-4.305218"
+        stCamera:VignetteModelParam2="402.677002"
+        stCamera:VignetteModelParam3="-11368.271484"/>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC USD A034"
+       stCamera:ProfileName="Adobe (TAMRON 70-210mm F/4 Di VC USD A034, NIKON CORPORATION)"
+       stCamera:SensorFormatFactor="1"
+       stCamera:FocalLength="110"
+       stCamera:FocusDistance="0.95"
+       stCamera:ApertureValue="4.970854">
+      <stCamera:PerspectiveModel>
+       <rdf:Description
+        stCamera:Version="2"
+        stCamera:ResidualMeanError="0"
+        stCamera:ResidualStandardDeviation="0"
+        stCamera:RadialDistortParam1="0.35977"
+        stCamera:RadialDistortParam2="1.045642"
+        stCamera:RadialDistortParam3="8.07468">
+       <stCamera:VignetteModel>
+        <rdf:Description
+         stCamera:ResidualMeanError="0.009609"
+         stCamera:VignetteModelParam1="3.287543"
+         stCamera:VignetteModelParam2="-395.323853"
+         stCamera:VignetteModelParam3="-289.083923">
+        <stCamera:VignetteModelPiecewiseParam>
+         <rdf:Seq>
+          <rdf:li>0.000000, 1.000000</rdf:li>
+          <rdf:li>0.127831, 0.975000</rdf:li>
+          <rdf:li>0.147498, 0.886000</rdf:li>
+          <rdf:li>0.167164, 0.760000</rdf:li>
+          <rdf:li>0.186831, 0.620000</rdf:li>
+          <rdf:li>0.196663, 0.531000</rdf:li>
+         </rdf:Seq>
+        </stCamera:VignetteModelPiecewiseParam>
+        </rdf:Description>
+       </stCamera:VignetteModel>
+       </rdf:Description>
+      </stCamera:PerspectiveModel>
+      </rdf:Description>
+     </rdf:li>
+     <rdf:li>
+      <rdf:Description
+       stCamera:Author="Adobe (www.adobe.com)"
+       stCamera:Make="NIKON CORPORATION"
+       stCamera:CameraRawProfile="True"
+       stCamera:LensID="205"
+       stCamera:Lens="70.0-210.0 mm f/4.0"
+       stCamera:LensInfo="700/10 2100/10 40/10 40/10"
+       stCamera:CameraPrettyName="NIKON CORPORATION"
+       stCamera:LensPrettyName="TAMRON 70-210mm F/4 Di VC US    </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{8B0E45DB-3A7B-42EE-9D17-A92AF69B79C1}</appv:InterfaceId>
+              <appv:Description>AxisTitle</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{8E17139B-5D9A-4EE3-96A1-F9455D55ED34}</appv:InterfaceId>
+              <appv:Description>ISkypeChatService</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{F1CBBA3D-683A-4612-97EB-AF035E3B6218}</appv:TypeLibraryId>
+                <appv:VersionNumber>1.0</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{F1CBBA3D-683A-4612-97EB-AF035E3B6218}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>1.0</appv:VersionNumber>
+                <appv:Name>DocumentChat COM SkypeServer Private Type Library 1.0</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\SkypeSrv\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win32>[{AppVPackageRoot}]\Office16\SkypeSrv\SKYPESERVER.TLB</appv:Win32>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{8FEB78F7-35C6-4871-918C-193C3CDD886D}</appv:InterfaceId>
+              <appv:Description>SeriesCollection</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{91807402-6C6F-47CD-B8FA-C42FEE8EE924}</appv:InterfaceId>
+              <appv:Description>Pages</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{91C46192-3124-4346-A815-10B8873F5A06}</appv:InterfaceId>
+              <appv:Description>Trendline</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{935D59F5-E365-4F92-B7F5-1C499A63ECA8}</appv:InterfaceId>
+              <appv:Description>TickLabels</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{98DFBD12-96CB-4F07-90EA-749FF1D6B89D}</appv:InterfaceId>
+              <appv:Description>OMathScrSub</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{99755F80-FE96-4F7D-B636-B8E800E54F44}</appv:InterfaceId>
+              <appv:Description>CoAuthLock</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{9E6B5EC5-E8E4-40AF-9540-6203F71E2823}</appv:InterfaceId>
+              <appv:Description>CoAuthUpdate</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{9F1DF642-3CCE-4D83-A770-D2634A05D278}</appv:InterfaceId>
+              <appv:Description>DropLines</appv:Description>
+              <appv:ProxyStubClassId>{00020424-0000-0000-C000-000000000046}</appv:ProxyStubClassId>
+              <appv:TypeLibrary>
+                <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+              </appv:TypeLibrary>
+            </appv:Interface>
+          </appv:Interfaces>
+        </appv:x64>
+        <appv:TypeLibraries>
+          <appv:TypeLibrary>
+            <appv:TypeLibraryId>{00020905-0000-0000-C000-000000000046}</appv:TypeLibraryId>
+            <appv:Versions>
+              <appv:Version>
+                <appv:VersionNumber>8.7</appv:VersionNumber>
+                <appv:Name>Microsoft Word 16.0 Object Library</appv:Name>
+                <appv:Flags>0</appv:Flags>
+                <appv:HelpDirectory>[{AppVPackageRoot}]\Office16\</appv:HelpDirectory>
+                <appv:Libraries>
+                  <appv:Library>
+                    <appv:Index>0</appv:Index>
+                    <appv:Win64>[{AppVPackageRoot}]\Office16\MSWORD.OLB</appv:Win64>
+                  </appv:Library>
+                </appv:Libraries>
+              </appv:Version>
+            </appv:Versions>
+          </appv:TypeLibrary>
+        </appv:TypeLibraries>
+        <appv:ApplicationId>Word</appv:ApplicationId>
+      </appv:COM>
+    </appv:Extension>
+    <appv:Extension Category="AppV.COM">
+      <appv:COM>
+        <appv:x64>
+          <appv:Interfaces>
+            <appv:Interface>
+              <appv:InterfaceId>{A03D1421-B1EC-11D0-8C3A-00C04FC31D2F}</appv:InterfaceId>
+              <appv:Description>ISkypeConversation</appv:Description>
+              <appv:ProxyStubClassId>{000204ë™V«Øş#Àı’?åYui)‘HĞDêJ¹”«$2R““å[ØL&Évd²ÔÃŞŒ“Àm(ãÙd4$B‹ („ÖL¦Ğ„gA8cCBhÄA&
+¢oÚ–
+‚` *‰[aPtr“, %™ÂW(ç8W$êğt³6‚D´ÂÑ6m^Äf\awÛÔJæaI²pEœ†ˆOÂï›âœD aÇøfĞd*šÔ9RÕhÉR
+Á ¦Ô@¶Q¯¨“©P¨“ÍP¨œPP7íIŞº¡E”Q?·ç$ÙQQqBá—D’Ïu™³ëì,…¶ãzˆYm†x¼àCğ:„¹…®ÊÕtõ®¶Õ˜:Ó!¸vÈÕtµ®.I™?AºÚ/e&82røZ˜¶ÓÕ¹:Ô JZå`Ò4td”%òÕP%ùrT9®Y&sd+é
+Ä¨ò•¨ŒåÈrğ8=N¿|¤µšşHÆ9-Ä9â9Ñ ƒ9lÉ«>°ª%æ6®	aèM¦/ŞÂ!]GÌåLéŒéõéSvuW»Õ©VİÊ®†˜ÂHØ~‡ J`’¸g¢âÄª…Y‹Œu1{1ƒ1$1cÕ1Ë˜˜Ù1ù<fƒ)x6£/ƒnÆn†aæòÌr†z=#œ9éÎôÌŒ™Ñ'ÃUÍ:M´¶šãš$M}5¤4Ö Ö(×®k™5î4ĞnômèİaÜ1¼i¼l¾>ß¬oÙ7øææøMëF,'‡(N‡9Ë9–Ñ9éwN;”ó¶Ã¶3°ãe§öÎsGt§{¢ÃW´Ú#4¾h`49ÚV£±hÉÓ8´ÄÚÖZ]mnL!)âú•*bJbd!3çLŸ©™SÔº:Ègy¦Á4ZSµšY5‘ša5¥ZºÚ«æ6uMé¦…¦¥¦¨ÓÈôpJŞT›Ê&™Æú‰uk÷ïW AiB˜šA’¬F@mâ AATTÂ*F"És€V¡Œp‚é°¬@`‡a
+˜fĞ¶‚Şø ùèX°< ƒÏw¸eä-¢wHˆ`À;z”ò![Ëæ&ÈçBÓÃP£xÀË+öuñô`ey·Œe"8Ïz‚‘HÁ]¼kö€K¦=„9Å8sTN{æ`Œ9YïÁ÷ ¨—»¯Ú"Å+d(½‡÷êv¼G¾[{Xv˜ÜÃ!»ÿìœ%Æ.ºUVwíN+©]Ò%-¾­¥ås¼mõÏÖè¶K/!nlõŞ‚æ¶»ä¯-İº‹6&<ÁäÊ4,T9¿,˜0Vãi»¹Ò¬ÊÚrÁ/kD„!¯N\ÛÒN>»Zã§'¢ÆX±0Äã–Yjß5–£>ì÷êi!´‡Ë¡/Û¶ijùªï:îåu{sX€	ÚZ(U¿×VÂ+Wèlìw#:6=«¡õé‘G'‡a“ÂÃü¯(°»äæ˜d1x[¥›jÓ“±¥¿-â”ª|U·l±Y›È+¦g²ô+~…·[fwx·ew‹b[“õJOşiRişŒ ¼ëÏôKòlo=9¬:Ù:¡~m*Øxå•û¹ÛÕÕ*§Ï(›"Q¥–pÙåúŒ57k²ä¨*!6vµ•ÃHlê5GcXJÖ¨$ª©Núœ«$]Û„âw’Q±oÕ‚ªznë¡ÿY7;ÿ¬q:{”}]m±ÅÏÊÕ/·­{|	Ù­şVÜ‹Õ¡ûŞ%üÅ}+vg.ŸùPÛGé˜…gW'A2Du/ËµŞà‡ICœöğwoE¦ÒÖ-·eºƒÛ Ûî
+§â¾á¯ƒ¸µ¡"Õ¶Iä^ÒÃ7­J|ƒ»4Şn{^%+`,Úíô»ÁÙ²ö«}õ:îûÒ£H_Eœó)U’Ù~B}ÌÖ²-Ø-öuCpé°]EúzL„İGäÛ¸	ÕöÜV§‰ÊJúñ“Ç`«<k ï’Ë•\"ÿÕ<ç€ÀÿõãŸ4™1íA±:¯7¾ÑNZ Y´u[Ò/°c¨`iºÕ-ÅúPJeØÔÊL:HúºÚè8a±‚àéœaÖP$Î:"0&Â£xƒgqp@©
+N¤x„ªP’³áÆYÒ”âˆdÎœxxX‰ÅÉqäœY(g%Uœ"OBZO…=y@ºüğ`Æ¡¤3„ğhn¡([¥…Ç}¬Îª‰
+}#è¢9I¬AŒ Êæ¹Îæ´ƒ.„Â9–xÔ»P°3x4„Pé
+w1-‘Å!/•ÅPÈ‘¯
+êÀ‡D"DÂx½PŒ{‰†„¬¡D+dÀ—Dfzì,Ì¨A4ğĞ¥ö : İc=®Sr`É†äygİó—XßÓÏ0şåìÔ@ïÈŒV~„>pÊ¹MÍr,s»|@T=àôÇNŠÚ³Y§¼#MJ.¸uçÁ“Ç­â¬¤lÆ˜{1NˆÏ4{ß%^iNxÊøq„yGµ›’»PÌIÃ¡ÚµÊv"üdû3°»§€DZo9õLĞ;ÅÄŞÎN^·W"öÌ¸'ƒÆ°ãû°GNbÃ±°nD6’0o­Î"'ôæ­^ç'/¨À©ZG³¼&¦ôH4rÕEzHC0èˆÏÂÿúÎğèÖù<>ÀÄyÏÈZ`¦j`òšsİ  <@xyÚxõ]Ü­ŒFqs FZOBLïšP7PzÏì@wôŒê>İSl!Ùz{pÌy)Ä0ì•uÙF™UãhìëÎB˜Ö<¤ºÓ'ÓL"¿ë`…®âş<:%ÇÔª>« iÌEç<ˆÀ{Ş™êùq°¾çZ Æ€…ÊD¾’À|8[õÀ'8S|ÇyACİ»Qïm=–Œ‚¯NM´‚F¦=‰Wö*ŒqO&ˆHô€6 ªSràòA¢åÜÌp|={-«Íœ@Ò<`/¸kÙná·$9š2g{b/øy“G!–
+¾…e²‘;ûÃzİ„·ÏÀ‘Ú\A ´ÃÖd¥ÏDXÆøµ)^ü‚İ“–hÑ­0?‘b™?Q¸Ë¦*±Nbè1mà"µñ v°æ	û¡÷´,–éGm„ö?Bw.È>ÔŒã{l˜1µ¼Š¡Åœ™;Ò5GÑÒ{^>×CzÀ²¦æŸ=,7µ¶Ù´ÕFÚÃ53t´f³pqŸ°ÂÊz“àÑkÜÙ™Ôlö%¡JÈ«Gº=x…Ü›‚ñ[œaV: …©Ú6ª;A0ãÌƒ­$2]RÑfBĞ‰ÁAÚÒóéO¦,vm¸ª'´"R1TO¼m€šf4‹Ó¬;Í0œµ]¢ú9=E¤ZÛÚ.:ı#¢üğdtÌ€	|§=ğ„Öìø‚5·¥q$D?Œ¨”û@¸÷{î4ü }`<L\Î}¤ÁrñÜWpÃ&p¿>{:¨ôä˜X\CÉ– ¯†;o.®'zE)ÆXË‘§™½™·,kRHáè—Ã¶Êkæ¢’l–ÙËtîÏr=İ“ÛÃ=Ätr>rÏ©{E	Ôÿ¯€_5HÙ.ğ¨BèitUKÖx,Á9-ƒqUî÷²çRğ¡	œ®Ş¨'>5ĞEòh£wğúËƒ6†rbOÎÌtõïÜCšál´'Æ²à®oÀ,›0³"Bƒ§vo«nkOPà¦B®"$ÒA1"šôELP=B¶Åvvqşí[ˆO+¯¦	6¯”	¹‡#Aà6ƒp|<:‰êÈĞÛÔ§|Õ†pÕ†]’‰ÃrE:püÃª2¢šVìĞ¨Ièõâ¯Õ>Â¢‹8¸9@::‚S)ğ±…BÄ	µ3 Ôğ®QÖò8 Õ4A¡\ÁGáxÏBç£­İñ±Á³ M«;ÕÁpÈ5ÁÈafÁe ÂÓj8íªáÀœN>85“pª†^i«„ı(u ,„1íÿ‚¼åfd|á 7á}­r¼á¸aKVH¸eaDâÔpR
+O<¼ Œî<¦êF†¨ÁŞï$qÂ8ŒÅ †–D/lıõ
+€DÈ,Gmñ‚®Ú¬bhAD~¡ÂÄ 8¨h>–ìl Hsò'a;©<ŞW*n	Ü(vÉñ©‡Xñ §Â¯á¡x®ë}ûæK(<	W(o.ó8âÚa²×ÕÇ'K«ÌåéàÁÏS'ĞqE<„+¸qjvpÂr… ó'ñ¸ßÖÁ´öÄ¼su¼ä«DF„kQñ±bA½(f™ëÙàî"‚YXÏ>íˆ"ÂX\s¿ñØ|PØì<¨’ºÌ³ ¢¡ÑOc*x¶W… 	<QP(`A_ÂıOÿDŸZq]üvŸo¼Ø+B„Lr|d3Í^ëÔ"ÓÈ+A¢L¾Si~â$\dÛÛ~b9ğƒhùÁa$†&,sñ®0å¢
+´®“á™"PZ^ÎT<"7O§ ïuÕ\ÂÚ×·ÂøÁ?
+GX‚o¶ÄˆvAË.‡cñNWmt	}(àLl}ó‚a0/+<¶è¥ÆºŒÂßØ<Õ+?ƒ„Z'™PÎpt¶ƒ *Q+àN‚›¼šŸ„ñÆ'úµ‡—pŠRs PÀ ×
+Nƒy9$¡«Ú#%Â—p@dsá/§’K˜ÃªAšÃàAKLê Eeç“\«Æã\]'.½9Òë7ûË1æø|‰I^Äø†Ïµe¼ÂUB2?dš9–`Ê8$x™šş¼¦F~ñ§2áŠå.Y@¶œåí¹"¥Èï$¾õâi\]à%Ô¡@ÙçqÙØôVæ‚„ÆW$B™”ÓèxÂÕÅp†£‰›¿_N:j[…â½Äe01‡+¦]	r;;*wĞñ„+*…—á{ªÚADåòAoÊ9„^S’CXu’ñW¢^&½BëìˆSai)Å>Á
+¼É+K†„?bXÉ :“p—òîÍ‚<ì„—}ø,f8-u&ÁÉgx’ÕåCÂ
+Ì!‚’Éq€ãPk‰)¬slO>ñ W	JY•¼¤üàç¶¹) %İÀ©c¼ÂÁ‰²7“Ã|.K‘$v…1%aå%ÂUŠ^1:}rƒ:.QF~D<$áìc,!Æ%\¢ìjAAĞQw‡™(îbzg>ÀÈa<ÂÕ”DD=´Áeµ XÒ5
+$`ôõMMâ"\b_¡¬¤7ğd)qndf+İŞ)«¾„® ë!3ëH3A2©`‚h¤Maf¸.D ½ï¥—pkÕNÑÌ	‚Šël5“Øjƒ-øŸ‚<	·È·¸J¢H‚Úfã~GF™¿˜£Ê.í
+h±Ó©×xBH¸4º£ZÓ3§#’)Ypğ´éèå<.ê;–8ò.8ñ®À4l KbQ ~yø-te•)bÍ,Óp¼À•i'Â¼,–ÏÇèÚh[†¯ ‚…x—ç•¼ wÎº‹M<„+ÄPSˆ¸‚;ÆÇMõç‘Á> &aÌ«ãŠ4/áÈ£9qB4IB-)Éy±ÄòNî*á¢;ÃÇ^‚ £ªá±®®İià°Û$Dªô¼Şñ„«,Œ¥†1î qÄƒü&ìEOê Â£¶:	çxk+ÑT„ÕPMÎ‚|¼3RÕ‹mµa~´™%¸ã	W,¡(éÆˆƒÙ1IV©Ü
+¤#™šfOíå—p-öÒMô Õ¡á^o™¯;^92_£RëêŞñ	W_Ã&È—Ğå@™I,„éè9ˆldúÚÿz5OKmÆ$\ rú@â¬œ ¨q2P¸jj#1–r“iñ¹·ÊŒH¸ˆò.ó‚Ğ†¸‚š]Î‹|2˜Æƒ8B Orh‰Şâ&qÂ„ÈĞAi¡ÄpQxá «Z\””‡…7*cU"Ç§<«äY0¡Á*k¸öe a†ãŠcb~ñqÓªr^Öä$¡¶@AË ƒËƒ„ñ¢r/ âÁÂ†ƒû¤²=çs^Ô¤0¡E©1Ah~vH(â¸àòİš›;£¤Ã&”—2¬xŞë Jö™ay9£•s©ñ@’\á„ôªz\«%Àbá's¥_Áeâ¡¶‚=‰êIÃƒ””¶"ŒFe~•™i¥¢›Š}´Ã²H-nÇô‡I(í£‰^ùËÄˆ¸™4A°±Úù'ÂmãÉ‡)BÉQa?A.¤rv
+ÒµMòDQöµãs)I(‡"²ÇsÅ4õ*b&‚œ*T)š–q>ºáJÚLö¿ìs ’‡Çë]"ŒD
+Óù§¶È@<ã)¯l&”ÚV¶½×£S‹)A‘ÆnãEl8@ÜuÊùN(Ú<òµ,4îêÉ¥83AĞæ
+j¯b¯(ê¸„Fœè«j"„’ä™æî(AŞTPP%õQd©ñ”O{ã;¢	%b‡”rëÌk.oq::ê¡•¤#*P2“’á '‹ºOğ29Œ¯PŒA	…"3høJ‚‘-/CË,  Ä2í­©{ù2Ó·iY«âúİ)7ººç.ºÿr¨¦ ®*_¡d2w„á<Ÿ²¬Úÿ>Â°;”îŞ0m4ù>|!;EmO;²“p ”YÇ7Œ{Œ1˜†'=[g5mÉ%ˆØ3úlŒ¦çÓT{ƒd©ÒqX?×ÏÕK9{wéãfÖ%«3¸KùÆt8R©ƒÇ²{™&CÌÁí?×r)ÙÌØ³Â+†Çİ£`&ÁÃ•^?XÔª§ev¼NÍl˜’%3™Ùğ’ÆÌyxÊ_Í®(³Y04ìªÂa§4£ó±Š:™¹”Wgn‚ùX”›ë>JãÌFâÍ[JËÊÂtÌÇ—¾/âŞOKòÎÓ{/u†˜&ñ"{ãŸÕyUÆÛ%²†Ó_¬wª}³â57Áä
+%5;éP(IWØ {GvaÌô`•Z¸ò†/ñY¢§xrïå–ìø³5(·BY˜í›ŒüšI&ş%æ=›üDÃõc6”µe·ZÖ¼Úú~óQ)EïrÙpü“BZRÜ™İÀeÎ9_Ğn:P`œÒYñš+H<ÇZÊ¯Ì)›>kÖ²Ív‚9Yqjtö­Ml¬QÌ;é3(³×Ò=Œg]MÀ·>	šË,KQ)E;k÷%Ò;TËš¿”ËÃÂ¬2–b1?íz?Lîñx<ğ&Öãiıú4cÛğÁ{Ö ä%cJ w*ãQ²º±Ÿfg&Kï=[šÔdqÃ2i¾>¥i2«¨2iç®èc‡uOš/\GœäìÁ`g°³Vì5|šQÕIš ZNß‚Ædª"Jí)?ÈÁ³2Y³œn”ˆĞ¦u¯Ş¼Õ86ŸØïç,ü¹Ó,Ö\ÔF‰—]®c'–[`ÆÎÎ¶ŸÆäN"N€µÆÓNÀÎa2çäÖÅób»xæ+ƒtôŠºª²‚XÜïçf‡e«wÿ6ÌÅ†,;\?½Ó4	°ˆı vÓ’@9ÖÜîi³›¸ÜÃß¥dU¿ÁĞ`·ŞÌµ}ƒa'İ%m|0nÆÓj ôv-l„ô”ÖHÁaXQŒ%ÆPÍc'>V’;™0šşÃõièËoGyªÃdšn°zÀNÆ•KÔÍ§ıLã´ï+˜÷¹å\Rê4İ×Y–Ue÷,‚C|‰‘šG<óQ•®Û#úXx¬”nè»â‘4_ïHd‡fgy£JfZ¼³™ß¥;£¦¸í¬i§LğgmN~`öd¨½ÔY&âISˆ¡}¬v:í¸ÃJ\ªÁÚÂ,ÓÆ»ä2YYşyƒ‡¼w¦«îsb@Õ)Øì³˜)ÚAu¡~bı8S %"¼¼}¢1bíh-H¢azÁ–-°éİ~`šŞ­\S!ù4F9zg|”Yš~ƒNÃÃWÕÄÛÜy³¹ >d‡£·]Áf–Ó°æ¦$í8õ“šÇºmÛ´›p=¼îÿ~ŸÈ=ËiK-Cî!ÀCªaªİÑXÎ†´F¸£‰û–&W“ål…R(•y¹Â¥j/]ÖÊÏ¥²0ªåúXfıàÔœí[¼µîÑ°“³F=°fÒ
+ŒkAÅšéÓ“v¯¯1Å»eüT¤{¶}˜yTæã5ãdìÑÚX©ùì’¢O-”Í§™Mªñö2ğ±ßìåÎÎÎºÒË[cßëùštÿ§–“şi¦šõÆSşæ}•ñˆ4Ò3`@§FÏR;µS¾ÓûyX²"4ÔF>Ö Ô‹nın²ß&ßR2¹ü¼ «ñP”¢B} ËgÎ?€ìÀ¸ÙÜ,O&˜ú«—…÷uÉN-vªÇÖŸöôçhì±ÚúŸë4_óÃãÙ^â¥fÏ··ö£©ŞÇ0kª{%AÓäjc8K¸Ãâl+¤¸P¬ge¿khjXié^’ØInÓû¹¥ÔıÄK®r±`³”š,Ëm|wY(;Ëîwd÷¿Àî`8‹jËË×|fÆ7R{T7ª©%`¨G+•ºËx©ŞëT>ß²ECeSßAˆbVİå”vÎı;Š‰{˜uŞµ¥°ÙÒ/5±‚ixûß»	ãÍõ4åK˜u=ÍùR_ó–º>^òrä{üP‡EQD`ôyÁİıJ·êiÉ±YU;‚ŒHRÑ.#Pí­9S‘÷´ivüRL±b²u—ñÒë™Õn‡—˜RÍœ8MU©şq;\‹İèT*=ĞÄJ(j><q!œd Tîç§5
+¦35­±:±LR¥¨ÃWÖlÿ‘­º|‹Me87¯su£nV¨iØÍ¦Û!7-ªÚğ­™K»rµn”›©}Ò»aÅšuóuxö˜YJ8(Ö.·i(tã!>--h>‰ŞR»U©q	ïì|ùÇ;l!Ysuºœ°ÔÈÚÙæ×æKT©škÖÎjşÁ,µA‘¥òê’•4ÃÆòh‚1jÕÌñæİÆóšATº7UÎÈ]Ëµü¸J™˜Ù-ïmT°DGp„Z/‚A­,P.[ƒ Ôzi)xÙª<z k%Ô.ın;ûOÉZ’Û5Í	Í$,¢6¼À³İ‚/,#?;^‰ù `‰áÍ«gá¼b•yçã€á`ı?^†`ş>[K?*¡Ì=ùññììÌ=Ë´†‡mSõÒë:ÑÍ»Æ±ôßÜ½ıDèÎÈ³tY°2ŠUiX
+É—Å;ª—àÙÉÓØ°cŞ1êöÏÀ\7YBÔHİÊ³8qSÖXO±øİÅX8ÓÆP„~éà†é/É&K¦M³Ä°\Ûî^Iw·GóªuÍçü:™í±Å3$G ·ã†ÁÄpÙI^x?qmM®r7ÅÆš¹q{ÊrÔ Ãª‡wí¤›Ş—İö=TzÚgBÆWŠŸÖé‡@ë¤ô“%\ïî.;FÜíš2ìdC”ğ‹HIÙ8´ÀèİUSYiâ †÷_³¦ æÙƒ»<­é4†­t}“™î§8UØ¢µÙ,Nº_·lÁt¨jUD_:ù:İÌ ›Óy*Ü {Ì¬©|;kÕ/º/öÆ}âñc¨™öŠ¦[ïº”%Ì£˜u½Ã,Eí¡“q½ÄÔ¸¯‘†Tÿ‘…5ób§³äw/›Ú˜ÀsY2‰`/­Y¦a©#7üÚEF£z,Ä¦|œªWy”Ôj;ÑÎ×X`Ò«Í¶…q6çÉŞE_“šrQoNæMéÂk5Û‘ÿbešY\xó©I Ó‘ip•OP×!”¼q’m7Â	^ÀT.G3¦—5bbRÖ4ì°ò”Œ”*K×ğŞvÒÚ-k$Ã-Ë.®lØéá£<á,³ZQğŠ?Dwé—â¯é•©^‹Só¼Ç ­Æ§'=é½”§+>)NE<.i8r'x#zÜêµ=„¸†]ï«J3Şê\#!¥[p§K‡.W^vhæ8ödŠ#=£ù Uº		•C×U,¬Ï·£BƒVš£&ˆz¶uG{˜UÄY ´•İºjàû¹®WÄozF°WûñfªãnE|ø;6¯RzÆ	†¥ÆÏËœ™Sºşu\õ Õaæ—ó¢q?˜c³Ú€µ
+¾EÇôÏpğa

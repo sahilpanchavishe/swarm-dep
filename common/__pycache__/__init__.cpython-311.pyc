@@ -1,0 +1,11 @@
+l_input + b"\r\n")
+        # Check we did exercise the GNU readline path
+        self.assertIn(lines[0], {'tty = True', 'tty = False'})
+        if lines[0] != 'tty = True':
+            self.skipTest("standard IO in should have been a tty")
+        input_result = eval(lines[1])   # ascii() -> eval() roundtrip
+        if expected is None:
+            if stdio_encoding:
+                expected = terminal_input.decode(stdio_encoding, 'surrogateescape')
+            else:
+                expected = terminal_inpu

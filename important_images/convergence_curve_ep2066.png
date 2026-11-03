@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stringTable xmlns="http://schemas.microsoft.com/windows/2008/deviceExperienceResources">
+  <string id="LTOOLS_CATEGORY_NAME">Lenovo Tools</string>
+  <string id="LTOOLS_CATEGORY_DESC">נהלו את מערכת Lenovo שלכם באמצעות תוכנת.</string>
+  <string id="LTOOLS_CATEGORY_TIP">תוכנת Lenovo מספקת כלי מחלקת עסקים לשימוש יומיומי.</string>
+  <string id="ATHEN_AND_FPR_TASK_NAME">השתמשו ב-Lenovo Fingerprint Software להוספת בטיחות ונוחות.</string>
+  <string id="FPR_TASK_NAME">קורא טביעות אצבע</string>
+  <string id="FPR_TASK_DESC">השתמשו ב-Lenovo Fingerprint Software להוספת בטיחות ונוחות.</string>
+  <string id="ATHFPR_TASK_NAME">‏Notebook Fingerprint Reader‏</string>
+  <string id="SYSUPD_TASK_NAME">עדכון ומנהלי התקן</string>
+  <string id="SYSUPD_TASK_DESC">‏Lenovo ThinkVantage System Update מחפש אחר עדכוני התוכנה ומנהל ההתקן העדכניים ביותר.</string>
+  <string id="TOOLBOX_TASK_NAME">תקינות מערכת ותכניות אבחון</string>
+  <string id="TOOLBOX_TASK_DESC">‏Lenovo ThinkVantage Toolbox עוקבת אחר תקינות המערכת ומיידעת אתכם אודותיה.</string>
+  <string id="RNR_TASK_NAME">גיבוי ושחזור משופרים</string>
+  <string id="RNR_TASK_DESC">‏Lenovo ThinkVantage Rescue and Recovery יכולה לגבות את כל ההגדרות והנתונים שלכם בהתקני אחסון מקומיים או חיצוניים.</string>
+  <string id="PWD_TASK_NAME">מאגר סיסמאות</string>
+  <string id="PWD_TASK_DESC">‏Lenovo ThinkVantage Password Manager זוכר את הסיסמאות שלכם עבורכם.</string>
+  <string id="PWRMGR_TASK_NAME">פקדי הפעלה</string>
+  <string id="PWRMGR_TASK_DESC">‏Lenovo ThinkVantage Power Manager מאפשר לכם למטב את ניצול האנרגיה.</string>
+  <string id="AC_TASK_NAME">חיבורי אינטרנט</string>
+  <string id="AC_TASK_DESC">‏Lenovo ThinkVantage Access Connections מאפשר לכם להתחבר ולנהל רשתות אלחוטיות.</string>
+  <string id="MBC_TASK_NAME">‏3G Mobile Broadband‏</string>
+  <string id="MBC_TASK_DESC">‏Lenovo ThinkVantage Mobile Broadband Activate מסייע לכם להישאר מחוברים באמצעות חיבור אלחוטי ברחבי העולם.</string>
+  <string id="GPS_TASK_NAME">‏GPS</string>
+  <string id="GPS_TASK_DESC">משלב בין Lenovo ThinkVantage GPS ובין יישומי GPS‏.</string>
+  <string id="APS_TASK_NAME">הגנת כרית אוויר</string>
+  <string id="APS_TASK_DESC">‏Lenovo ThinkVantage Active Protection System פועלת כמו כר מתכוונן עבור הכונן הקשיח שלכם.</string>
+  <string id="RECOV_TASK_NAME">תקליטורי Factory Recovery‏</string>
+  <string id="RECOV_TASK_DESC">השתמשו ב-Lenovo ThinkVantage Recovery Media כדי לשמור עותק של תמונת הטעינה המוקדמת במפעל בכונן חיצוני או במדיה אופטית.</string>
+  <string id="TVTDWN_TASK_NAME">הורדת Lenovo Tools‏</string>
+  <string id="TVTDWN_TASK_DESC">תוכנת Lenovo מספקת כלי מחלקת עסקים לשימוש יומיומי.</string>
+  <string id="CSS_TASK_NAME">אבטחה משופרת</string>
+  <string id="CSS_TASK_DESC">‏Lenovo ThinkVantage Client Security Solution מספק הגנת בטיחות מתקדמת ונוחה עבור המערכת שלכם.</string>
+  <string id="TILES_TASK_NAME">SimpleTap</string>
+  <string id="TILES_TASK_DESC">‏Lenovo SimpleTap מספק גישה מהירה וניתנת להתאמה להגדרות החומרה.</string>
+  <string id="MCP_TASK_NAME">הודעות מ-Lenovo‏</string>
+  <string id="MCP_TASK_DESC">‏Lenovo Message Center Plus מיידע אתכם לגבי הצעות ומידע קריטי מ-Lenovo.</string>
+  <string id="TBCTL_TASK_NAME">תכנית עזר של הלוח</string>
+  <string id="TBCTL_TASK_DESC">השתמשו ב-Lenovo ThinkVantage Tablet Shortcut Menu כדי להגדיר קיצורי דרך ומאפיינים של הלוח. </string>
+  <string id="AC_RTI_TASK_NAME">חיבורי אינטרנט</string>
+  <string id="AC_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Access Connections.</string>
+  <string id="PWD_RTI_TASK_NAME">מאגר סיסמאות</string>
+  <string id="PWD_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Password Manager.</string>
+  <string id="RNR_RTI_TASK_NAME">גיבוי ושחזור משופרים</string>
+  <string id="RNR_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Rescue and Recovery.</string>
+  <string id="TILES_RTI_TASK_NAME">SimpleTap</string>
+  <string id="TILES_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את SimpleTap.</string>
+  <string id="FPR_RTI_TASK_NAME">קורא טביעות אצבע</string>
+  <string id="ATHFPR_RTI_TASK_NAME">‏Notebook Fingerprint Reader‏</string>
+  <string id="FPR_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Fingerprint Reader.</string>
+  <string id="SYSUPD_RTI_TASK_NAME">עדכון ומנהלי התקן</string>
+  <string id="SYSUPD_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את System Update.</string>
+  <string id="TOOLBOX_RTI_TASK_NAME">תקינות מערכת ותכניות אבחון</string>
+  <string id="TOOLBOX_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את ThinkVantage Toolbox.</string>
+  <string id="PWRMGR_RTI_TASK_NAME">פקדי הפעלה</string>
+  <string id="PWRMGR_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Power Manager.</string>
+  <string id="MBC_RTI_TASK_NAME">‏3G Mobile Broadband‏</string>
+  <string id="MBC_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Mobile Broadband Activate.</string>
+  <string id="GPS_RTI_TASK_NAME">‏GPS</string>
+  <string id="GPS_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין GPS.</string>
+  <string id="APS_RTI_TASK_NAME">הגנת כרית אוויר</string>
+  <string id="APS_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Active Protection System.</string>
+  <string id="RECOV_RTI_TASK_NAME">תקליטורי Factory Recovery‏</string>
+  <string id="RECOV_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Factory Recovery Media.</string>
+  <string id="CSS_RTI_TASK_NAME">אבטחה משופרת</string>
+  <string id="CSS_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Client Security System.</string>
+  <string id="MCP_RTI_TASK_NAME">הודעות מ-Lenovo‏</string>
+  <string id="MCP_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Message Center Plus.</string>
+  <string id="TBCTL_RTI_TASK_NAME">תכנית עזר של הלוח</string>
+  <string id="TBCTL_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Tablet Control Utility.</string>
+  <string id="WRNTY_RTI_TASK_NAME">Lenovo Warranty</string>
+  <string id="WRNTY_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Lenovo Warranty</string>
+  <string id="USRGUIDE_RTI_TASK_NAME">Lenovo User Guide</string>
+  <string id="USRGUIDE_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Lenovo User Guide</string>
+  <string id="TSRO_TASK_NAME">מיטוב קריאה</string>
+  <string id="TSRO_TASK_DESC">Screen Reader Optimizer מכוון את המסך לזווית הנוחה ביותר עבור חוויית הקריאה שלכם.</string>
+  <string id="TSRO_RTI_TASK_NAME">Screen Reader Optimizer</string>
+  <string id="TSRO_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Screen Reader Optimizer.</string>
+  <string id="COMMUTIL_TASK_NAME">ועידות אינטרנט</string>
+  <string id="COMMUTIL_TASK_DESC">Lenovo Communication Utility מספק מיקום מרכזי עבור הגדרות מצלמה ומיקרופון משולבים.</string>
+  <string id="COMMUTIL_RTI_TASK_NAME">Communication Utility</string>
+  <string id="COMMUTIL_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Communication Utility.</string>
+  <string id="VWMGR_TASK_NAME">פריסת מסך</string>
+  <string id="VWMGR_TASK_DESC">Lenovo View Manager מאפשר לכם להפוך מיקומי חלון לאוטומטיים.</string>
+  <string id="VWMGR_RTI_TASK_NAME">View Manager</string>
+  <string id="VWMGR_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את View Manager.</string>
+  <string id="SOLNCTR_TASK_NAME">תקינות מערכת ותכניות אבחון</string>
+  <string id="SOLNCTR_TASK_DESC">Lenovo Solution Center מספק מידע אודות תקינות המערכת ומאפשר לכם להפעיל בדיקות אבחון.</string>
+  <string id="SOLNCTR_RTI_TASK_NAME">תקינות מערכת ותכניות אבחון</string>
+  <string id="SOLNCTR_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Lenovo Solution Center.</string>  
+  <string id="QuickCast_TASK_NAME">Lenovo QuickCast</string>
+  <string id="QuickCast_TASK_DESC">Lenovo QuickCast מאפשרת לכם לשתף קבצים עם התקנים אחרים.</string>
+  <string id="QuickCast_RTI_TASK_NAME">Lenovo QuickCast</string>
+  <string id="QuickCast_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Lenovo QuickCast.</string> 
+  <string id="QuickControl_TASK_NAME">Lenovo QuickControl</string>
+  <string id="QuickControl_TASK_DESC">Lenovo QuickControl מאפשרת לכם לשלוט במחשב שלכם באמצעות הטלפון החכם.</string>
+  <string id="QuickControl_RTI_TASK_NAME">Lenovo QuickControl</string>
+  <string id="QuickControl_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Lenovo QuickControl.</string>
+  <string id="QuickDisplay_TASK_NAME">Lenovo QuickDisplay</string>
+  <string id="QuickDisplay_TASK_DESC">Lenovo QuickDisplay מאפשרת להתחבר באופן פשוט וקל לצגים ולמקרנים אלחוטיים.</string>
+  <string id="QuickDisplay_RTI_TASK_NAME">Lenovo QuickDisplay</string>
+  <string id="QuickDisplay_RTI_TASK_DESC">לחצו כאן כדי ללמוד עוד ולהתקין את Lenovo QuickDisplay.</string>
+</stringTable>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              //
+// Copyright (c) 2016-2019 Vinnie Falco (vinnie dot falco at gmail dot com)
+//
+// Distributed under the Boost Software License, Version 1.0. (See accompanying
+// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+//
+// Official repository: https://github.com/boostorg/beast
+//
+
+#ifndef BOOST_BEAST_IMPL_READ_SIZE_HPP
+#define BOOST_BEAST_IMPL_READ_SIZE_HPP
+
+#include <boost/asio/buffer.hpp>
+#include <boost/assert.hpp>
+#include <stdexcept>
+#include <type_traits>
+
+namespace boost {
+namespace beast {
+
+namespace detail {
+
+template<class T, class = void>
+struct has_read_size_helper : std::false_type {};
+
+template<class T>
+struct has_read_size_helper<T, decltype(
+    read_size_helper(std::declval<T&>(), 512),
+    (void)0)> : std::true_type
+{
+};
+
+template<class DynamicBuffer>
+std::size_t
+read_size(DynamicBuffer& buffer,
+    std::size_t max_size, std::true_type)
+{
+    return read_size_helper(buffer, max_size);
+}
+
+template<class DynamicBuffer>
+std::size_t
+read_size(DynamicBuffer& buffer,
+    std::size_t max_size, std::false_type)
+{
+    static_assert(
+        net::is_dynamic_buffer<DynamicBuffer>::value,
+        "DynamicBuffer type requirements not met");
+    auto const size = buffer.size();
+    auto const limit = buffer.max_size() - size;
+    BOOST_ASSERT(size <= buffer.max_size());
+    return std::min<std::size_t>(
+        std::max<std::size_t>(512, buffer.capacity() - size),
+        std::min<std::size_t>(max_size, limit));
+}
+
+} // detail
+
+template<class DynamicBuffer>
+std::size_t
+read_size(
+    DynamicBuffer& buffer, std::size_t max_size)
+{
+    return detail::read_size(buffer, max_size,
+        detail::has_read_size_helper<DynamicBuffer>{});
+}
+
+template<class DynamicBuffer>
+std::size_t
+read_size_or_throw(
+    DynamicBuffer& buffer, std::size_t max_size)
+{
+    auto const n = read_size(buffer, max_size);
+    if(n == 0)
+        BOOST_THROW_EXCEPTION(std::length_error{
+            "buffer overflow"});
+    return n;
+}
+
+} // beast
+} // boost
+
+#endif
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           �
+    ���j�"  �                  �  � S r SSKJr  SSKJrJr  SSKJr  SSKJ	r	  SSK
+JrJrJrJrJrJr  SSKJrJrJrJrJr  \(       a  SSKJr   " S	 S
+\5      r " S S\5      r " S S\5      r " S S\5      r " S S\5      r " S S\5      r " S S\5      r " S S\5      r  " S S\5      r! " S S\5      r" " S S\5      r# " S S \5      r$ " S! S"\5      r% " S# S$\5      r& " S% S&\5      r' " S' S(\5      r( " S) S*\5      r)g+),zDCustom element classes for shape-related elements like `<w:inline>`.�    )�annotations)�TYPE_CHECKING�cast��nsdecls)�	parse_xml)�ST_Coordinate�ST_DrawingElementId�ST_PositiveCoordinate�ST_RelationshipId�	XsdString�XsdToken)�BaseOxmlElement�OneAndOnlyOne�OptionalAttribute�RequiredAttribute�	ZeroOrOne)�Lengthc                  �   � \ rS rSrSrSrg)�	CT_Anchor�   z8`<wp:anchor>` element, container for a "floating" shape.� N��__name__�
+__module__�__qualname__�__firstlineno__�__doc__�__static_attributes__r   �    �[C:\Users\izadb\AppData\Local\Programs\Python\Python313\Lib\site-packages\docx/oxml/shape.pyr   r      s   � �Br    r   c                  �R   � \ rS rSr% Sr\" S\5      rS\S'   \" S\5      r	S\S'   Sr
+g	)
+�CT_Blip�!   zT``<a:blip>`` element, specifies image source and adjustments such as alpha and
+tint.zr:embedz
+str | None�embedzr:link�linkr   N)r   r   r   r   r   r   r   r%   �__annotations__r&   r   r   r    r!   r#   r#   !   s9   � �� *��$��E�:� � )��#��D�*� r    r#   c                  �2   � \ rS rSr% Sr\" SSS9rS\S'   Srg	)
+�CT_BlipFillProperties�-   z9``<pic:blipFill>`` element, specifies picture properties.za:blip)z	a:srcRectza:tilez	a:stretch��
+successorsr#   �blipr   N)	r   r   r   r   r   r   r-   r'   r   r   r    r!   r)   r)   -   s   � �C���A��D�'� r    r)   c                  �4   � \ rS rSr% Sr\" S5      rS\S'   Srg)�CT_GraphicalObject�5   z:``<a:graphic>`` element, container for a DrawingML object.za:graphicData�CT_GraphicalObjectData�graphicDatar   N)	r   r   r   r   r   r   r2   r'   r   r   r    r!   r/   r/   5   s   � �D�*7��+�K�'� r    r/   c                  �P   � \ rS rSr% Sr\" S5      rS\S'   \" S\	5      r
+S\S'   Srg	)
+r1   �=   zI``<a:graphicData>`` element, container for the XML of a DrawingML object.zpic:pic�
+CT_Picture�pic�uri�strr   N)r   r   r   r   r   r   r6   r'   r   r   r7   r   r   r    r!   r1   r1   =   s%   � �S��	�*�C��*� ���1�C��1r    r1   c                  �   � \ rS rSr% Sr\" S5      rS\S'   \" S5      rS\S'   \" S	5      r	S
+\S'   \
+SS j5       r\
+            SS j5       r\
+S 5       rSrg)�	CT_Inline�D   z5`<wp:inline>` element, container for an inline shape.z	wp:extent�CT_PositiveSize2D�extentzwp:docPr�CT_NonVisualDrawingProps�docPrz	a:graphicr/   �graphicc                �\  � [        [        [        U R                  5       5      5      nXR                  l        X%R                  l        X5R                  l        SU-  UR                  l	        SUR                  R                  l        UR                  R                  R                  U5        U$ )zTReturn a new ``<wp:inline>`` element populated with the values passed as
+parameters.z
+Picture %dz8http://schemas.openxmlformats.org/drawingml/2006/picture)r   r:   r   �_inline_xmlr=   �cx�cyr?   �id�namer@   r2   r7   �_insert_pic)�clsrC   rD   �shape_idr6   �inlines         r!   �new�CT_Inline.newO   sy   � � �i��3�?�?�+<�!=�>����������"����(�8�3�����)c����"�"�&����"�"�.�.�s�3��r    c                �\   � Sn[         R                  XcX$U5      nU R                  XEX5      nU$ )z�Create `wp:inline` element containing a `pic:pic` element.
+
+The contents of the `pic:pic` element is taken from the argument values.
+r   )r5   rK   )	rH   rI   �rId�filenamerC   rD   �pic_idr6   rJ   s	            r!   �new_pic_inline�CT_Inline.new_pic_inline\   s0   � � ���n�n�V�s��;�������/���r    c                �$   � S[        SSSS5      -  $ )Na  <wp:inline %s>
+  <wp:extent cx="914400" cy="914400"/>
+  <wp:docPr id="666" name="unnamed"/>
+  <wp:cNvGraphicFramePr>
+    <a:graphicFrameLocks noChangeAspect="1"/>
+  </wp:cNvGraphicFramePr>
+  <a:graphic>
+    <a:graphicData uri="URI not set"/>
+  </a:graphic>
+</wp:inline>�wp�ar6   �rr   �rH   s    r!   rB   �CT_Inline._inline_xmli   s!   � �	� %�T�3��s�;�	<�	
+r    r   N)
+rC   r   rD   r   rI   �intr6   r5   �returnr:   )rI   rY   rN   r8   rO   r8   rC   r   rD   r   rZ   r:   )r   r   r   r   r   r   r=   r'   r?   r@   �classmethodrK   rQ   rB   r   r   r    r!   r:   r:   D   s�   � �?� -�k� :�F��:�&3��'�E�#� � #0��#�G�� � �
+� �
+� �
+��
+�!$�
+�03�
+�9?�
+�EK�
+�	�
+� �
+� �
+� �
+r    r:   c                  �<   � \ rS rSrSr\" S\5      r\" S\5      r	Sr
+g)r>   �y   zhUsed for ``<wp:docPr>`` element, and perhaps others.
+
+Specifies the id and name of a DrawingML drawing.
+rE   rF   r   N)r   r   r   r   r   r   r
+   rE   r   rF   r   r   r    r!   r>   r>   y   s"   � ��
+ 
+�4�!4�	5�B��V�Y�/�Dr    r>   c                  �   � \ rS rSrSrSrg)�CT_NonVisualPictureProperties�   zK``<pic:cNvPicPr>`` element, specifies picture locking and resize behaviors.r   Nr   r   r    r!   r_   r_   �   s   � �Ur    r_   c                  �   � \ rS rSr% Sr\" S5      rS\S'   \" S5      rS\S'   \" S	5      r	S
+\S'   \
+SS j5       r\
+S 5       rSrg)r5   �   z+``<pic:pic>`` element, a DrawingML picture.zpic:nvPicPr�CT_PictureNonVisual�nvPicPrzpic:blipFillr)   �blipFillzpic:spPr�CT_ShapeProperties�spPrc                �  � [        U R                  5       5      nXR                  R                  l        X&R                  R                  l        X6R                  R                  l        XFR                  l
+        XVR                  l        U$ )z3A new minimum viable `<pic:pic>` (picture) element.)r   �_pic_xmlrd   �cNvPrrE   rF   re   r-   r%   rg   rC   rD   )rH   rP   rO   rN   rC   rD   r6   s          r!   rK   �CT_Picture.new�   s[   � � �����'��%������!)������"%���������������
+r    c                �"   � S[        SSS5      -  $ )Naq  <pic:pic %s>
+  <pic:nvPicPr>
+    <pic:cNvPr id="666" name="unnamed"/>
+    <pic:cNvPicPr/>
+  </pic:nvPicPr>
+  <pic:blipFill>
+    <a:blip/>
+    <a:stretch>
+      <a:fillRect/>
+    </a:stretch>
+  </pic:blipFill>
+  <pic:spPr>
+    <a:xfrm>
+      <a:off x="0" y="0"/>
+      <a:ext cx="914400" cy="914400"/>
+    </a:xfrm>
+    <a:prstGeom prst="rect"/>
+  </pic:spPr>
+</pic:pic>r6   rU   rV   r   rW   s    r!   ri   �CT_Picture._pic_xml�   s   � ��$ #�5�#�s�3�%4�	
+r    r   N)rP   rY   rO   r8   rN   r8   rC   r   rD   r   rZ   r5   )r   r   r   r   r   r   rd   r'   re   rg   r[   rK   ri   r   r   r    r!   r5   r5   �   si   � �5�#0��$�G� � � '4��'�H�#� �  -�Z�8�D�
+�8��� �� �
+� �
+r    r5   c                  �(   � \ rS rSrSr\" S5      rSrg)rc   �   z9``<pic:nvPicPr>`` element, non-visual picture properties.z	pic:cNvPrr   N)r   r   r   r   r   r   rj   r   r   r    r!   rc   rc   �   s   � �C��+�&�Er    rc   c                  �<   � \ rS rSrSr\" S\5      r\" S\5      rSr	g)�
+CT_Point2D�   zYUsed for ``<a:off>`` element, and perhaps others.
+
+Specifies an x, y coordinate (point).
+�x�yr   N)
+r   r   r   r   r   r   r	   rs   rt   r   r   r    r!   rq   rq   �   s!   � ��
+ 	�#�}�-�A��#�}�-�Ar    rq   c                  �R   � \ rS rSr% Sr\" S\5      rS\S'   \" S\5      r	S\S'   Sr
+g)r<   ��   zhUsed for ``<wp:extent>`` element, and perhaps others later.
+
+Specifies the size of a DrawingML drawing.
+rC   r   rD   r   N)r   r   r   r   r   r   r   rC   r'   rD   r   r   r    r!   r<   r<   �   s9   � ��
+ #��#��B�� � #��#��B�� r    r<   c                  �   � \ rS rSrSrSrg)�CT_PresetGeometry2D��   zS``<a:prstGeom>`` element, specifies an preset autoshape geometry, such as
+``rect``.r   Nr   r   r    r!   rx   rx   �   s   � �r    rx   c                  �   � \ rS rSrSrSrg)�CT_RelativeRect��   zT``<a:fillRect>`` element, specifying picture should fill containing rectangle
+shape.r   Nr   r   r    r!   r{   r{   �   �   � �r    r{   c                  �   � \ rS rSrSr\" SSS9r\S 5       r\R                  S 5       r\S 5       r
+\
+R                  S	 5       r
+S
+rg)rf   ��   zF``<pic:spPr>`` element, specifies size and shape of picture container.za:xfrm)z
+a:custGeomz
+a:prstGeomza:lnza:effectLstza:effectDagz	a:scene3dza:sp3dza:extLstr+   c                �:   � U R                   nUc  gUR                  $ )z:Shape width as an instance of Emu, or None if not present.N)�xfrmrC   ��selfr�   s     r!   rC   �CT_ShapeProperties.cx�   �   � � �y�y���<���w�w�r    c                �0   � U R                  5       nXl        g �N)�get_or_add_xfrmrC   �r�   �valuer�   s      r!   rC   r�   �   �   � ��#�#�%���r    c                �:   � U R                   nUc  gUR                  $ )z;Shape height as an instance of Emu, or None if not present.N)r�   rD   r�   s     r!   rD   �CT_ShapeProperties.cy�   r�   r    c                �0   � U R                  5       nXl        g r�   )r�   rD   r�   s      r!   rD   r�     r�   r    r   N)r   r   r   r   r   r   r�   �propertyrC   �setterrD   r   r   r    r!   rf   rf   �   so   � �P���	
+��D� �� �� �Y�Y�� �� �� �� �Y�Y�� �r    rf   c                  �   � \ rS rSrSrSrg)�CT_StretchInfoPropertiesi
+  zP``<a:stretch>`` element, specifies how picture should fill its containing
+shape.r   Nr   r   r    r!   r�   r�   
+  r}   r    r�   c                  �   � \ rS rSrSr\" SSS9r\" SSS9r\S 5       r	\	R                  S	 5       r	\S
+ 5       r\R                  S 5       rSrg)�CT_Transform2Di  zD``<a:xfrm>`` element, specifies size and shape of picture container.za:off)�a:extr+   r�   r   c                �:   � U R                   nUc  g UR                  $ r�   )�extrC   �r�   r�   s     r!   rC   �CT_Transform2D.cx  �   � ��h�h���;���v�v�r    c                �0   � U R                  5       nXl        g r�   )�get_or_add_extrC   �r�   r�   r�   s      r!   rC   r�     �   � ��!�!�#���r    c                �:   � U R                   nUc  g UR                  $ r�   )r�   rD   r�   s     r!   rD   �CT_Transform2D.cy!  r�   r    c                �0   � U R                  5       nXl        g r�   )r�   rD   r�   s      r!   rD   r�   (  r�   r    N)r   r   r   r   r   r   �offr�   r�   rC   r�   rD   r   r   r    r!   r�   r�     ss   � �N�
+�G�
+�
+3�C�
+�G��
++�C��� �� �Y�Y�� �� �� �� �Y�Y�� �r    r�   N)*r   �
+__future__r   �typingr   r   �docx.oxml.nsr   �docx.oxml.parserr   �docx.oxml.simpletypesr	   r
+   r   r   r   r   �docx.oxml.xmlchemyr   r   r   r   r   �docx.sharedr   r   r#   r)   r/   r1   r:   r>   r_   r5   rc   rq   r<   rx   r{   rf   r�   r�   r   r    r!   �<module>r�      s  �� J� "� &�  � &�� �� � �"�C�� C�	�o� 	��O� ��� �2�_� 2�2
+�� 2
+�j0�� 0�V�O� V�,
+�� ,
+�^'�/� '�.�� .��� ��/� �
+�o� �
+)�� )�X�� �
+�_� r                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           import unittest
+from collections import defaultdict
+from llvmlite import ir
+from llvmlite import binding as llvm
+from llvmlite.tests import TestCase
+
+import llvmlite.tests.refprune_proto as proto
+
+
+def _iterate_cases(generate_test):
+    def wrap(fn):
+        def wrapped(self):
+            return generate_test(self, fn)
+        wrapped.__doc__ = f"generated test for {fn.__module__}.{fn.__name__}"
+        return wrapped
+
+    for k, case_fn in proto.__dict__.items():
+        if k.startswith('case'):
+            yield f'test_{k}', wrap(case_fn)
+
+
+class PassManagerMixin():
+
+    def pb(self):
+        llvm.initialize_native_target()
+        tm = llvm.Target.from_default_triple().create_target_machine()
+        pto = llvm.create_pipeline_tuning_options(speed_level=0, size_level=0)
+        return llvm.create_pass_builder(tm, pto)
+
+
+class TestRefPrunePrototype(TestCase):
+    """
+    Test that the prototype is working.
+    """
+    def generate_test(self, case_gen):
+        nodes, edges, expected = case_gen()
+        got = proto.FanoutAlgorithm(nodes, edges).run()
+        self.assertEqual(expected, got)
+
+    # Generate tests
+    for name, case in _iterate_cases(generate_test):
+        locals()[name] = case
+
+
+ptr_ty = ir.IntType(8).as_pointer()
+
+
+class TestRefPrunePass(TestCase, PassManagerMixin):
+    """
+    Test that the C++ implementation matches the expected behavior as for
+    the prototype.
+
+    This generates a LLVM module for each test case, runs the pruner and checks
+    that the expected results are achieved.
+    """
+
+    def make_incref(self, m):
+        fnty = ir.FunctionType(ir.VoidType(), [ptr_ty])
+        return ir.Function(m, fnty, name='NRT_incref')
+
+    def make_decref(self, m):
+        fnty = ir.FunctionType(ir.VoidType(), [ptr_ty])
+        return ir.Function(m, fnty, name='NRT_decref')
+
+    def make_switcher(self, m):
+        fnty = ir.FunctionType(ir.IntType(32), ())
+        return ir.Function(m, fnty, name='switcher')
+
+    def make_brancher(self, m):
+        fnty = ir.FunctionType(ir.IntType(1), ())
+        return ir.Function(m, fnty, name='brancher')
+
+    def generate_ir(self, nodes, edges):
+        # Build LLVM module for the CFG
+        m = ir.Module()
+
+        incref_fn = self.make_incref(m)
+        decref_fn = self.make_decref(m)
+        switcher_fn = self.make_switcher(m)
+        brancher_fn = self.make_brancher(m)
+
+        fnty = ir.FunctionType(ir.VoidType(), [ptr_ty])
+        fn = ir.Function(m, fnty, name='main')
+        [ptr] = fn.args
+        ptr.name = 'mem'
+        # populate the BB nodes
+        bbmap = {}
+        for bb in edges:
+            bbmap[bb] = fn.append_basic_block(bb)
+        # populate the BB
+        builder = ir.IRBuilder()
+        for bb, jump_targets in edges.items():
+            builder.position_at_end(bbmap[bb])
+            # Insert increfs and decrefs
+            for action in nodes[bb]:
+                if action == 'incref':
+                    builder.call(incref_fn, [ptr])
+                elif action == 'decref':
+                    builder.call(decref_fn, [ptr])
+                else:
+                    raise AssertionError('unreachable')
+
+            # Insert the terminator.
+            # Switch base on the number of jump targets.
+            n_targets = len(jump_targets)
+            if n_targets == 0:
+                builder.ret_void()
+            elif n_targets == 1:
+                [dst] = jump_targets
+                builder.branch(bbmap[dst])
+            elif n_targets == 2:
+                [left, right] = jump_targets
+                sel = builder.call(brancher_fn, ())
+                builder.cbranch(sel, bbmap[left], bbmap[right])
+            elif n_targets > 2:
+                sel = builder.call(switcher_fn, ())
+                [head, *tail] = jump_targets
+
+                sw = builder.switch(sel, default=bbmap[head])
+                for i, dst in enumerate(tail):
+                    sw.add_case(sel.type(i), bbmap[dst])
+            else:
+                raise AssertionError('unreachable')
+
+        return m
+
+    def apply_refprune(self, irmod):
+        mod = llvm.parse_assembly(str(irmod))
+        pb = self.pb()
+        pm = pb.getModulePassManager()
+        pm.add_refprune_pass()
+        pm.run(mod, pb)
+        return mod
+
+    def check(self, mod, expected, nodes):
+        # preprocess incref/decref locations
+
+        # LLVM >= 18 adds an extra empty block "LoopExit" which causes
+        # regular dict to throw KeyError
+        d = defaultdict(lambda: defaultdict(int))
+
+        for k, vs in nodes.items():
+            n_incref = vs.count('incref')
+            n_decref = vs.count('decref')
+            d[k] = {'incref': n_incref, 'decref': n_decref}
+        for k, stats in d.items():
+            if expected.get(k):
+                stats['incref'] -= 1
+                for dec_bb in expected[k]:
+                    d[dec_bb]['decref'] -= 1
+
+        # find the main function
+        for f in mod.functions:
+            if f.name == 'main':
+                break
+
+        # check each BB
+        for bb in f.blocks:
+            stats = d[bb.name]
+            text = str(bb)
+            n_incref = text.count('NRT_incref')
+            n_decref = text.count('NRT_decref')
+            self.assertEqual(stats['incref'], n_incref, msg=f'BB {bb}')
+            self.assertEqual(stats['decref'], n_decref, msg=f'BB {bb}')
+
+    def generate_test(self, case_gen):
+        nodes, edges, expected = case_gen()
+        irmod = self.generate_ir(nodes, edges)
+        outmod = self.apply_refprune(irmod)
+        self.check(outmod, expected, nodes)
+
+    # Generate tests
+    for name, case in _iterate_cases(generate_test):
+        locals()[name] = case
+
+
+class BaseTestByIR(TestCase, PassManagerMixin):
+    refprune_bitmask = 0
+
+    prologue = r"""
+declare void @NRT_incref(i8* %ptr)
+declare void @NRT_decref(i8* %ptr)
+"""
+
+    def check(self, irmod, subgraph_limit=None):
+        mod = llvm.parse_assembly(f"{self.prologue}\n{irmod}")

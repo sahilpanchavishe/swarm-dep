@@ -1,0 +1,4191 @@
+ile name='fczf.exe' />
+        <File name='data\kor_kr.big' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\EA SPORTS(TM) FC ONLINE\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='Russia'>
+      <CMSID>101125711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>fifa4zf.exe</Icon>
+      <DriverProfile>fifa4zf.exe</DriverProfile>
+      <Image>fifa4zf.exe</Image>
+      <Launch>FOR /F &quot;skip=2 tokens=3* delims= &quot; %i IN (&apos;REG QUERY &quot;HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\101XP Game Center&quot; /v InstallLocation&apos;) DO cmd /c &quot;&quot;%i %j\launcher101xp_agent.exe&quot; send play=132&quot;</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fifa4launcher.exe' />
+        <File name='fifa4zf.exe' />
+        <File name='data\rus_ru.big' exists='true' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Game 101XP 132\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='figureheads'>
+    <DisplayName>Figureheads</DisplayName>
+    <ChromaAppID>63a49184-6fde-4b6c-9a7c-c735d9ad2f72</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101126211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Binaries\Win32\Figureheads.exe</Icon>
+      <Image>Binaries\Win32\Figureheads.exe</Image>
+      <Launch>Binaries\Win32\FigureheadsLauncher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Binaries\Win32\Figureheads.exe' />
+        <File name='Binaries\Win32\FigureheadsLauncher.exe' />
+        <File name='Binaries\Win32\fh.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{C4D91A65-F3B3-4869-9B4F-FF484FA36B36}\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <DriverProfile>Binaries\Win32\Figureheads.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy'>
+    <DisplayName>Final Fantasy</DisplayName>
+    <ChromaAppID>0e9c0a2f-cf1d-4062-a1af-534c4140b17a</ChromaAppID>
+    <Version name='steam'>
+      <SteamAppIds>
+        <id>1173770</id>
+      </SteamAppIds>
+      <CMSID>101919111</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FINAL FANTASY.exe</Icon>
+      <DriverProfile>FINAL FANTASY.exe</DriverProfile>
+      <Image>FINAL FANTASY.exe</Image>
+      <Launch>start steam://rungameid/1173770</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='FINAL FANTASY.exe' />
+        <File name='UnityPlayer.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_iii'>
+    <DisplayName>FINAL FANTASY III</DisplayName>
+    <ChromaAppID>0b4552e9-7d1e-4b09-890c-4280028a62b6</ChromaAppID>
+    <Version name='generic-steam'>
+      <TelemetryType>1</TelemetryType>
+      <Distributor>Steam</Distributor>
+      <CMSVersion>1</CMSVersion>
+      <CMSID>101127011</CMSID>
+      <Icon>FF3_Launcher.exe</Icon>
+      <Image>FF3_Win32.exe</Image>
+      <Image>FF3_Launcher.exe</Image>
+      <Launch>start steam://rungameid/239120</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/239120</StreamingCmdLine>
+      <StreamingCaption>Final Fantasy III</StreamingCaption>
+      <StreamingClassName>SDL_app</StreamingClassName>
+      <StreamingAutomatedLaunch>1</StreamingAutomatedLaunch>
+      <Files>
+        <File name='FF3_Win32.exe' />
+        <File name='steam_api.dll' />
+      </Files>
+      <SteamAppIds>
+        <id>239120</id>
+      </SteamAppIds>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_iii_2021'>
+    <DisplayName>Final Fantasy III</DisplayName>
+    <ChromaAppID>685983ca-5177-441e-a7a5-0270dcca4b01</ChromaAppID>
+    <Version name='steam'>
+      <SteamAppIds>
+        <id>1173790</id>
+      </SteamAppIds>
+      <CMSID>101919311</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FINAL FANTASY III.exe</Icon>
+      <DriverProfile>FINAL FANTASY III.exe</DriverProfile>
+      <Image>FINAL FANTASY III.exe</Image>
+      <Launch>start steam://rungameid/1173790</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='FINAL FANTASY III.exe' />
+        <File name='UnityPlayer.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_iv'>
+    <DisplayName>FINAL FANTASY IV</DisplayName>
+    <ChromaAppID>d59c1fce-8973-454e-80c6-d8dacd358941</ChromaAppID>
+    <Version name='generic-steam'>
+      <TelemetryType>1</TelemetryType>
+      <Distributor>Steam</Distributor>
+      <CMSVersion>1</CMSVersion>
+      <CMSID>101127111</CMSID>
+      <Icon>FF4.exe</Icon>
+      <Image>FF4.exe</Image>
+      <Image>FF4_Launcher.exe</Image>
+      <Launch>start steam://rungameid/312750</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/312750</StreamingCmdLine>
+      <StreamingCaption>Final Fantasy IV</StreamingCaption>
+      <StreamingClassName>SDL_app</StreamingClassName>
+      <StreamingAutomatedLaunch>1</StreamingAutomatedLaunch>
+      <Files>
+        <File name='FF4.exe' />
+        <File name='steam_api.dll' />
+      </Files>
+      <SteamAppIds>
+        <id>312750</id>
+      </SteamAppIds>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_vii_rebirth'>
+    <DisplayName>FINAL FANTASY VII REBIRTH</DisplayName>
+    <ChromaAppID>b82212be-c857-48f1-9af8-a533f3b1028b</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2909400</id>
+      </SteamAppIds>
+      <CMSID>10374850</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <DriverProfile>End\Binaries\Win64\ff7rebirth_.exe</DriverProfile>
+      <Image>End\Binaries\Win64\ff7rebirth_.exe</Image>
+      <Image>ff7rebirth.exe</Image>
+      <Launch>start steam://rungameid/2909400</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='End\Binaries\Win64\ff7rebirth_.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <PinnedSLVersion>2.7.15</PinnedSLVersion>
+    </Version>
+    <Version name='EGS'>
+      <Distributor>Epic</Distributor>
+      <EpicAppId>33e6ac38b5a14098b079fd62d71aabc6</EpicAppId>
+      <CMSID>10374850</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <DriverProfile>End\Binaries\Win64\ff7rebirth_.exe</DriverProfile>
+      <Image>End\Binaries\Win64\ff7rebirth_.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/33e6ac38b5a14098b079fd62d71aabc6?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='End\Binaries\Win64\ff7rebirth_.exe' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <PinnedSLVersion>2.7.15</PinnedSLVersion>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_vii_remake'>
+    <DisplayName>FINAL FANTASY VII REMAKE</DisplayName>
+    <ChromaAppID>71c0a28d-4889-46ed-b80b-58769a3bb2f3</ChromaAppID>
+    <Version name='epic'>
+      <Distributor>Epic</Distributor>
+      <EpicAppId>b25ba0f04dc9434f8a04a062719e7aa7</EpicAppId>
+      <CMSID>101128211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <DriverProfile>End\Binaries\Win64\ff7remake_.exe</DriverProfile>
+      <Image>End\Binaries\Win64\ff7remake_.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/b25ba0f04dc9434f8a04a062719e7aa7?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='End\Binaries\Win64\ff7remake_.exe' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <SteamAppIds>
+        <id>1462040</id>
+      </SteamAppIds>
+      <CMSID>101128211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <DriverProfile>End\Binaries\Win64\ff7remake_.exe</DriverProfile>
+      <Image>End\Binaries\Win64\ff7remake_.exe</Image>
+      <Launch>start steam://rungameid/1462040</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='End\Binaries\Win64\ff7remake_.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_viii_remastered'>
+    <DisplayName>Final Fantasy VIII Remastered</DisplayName>
+    <ChromaAppID>9fcaaa70-1143-4154-a169-02c102440d23</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1026680</id>
+      </SteamAppIds>
+      <CMSID>101128411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FFVIII.exe</Icon>
+      <DriverProfile>FFVIII.exe</DriverProfile>
+      <Image>FFVIII.exe</Image>
+      <Launch>start steam://rungameid/1026680</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='FFVIII.exe' />
+        <File name='FFVIII_LAUNCHER.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_xii'>
+    <DisplayName>FINAL FANTASY XII: The Zodiac Age Remastered</DisplayName>
+    <ChromaAppID>d21392ec-6d25-4a7f-aa47-9ad07ba6c21a</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>595520</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.25</WhisperModePopsFactor>
+      <CMSID>101128711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>x64/FFXII_TZA.exe</Icon>
+      <Image>x64/FFXII_TZA.exe</Image>
+      <Launch>start steam://rungameid/595520</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/595520</StreamingCmdLine>
+      <StreamingCaption>FINAL FANTASY XII: The Zodiac Age Remastered</StreamingCaption>
+      <StreamingClassName>PhyreFrameworkClass</StreamingClassName>
+      <Files>
+        <File name='x64\FFXII_TZA.exe' />
+        <File name='x64\steam_api.dll' />
+      </Files>
+      <DriverProfile>x64/FFXII_TZA.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_xiii'>
+    <DisplayName>FINAL FANTASY XIII</DisplayName>
+    <ChromaAppID>623d056d-3ee4-47be-955f-f941d31cedcd</ChromaAppID>
+    <Version name='steam-generic'>
+      <TelemetryType>1</TelemetryType>
+      <Distributor>Steam</Distributor>
+      <CMSVersion>1</CMSVersion>
+      <CMSID>101128811</CMSID>
+      <Icon>FFXiiiLauncher.exe</Icon>
+      <Image>FFXiiiLauncher.exe</Image>
+      <Image>ffxiiiimg.exe</Image>
+      <Launch>start steam://rungameid/292120</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/292120</StreamingCmdLine>
+      <StreamingCaption>FINAL FANTASY XIII</StreamingCaption>
+      <StreamingClassName>SQEX.CDev.Engine.Framework.MainWindow</StreamingClassName>
+      <Files>
+        <File name='FFXiiiLauncher.exe' />
+        <File name='steam_api.dll' />
+      </Files>
+      <CMSID>101128811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <SteamAppIds>
+        <id>292120</id>
+      </SteamAppIds>
+      <DriverProfile>FFXiiiLauncher.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_xiv'>
+    <DisplayName>FINAL FANTASY XIV ONLINE</DisplayName>
+    <ChromaAppID>e17e17c0-2137-4552-92ba-7876b5ff0188</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.74</WhisperModePopsFactor>
+      <SteamAppIds>
+        <id>39210</id>
+      </SteamAppIds>
+      <CMSID>100918011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>boot\ffxivboot.exe</Icon>
+      <DriverProfile>game\ffxiv_dx11.exe</DriverProfile>
+      <Image>game\ffxiv_dx11.exe</Image>
+      <Launch>start steam://rungameid/39210</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/39210</StreamingCmdLine>
+      <StreamingCaption>FFXIVLauncher</StreamingCaption>
+      <StreamingClassName>FFXIVLauncher</StreamingClassName>
+      <Files>
+        <File name='boot\ffxivboot.exe' />
+        <File name='boot\ffxivupdater64.exe' />
+        <File name='game\ffxiv_dx11.exe' />
+        <File name='install_39210.vdf' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.74</WhisperModePopsFactor>
+      <CMSID>100918011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>boot\ffxivboot.exe</Icon>
+      <DriverProfile>game\ffxiv_dx11.exe</DriverProfile>
+      <Image>game\ffxiv_dx11.exe</Image>
+      <Image>boot\ffxivlauncher.exe</Image>
+      <Image>boot\ffxivupdater.exe</Image>
+      <Image>boot\ffxivsysinfo.exe</Image>
+      <Image>boot\ffxivconfig.exe</Image>
+      <Image>boot\ffxivboot.exe</Image>
+      <Launch>boot\ffxivboot.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>boot\ffxivboot.exe</StreamingCmdLine>
+      <StreamingCaption>Final Fantasy XIV: A Realm Reborn</StreamingCaption>
+      <StreamingClassName>FFXIVLauncher</StreamingClassName>
+      <Files>
+        <File name='boot\ffxivboot.exe' />
+        <File name='boot\ffxivupdater64.exe' />
+        <File name='game\ffxiv_dx11.exe' />
+        <File name='install_39210.vdf' exists='false' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath level='2' view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{2B41E132-07DF-4925-A3D3-F2D1765CCDFE}\\DisplayIcon</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='TC'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.74</WhisperModePopsFactor>
+      <CMSID>100918011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>boot\FfxivLauncherTC.exe</Icon>
+      <DriverProfile>game\ffxiv_dx11.exe</DriverProfile>
+      <Image>game\ffxiv_dx11.exe</Image>
+      <Launch>boot\FfxivLauncherTC.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>boot\ffxivboot.exe</StreamingCmdLine>
+      <StreamingCaption>Final Fantasy XIV: A Realm Reborn</StreamingCaption>
+      <StreamingClassName>FFXIVLauncher</StreamingClassName>
+      <Files>
+        <File name='boot\FfxivLauncherTC.exe' />
+        <File name='game\ffxiv_dx11.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath>HKEY_CURRENT_USER\\Software\\Classes\\com.userjoy.ffxiv\\InstallDir</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_xiv_kr'>
+    <DisplayName>Final Fantasy XIV - DX9</DisplayName>
+    <ChromaAppID>e17e17c0-2137-4552-92ba-7876b5ff0188</ChromaAppID>
+    <Version name='korean'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>100918011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Actoz Soft</Distributor>
+      <Icon>game\ffxiv.exe</Icon>
+      <DriverProfile>game\ffxiv_dx11.exe</DriverProfile>
+      <Image>game\ffxiv.exe</Image>
+      <Image>game\ffxiv_dx11.exe</Image>
+      <Image>boot\FFXIV_Boot.exe</Image>
+      <Launch>boot\FFXIV_Boot.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <Files>
+        <File name='boot\FFXIV_Boot.exe' />
+        <File name='boot\FFXIV_Launcher.exe' />
+        <File name='game\ffxiv_dx11.exe' />
+        <File name='game\ffxiv.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath level='2' view='64' matchIndex='1' valueRegex='^&quot;([^&quot;]*)&quot;'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Classes\\FF14kr\\shell\\open\\command\\</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='wegame'>
+      <TelemetryType>1</TelemetryType>
+      <TencentAppId>2000340</TencentAppId>
+      <CMSID>100918011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>TGP</Distributor>
+      <Icon>game\ffxiv_dx11.exe</Icon>
+      <DriverProfile>game\ffxiv_dx11.exe</DriverProfile>
+      <Image>game\ffxiv_dx11.exe</Image>
+      <Launch>start wegame://StartFor=2000340</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start wegame://StartFor=2000340</StreamingCmdLine>
+      <StreamingCaption>&#x6700;&#x7EC8;&#x5E7B;&#x60F3;XIV</StreamingCaption>
+      <StreamingClassName>FFXIVGAME</StreamingClassName>
+      <Files>
+        <File name='game\ffxiv_dx11.exe' />
+        <File name='&#x6700;&#x7EC8;&#x5E7B;&#x60F3;14&#x5378;&#x8F7D;.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='chinese'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>100918011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>SNDA</Distributor>
+      <Icon>FFXIVBoot.exe</Icon>
+      <DriverProfile>game\ffxiv_dx11.exe</DriverProfile>
+      <Image>game\ffxiv_dx11.exe</Image>
+      <Image>game\ffxiv.exe</Image>
+      <Launch>FFXIVBoot.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>FFXIVBoot.exe</StreamingCmdLine>
+      <StreamingCaption>&#x6700;&#x7EC8;&#x5E7B;&#x60F3;XIV</StreamingCaption>
+      <StreamingClassName>FFXIVGAME</StreamingClassName>
+      <Files>
+        <File name='FFXIVBoot.exe' />
+        <File name='FFXIVRepair.exe' />
+        <File name='game\ffxiv_dx11.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath level='1' view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\FFXIV\\DisplayIcon</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_xv'>
+    <DisplayName>Final Fantasy XV</DisplayName>
+    <ChromaAppID>4a3f75fc-3858-4f51-aa0a-c265c8d498e8</ChromaAppID>
+    <Version name='steam_demo'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>671210</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.14</WhisperModePopsFactor>
+      <CMSID>101129211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>ffxv_s.exe</Icon>
+      <Image>ffxv_s.exe</Image>
+      <Launch>start steam://rungameid/671210</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='ffxv_s.exe' />
+        <File name='steam_api64.dll' />
+        <File name='datas\event\cp01\cp01_trial\trial_ending_movie.earc' />
+      </Files>
+      <DriverProfile>ffxv_s.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='origin_demo'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.14</WhisperModePopsFactor>
+      <OriginAppIds>
+        <id>FINAL FANTASY XV WINDOWS EDITION PLAYABLE DEMO</id>
+      </OriginAppIds>
+      <CMSID>101129211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Origin</Distributor>
+      <Icon>ffxv_o.exe</Icon>
+      <Image>ffxv_o.exe</Image>
+      <Launch>ffxv_o.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='ffxv_o.exe' />
+        <File name='datas\event\cp01\cp01_trial\trial_ending_movie.earc' />
+      </Files>
+      <DriverProfile>ffxv_o.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>637650</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.14</WhisperModePopsFactor>
+      <CMSID>101129211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>ffxv_s.exe</Icon>
+      <Image>ffxv_s.exe</Image>
+      <Launch>start steam://rungameid/637650</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/637650</StreamingCmdLine>
+      <StreamingCaption>FINAL FANTASY XV WINDOWS EDITION</StreamingCaption>
+      <StreamingClassName>FFXV.MainWindow</StreamingClassName>
+      <Files>
+        <File name='ffxv_s.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <DriverProfile>ffxv_s.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='origin'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.14</WhisperModePopsFactor>
+      <OriginAppIds>
+        <id>FINAL FANTASY XV WINDOWS EDITION</id>
+      </OriginAppIds>
+      <CMSID>101129211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Origin</Distributor>
+      <Icon>ffxv_o.exe</Icon>
+      <Image>ffxv_o.exe</Image>
+      <Launch>ffxv_o.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='ffxv_o.exe' />
+      </Files>
+      <DriverProfile>ffxv_o.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='uwp'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.14</WhisperModePopsFactor>
+      <CMSID>101129211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>ffxv_u.exe</Icon>
+      <Image>ffxv_u.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>39EA002F.FINALFANTASYXVforPC_n746a19ndrrjg</UWPPackageFamilyName>
+      <AppUserModelId>39EA002F.FINALFANTASYXVforPC_n746a19ndrrjg!App</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='uwp_demo'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.14</WhisperModePopsFactor>
+      <CMSID>101129211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>ffxv_u.exe</Icon>
+      <Image>ffxv_u.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>39EA002F.FINALFANTASYXVWINDOWSEDITIONPlayableDemo_n746a19ndrrjg</UWPPackageFamilyName>
+      <AppUserModelId>39EA002F.FINALFANTASYXVWINDOWSEDITIONPlayableDemo_n746a19ndrrjg!App</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fantasy_xvi'>
+    <DisplayName>Final Fantasy XVI</DisplayName>
+    <ChromaAppID>6dd0ce0f-89ee-4f57-8966-d78143ddf73e</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2515020</id>
+      </SteamAppIds>
+      <CMSID>102972627</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>ffxvi.exe</Icon>
+      <DriverProfile>ffxvi.exe</DriverProfile>
+      <Image>ffxvi.exe</Image>
+      <Launch>start steam://rungameid/2515020</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='ffxvi.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='final_fire'>
+    <DisplayName>Final Fire</DisplayName>
+    <ChromaAppID>9b87dd75-90b9-4ced-ba74-0ae4fdc248de</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101129611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>FinalFire.exe</Icon>
+      <Image>FinalFire.exe</Image>
+      <Launch>Launcher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\A8D3D4C9-1A35-4916-866B-4B33A2CFD813_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingAutomatedLaunch>1</StreamingAutomatedLaunch>
+      <StreamingCmdLine>Launcher.exe</StreamingCmdLine>
+      <StreamingCaption>&#x6700;&#x540E;&#x4E00;&#x70AE; - FinalFire</StreamingCaption>
+      <StreamingClassName>TorqueJuggernaughtWindow</StreamingClassName>
+      <Files>
+        <File name='FinalFire.exe' />
+        <File name='FFUpdate.exe' />
+      </Files>
+      <DriverProfile>FinalFire.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='finnish_cottage_simulator'>
+    <DisplayName>Finnish Cottage Simulator</DisplayName>
+    <ChromaAppID>f222d6d0-1e5d-4408-bdee-87fa2dab0c33</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1723780</id>
+      </SteamAppIds>
+      <CMSID>103734645</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FCS\Binaries\Win64\FCS-Win64-Shipping.exe</Icon>
+      <DriverProfile>FCS\Binaries\Win64\FCS-Win64-Shipping.exe</DriverProfile>
+      <Image>FCS\Binaries\Win64\FCS-Win64-Shipping.exe</Image>
+      <Image>FCS.exe</Image>
+      <Launch>start steam://rungameid/1723780</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='FCS\Binaries\Win64\FCS-Win64-Shipping.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <PinnedSLVersion>2.7.15</PinnedSLVersion>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='firefall'>
+    <DisplayName>FIREFALL</DisplayName>
+    <ChromaAppID>ae041e42-aa11-42a2-b3c1-7c05e77f4e03</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>system\bin\FirefallClient.exe</Icon>
+      <Image>system\bin\FirefallClient.exe</Image>
+      <Launch>Launcher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='system\bin\FirefallClient.exe' />
+        <File name='system\bin\Launcher.exe' />
+      </Files>
+      <SteamAppIds>
+        <id>227700</id>
+      </SteamAppIds>
+      <CMSID>101130511</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <DriverProfile>system\bin\FirefallClient.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='firefighting_simulator_ignite'>
+    <DisplayName>Firefighting Simulator: Ignite</DisplayName>
+    <ChromaAppID>0dbe17ab-b912-49c5-8b2f-50a102573e12</ChromaAppID>
+    <Version name='dlss_override'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>104470230</CMSID>
+      <Files>
+        <File name='FFSIgnite\Binaries\Win64\FFSIgnite-Win64-Shipping.exe' />
+        <File name='FFSIgnite.exe' />
+      </Files>
+      <DriverProfile>FFSIgnite\Binaries\Win64\FFSIgnite-Win64-Shipping.exe</DriverProfile>
+      <Launch>FFSIgnite\Binaries\Win64\FFSIgnite-Win64-Shipping.exe</Launch>
+      <Image>FFSIgnite\Binaries\Win64\FFSIgnite-Win64-Shipping.exe</Image>
+      <Image>FFSIgnite.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='firefighting_simulator_the_squad'>
+    <DisplayName>Firefighting Simulator - The Squad</DisplayName>
+    <ChromaAppID>955efdf4-f13a-4a71-b2f0-c75c6cc79ef5</ChromaAppID>
+    <Version name='Steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>420560</id>
+      </SteamAppIds>
+      <CMSID>101663611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FG\Binaries\Win64\FG-Win64-Shipping.exe</Icon>
+      <DriverProfile>FG\Binaries\Win64\FG-Win64-Shipping.exe</DriverProfile>
+      <Image>FG\Binaries\Win64\FG-Win64-Shipping.exe</Image>
+      <Launch>start steam://rungameid/420560</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='FG.exe' />
+        <File name='FG\Binaries\Win64\FG-Win64-Shipping.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='firewatch'>
+    <DisplayName>Firewatch</DisplayName>
+    <ChromaAppID>ecc80310-1b07-4522-b4e1-51444a15898f</ChromaAppID>
+    <Version name='steam-generic'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>383870</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.25</WhisperModePopsFactor>
+      <CMSID>101130711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>firewatch.exe</Icon>
+      <DriverProfile>firewatch.exe</DriverProfile>
+      <Image>firewatch.exe</Image>
+      <Launch>start steam://rungameid/383870</Launch>
+      <FRLPOPS>1</FRLPOPS>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/383870</StreamingCmdLine>
+      <StreamingCaption>Firewatch</StreamingCaption>
+      <StreamingClassName>UnityWndClass  (Unicode)</StreamingClassName>
+      <Files>
+        <File name='firewatch.exe' />
+        <File name='Firewatch_Data\Plugins\steam_api.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='wegame'>
+      <TelemetryType>1</TelemetryType>
+      <TencentAppId>2000059</TencentAppId>
+      <WhisperModePopsFactor>0.25</WhisperModePopsFactor>
+      <CMSID>101130711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>TGP</Distributor>
+      <Icon>firewatch.exe</Icon>
+      <DriverProfile>firewatch.exe</DriverProfile>
+      <Image>firewatch.exe</Image>
+      <Launch>start wegame://StartFor=2000059</Launch>
+      <FRLPOPS>1</FRLPOPS>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>FOR /F &quot;skip=2 tokens=3* delims= &quot; %i IN (&apos;REG QUERY &quot;HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\TGPClient.exe&quot; /v ExeFile&apos;) DO cmd /c &quot;%i %j&quot;</StreamingCmdLine>
+      <StreamingCaption>Firewatch</StreamingCaption>
+      <StreamingClassName>UnityWndClass  (Unicode)</StreamingClassName>
+      <Files>
+        <File name='firewatch.exe' />
+        <File name='FirewatchBase.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='firework'>
+    <DisplayName>Firework</DisplayName>
+    <ChromaAppID>a60e36c8-65c3-4e29-a3fb-6b8e8da5176a</ChromaAppID>
+    <Version name='Steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1288310</id>
+      </SteamAppIds>
+      <CMSID>101751011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Game.exe</Icon>
+      <DriverProfile>Game.exe</DriverProfile>
+      <Image>Game.exe</Image>
+      <Launch>start steam://rungameid/1288310</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Game.exe' />
+        <File name='www\lib\steam_api64.dll' />
+        <File name='swiftshader\libEGL.dll' />
+        <File name='www\steam_appid.txt' md5='6ab67860f0d8d941d0c5a7a80ee314d4' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fishing_planet'>
+    <DisplayName>Fishing Planet</DisplayName>
+    <ChromaAppID>f09b4a31-4b65-430c-b3a2-f0317d73437d</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>380600</id>
+      </SteamAppIds>
+      <CMSID>101131211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FishingPlanet.exe</Icon>
+      <DriverProfile>FishingPlanet.exe</DriverProfile>
+      <Image>FishingPlanet.exe</Image>
+      <Launch>start steam://rungameid/380600</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/380600</StreamingCmdLine>
+      <StreamingCaption>Fishing Planet</StreamingCaption>
+      <StreamingClassName>UnityWndClass</StreamingClassName>
+      <Files>
+        <File name='FishingPlanet.exe' />
+        <File name='UnityPlayer.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fist_forged_in_shadow_torch'>
+    <DisplayName>F.I.S.T.: Forged In Shadow Torch</DisplayName>
+    <ChromaAppID>a4d59622-41c9-40d8-93ee-2ab141e3629b</ChromaAppID>
+    <Version name='Steam'>
+      <SteamAppIds>
+        <id>1330470</id>
+      </SteamAppIds>
+      <CMSID>101722811</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>ZingangGame.exe</Icon>
+      <DriverProfile>ZingangGame\Binaries\Win64\ZingangGame-Win64-Shipping.exe</DriverProfile>
+      <Image>ZingangGame\Binaries\Win64\ZingangGame-Win64-Shipping.exe</Image>
+      <Image>ZingangGame.exe</Image>
+      <Launch>start steam://rungameid/1330470</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='ZingangGame.exe' />
+        <File name='ZingangGame\Binaries\Win64\ZingangGame-Win64-Shipping.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='dlss_override_uwp'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>101722811</CMSID>
+      <DriverProfile>Content\ZingangGame\Binaries\WinGDK\ZingangGame-WinGDK-Shipping.exe</DriverProfile>
+      <Image>Content\ZingangGame\Binaries\WinGDK\ZingangGame-WinGDK-Shipping.exe</Image>
+      <UWPPackageFamilyName>41027AB6.F.I.S.T.ForgedInShadowTorchGame_5dx7f0gg7w5pa</UWPPackageFamilyName>
+      <AppUserModelId>41027AB6.F.I.S.T.ForgedInShadowTorchGame_5dx7f0gg7w5pa!AppFISTForgedInShadowTorchShipping</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='five_nights_at_freddys_security_breach'>
+    <DisplayName>Five Nights at Freddy&apos;s: Security Breach</DisplayName>
+    <ChromaAppID>b87cf15b-34e1-4f09-9312-1156d96dd7ac</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>747660</id>
+      </SteamAppIds>
+      <CMSID>101132411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fnaf9\Binaries\Win64\fnaf9-Win64-Shipping.exe</Icon>
+      <DriverProfile>fnaf9\Binaries\Win64\fnaf9-Win64-Shipping.exe</DriverProfile>
+      <Image>fnaf9\Binaries\Win64\fnaf9-Win64-Shipping.exe</Image>
+      <Launch>start steam://rungameid/747660</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fnaf9.exe' />
+        <File name='fnaf9\Binaries\Win64\fnaf9-Win64-Shipping.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='flintlock_the_siege_of_dawn'>
+    <DisplayName>Flintlock: The Siege of Dawn</DisplayName>
+    <ChromaAppID>ca2237e4-e145-44c6-af18-c619b6a3350d</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1832040</id>
+      </SteamAppIds>
+      <CMSID>101137211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Saltpeter-Win64-Shipping.exe</Icon>
+      <DriverProfile>Saltpeter-Win64-Shipping.exe</DriverProfile>
+      <Image>Saltpeter-Win64-Shipping.exe</Image>
+      <Image>Saltpeter.exe</Image>
+      <Launch>start steam://rungameid/1832040</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Saltpeter.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+    <Version name='UWP'>
+      <CMSID>101137211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <DriverProfile>Content\Saltpeter\Binaries\WinGDK\Saltpeter-WinGDK-Shipping.exe</DriverProfile>
+      <Image>Content\Saltpeter\Binaries\WinGDK\Saltpeter-WinGDK-Shipping.exe</Image>
+      <Image>Content\gamelaunchhelper.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>KeplerInteractive.Flintlock_ymj30pw7xe604</UWPPackageFamilyName>
+      <AppUserModelId>KeplerInteractive.Flintlock_ymj30pw7xe604!AppSaltpeterShipping</AppUserModelId>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='flipscapes'>
+    <DisplayName>FlipScapes</DisplayName>
+    <ChromaAppID>f1129aeb-fd48-4bd7-8dcf-a1e34a33089c</ChromaAppID>
+    <Version name='dlss_override'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>106292189</CMSID>
+      <Files>
+        <File name='FlipScapes\Binaries\Win64\FlipScapes-Win64-Shipping.exe' />
+        <File name='FlipScapes.exe' />
+      </Files>
+      <DriverProfile>FlipScapes\Binaries\Win64\FlipScapes-Win64-Shipping.exe</DriverProfile>
+      <Launch>FlipScapes\Binaries\Win64\FlipScapes-Win64-Shipping.exe</Launch>
+      <Image>FlipScapes\Binaries\Win64\FlipScapes-Win64-Shipping.exe</Image>
+      <Image>FlipScapes.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_FG_Override>1</Disable_FG_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fly_to_kuma'>
+    <DisplayName>Fly to KUMA</DisplayName>
+    <ChromaAppID>d5abe3ed-dbad-4fc6-aff4-43aba373d21c</ChromaAppID>
+    <Version name='oculus'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101134011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Oculus</Distributor>
+      <OculusAppId>1026362144104451</OculusAppId>
+      <Icon>FlytoKUMA.exe</Icon>
+      <Image>FlytoKUMA.exe</Image>
+      <Launch>FlytoKUMA.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>FlytoKUMA.exe</StreamingCmdLine>
+      <StreamingCaption>FlytoKUMA</StreamingCaption>
+      <StreamingClassName>UnityWndClass</StreamingClassName>
+      <Files>
+        <File name='FlytoKUMA.exe' />
+        <File name='FlytoKUMA_Data\level0' />
+      </Files>
+      <DriverProfile>FlytoKUMA.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2013'>
+    <DisplayName>Football Manager 2013</DisplayName>
+    <ChromaAppID>f76e5845-492c-49d3-a855-9d2bc24ba93f</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>fm.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\ball_physics.bin' />
+      </Files>
+      <SteamAppIds>
+        <id>207890</id>
+        <id>216610</id>
+      </SteamAppIds>
+      <CMSID>101135011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2014'>
+    <DisplayName>Football Manager 2014</DisplayName>
+    <ChromaAppID>95337541-6ac0-4d3f-b2be-b5a40df62004</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/231670</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\ball_physics_v1394.bin' />
+        <File name='steam_api.dll' />
+      </Files>
+      <CMSID>101135111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <SteamAppIds>
+        <id>231670</id>
+      </SteamAppIds>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='retail_generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>fm.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\ball_physics_v1394.bin' />
+      </Files>
+      <CMSID>101135111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2015'>
+    <DisplayName>Football Manager 2015</DisplayName>
+    <ChromaAppID>ed7853fc-16ad-47b4-b83a-c1005dad7c43</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/295270</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\ball_physics_v1493.bin' />
+        <File name='steam_api.dll' />
+      </Files>
+      <CMSID>101135211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <SteamAppIds>
+        <id>295270</id>
+      </SteamAppIds>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2016'>
+    <DisplayName>Football Manager 2016</DisplayName>
+    <ChromaAppID>a2019ed7-bbc6-4311-8ac5-c5fd64ffbb0f</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/378120</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\libc\ball_physics_v1555.bin' />
+        <File name='steam_api.dll' />
+      </Files>
+      <CMSID>101135311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <SteamAppIds>
+        <id>378120</id>
+      </SteamAppIds>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2017'>
+    <DisplayName>Football Manager 2017</DisplayName>
+    <ChromaAppID>82dc544b-c058-492c-9226-be7ea0ec8004</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/482730</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\libc\ball_physics_v1659.bin' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <CMSID>101135511</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <SteamAppIds>
+        <id>482730</id>
+      </SteamAppIds>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam2'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/482730</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='data\physics\libc\ball_physics_v1659.bin' />
+        <File name='steam_api.dll' />
+      </Files>
+      <CMSID>101135511</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <SteamAppIds>
+        <id>482730</id>
+      </SteamAppIds>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2018'>
+    <DisplayName>Football Manager 2018</DisplayName>
+    <ChromaAppID>da9e2586-a468-425f-9910-cc9329d3aaa0</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>624090</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.57</WhisperModePopsFactor>
+      <CMSID>101135611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/624090</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='poster\FM18 Steam Poster (UK).pdf' />
+      </Files>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2019'>
+    <DisplayName>Football Manager 2019</DisplayName>
+    <ChromaAppID>683bfb1f-fe32-48d9-b5de-fa6832ca3fc2</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>872790</id>
+      </SteamAppIds>
+      <CMSID>101135711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/872790</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='steam_api64.dll' />
+        <File name='data\game\how_to.fmf' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2020'>
+    <DisplayName>Football Manager 2020</DisplayName>
+    <ChromaAppID>8058d12e-87dd-4fd4-a564-7fa41a172a7b</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1100600</id>
+      </SteamAppIds>
+      <CMSID>101135911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/1100600</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='GFSDK_Aftermath_Lib.x64.dll' />
+        <File name='data\fm scout.fmf' exists='false' />
+        <File name='icudt59.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='egs'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>bf35243e8c3542e082bc7042e0592183</EpicAppId>
+      <CMSID>101135911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/bf35243e8c3542e082bc7042e0592183?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='GFSDK_Aftermath_Lib.x64.dll' />
+        <File name='data\fm scout.fmf' exists='true' />
+        <File name='icudt59.dll' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2021'>
+    <DisplayName>Football Manager 2021</DisplayName>
+    <ChromaAppID>7fad71e5-27bb-4284-a47e-8f5c235bfcf0</ChromaAppID>
+    <Version name='Steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1263850</id>
+      </SteamAppIds>
+      <CMSID>101136111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/1263850</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='steam_api64.dll' />
+        <File name='icudt65.dll' />
+        <File name='data\simatchshared.fmf' exists='false' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='egs'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>ec997512b77d4dd5baf30ab5c2f8e8c9</EpicAppId>
+      <CMSID>101136111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/ec997512b77d4dd5baf30ab5c2f8e8c9?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='epic.txt' />
+        <File name='icudt65.dll' />
+        <File name='data\simatchshared.fmf' exists='false' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2022'>
+    <DisplayName>Football Manager 2022</DisplayName>
+    <ChromaAppID>ea1427fc-2cbb-4d9a-bccd-da67fa9c2065</ChromaAppID>
+    <Version name='Steam'>
+      <SteamAppIds>
+        <id>1569040</id>
+      </SteamAppIds>
+      <CMSID>101136211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/1569040</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='steam_api64.dll' />
+        <File name='icudt65.dll' />
+        <File name='data\fm scout.fmf' exists='false' />
+        <File name='data\simatchshared.fmf' />
+        <File name='api-ms-win-core-fibers-l1-1-0.dll' exists='false' />
+        <File name='data\database\db\2330\lnc\platform\chn_ps5_fm23.lnc' exists='false' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='egs'>
+      <EpicAppId>29c30b4114b247678453c84ae156715d</EpicAppId>
+      <CMSID>101136211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/29c30b4114b247678453c84ae156715d?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='fm.exe' />
+        <File name='epic.txt' />
+        <File name='icudt65.dll' />
+        <File name='data\simatchshared.fmf' />
+        <File name='api-ms-win-core-fibers-l1-1-0.dll' exists='false' />
+        <File name='data\database\db\2330\lnc\platform\chn_ps5_fm23.lnc' exists='false' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2023'>
+    <DisplayName>Football Manager 2023</DisplayName>
+    <ChromaAppID>e66e795f-6bc2-4f42-a1d6-bd41963f3283</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1904540</id>
+      </SteamAppIds>
+      <CMSID>102270911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/1904540</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='fm.exe' />
+        <File name='api-ms-win-core-fibers-l1-1-0.dll' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2024'>
+    <DisplayName>Football Manager 2024</DisplayName>
+    <ChromaAppID>0aad8f83-8514-4065-95b3-3fab5f39c641</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2252570</id>
+      </SteamAppIds>
+      <CMSID>102696711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/2252570</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='fm.exe' />
+        <File name='api-ms-win-core-fibers-l1-1-0.dll' exists='false' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Directories>
+        <Directory name='data\database\db\2400' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='football_manager_2026'>
+    <DisplayName>Football Manager 26</DisplayName>
+    <ChromaAppID>7d262a2b-78e6-4167-956d-ec65de517db7</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>3551340</id>
+      </SteamAppIds>
+      <CMSID>106710376</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start steam://rungameid/3551340</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='fm.exe' />
+        <File name='core.txt' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>e54a251079034694b55ab6289707bfa0</EpicAppId>
+      <CMSID>106710376</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Epic</Distributor>
+      <Icon>fm.exe</Icon>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/e54a251079034694b55ab6289707bfa0?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='fm.exe' />
+        <File name='epic.txt' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='uwp'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>106710376</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <DriverProfile>fm.exe</DriverProfile>
+      <Image>fm.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <UWPPackageFamilyName>SportsInteractive.FootballManager26_5w3tn6tb6stnm</UWPPackageFamilyName>
+      <AppUserModelId>SportsInteractive.FootballManager26_5w3tn6tb6stnm!App</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='for_honor'>
+    <DisplayName>For Honor</DisplayName>
+    <ChromaAppID>eed1e86e-71ef-4c8e-9c55-2b9ca7c803d9</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>304390</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.07</WhisperModePopsFactor>
+      <CMSID>100873411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>forhonor.exe</Icon>
+      <DriverProfile>forhonor.exe</DriverProfile>
+      <Image>forhonor.exe</Image>
+      <Launch>start steam://rungameid/304390</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/304390</StreamingCmdLine>
+      <StreamingCaption>For Honor&#x2122;</StreamingCaption>
+      <StreamingClassName>FoxGame</StreamingClassName>
+      <Files>
+        <File name='forhonor.exe' />
+        <File name='distribution.steam' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='uplay'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.07</WhisperModePopsFactor>
+      <CMSID>100873411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UPlay</Distributor>
+      <Icon>forhonor.exe</Icon>
+      <DriverProfile>forhonor.exe</DriverProfile>
+      <Image>forhonor.exe</Image>
+      <Launch>forhonor.exe</Launch>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Ubisoft\\Launcher\\Installs\\569\\InstallDir</ValuePath>
+      </InstallDirRegValues>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>forhonor.exe</StreamingCmdLine>
+      <StreamingCaption>For Honor&#x2122;</StreamingCaption>
+      <StreamingClassName>FoxGame</StreamingClassName>
+      <Files>
+        <File name='forhonor.exe' />
+        <File name='uplay_install.manifest' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='for_the_king'>
+    <DisplayName>For The King</DisplayName>
+    <ChromaAppID>6bd851cc-e847-4cf8-9e61-4c03df17098b</ChromaAppID>
+    <Version name='egs'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>100877611</CMSID>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Distributor>Standalone</Distributor>
+      <DriverProfile>FTK.exe</DriverProfile>
+      <EpicAppId>Discus</EpicAppId>
+      <Files>
+        <File name='FTK.exe' />
+      </Files>
+      <Image>FTK.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <Launch>start com.epicgames.launcher://apps/Discus?action=launch</Launch>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='gog'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>100877611</CMSID>
+      <Distributor>Standalone</Distributor>
+      <DriverProfile>FTK.exe</DriverProfile>
+      <Files>
+        <File name='FTK.exe' />
+        <File name='gog.ico' />
+      </Files>
+      <Image>FTK.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <Launch>FTK.exe</Launch>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>100877611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <DriverProfile>FTK.exe</DriverProfile>
+      <Files>
+        <File name='FTK.exe' />
+        <File name='FTK_Data\app.info' />
+      </Files>
+      <Icon>FTK.exe</Icon>
+      <Image>FTK.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <Launch>start steam://rungameid/527230</Launch>
+      <SteamAppIds>
+        <id>527230</id>
+      </SteamAppIds>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='for_the_king_ii'>
+    <DisplayName>For The King II</DisplayName>
+    <ChromaAppID>3f263530-e6d6-4ece-a133-aa967adc577f</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1676840</id>
+      </SteamAppIds>
+      <CMSID>102357711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>For The King II.exe</Icon>
+      <DriverProfile>For The King II.exe</DriverProfile>
+      <Image>For The King II.exe</Image>
+      <Launch>start steam://rungameid/1676840</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='For The King II.exe' />
+        <File name='For The King II_Data\Plugins\x86_64\steam_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forager'>
+    <DisplayName>Forager</DisplayName>
+    <ChromaAppID>10aad894-bac4-4036-a182-49bc0125850e</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>751780</id>
+      </SteamAppIds>
+      <CMSID>101136811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Forager.exe</Icon>
+      <DriverProfile>Forager.exe</DriverProfile>
+      <Image>Forager.exe</Image>
+      <Launch>start steam://rungameid/751780</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Forager.exe' />
+        <File name='steam_api.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forever_skies'>
+    <DisplayName>Forever Skies</DisplayName>
+    <ChromaAppID>ad3488c8-7f4b-4a19-b0c7-d8487e361f07</ChromaAppID>
+    <Version name='dlss_override'>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>102292511</CMSID>
+      <Files>
+        <File name='ProjectZeppelin\Binaries\Win64\ForeverSkies-Win64-Shipping.exe' />
+        <File name='ForeverSkies.exe' />
+      </Files>
+      <DriverProfile>ProjectZeppelin\Binaries\Win64\ForeverSkies-Win64-Shipping.exe</DriverProfile>
+      <Launch>ProjectZeppelin\Binaries\Win64\ForeverSkies-Win64-Shipping.exe</Launch>
+      <Image>ProjectZeppelin\Binaries\Win64\ForeverSkies-Win64-Shipping.exe</Image>
+      <Image>ForeverSkies.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forgive_me_father_2'>
+    <DisplayName>Forgive Me Father 2</DisplayName>
+    <ChromaAppID>0bdea801-ec3d-4414-be08-2b65fb2eb926</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2272250</id>
+      </SteamAppIds>
+      <CMSID>102676811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FMF2\Binaries\Win64\FMF2-Win64-Shipping.exe</Icon>
+      <DriverProfile>FMF2\Binaries\Win64\FMF2-Win64-Shipping.exe</DriverProfile>
+      <Image>FMF2\Binaries\Win64\FMF2-Win64-Shipping.exe</Image>
+      <Image>FMF2.exe</Image>
+      <Launch>start steam://rungameid/2272250</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='FMF2\Binaries\Win64\FMF2-Win64-Shipping.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fort_solis'>
+    <DisplayName>Fort Solis</DisplayName>
+    <ChromaAppID>bb49ea22-b785-48c9-bf9f-002db2885b1b</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1931730</id>
+      </SteamAppIds>
+      <CMSID>102442711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Sycamore\Binaries\Win64\fortsolis.exe</Icon>
+      <DriverProfile>Sycamore\Binaries\Win64\fortsolis.exe</DriverProfile>
+      <Image>Sycamore\Binaries\Win64\fortsolis.exe</Image>
+      <Image>fortsolis.exe</Image>
+      <Launch>start steam://rungameid/1931730</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Sycamore\Binaries\Win64\fortsolis.exe' />
+        <File name='fortsolis.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fortnite'>
+    <DisplayName>Fortnite</DisplayName>
+    <ChromaAppID>46bfab06-d864-465d-9e56-2d9e45cdee0a</ChromaAppID>
+    <Version name='chinese'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.875</WhisperModePopsFactor>
+      <BatteryBoost2PopsFactorTPPLow>0.625</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>0.625</BatteryBoost2PopsFactorTPPHigh>
+      <TencentAppId>2000196</TencentAppId>
+      <CMSID>101138111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>TGP</Distributor>
+      <Icon>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</Icon>
+      <DriverProfile>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</DriverProfile>
+      <Image>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</Image>
+      <Image>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping_EAC_EOS.exe</Image>
+      <Launch>start wegame://StartFor=2000196</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>FOR /F &quot;skip=2 tokens=3* delims= &quot; %i IN (&apos;REG QUERY &quot;HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\TGPClient.exe&quot; /v ExeFile&apos;) DO cmd /c &quot;%i %j&quot;</StreamingCmdLine>
+      <StreamingCaption>Fortnite </StreamingCaption>
+      <StreamingClassName>UnrealWindow</StreamingClassName>
+      <Files>
+        <File name='FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe' />
+        <File name='FortniteGame\Binaries\ThirdParty\Tencent\Win64\rail_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>Fortnite</EpicAppId>
+      <WhisperModePopsFactor>0.875</WhisperModePopsFactor>
+      <BatteryBoost2PopsFactorTPPLow>0.625</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>0.625</BatteryBoost2PopsFactorTPPHigh>
+      <CMSID>101138111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</Icon>
+      <DriverProfile>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</DriverProfile>
+      <Image>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</Image>
+      <Image>FortniteGame\Binaries\Win64\FortniteClient-Win64-Test.exe</Image>
+      <Image>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping_EAC_EOS.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/fortnite?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingAutomatedLaunch>0</StreamingAutomatedLaunch>
+      <StreamingCmdLine>FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe</StreamingCmdLine>
+      <StreamingCaption>Fortnite</StreamingCaption>
+      <StreamingClassName>UnrealWindow</StreamingClassName>
+      <Files>
+        <File name='FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe' />
+        <File name='FortniteGame\Binaries\Win64\EOSSDK-Win64-Shipping.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forza_horizon_3'>
+    <DisplayName>Forza Horizon 3</DisplayName>
+    <ChromaAppID>1afca42a-6e7b-4348-a2ce-ca00adddfefe</ChromaAppID>
+    <Version name='uwp'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101138311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>forza_x64_release_final.exe</Icon>
+      <Image>forza_x64_release_final.exe</Image>
+      <UWPPackageFamilyName>Microsoft.OpusPG_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.OpusPG_8wekyb3d8bbwe!OpusReleaseFinal</AppUserModelId>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingAutomatedLaunch>1</StreamingAutomatedLaunch>
+      <StreamingCmdLine>explorer.exe shell:AppsFolder\Microsoft.OpusPG_8wekyb3d8bbwe!OpusReleaseFinal</StreamingCmdLine>
+      <StreamingCaption>Forza Horizon 3</StreamingCaption>
+      <StreamingClassName>Windows.UI.Core.CoreWindow</StreamingClassName>
+      <DriverProfile>forza_x64_release_final.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forza_horizon_4'>
+    <DisplayName>Forza Horizon 4</DisplayName>
+    <ChromaAppID>da58c709-78fe-4fd0-895d-58f77282188d</ChromaAppID>
+    <Version name='uwp'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101138411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>ForzaHorizon4.exe</Icon>
+      <DriverProfile>ForzaHorizon4.exe</DriverProfile>
+      <Image>ForzaHorizon4.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>Microsoft.SunriseBaseGame_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.SunriseBaseGame_8wekyb3d8bbwe!SunriseReleaseFinal</AppUserModelId>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>explorer.exe shell:AppsFolder\Microsoft.SunriseBaseGame_8wekyb3d8bbwe!SunriseReleaseFinal</StreamingCmdLine>
+      <StreamingCaption>Forza Horizon 4</StreamingCaption>
+      <StreamingClassName>Windows.UI.Core.CoreWindow</StreamingClassName>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1293830</id>
+      </SteamAppIds>
+      <CMSID>101138411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <DriverProfile>ForzaHorizon4.exe</DriverProfile>
+      <Image>ForzaHorizon4.exe</Image>
+      <Launch>start steam://rungameid/1293830</Launch>
+      <Files>
+        <File name='ForzaHorizon4.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <IsAutomatable>1</IsAutomatable>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forza_horizon_5'>
+    <DisplayName>Forza Horizon 5</DisplayName>
+    <ChromaAppID>6f5d61af-2cc5-41d5-9f08-1e9bbc75dad6</ChromaAppID>
+    <Version name='UWP'>
+      <BatteryBoost2PopsFactorTPPLow>0.625</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>0.875</BatteryBoost2PopsFactorTPPHigh>
+      <CMSID>101745411</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>ForzaHorizon5.exe</Icon>
+      <DriverProfile>ForzaHorizon5.exe</DriverProfile>
+      <Image>ForzaHorizon5.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <UWPPackageFamilyName>Microsoft.624F8B84B80_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.624F8B84B80_8wekyb3d8bbwe!Forzahorizon5</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <Distributor>Steam</Distributor>
+      <SteamAppIds>
+        <id>1551360</id>
+      </SteamAppIds>
+      <BatteryBoost2PopsFactorTPPLow>0.625</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>0.875</BatteryBoost2PopsFactorTPPHigh>
+      <CMSID>101745411</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <DriverProfile>ForzaHorizon5.exe</DriverProfile>
+      <Image>ForzaHorizon5.exe</Image>
+      <Launch>start steam://rungameid/1551360</Launch>
+      <Files>
+        <File name='ForzaHorizon5.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forza_horizon_6'>
+    <DisplayName>Forza Horizon 6</DisplayName>
+    <ChromaAppID>326bf7cb-4bfc-4c8b-bfcb-4fdcafb4ef62</ChromaAppID>
+    <Version name='steam'>
+      <CMSID>107069168</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <SteamAppIds>
+        <id>2483190</id>
+      </SteamAppIds>
+      <IsAutomatable>1</IsAutomatable>
+      <TelemetryType>1</TelemetryType>
+      <DriverProfile>forzahorizon6.exe</DriverProfile>
+      <Image>forzahorizon6.exe</Image>
+      <Launch>start steam://rungameid/2483190</Launch>
+      <Files>
+        <File name='forzahorizon6.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+    <Version name='UWP'>
+      <CMSID>107069168</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <DriverProfile>forzahorizon6.exe</DriverProfile>
+      <Image>forzahorizon6.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>Microsoft.ForteBaseGame_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.ForteBaseGame_8wekyb3d8bbwe!Forzahorizon6</AppUserModelId>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forza_motorsport_2023'>
+    <DisplayName>Forza Motorsport</DisplayName>
+    <ChromaAppID>8e09c112-4050-413e-a610-8ef20e150598</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2440510</id>
+      </SteamAppIds>
+      <CMSID>102385611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>forza_steamworks_release_final.exe</Icon>
+      <DriverProfile>forza_steamworks_release_final.exe</DriverProfile>
+      <Image>forza_steamworks_release_final.exe</Image>
+      <Launch>start steam://rungameid/2440510</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='forza_steamworks_release_final.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='uwp'>
+      <CMSID>102385611</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <DriverProfile>forza_gaming.desktop.x64_release_final.exe</DriverProfile>
+      <Image>forza_gaming.desktop.x64_release_final.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>Microsoft.ForzaMotorsport_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.ForzaMotorsport_8wekyb3d8bbwe!ReleaseFinal</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='forza_street'>
+    <DisplayName>Forza Street</DisplayName>
+    <ChromaAppID>44cc1d6c-0b8a-42e9-a680-6704ebac68f6</ChromaAppID>
+    <Version name='UWP'>
+      <WhisperModePopsFactor>0.25</WhisperModePopsFactor>
+      <CMSID>101138611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>Gravity-UWP64-Shipping.exe</Icon>
+      <DriverProfile>Gravity-UWP64-Shipping.exe</DriverProfile>
+      <Image>Gravity-UWP64-Shipping.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>explorer.exe shell:AppsFolder\Microsoft.331194F9F13CC_8wekyb3d8bbwe!AppGravity</StreamingCmdLine>
+      <StreamingCaption>Forza Street</StreamingCaption>
+      <StreamingClassName>Windows.UI.Core.CoreWindow</StreamingClassName>
+      <UWPPackageFamilyName>Microsoft.331194F9F13CC_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.331194F9F13CC_8wekyb3d8bbwe!AppGravity</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='foundry_modo'>
+    <DisplayName>The Foundry Modo</DisplayName>
+    <ChromaAppID>20598676-2a41-4450-be17-2fd7a30bc1ef</ChromaAppID>
+    <IsCreativeApplication>true</IsCreativeApplication>
+    <Version name='fv-13'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>102861738</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>modo.exe</Icon>
+      <DriverProfile>modo.exe</DriverProfile>
+      <Image>modo.exe</Image>
+      <Launch>modo.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='modo.exe' version_regex='13\d+\.\d+\.\d+\.\d+' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\SOFTWARE\\Foundry\\Modo13\.0v1\\installDir</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='fv-12'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>102861738</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>modo.exe</Icon>
+      <DriverProfile>modo.exe</DriverProfile>
+      <Image>modo.exe</Image>
+      <Launch>modo.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='modo.exe' version_regex='12\d+\.\d+\.\d+\.\d+' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\SOFTWARE\\Foundry\\Modo12\.0v1\\installDir</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='fv-15'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>102861738</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>modo.exe</Icon>
+      <DriverProfile>modo.exe</DriverProfile>
+      <Image>modo.exe</Image>
+      <Launch>modo.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='modo.exe' version_regex='15\d+\.\d+\.\d+\.\d+' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\SOFTWARE\\Foundry\\Modo15\.1v1\\installDir</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='foundry_nuke'>
+    <DisplayName>Foundry Nuke</DisplayName>
+    <IsCreativeApplication>true</IsCreativeApplication>
+    <ChromaAppID>efd4581c-5386-4425-bb80-a76b7d42002b</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Nuke13.0.exe</Icon>
+      <DriverProfile>Nuke13.0.exe</DriverProfile>
+      <Image>Nuke13.0.exe</Image>
+      <Launch>Nuke13.0.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Nuke13.0.exe' />
+        <File name='NukeFBX.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='13.2'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Nuke13.2.exe</Icon>
+      <DriverProfile>Nuke13.2.exe</DriverProfile>
+      <Image>Nuke13.2.exe</Image>
+      <Launch>Nuke13.2.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Nuke13.2.exe' />
+        <File name='NukeFBX.dll' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Foundry\\Nuke13.2v2\\Default</ValuePath>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Foundry\\Nuke13.2v2</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='11.3'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Nuke11.3.exe</Icon>
+      <DriverProfile>Nuke11.3.exe</DriverProfile>
+      <Image>Nuke11.3.exe</Image>
+      <Launch>Nuke11.3.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Nuke11.3.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.3v1_is1\\Inno Setup: App Path</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.3v1_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='10.5'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke10.5.exe</Icon>
+      <DriverProfile>nuke10.5.exe</DriverProfile>
+      <Image>nuke10.5.exe</Image>
+      <Launch>nuke10.5.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='nuke10.5.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 10\.5v3_is1\\Inno Setup: App Path</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 10\.5v3_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='9.0.8'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke9.0.exe</Icon>
+      <DriverProfile>nuke9.0.exe</DriverProfile>
+      <Image>nuke9.0.exe</Image>
+      <Launch>nuke9.0.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='nuke9.0.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 9\.0v8_is1\\InstallLocation</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 9\.0v8_is1\\Inno Setup: App Path&#xA;</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='11.1'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke11.1.exe</Icon>
+      <DriverProfile>nuke11.1.exe</DriverProfile>
+      <Image>nuke11.1.exe</Image>
+      <Launch>nuke11.1.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='nuke11.1.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.1v1_is1\\Inno Setup: App Path</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.1v1_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='foundry_nuke_9'>
+    <DisplayName>Foundry Nuke</DisplayName>
+    <ChromaAppID>efd4581c-5386-4425-bb80-a76b7d42002b</ChromaAppID>
+    <Version name='11.3'>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Nuke11.3.exe</Icon>
+      <Image>Nuke11.3.exe</Image>
+      <Launch>Nuke11.3.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Nuke11.3.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.3v1_is1\\Inno Setup: App Path</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.3v1_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='11.1'>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke11.1.exe</Icon>
+      <Image>nuke11.1.exe</Image>
+      <Launch>nuke11.1.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='nuke11.1.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.1v1_is1\\Inno Setup: App Path</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 11\.1v1_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='10.5'>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke10.5.exe</Icon>
+      <Image>nuke10.5.exe</Image>
+      <Launch>nuke10.5.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='nuke10.5.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 10\.5v3_is1\\Inno Setup: App Path</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 10\.5v3_is1\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='9.0.8'>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke9.0.exe</Icon>
+      <Image>nuke9.0.exe</Image>
+      <Launch>nuke9.0.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Nuke9.0.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 9\.0v8_is1\\InstallLocation</ValuePath>
+        <ValuePath view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Nuke 9\.0v8_is1\\Inno Setup: App Path&#xA;</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='Generic'>
+      <CMSID>101830911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>nuke9.0.exe</Icon>
+      <Image>nuke9.0.exe</Image>
+      <Launch>nuke9.0.exe</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Nuke9.0.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='foxhole'>
+    <DisplayName>Foxhole</DisplayName>
+    <ChromaAppID>e1eae1a3-5848-4a94-9f31-d0d14b090723</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>505460</id>
+      </SteamAppIds>
+      <CMSID>102696311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>War\Binaries\Win64\War-Win64-Shipping.exe</Icon>
+      <DriverProfile>War\Binaries\Win64\War-Win64-Shipping.exe</DriverProfile>
+      <Image>War\Binaries\Win64\War-Win64-Shipping.exe</Image>
+      <Launch>start steam://rungameid/505460</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='War\Binaries\Win64\War-Win64-Shipping.exe' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fragpunk'>
+    <DisplayName>FragPunk</DisplayName>
+    <ChromaAppID>d8003e8e-db2b-4f21-b9d0-d7abef2b18e1</ChromaAppID>
+    <Version name='dlss_override'>
+      <CMSID>102438611</CMSID>
+      <Files>
+        <File name='FragPunk.exe' />
+        <File name='FragPunk\Binaries\Win64\FragPunk.exe' />
+      </Files>
+      <DriverProfile>FragPunk\Binaries\Win64\FragPunk.exe</DriverProfile>
+      <Launch>FragPunk\Binaries\Win64\FragPunk.exe</Launch>
+      <Image>FragPunk\Binaries\Win64\FragPunk.exe</Image>
+      <Image>FragPunk.exe</Image>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='freedom_planet'>
+    <DisplayName>Freedom Planet</DisplayName>
+    <ChromaAppID>46c9daa9-df7a-444c-84b0-41e633a5c15d</ChromaAppID>
+    <Version name='steam-generic'>
+      <TelemetryType>1</TelemetryType>
+      <Distributor>Steam</Distributor>
+      <CMSVersion>1</CMSVersion>
+      <CMSID>101140511</CMSID>
+      <Icon>FP.exe</Icon>
+      <Image>FP.exe</Image>
+      <Launch>start steam://rungameid/248310</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/248310</StreamingCmdLine>
+      <StreamingCaption>Freedom Planet</StreamingCaption>
+      <StreamingClassName>SDL_app  (Unicode)</StreamingClassName>
+      <Files>
+        <File name='FP.exe' />
+        <File name='steam_api.dll' />
+      </Files>
+      <SteamAppIds>
+        <id>248310</id>
+      </SteamAppIds>
+      <DriverProfile>FP.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='freestyle'>
+    <DisplayName>Freestyle</DisplayName>
+    <ChromaAppID>19d19568-bee7-4c15-a1ce-19888053085e</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>FSBox.exe</Icon>
+      <Image>FreeStyle.exe</Image>
+      <Launch>FSBox.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>FSBox.exe</StreamingCmdLine>
+      <StreamingCaption>Freestyle!</StreamingCaption>
+      <StreamingClassName>GAMEFRAMEWORK</StreamingClassName>
+      <Files>
+        <File name='FreeStyle.exe' />
+        <File name='FSBox.exe' />
+        <File name='game.cfg' />
+      </Files>
+      <CMSID>101140911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <InstallDirRegValues>
+        <ValuePath>HKEY_CURRENT_USER\\SOFTWARE\\T2CN\\&#x8857;&#x5934;&#x7BEE;&#x7403;\\InstallDir</ValuePath>
+        <ValuePath>HKEY_CURRENT_USER\\SOFTWARE\\T2CN\\&#xBD;&#xD6;&#xCD;&#xB7;&#xC0;&#xBA;&#xC7;&#xF2;\\InstallDir</ValuePath>
+      </InstallDirRegValues>
+      <DriverProfile>FreeStyle.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='freestyle_2'>
+    <DisplayName>Freestyle 2</DisplayName>
+    <ChromaAppID>ba82b091-4680-4c59-90e4-38758703cb33</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>FreeStyle2.exe</Icon>
+      <DriverProfile>FreeStyle2.exe</DriverProfile>
+      <Image>FreeStyle2.exe</Image>
+      <Launch>Launcher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>Launcher.exe</StreamingCmdLine>
+      <StreamingCaption>&#x81EA;&#x7531;&#x7BEE;&#x7403;</StreamingCaption>
+      <StreamingClassName>FS2</StreamingClassName>
+      <Files>
+        <File name='FreeStyle2.exe' />
+        <File name='EndingBanner.exe' />
+        <File name='Launcher.exe' />
+        <File name='itemMotion.pak' />
+      </Files>
+      <CMSID>101141011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Tiancity\\FreeStyle2\\RootPath</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='worldwide'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>FreeStyle2.exe</Icon>
+      <DriverProfile>FreeStyle2.exe</DriverProfile>
+      <Image>FreeStyle2.exe</Image>
+      <Launch>Launcher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='FreeStyle2.exe' />
+        <File name='Launcher.exe' />
+        <File name='XIGNCODE\xcorona_x64.xem' />
+      </Files>
+      <CMSID>101141011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <InstallDirRegValues>
+        <ValuePath level='1'>HKEY_CURRENT_USER\\System\\GameConfigStore\\Children\\ce4c83e3-52b6-429f-87e3-6824d56886a2\\MatchedExeFullPath</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>339610</id>
+      </SteamAppIds>
+      <CMSID>101141011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>FreeStyle2.exe</Icon>
+      <DriverProfile>FreeStyle2.exe</DriverProfile>
+      <Image>FreeStyle2.exe</Image>
+      <Launch>start steam://rungameid/339610</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='FreeStyle2.exe' />
+        <File name='LauncherSteam.exe' />
+        <File name='steam_api.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='freestyle_football'>
+    <DisplayName>Freestyle Football</DisplayName>
+    <ChromaAppID>057681ae-73d8-4d17-82be-825b28d6f0ea</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>TCLS\Client.exe</Icon>
+      <Image>FSeFootball.exe</Image>
+      <Launch>TCLS\Client.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>TCLS\Client.exe</StreamingCmdLine>
+      <StreamingCaption>&#x81EA;&#x7531;&#x8DB3;&#x7403;</StreamingCaption>
+      <StreamingClassName>FSF</StreamingClassName>
+      <Files>
+        <File name='FSeFootball.exe' />
+        <File name='TenProxy.dll' />
+        <File name='TCLS\Client.exe' />
+      </Files>
+      <CMSID>101141111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Tencent\\fsf</ValuePath>
+      </InstallDirRegValues>
+      <DriverProfile>FSeFootball.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='china'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101141111</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Launcher\Launcher.exe</Icon>
+      <Image>FSeFootball.exe</Image>
+      <Launch>Launcher\Launcher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>Launcher\Launcher.exe</StreamingCmdLine>
+      <StreamingCaption>&#x81EA;&#x7531;&#x8DB3;&#x7403;</StreamingCaption>
+      <StreamingClassName>&#x81EA;&#x7531;&#x8DB3;&#x7403;</StreamingClassName>
+      <Files>
+        <File name='FSeFootball.exe' />
+        <File name='Launcher\Launcher.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\HOGA\\FSF</ValuePath>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\HOGA\\FSF\\CurrentPath</ValuePath>
+      </InstallDirRegValues>
+      <DriverProfile>FSeFootball.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='friday_the_13th_the_game'>
+    <DisplayName>Friday the 13th: The Game</DisplayName>
+    <ChromaAppID>a3bb9733-0d26-4951-8fd4-96b8193db795</ChromaAppID>
+    <Version name='Steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>438740</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.167</WhisperModePopsFactor>
+      <CMSID>101141311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>SummerCamp\Binaries\Win64\SummerCamp.exe</Icon>
+      <Image>SummerCamp\Binaries\Win64\SummerCamp.exe</Image>
+      <Launch>start steam://rungameid/438740/</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='SummerCamp\Binaries\Win64\SummerCamp.exe' />
+        <File name='EAC_Launcher.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Steam App 438740\\InstallLocation</ValuePath>
+      </InstallDirRegValues>
+      <DriverProfile>SummerCamp\Binaries\Win64\SummerCamp.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='frostpunk'>
+    <DisplayName>Frostpunk</DisplayName>
+    <ChromaAppID>596868df-c7b0-4b47-997e-68e43323ab2a</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>323190</id>
+      </SteamAppIds>
+      <CMSID>101142611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Frostpunk.exe</Icon>
+      <DriverProfile>Frostpunk.exe</DriverProfile>
+      <Image>Frostpunk.exe</Image>
+      <Launch>start steam://rungameid/323190</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Frostpunk.exe' />
+        <File name='steam_api64.dll' />
+        <File name='EOSSDK-Win64-Shipping.dll' exists='false' />
+        <File name='Galaxy64.dll' exists='false' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='egs'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>b2e00fc16632475782a7730d1bd7cb60</EpicAppId>
+      <CMSID>101142611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Frostpunk.exe</Icon>
+      <DriverProfile>Frostpunk.exe</DriverProfile>
+      <Image>Frostpunk.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/b2e00fc16632475782a7730d1bd7cb60?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Frostpunk.exe' />
+        <File name='steam_api64.dll' exists='false' />
+        <File name='EOSSDK-Win64-Shipping.dll' exists='true' />
+        <File name='Galaxy64.dll' exists='false' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='gog'>
+      <TelemetryType>1</TelemetryType>
+      <GogAppId>1648559910</GogAppId>
+      <CMSID>101142611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>gog</Distributor>
+      <Icon>Frostpunk.exe</Icon>
+      <DriverProfile>Frostpunk.exe</DriverProfile>
+      <Image>Frostpunk.exe</Image>
+      <Launch>Frostpunk.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Frostpunk.exe' />
+        <File name='Galaxy64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='UWP'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101142611</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>FrostpunkWindows10.exe</Icon>
+      <DriverProfile>FrostpunkWindows10.exe</DriverProfile>
+      <Image>FrostpunkWindows10.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>11bitstudios.Frostpunk_gwy9gn5q9j1y6</UWPPackageFamilyName>
+      <AppUserModelId>11bitstudios.Frostpunk_gwy9gn5q9j1y6!App</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='frostpunk_2'>
+    <DisplayName>Frostpunk 2</DisplayName>
+    <ChromaAppID>b6aaa37b-df75-4ced-b172-61a376f1afc2</ChromaAppID>
+    <Version name='gog'>
+      <GogAppId>1728870436</GogAppId>
+      <CMSID>101864211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>gog</Distributor>
+      <DriverProfile>Frostpunk2.exe</DriverProfile>
+      <Files>
+        <File name='Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe' />
+        <File name='goggame-1728870436.ico' />
+        <File name='gog.ico' />
+      </Files>
+      <Icon>Frostpunk2.exe</Icon>
+      <Image>Frostpunk2.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <Launch>Frostpunk2.exe</Launch>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='egs'>
+      <EpicAppId>b9fcd8cd104a4b31a99692128a8e4bb4</EpicAppId>
+      <CMSID>101864211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Epic</Distributor>
+      <DriverProfile>Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe</DriverProfile>
+      <Files>
+        <File name='Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe' />
+        <File name='Engine\Binaries\ThirdParty\Steamworks\Steamv153\Win64\steam_api64.dll' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Icon>Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe</Icon>
+      <Image>Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe</Image>
+      <Image>Frostpunk2.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Launch>start com.epicgames.launcher://apps/b9fcd8cd104a4b31a99692128a8e4bb4?action=launch</Launch>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <SteamAppIds>
+        <id>1601580</id>
+      </SteamAppIds>
+      <CMSID>101864211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <DriverProfile>Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe</DriverProfile>
+      <Files>
+        <File name='Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe' />
+      </Files>
+      <Icon>Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe</Icon>
+      <Image>Frostpunk2\Binaries\Win64\Frostpunk2-Win64-Shipping.exe</Image>
+      <Image>Frostpunk2.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Launch>start steam://rungameid/1601580</Launch>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='UWP'>
+      <CMSID>101864211</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <DriverProfile>Frostpunk2\Binaries\WinGDK\Frostpunk2-WinGDK-Shipping.exe</DriverProfile>
+      <Icon>Frostpunk2\Binaries\WinGDK\Frostpunk2-WinGDK-Shipping.exe</Icon>
+      <Image>Frostpunk2\Binaries\WinGDK\Frostpunk2-WinGDK-Shipping.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>4063811bitstudios.Frostpunk2ConsoleEdition_gwy9gn5q9j1y6</UWPPackageFamilyName>
+      <AppUserModelId>4063811bitstudios.Frostpunk2ConsoleEdition_gwy9gn5q9j1y6!AppFrostpunk2Shipping</AppUserModelId>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='frozenheim'>
+    <DisplayName>Frozenheim</DisplayName>
+    <ChromaAppID>d418b629-47e1-43d5-bb76-12ecaeca5b5a</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1134100</id>
+      </SteamAppIds>
+      <CMSID>101878511</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Frozenheim\Binaries\Win64\Frozenheim-Win64-Shipping.exe</Icon>
+      <DriverProfile>Frozenheim\Binaries\Win64\Frozenheim-Win64-Shipping.exe</DriverProfile>
+      <Image>Frozenheim\Binaries\Win64\Frozenheim-Win64-Shipping.exe</Image>
+      <Launch>start steam://rungameid/1134100</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Frozenheim\Binaries\Win64\Frozenheim-Win64-Shipping.exe' />
+        <File name='Frozenheim.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='funko_fusion'>
+    <DisplayName>Funko Fusion</DisplayName>
+    <ChromaAppID>2744d616-af0b-46cb-a2ed-af4bcf60cf21</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1843310</id>
+      </SteamAppIds>
+      <CMSID>103177899</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <DriverProfile>FunkoFusion\Binaries\Win64\FunkoFusion-Win64-Shipping.exe</DriverProfile>
+      <Image>FunkoFusion\Binaries\Win64\FunkoFusion-Win64-Shipping.exe</Image>
+      <Image>FunkoFusion.exe</Image>
+      <Launch>FunkoFusion\Binaries\Win64\FunkoFusion-Win64-Shipping.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='FunkoFusion\Binaries\Win64\FunkoFusion-Win64-Shipping.exe' />
+        <File name='FunkoFusion.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='fxhome_imerge_pro'>
+    <DisplayName>FXhome Imerge Pro</DisplayName>
+    <IsCreativeApplication>true</IsCreativeApplication>
+    <ChromaAppID>13fd6ecb-532e-44e8-aef6-5ebd6df95048</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101820911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>Imerge Pro.exe</Icon>
+      <DriverProfile>Imerge Pro.exe</DriverProfile>
+      <Image>Imerge Pro.exe</Image>
+      <Launch>&quot;Imerge Pro.exe&quot;</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Imerge Pro.exe' />
+        <File name='diagnostics.bat' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='game_of_thrones_kingsroad'>
+    <DisplayName>Game of Thrones Kingsroad</DisplayName>
+    <ChromaAppID>cbbca1d6-e580-4105-8007-294b2dd14247</ChromaAppID>
+    <Version name='dlss_override'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>3183280</id>
+      </SteamAppIds>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>103888654</CMSID>
+      <Files>
+        <File name='ProjectT\Binaries\Win64\ProjectT-Win64-Shipping.exe' />
+        <File name='GameOfThrones-Kingsroad.exe' />
+      </Files>
+      <DriverProfile>ProjectT\Binaries\Win64\ProjectT-Win64-Shipping.exe</DriverProfile>
+      <Launch>start steam://rungameid/3183280</Launch>
+      <Image>ProjectT\Binaries\Win64\ProjectT-Win64-Shipping.exe</Image>
+      <Image>GameOfThrones-Kingsroad.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gang_beasts'>
+    <DisplayName>Gang Beasts</DisplayName>
+    <ChromaAppID>57b1806d-fae0-491b-8df7-62b8876f9fbb</ChromaAppID>
+    <Version name='Steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>285900</id>
+      </SteamAppIds>
+      <CMSID>100918411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Gang Beasts.exe</Icon>
+      <DriverProfile>Gang Beasts.exe</DriverProfile>
+      <Image>Gang Beasts.exe</Image>
+      <Launch>start steam://rungameid/285900</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Gang Beasts_Data\level0' />
+        <File name='Gang Beasts.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='garrys_mod'>
+    <DisplayName>Garry&apos;s Mod</DisplayName>
+    <ChromaAppID>fc7b0ad4-66d0-461b-a71b-89901e4db016</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>4000</id>
+      </SteamAppIds>
+      <CMSID>101146911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>hl2.exe</Icon>
+      <DriverProfile>hl2.exe</DriverProfile>
+      <Image>hl2.exe</Image>
+      <Image>nvRemixBridge.exe</Image>
+      <Launch>start steam://rungameid/4000</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='hl2.exe' />
+        <File name='garrysmod\garrysmod_000.vpk' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gas_station_simulator'>
+    <DisplayName>Gas Station Simulator</DisplayName>
+    <ChromaAppID>4888cba6-c3d1-4c79-923d-b46d2c381b85</ChromaAppID>
+    <Version name='steam'>
+      <SteamAppIds>
+        <id>1149620</id>
+      </SteamAppIds>
+      <CMSID>101793311</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Icon</Icon>
+      <DriverProfile>GSS2\Binaries\Win64\GSS2-Win64-Shipping.exe</DriverProfile>
+      <Image>GSS2\Binaries\Win64\GSS2-Win64-Shipping.exe</Image>
+      <Launch>start steam://rungameid/1149620</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <Files>
+        <File name='GSS2\Binaries\Win64\GSS2-Win64-Shipping.exe' />
+        <File name='GSS2\GSS2.uproject' />
+      </Files>
+      <Directories>
+        <Directory name='GSS2\Plugins\SteamUtilities' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gauntlet'>
+    <DisplayName>Gauntlet (2014)</DisplayName>
+    <ChromaAppID>6c8b9eff-9be9-4130-b718-94d87b7b3cb6</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>258970</id>
+      </SteamAppIds>
+      <CMSID>101147811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>binaries\gauntlet.exe</Icon>
+      <Image>binaries\gauntlet.exe</Image>
+      <Launch>start steam://rungameid/258970</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/258970</StreamingCmdLine>
+      <StreamingCaption>Gauntlet</StreamingCaption>
+      <StreamingClassName>main_window</StreamingClassName>
+      <Files>
+        <File name='binaries\gauntlet.exe' />
+        <File name='binaries\steam_api.dll' />
+      </Files>
+      <DriverProfile>binaries\gauntlet.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='gog'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101147811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>gog</Distributor>
+      <Icon>binaries_x86\gauntlet.exe</Icon>
+      <Image>binaries_x86\gauntlet.exe</Image>
+      <Launch>binaries_x86\gauntlet.exe -bundle-dir contents -ini settings</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>binaries_x86\gauntlet.exe -bundle-dir contents -ini settings</StreamingCmdLine>
+      <StreamingCaption>Gauntlet</StreamingCaption>
+      <StreamingClassName>main_window</StreamingClassName>
+      <Files>
+        <File name='binaries_x86\gauntlet.exe' />
+        <File name='binaries_x86\Galaxy.dll' />
+      </Files>
+      <DriverProfile>binaries_x86\gauntlet.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gears_5'>
+    <DisplayName>Gears 5</DisplayName>
+    <ChromaAppID>ac15f041-c745-4aff-b2f8-c1292e53c67d</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.1</WhisperModePopsFactor>
+      <CMSID>101148211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>Gears5.exe</Icon>
+      <DriverProfile>Gears5.exe</DriverProfile>
+      <Image>Gears5.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/</StreamingCmdLine>
+      <StreamingCaption>StreamingCaption</StreamingCaption>
+      <StreamingClassName>StreamingClassName</StreamingClassName>
+      <UWPPackageFamilyName>Microsoft.HalifaxBaseGame_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.HalifaxBaseGame_8wekyb3d8bbwe!GearGameShippingInternal</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1097840</id>
+      </SteamAppIds>
+      <CMSID>101148211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GearGame\Binaries\Steam\Gears5.exe</Icon>
+      <DriverProfile>GearGame\Binaries\Steam\Gears5.exe</DriverProfile>
+      <Image>GearGame\Binaries\Steam\Gears5.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/</StreamingCmdLine>
+      <StreamingCaption>StreamingCaption</StreamingCaption>
+      <StreamingClassName>StreamingClassName</StreamingClassName>
+      <Files>
+        <File name='GearGame\Binaries\Steam\Gears5.exe' />
+        <File name='GearGame\Binaries\Steam\xinput1_3.dll' />
+      </Files>
+      <Launch>start steam://rungameid/1097840</Launch>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gears_of_war_4'>
+    <DisplayName>Gears of War 4</DisplayName>
+    <ChromaAppID>da159251-fc7d-4f68-a54b-dda1b76e4ddc</ChromaAppID>
+    <Version name='uwp'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101148311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>UWP</Distributor>
+      <Icon>GearGame.exe</Icon>
+      <Image>GearGame.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>Microsoft.SpartaUWP_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.SpartaUWP_8wekyb3d8bbwe!GearGameShippingPublic</AppUserModelId>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>explorer.exe shell:AppsFolder\Microsoft.SpartaUWP_8wekyb3d8bbwe!GearGameShippingPublic</StreamingCmdLine>
+      <StreamingCaption>Gears of War 4</StreamingCaption>
+      <StreamingClassName>ApplicationFrameWindow</StreamingClassName>
+      <DriverProfile>GearGame.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gears_of_war_e_day'>
+    <DisplayName>Gears of War: E-Day</DisplayName>
+    <ChromaAppID>249ad9c3-988a-4441-b47e-d9799feb1eb0</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <CMSID>103137774</CMSID>
+      <Distributor>Steam</Distributor>
+      <SteamAppIds>
+        <id>3010850</id>
+      </SteamAppIds>
+      <Files>
+        <File name='FairlightConcept\Binaries\Win64\GoWEDay-Steam.exe' />
+        <File name='FairlightConcept\Binaries\Win64\EOSSDK-Win64-Shipping.dll' />
+      </Files>
+      <DriverProfile>FairlightConcept\Binaries\Win64\GoWEDay-Steam.exe</DriverProfile>
+      <Launch>start steam://rungameid/3010850</Launch>
+      <Image>FairlightConcept\Binaries\Win64\GoWEDay-Steam.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+    </Version>
+    <Version name='uwp'>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <CMSID>103137774</CMSID>
+      <Distributor>UWP</Distributor>
+      <DriverProfile>Content\FairlightConcept\Binaries\WinGDK\GoWEDay.exe</DriverProfile>
+      <Image>Content\FairlightConcept\Binaries\WinGDK\GoWEDay.exe</Image>
+      <UWPPackageFamilyName>Microsoft.Fairlightbasegame_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.Fairlightbasegame_8wekyb3d8bbwe!AppGearsofWarEDayShipping</AppUserModelId>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gears_of_war_reloaded'>
+    <DisplayName>Gears of War: Reloaded</DisplayName>
+    <ChromaAppID>06edb15d-7f49-4074-ab46-8bbbfc09aaf8</ChromaAppID>
+    <Version name='dlss_override'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>104173097</CMSID>
+      <Files>
+        <File name='Binaries_x64\GOWDE-Steam.exe' />
+        <File name='Binaries_x64\steam_api64.dll' />
+      </Files>
+      <DriverProfile>Binaries_x64\GOWDE-Steam.exe</DriverProfile>
+      <Launch>Binaries_x64\GOWDE-Steam.exe</Launch>
+      <Image>Binaries_x64\GOWDE-Steam.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_FG_Override>1</Disable_FG_Override>
+    </Version>
+    <Version name='dlss_override_uwp'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>104173097</CMSID>
+      <DriverProfile>Content\Binaries_x64\GOWDE-WinGDK.exe</DriverProfile>
+      <Image>Content\Binaries_x64\GOWDE-WinGDK.exe</Image>
+      <UWPPackageFamilyName>Microsoft.Pender_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.Pender_8wekyb3d8bbwe!Launch.GOWDE</AppUserModelId>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_FG_Override>1</Disable_FG_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gears_tactics'>
+    <DisplayName>Gears Tactics</DisplayName>
+    <ChromaAppID>b53239ff-d4f9-46cc-b269-cbdbf64cb8a9</ChromaAppID>
+    <Version name='Steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1184050</id>
+      </SteamAppIds>
+      <CMSID>101148511</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GearGame\Binaries\Steam\GearsTactics.exe</Icon>
+      <DriverProfile>GearGame\Binaries\Steam\GearsTactics.exe</DriverProfile>
+      <Image>GearGame\Binaries\Steam\GearsTactics.exe</Image>
+      <Launch>start steam://rungameid/1184050</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='GearGame\Binaries\Steam\GearsTactics.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='UWP'>
+      <TelemetryType>1</TelemetryType>
+      <Distributor>UWP</Distributor>
+      <CMSID>101148511</CMSID>
+      <DriverProfile>GearGame\Binaries\WinStore\GearsTactics.exe</DriverProfile>
+      <Image>GearGame\Binaries\WinStore\GearsTactics.exe</Image>
+      <IsAutomatable>1</IsAutomatable>
+      <UWPPackageFamilyName>Microsoft.GanderBaseGame_8wekyb3d8bbwe</UWPPackageFamilyName>
+      <AppUserModelId>Microsoft.GanderBaseGame_8wekyb3d8bbwe!GanderShippingInternal</AppUserModelId>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='generation_zero'>
+    <DisplayName>Generation Zero</DisplayName>
+    <ChromaAppID>408586e9-e55d-44e4-9d65-d651e18967de</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>704270</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.25</WhisperModePopsFactor>
+      <CMSID>101148911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GenerationZero_R.exe</Icon>
+      <DriverProfile>GenerationZero_R.exe</DriverProfile>
+      <Image>GenerationZero_R.exe</Image>
+      <Launch>start steam://rungameid/704270</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/704270</StreamingCmdLine>
+      <StreamingCaption>Generation Zero</StreamingCaption>
+      <StreamingClassName>Generation Zero</StreamingClassName>
+      <Files>
+        <File name='GenerationZero_R.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='genesis_alpha_one'>
+    <DisplayName>Genesis Alpha One</DisplayName>
+    <ChromaAppID>e49e9d64-6573-4d57-bb09-8fadbb282754</ChromaAppID>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>Puma</EpicAppId>
+      <WhisperModePopsFactor>0.28</WhisperModePopsFactor>
+      <CMSID>100877711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>TGP</Distributor>
+      <Icon>Genesis_EGS\Binaries\Win64\Genesis-Win64-Shipping.exe</Icon>
+      <DriverProfile>Genesis_EGS\Binaries\Win64\Genesis-Win64-Shipping.exe</DriverProfile>
+      <Image>Genesis_EGS\Binaries\Win64\Genesis-Win64-Shipping.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/Puma?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/</StreamingCmdLine>
+      <StreamingCaption>StreamingCaption</StreamingCaption>
+      <StreamingClassName>StreamingClassName</StreamingClassName>
+      <Files>
+        <File name='Genesis_EGS\Binaries\Win64\Genesis-Win64-Shipping.exe' />
+        <File name='Genesis_EGS\Content\Paks\Genesis_EGS-WindowsNoEditor.pak' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.28</WhisperModePopsFactor>
+      <SteamAppIds>
+        <id>712190</id>
+      </SteamAppIds>
+      <CMSID>100877711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Genesis\Binaries\Win64\Genesis-Win64-Shipping.exe</Icon>
+      <DriverProfile>Genesis\Binaries\Win64\Genesis-Win64-Shipping.exe</DriverProfile>
+      <Image>Genesis\Binaries\Win64\Genesis-Win64-Shipping.exe</Image>
+      <Launch>start steam://rungameid/712190</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/</StreamingCmdLine>
+      <StreamingCaption>StreamingCaption</StreamingCaption>
+      <StreamingClassName>StreamingClassName</StreamingClassName>
+      <Files>
+        <File name='Genesis\Binaries\Win64\Genesis-Win64-Shipping.exe' />
+        <File name='Genesis\Content\Paks\Genesis-WindowsNoEditor.pak' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='genshin_impact'>
+    <DisplayName>Genshin Impact</DisplayName>
+    <ChromaAppID>64cc9e92-6ad6-49b9-a335-8a579ba7b434</ChromaAppID>
+    <Version name='cn'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>1</WhisperModePopsFactor>
+      <BatteryBoost2PopsFactorTPPLow>1.0</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>1.0</BatteryBoost2PopsFactorTPPHigh>
+      <CMSID>101574711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>YuanShen.exe</Icon>
+      <DriverProfile>YuanShen.exe</DriverProfile>
+      <Image>YuanShen.exe</Image>
+      <Launch>FOR /F &quot;tokens=*&quot; %A IN (&apos;REG QUERY &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall&quot; /s /f &quot;HYP_*_*_cn&quot; /k&apos;) DO ( FOR /F &quot;tokens=2*&quot; %B IN (&apos;REG QUERY &quot;%A&quot; /v DisplayIcon 2^&gt;nul&apos;) DO cmd /c &quot;&quot;%C&quot; --game=hk4e_cn&quot; )</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <Files>
+        <File name='YuanShen.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\Software\\miHoYo\\HYP\\1_1\\hk4e_cn\\GameInstallPath</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='global'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>1</WhisperModePopsFactor>
+      <BatteryBoost2PopsFactorTPPLow>1.0</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>1.0</BatteryBoost2PopsFactorTPPHigh>
+      <CMSID>101574711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Standalone</Distributor>
+      <Icon>GenshinImpact.exe</Icon>
+      <DriverProfile>GenshinImpact.exe</DriverProfile>
+      <Image>GenshinImpact.exe</Image>
+      <Launch>FOR /F &quot;tokens=*&quot; %A IN (&apos;REG QUERY &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall&quot; /s /f &quot;HYP_*_*_global&quot; /k&apos;) DO ( FOR /F &quot;tokens=2*&quot; %B IN (&apos;REG QUERY &quot;%A&quot; /v DisplayIcon 2^&gt;nul&apos;) DO cmd /c &quot;&quot;%C&quot; --game=hk4e_global&quot; )</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <Files>
+        <File name='mhypbase.dll' />
+        <File name='GenshinImpact_Data\Plugins\EOSSDK-Win64-Shipping.dll' exists='false' />
+        <File name='GenshinImpact.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath level='1' suffix='Genshin Impact game' view='64'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Genshin Impact\\DisplayIcon</ValuePath>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\SOFTWARE\\Cognosphere\\HYP\\1_1\\hk4e_global\\GameInstallPath</ValuePath>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\SOFTWARE\\Cognosphere\\HYP\\1_0\\hk4e_global\\GameInstallPath</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>41869934302e4b8cafac2d3c0e7c293d</EpicAppId>
+      <WhisperModePopsFactor>1</WhisperModePopsFactor>
+      <BatteryBoost2PopsFactorTPPLow>1.0</BatteryBoost2PopsFactorTPPLow>
+      <BatteryBoost2PopsFactorTPPHigh>1.0</BatteryBoost2PopsFactorTPPHigh>
+      <CMSID>101574711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Epic</Distributor>
+      <Icon>GenshinImpact.exe</Icon>
+      <DriverProfile>GenshinImpact.exe</DriverProfile>
+      <Image>GenshinImpact.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/879b0d8776ab46a59a129983ba78f0ce%3A7d690c122fde4c60bed85405f343ad10%3A41869934302e4b8cafac2d3c0e7c293d?action=launch&amp;silent=true</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsArm64Automatable>1</IsArm64Automatable>
+      <Files>
+        <File name='GenshinImpact_Data\Plugins\EOSSDK-Win64-Shipping.dll' />
+        <File name='GenshinImpact.exe' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='64'>HKEY_CURRENT_USER\\SOFTWARE\\Cognosphere\\HYP\\standalone\\1_3\\hk4e_global\\8fANlj5K7I\\hk4e_global\\GameInstallPath</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='gfe_sdk_demo'>
+    <DisplayName>GFE SDK DEMO</DisplayName>
+    <ChromaAppID>7719c6ce-aaa8-42cc-bbcb-de2be5483f73</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <CMSID>101150211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>NVIDIA</Distributor>
+      <Icon>GfeSDKDemo_DX.exe</Icon>
+      <Image>GfeSDKDemo_DX.exe</Image>
+      <Launch>GfeSDKDemo_DX.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>GfeSDKDemo_DX.exe</StreamingCmdLine>
+      <StreamingCaption>GfeSDKDemo_DX</StreamingCaption>
+      <StreamingClassName>Direct3DWindowClass</StreamingClassName>
+      <Files>
+        <File name='GfeSDKDemo_DX.exe' />
+        <File name='GfeSDK.dll' />
+        <File name='Media\Tiny\Tiny_skin.dds' />
+      </Files>
+      <DriverProfile>GfeSDKDemo_DX.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghost_hunters_corp'>
+    <DisplayName>Ghost Hunters Corp</DisplayName>
+    <ChromaAppID>16d231c7-6463-484e-bbb2-9e518370574d</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1618540</id>
+      </SteamAppIds>
+      <CMSID>101956911</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Ghost Hunters Corp.exe</Icon>
+      <DriverProfile>Ghost Hunters Corp.exe</DriverProfile>
+      <Image>Ghost Hunters Corp.exe</Image>
+      <Launch>start steam://rungameid/1618540</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Ghost Hunters Corp.exe' />
+        <File name='UnityCrashHandler64.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghost_of_tsushima'>
+    <DisplayName>Ghost of Tsushima: Directors Cut</DisplayName>
+    <ChromaAppID>4f27b612-004f-4bd3-ad3c-1c7612af33c0</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2215430</id>
+      </SteamAppIds>
+      <CMSID>102785008</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GhostOfTsushima.exe</Icon>
+      <DriverProfile>GhostOfTsushima.exe</DriverProfile>
+      <Image>GhostOfTsushima.exe</Image>
+      <Launch>start steam://rungameid/2215430</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='GhostOfTsushima.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='Epic'>
+      <Distributor>Epic</Distributor>
+      <EpicAppId>cd231060e6744ffb97684767b07d2b77</EpicAppId>
+      <CMSID>102785008</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <DriverProfile>GhostOfTsushima.exe</DriverProfile>
+      <Image>GhostOfTsushima.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/cd231060e6744ffb97684767b07d2b77?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='GhostOfTsushima.exe' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghost_recon_phantoms'>
+    <DisplayName>Tom Clancy&apos;s Ghost Recon Phantoms</DisplayName>
+    <ChromaAppID>47c9e688-9bb2-4a50-934b-48869ba5fd8f</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>272350</id>
+      </SteamAppIds>
+      <CMSID>101504411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Game\PDC-Live\GhostReconPhantoms.exe</Icon>
+      <Image>Game\PDC-Live\GhostReconPhantoms.exe</Image>
+      <Launch>start steam://rungameid/272350</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/272350</StreamingCmdLine>
+      <StreamingCaption>Ghost Recon Phantoms</StreamingCaption>
+      <StreamingClassName>Yeti class</StreamingClassName>
+      <Files>
+        <File name='Game\PDC-Live\GhostReconPhantoms.exe' />
+      </Files>
+      <DriverProfile>Game\PDC-Live\GhostReconPhantoms.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghost_recon_wildlands'>
+    <DisplayName>Ghost Recon&#xAE; Wildlands</DisplayName>
+    <ChromaAppID>226cc2ab-ba1f-4fe8-9eca-197cc5fbb429</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>460930</id>
+      </SteamAppIds>
+      <WhisperModePopsFactor>0.125</WhisperModePopsFactor>
+      <CMSID>100872311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GRW.exe</Icon>
+      <DriverProfile>GRW.exe</DriverProfile>
+      <Image>GRW.exe</Image>
+      <Launch>start steam://rungameid/460930</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/460930</StreamingCmdLine>
+      <StreamingCaption>Ghost Recon&#xAE; Wildlands</StreamingCaption>
+      <StreamingClassName>ScimitarEngineWindowClass</StreamingClassName>
+      <Files>
+        <File name='GRW.exe' />
+        <File name='distribution.steam' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='uplay'>
+      <TelemetryType>1</TelemetryType>
+      <WhisperModePopsFactor>0.125</WhisperModePopsFactor>
+      <CMSID>100872311</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Uplay</Distributor>
+      <Icon>GRW.exe</Icon>
+      <DriverProfile>GRW.exe</DriverProfile>
+      <Image>GRW.exe</Image>
+      <Launch>GRW.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>GRW.exe</StreamingCmdLine>
+      <StreamingCaption>Ghost Recon&#xAE; Wildlands</StreamingCaption>
+      <StreamingClassName>ScimitarEngineWindowClass</StreamingClassName>
+      <Files>
+        <File name='GRW.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <InstallDirRegValues>
+        <ValuePath view='32'>HKEY_LOCAL_MACHINE\\SOFTWARE\\Ubisoft\\Launcher\\Installs\\1771\\InstallDir</ValuePath>
+      </InstallDirRegValues>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghostrunner'>
+    <DisplayName>Ghostrunner</DisplayName>
+    <ChromaAppID>482834e6-ffb4-49d2-8334-df266564468e</ChromaAppID>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>ea8df71f923649a193ab1c1fded7e1b3</EpicAppId>
+      <CMSID>100913011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>TGP</Distributor>
+      <Icon>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Image>
+      <Launch>start &quot;&quot; &quot;com.epicgames.launcher://apps/ea8df71f923649a193ab1c1fded7e1b3?action=launch&amp;silent=true&quot;</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe' />
+        <File name='Ghostrunner.exe' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='gog-demo'>
+      <TelemetryType>1</TelemetryType>
+      <GogAppId>1996915520</GogAppId>
+      <CMSID>100913011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Image>
+      <Launch>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe -dx12</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe' />
+        <File name='Ghostrunner.exe' />
+        <File name='goggame-1996915520.info' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='gog'>
+      <TelemetryType>1</TelemetryType>
+      <GogAppId>1957528513</GogAppId>
+      <CMSID>100913011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Image>
+      <Launch>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe -dx12</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe' />
+        <File name='Ghostrunner.exe' />
+        <File name='goggame-1957528513.info' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1139900</id>
+      </SteamAppIds>
+      <CMSID>100913011</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe</Image>
+      <Launch>FOR /F &quot;skip=1 tokens=3* delims= &quot; %i IN (&apos;REG QUERY &quot;HKCU\Software\Valve\Steam&quot; /v SteamExe&apos;) DO cmd /c &quot;&quot;%i %j&quot; -applaunch 1139900 -dx12&quot;</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner\Binaries\Win64\Ghostrunner-Win64-Shipping.exe' />
+        <File name='Ghostrunner.exe' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghostrunner_2'>
+    <DisplayName>Ghostrunner 2</DisplayName>
+    <ChromaAppID>1e7dce2e-db6f-4811-b954-f4d429e48176</ChromaAppID>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>cc3213f280df4b428e85b771c09d1891</EpicAppId>
+      <CMSID>102388811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Epic</Distributor>
+      <Icon>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</Image>
+      <Image>Ghostrunner2.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/cc3213f280df4b428e85b771c09d1891?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe' />
+        <File name='Ghostrunner2.exe' />
+        <File name='gog.ico' exists='false' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='gog'>
+      <TelemetryType>1</TelemetryType>
+      <GogAppId>1825685277</GogAppId>
+      <CMSID>102388811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>gog</Distributor>
+      <Icon>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</Image>
+      <Launch>Ghostrunner2.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe' />
+        <File name='Ghostrunner2.exe' />
+        <File name='gog.ico' exists='true' />
+      </Files>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>2144740</id>
+      </SteamAppIds>
+      <CMSID>102388811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</Icon>
+      <DriverProfile>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</DriverProfile>
+      <Image>Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe</Image>
+      <Image>Ghostrunner2.exe</Image>
+      <Launch>FOR /F &quot;skip=1 tokens=3* delims= &quot; %i IN (&apos;REG QUERY &quot;HKCU\Software\Valve\Steam&quot; /v SteamExe&apos;) DO cmd /c &quot;&quot;%i %j&quot; -applaunch 2144740 -dx12&quot;</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Ghostrunner2\Binaries\Win64\Ghostrunner2-Win64-Shipping.exe' />
+        <File name='Ghostrunner2.exe' />
+        <File name='gog.ico' exists='false' />
+      </Files>
+      <Directories>
+        <Directory name='Engine\Binaries\ThirdParty\Steamworks' />
+      </Directories>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='ghostwire_tokyo'>
+    <DisplayName>GhostWire: Tokyo</DisplayName>
+    <ChromaAppID>9afacd29-b192-40c5-87a8-507f4204c6e6</ChromaAppID>
+    <Version name='epic'>
+      <EpicAppId>007ff8f4e30845a687e66aa77eb3e965</EpicAppId>
+      <CMSID>101152111</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Epic</Distributor>
+      <DriverProfile>GWT.exe</DriverProfile>
+      <Image>GWT.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/007ff8f4e30845a687e66aa77eb3e965?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Snowfall\Binaries\Win64\GWT.exe' />
+        <File name='GWT.exe' />
+      </Files>
+      <Directories>
+        <Directory name='.egstore' />
+      </Directories>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+    <Version name='steam'>
+      <Distributor>Steam</Distributor>
+      <SteamAppIds>
+        <id>1475810</id>
+      </SteamAppIds>
+      <CMSID>101152111</CMSID>
+      <TelemetryType>1</TelemetryType>
+      <DriverProfile>GWT.exe</DriverProfile>
+      <Image>GWT.exe</Image>
+      <Launch>start steam://rungameid/1475810</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='Snowfall\Binaries\Win64\GWT.exe' />
+        <File name='GWT.exe' />
+        <File name='Snowfall\Binaries\Win64\EOSSDK-Win64-Shipping.dll' exists='false' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='giana_sisters_rise_of_the_owlverlord'>
+    <DisplayName>Giana Sisters: Twisted Dreams - Rise of the Owlverlord</DisplayName>
+    <ChromaAppID>20a97930-5b8b-427e-97ad-c07780bcb857</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>246960</id>
+      </SteamAppIds>
+      <CMSID>101152511</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GSGameExe.exe</Icon>
+      <Image>GSGameExe.exe</Image>
+      <Launch>start steam://rungameid/246960</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/246960</StreamingCmdLine>
+      <StreamingCaption>GSTD - Rise of the Owlverlord</StreamingCaption>
+      <StreamingClassName>CabinetWClass</StreamingClassName>
+      <Files>
+        <File name='GSGameExe.exe' />
+        <File name='GSGameExe_DX9.exe' />
+        <File name='bundles\Level4-0.pak' />
+      </Files>
+      <DriverProfile>GSGameExe.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='giana_sisters_twisted_dreams'>
+    <DisplayName>Giana Sisters - Twisted Dreams</DisplayName>
+    <ChromaAppID>a9500e96-9e2f-45ec-b7b1-4d18dc56f532</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>223220</id>
+      </SteamAppIds>
+      <CMSID>101152411</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GSGameExe.exe</Icon>
+      <Image>GSGameExe.exe</Image>
+      <Image>GSGameExe.exe_DX9</Image>
+      <Image>GSLauncher.exe</Image>
+      <Launch>start steam://rungameid/223220</Launch>
+      <IsAutomatable>0</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingAutomatedLaunch>1</StreamingAutomatedLaunch>
+      <StreamingCmdLine>start steam://rungameid/223220</StreamingCmdLine>
+      <StreamingCaption>Giana Sisters - Twisted Dreams Launcher</StreamingCaption>
+      <StreamingClassName>WindowsForms10.Window.8.app.0.2bf8098_r29_ad1</StreamingClassName>
+      <Files>
+        <File name='steam_api.dll' />
+        <File name='GSGameExe.exe' />
+        <File name='bundles\Level1-1.pak' />
+      </Files>
+      <DriverProfile>GSGameExe.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='glorious_mission_online'>
+    <DisplayName>Glorious Mission Online</DisplayName>
+    <ChromaAppID>35d961cc-ffc0-45e0-b521-7750db62d687</ChromaAppID>
+    <Version name='generic'>
+      <TelemetryType>1</TelemetryType>
+      <Icon>PLALauncher.exe</Icon>
+      <Image>PLAGame\Binaries\Win32\PLAGame-Win32-Shipping.exe</Image>
+      <Launch>PLALauncher.exe</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <Files>
+        <File name='PLAGame\Binaries\Win32\PLAGame-Win32-Shipping.exe' />
+        <File name='PLAGame\Binaries\Win32\ApexFramework_x86.dll' />
+        <File name='PLALauncher.exe' />
+      </Files>
+      <CMSID>101153811</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <DriverProfile>PLAGame\Binaries\Win32\PLAGame-Win32-Shipping.exe</DriverProfile>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='goals'>
+    <DisplayName>GOALS</DisplayName>
+    <ChromaAppID>e8c49c5a-81f0-409d-b6e1-0b1e8ec22676</ChromaAppID>
+    <Version name='dlss_override'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>103305702</CMSID>
+      <Files>
+        <File name='Game\Binaries\Win64\Goals.exe' />
+        <File name='Goals.exe' />
+      </Files>
+      <DriverProfile>Game\Binaries\Win64\Goals.exe</DriverProfile>
+      <Launch>Game\Binaries\Win64\Goals.exe</Launch>
+      <Image>Game\Binaries\Win64\Goals.exe</Image>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='dlss_override_uwp'>
+      <DLSS_Override_No_OPS>1</DLSS_Override_No_OPS>
+      <TelemetryType>1</TelemetryType>
+      <CMSVersion>1</CMSVersion>
+      <IsAutomatable>1</IsAutomatable>
+      <CMSID>103305702</CMSID>
+      <DriverProfile>Content\Game\Binaries\WinGDK\Game-WinGDK-Shipping.exe</DriverProfile>
+      <Image>Content\Game\Binaries\WinGDK\Game-WinGDK-Shipping.exe</Image>
+      <UWPPackageFamilyName>GOALS.GOALS_h042pmsq4z2gc</UWPPackageFamilyName>
+      <AppUserModelId>GOALS.GOALS_h042pmsq4z2gc!AppGOALSShipping</AppUserModelId>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='goat_simulator_3'>
+    <DisplayName>Goat Simulator 3</DisplayName>
+    <ChromaAppID>ec428999-c42b-4a84-a82c-54b6fb0fd549</ChromaAppID>
+    <Version name='egs'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>69f916aead6e4947aa3587ea234268be</EpicAppId>
+      <CMSID>101154211</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Epic</Distributor>
+      <Icon>Goat2\Binaries\Win64\Goat2-Win64-Shipping.exe</Icon>
+      <DriverProfile>Goat2\Binaries\Win64\Goat2-Win64-Shipping.exe</DriverProfile>
+      <Image>Goat2\Binaries\Win64\Goat2-Win64-Shipping.exe</Image>
+      <Launch>start com.epicgames.launcher://apps/69f916aead6e4947aa3587ea234268be?action=launch</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <Files>
+        <File name='Goat2\Binaries\Win64\Goat2-Win64-Shipping.exe' />
+        <File name='Goat2\Content\Paks\Goat2-WindowsNoEditor.pak' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_SR_Override>1</Disable_SR_Override>
+      <Disable_RR_Override>1</Disable_RR_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+      <Disable_SR_Model_Override>1</Disable_SR_Model_Override>
+    </Version>
+  </Fingerprint>
+  <Fingerprint name='god_of_war'>
+    <DisplayName>God of War</DisplayName>
+    <ChromaAppID>423b98a9-a629-4ff2-b951-3824bff9e114</ChromaAppID>
+    <Version name='steam'>
+      <TelemetryType>1</TelemetryType>
+      <SteamAppIds>
+        <id>1593500</id>
+      </SteamAppIds>
+      <CMSID>101721711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GoW.exe</Icon>
+      <DriverProfile>GoW.exe</DriverProfile>
+      <Image>GoW.exe</Image>
+      <Launch>start steam://rungameid/1593500</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start steam://rungameid/1593500</StreamingCmdLine>
+      <StreamingCaption>God of War</StreamingCaption>
+      <StreamingClassName>SonySantaMonica</StreamingClassName>
+      <Files>
+        <File name='GoW.exe' />
+        <File name='steam_api64.dll' />
+      </Files>
+      <Disable_FG_Override>1</Disable_FG_Override>
+      <Disable_RR_Model_Override>1</Disable_RR_Model_Override>
+    </Version>
+    <Version name='epic'>
+      <TelemetryType>1</TelemetryType>
+      <EpicAppId>91bfb663fe7a4b9698ba08bd80549b34</EpicAppId>
+      <CMSID>101721711</CMSID>
+      <CMSVersion>1</CMSVersion>
+      <Distributor>Steam</Distributor>
+      <Icon>GoW.exe</Icon>
+      <DriverProfile>GoW.exe</DriverProfile>
+      <Image>GoW.exe</Image>
+      <Launch>start &quot;&quot; &quot;com.epicgames.launcher://apps/91bfb663fe7a4b9698ba08bd80549b34?action=launch&amp;silent=true&quot;</Launch>
+      <IsAutomatable>1</IsAutomatable>
+      <IsStreamingSupported>0</IsStreamingSupported>
+      <StreamingCmdLine>start &quot;&quot; &quot;com.epicgames.launcher://apps/91bfb663fe7a4b9698ba08bd80549b34?action=launch&amp;silent=true&quot;</StreamingCmdLine>
+      <StreamingCaption>God of War</StreamingCaption>
+      <StreamingClassName>SonySantaMonica</StreamingCla

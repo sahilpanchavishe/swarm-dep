@@ -1,0 +1,797 @@
+        self.assertEqual(range(1, 2**100, 2).index(2**87+1), 2**86)
+
+        self.assertEqual(range(10).index(ALWAYS_EQ), 0)
+
+    def test_user_index_method(self):
+        bignum = 2*sys.maxsize
+        smallnum = 42
+
+        # User-defined class with an __index__ method
+        class I:
+            def __init__(self, n):
+                self.n = int(n)
+            def __index__(self):
+                return self.n
+        self.assertEqual(list(range(I(bignum), I(bignum + 1))), [bignum])
+    r:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>Simple-IPC API</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Simple-IPC API is a collection of <code>ipc_</code> prefixed library routines
+and a basic communication protocol that allows an IPC-client process to
+send an application-specific IPC-request message to an IPC-server
+process and receive an application-specific IPC-response message.</p>
+</div>
+<div class="paragraph">
+<p>Communication occurs over a named pipe on Windows and a Unix domain
+socket on other platforms.  IPC-clients and IPC-servers rendezvous at
+a previously agreed-to application-specific pathname (which is outside
+the scope of this design) that is local to the computer system.</p>
+</div>
+<div class="paragraph">
+<p>The IPC-server routines within the server application process create a
+thread pool to listen for connections and receive request messages
+from multiple concurrent IPC-clients.  When received, these messages
+are dispatched up to the server application callbacks for handling.
+IPC-server routines then incrementally relay responses back to the
+IPC-client.</p>
+</div>
+<div class="paragraph">
+<p>The IPC-client routines within a client application process connect
+to the IPC-server and send a request message and wait for a response.
+When received, the response is returned back to the caller.</p>
+</div>
+<div class="paragraph">
+<p>For example, the <code>fsmonitor--daemon</code> feature will be built as a server
+application on top of the IPC-server library routines.  It will have
+threads watching for file system events and a thread pool waiting for
+client connections.  Clients, such as <code>git</code> <code>status</code>, will request a list
+of file system events since a point in time and the server will
+respond with a list of changed files and directories.  The formats of
+the request and response are application-specific; the IPC-client and
+IPC-server routines treat them as opaque byte streams.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comparison_with_sub_process_model">Comparison with sub-process model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Simple-IPC mechanism differs from the existing <code>sub-process.c</code>
+model (Documentation/technical/long-running-process-protocol.adoc) and
+used by applications like Git-LFS.  In the LFS-style sub-process model,
+the helper is started by the foreground process, communication happens
+via a pair of file descriptors bound to the stdin/stdout of the
+sub-process, the sub-process only serves the current foreground
+process, and the sub-process exits when the foreground process
+terminates.</p>
+</div>
+<div class="paragraph">
+<p>In the Simple-IPC model the server is a very long-running service.  It
+can service many clients at the same time and has a private socket or
+named pipe connection to each active client.  It might be started
+(on-demand) by the current client process or it might have been
+started by a previous client or by the OS at boot time.  The server
+process is not associated with a terminal and it persists after
+clients terminate.  Clients do not have access to the stdin/stdout of
+the server process and therefore must communicate over sockets or
+named pipes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server_startup_and_shutdown">Server startup and shutdown</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>How an application server based upon IPC-server is started is also
+outside the scope of the Simple-IPC design and is a property of the
+application using it.  For example, the server might be started or
+restarted during routine maintenance operations, or it might be
+started as a system service during the system boot-up sequence, or it
+might be started on-demand by a foreground Git command when needed.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, server shutdown is a property of the application using
+the simple-ipc routines.  For example, the server might decide to
+shutdown when idle or only upon explicit request.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_simple_ipc_protocol">Simple-IPC protocol</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Simple-IPC protocol consists of a single request message from the
+client and an optional response message from the server.  Both the
+client and server messages are unlimited in length and are terminated
+with a flush packet.</p>
+</div>
+<div class="paragraph">
+<p>The pkt-line routines (<a href="../gitprotocol-common.html">gitprotocol-common(5)</a>)
+are used to simplify buffer management during message generation,
+transmission, and reception.  A flush packet is used to mark the end
+of the message.  This allows the sender to incrementally generate and
+transmit the message.  It allows the receiver to incrementally receive
+the message in chunks and to know when they have received the entire
+message.</p>
+</div>
+<div class="paragraph">
+<p>The actual byte format of the client request and server response
+messages are application specific.  The IPC layer transmits and
+receives them as opaque byte buffers without any concern for the
+content within.  It is the job of the calling application layer to
+understand the contents of the request and response messages.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_summary">Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Conceptually, the Simple-IPC protocol is similar to an HTTP REST
+request.  Clients connect, make an application-specific and
+stateless request, receive an application-specific
+response, and disconnect.  It is a one round trip facility for
+querying the server.  The Simple-IPC routines hide the socket,
+named pipe, and thread pool details and allow the application
+layer to focus on the task at hand.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2025-07-02 10:46:59 UTC
+</div>
+</div>
+</body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    DCMPA30Ä◊’ﬁ±ù VDÑ ¥±öY3˙:hb06
+™
+^àÚ¶.ÉF-4Th4·GDâ€y'qb%àA‡XDÛò	l¯Ñ6Ê9ÇïO}vÑ*®’Ä<!TP"¬(@0Ê?]iH=ΩA≈Êçƒ`Jâ¥¿‰—åiSÊ¥`0u`ﬂ9TÇ˘ŒÓZU¬çAì2b∞4å@)ƒàîTBö9¡FUâ—£L£	√t…UgP£√&uöà"ÂöØXø>±ÚM({òJåô”m^ìa©(!Œ°≈≤Ò‰â/QúPπ"DÀ*F¶ëBe ;âPY''KÑ‹ô@."≠b– Ãp–BåCp`£ëça©WÚPÅö0hHErZÄ§af,
+•+r
+πT»T&_åµ“†)tˆ·0à˛C†©1p—:¶
+e #ã"À8Ñ~Ä|ìL=H)ÖP⁄©UP˙Îí#	ªAcqÁQ≠˙åª`(—=Eà≥©∏üa•ƒç.
+ c õüq„õ+Jl—?◊E]ÙÕvµìÒP¶ X^¨òì8l°»á*·Â^¨àè (‰Âä*≤ë∏Ò√∆ÄE ∫]0å(ZäãGG <@æÛ–WƒŒÊÅ∏opìEò,Ωzx¿-ÏCb^ 0ÏDÍH<
+ºçÅ¢ä¸ h ÄDıáÏà-∫?‘@†ÿb @¡‡V$f|§PÄx!< 	Ñ~∞òb˚CP√äÅ”¢`	P                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              """
+babel.messages.plurals
+~~~~~~~~~~~~~~~~~~~~~~
+
+Plural form definitions.
+
+:copyright: (c) 2013-2026 by the Babel Team.
+:license: BSD, see LICENSE for more details.
+"""
+
+from __future__ import annotations
+
+from babel.core import Locale, default_locale
+
+# XXX: remove this file, duplication with babel.plural
+
+
+LC_CTYPE: str | None = default_locale('LC_CTYPE')
+
+
+PLURALS: dict[str, tuple[int, str]] = {
+    # Afar
+    # 'aa': (),
+    # Abkhazian
+    # 'ab': (),
+    # Avestan
+    # 'ae': (),
+    # Afrikaans - From Pootle's PO's
+    'af': (2, '(n != 1)'),
+    # Akan
+    # 'ak': (),
+    # Amharic
+    # 'am': (),
+    # Aragonese
+    # 'an': (),
+    # Arabic - From Pootle's PO's
+    'ar': (6, '(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=0 && n%100<=2 ? 4 : 5)'),
+    # Assamese
+    # 'as': (),
+    # Avaric
+    # 'av': (),
+    # Aymara
+    # 'ay': (),
+    # Azerbaijani
+    # 'az': (),
+    # Bashkir
+    # 'ba': (),
+    # Belarusian
+    'be': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Bulgarian - From Pootle's PO's
+    'bg': (2, '(n != 1)'),
+    # Bihari
+    # 'bh': (),
+    # Bislama
+    # 'bi': (),
+    # Bambara
+    # 'bm': (),
+    # Bengali - From Pootle's PO's
+    'bn': (2, '(n != 1)'),
+    # Tibetan - as discussed in private with Andrew West
+    'bo': (1, '0'),
+    # Breton
+    'br': (
+        6,
+        '(n==1 ? 0 : n%10==1 && n%100!=11 && n%100!=71 && n%100!=91 ? 1 : n%10==2 && n%100!=12 && n%100!=72 && '
+        'n%100!=92 ? 2 : (n%10==3 || n%10==4 || n%10==9) && n%100!=13 && n%100!=14 && n%100!=19 && n%100!=73 && '
+        'n%100!=74 && n%100!=79 && n%100!=93 && n%100!=94 && n%100!=99 ? 3 : n%1000000==0 ? 4 : 5)',
+    ),
+    # Bosnian
+    'bs': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Catalan - From Pootle's PO's
+    'ca': (2, '(n != 1)'),
+    # Chechen
+    # 'ce': (),
+    # Chamorro
+    # 'ch': (),
+    # Corsican
+    # 'co': (),
+    # Cree
+    # 'cr': (),
+    # Czech
+    'cs': (3, '((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2)'),
+    # Church Slavic
+    # 'cu': (),
+    # Chuvash
+    'cv': (1, '0'),
+    # Welsh
+    'cy': (5, '(n==1 ? 1 : n==2 ? 2 : n==3 ? 3 : n==6 ? 4 : 0)'),
+    # Danish
+    'da': (2, '(n != 1)'),
+    # German
+    'de': (2, '(n != 1)'),
+    # Divehi
+    # 'dv': (),
+    # Dzongkha
+    'dz': (1, '0'),
+    # Greek
+    'el': (2, '(n != 1)'),
+    # English
+    'en': (2, '(n != 1)'),
+    # Esperanto
+    'eo': (2, '(n != 1)'),
+    # Spanish
+    'es': (2, '(n != 1)'),
+    # Estonian
+    'et': (2, '(n != 1)'),
+    # Basque - From Pootle's PO's
+    'eu': (2, '(n != 1)'),
+    # Persian - From Pootle's PO's
+    'fa': (1, '0'),
+    # Finnish
+    'fi': (2, '(n != 1)'),
+    # French
+    'fr': (2, '(n > 1)'),
+    # Friulian - From Pootle's PO's
+    'fur': (2, '(n > 1)'),
+    # Irish
+    'ga': (5, '(n==1 ? 0 : n==2 ? 1 : n>=3 && n<=6 ? 2 : n>=7 && n<=10 ? 3 : 4)'),
+    # Galician - From Pootle's PO's
+    'gl': (2, '(n != 1)'),
+    # Hausa - From Pootle's PO's
+    'ha': (2, '(n != 1)'),
+    # Hebrew
+    'he': (2, '(n != 1)'),
+    # Hindi - From Pootle's PO's
+    'hi': (2, '(n != 1)'),
+    # Croatian
+    'hr': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Hungarian
+    'hu': (1, '0'),
+    # Armenian - From Pootle's PO's
+    'hy': (1, '0'),
+    # Icelandic - From Pootle's PO's
+    'is': (2, '(n%10==1 && n%100!=11 ? 0 : 1)'),
+    # Italian
+    'it': (2, '(n != 1)'),
+    # Japanese
+    'ja': (1, '0'),
+    # Georgian - From Pootle's PO's
+    'ka': (1, '0'),
+    # Kongo - From Pootle's PO's
+    'kg': (2, '(n != 1)'),
+    # Khmer - From Pootle's PO's
+    'km': (1, '0'),
+    # Korean
+    'ko': (1, '0'),
+    # Kurdish - From Pootle's PO's
+    'ku': (2, '(n != 1)'),
+    # Lao - Another member of the Tai language family, like Thai.
+    'lo': (1, '0'),
+    # Lithuanian
+    'lt': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Latvian
+    'lv': (3, '(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2)'),
+    # Maltese - From Pootle's PO's
+    'mt': (4, '(n==1 ? 0 : n==0 || ( n%100>=1 && n%100<=10) ? 1 : (n%100>10 && n%100<20 ) ? 2 : 3)'),
+    # Norwegian Bokm√•l
+    'nb': (2, '(n != 1)'),
+    # Dutch
+    'nl': (2, '(n != 1)'),
+    # Norwegian Nynorsk
+    'nn': (2, '(n != 1)'),
+    # Norwegian
+    'no': (2, '(n != 1)'),
+    # Punjabi - From Pootle's PO's
+    'pa': (2, '(n != 1)'),
+    # Polish
+    'pl': (3, '(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Portuguese
+    'pt': (2, '(n != 1)'),
+    # Brazilian
+    'pt_BR': (2, '(n > 1)'),
+    # Romanian - From Pootle's PO's
+    'ro': (3, '(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2)'),
+    # Russian
+    'ru': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Slovak
+    'sk': (3, '((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2)'),
+    # Slovenian
+    'sl': (4, '(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3)'),
+    # Serbian - From Pootle's PO's
+    'sr': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Southern Sotho - From Pootle's PO's
+    'st': (2, '(n != 1)'),
+    # Swedish
+    'sv': (2, '(n != 1)'),
+    # Thai
+    'th': (1, '0'),
+    # Turkish
+    'tr': (1, '0'),
+    # Ukrainian
+    'uk': (3, '(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)'),
+    # Venda - From Pootle's PO's
+    've': (2, '(n != 1)'),
+    # Vietnamese - From Pootle's PO's
+    'vi': (1, '0'),
+    # Xhosa - From Pootle's PO's
+    'xh': (2, '(n != 1)'),
+    # Chinese - From Pootle's PO's (modified)
+    'zh': (1, '0'),
+}  # fmt: skip
+
+
+DEFAULT_PLURAL: tuple[int, str] = (2, '(n != 1)')
+
+
+class _PluralTuple(tuple):
+    """A tuple with plural information."""
+
+    __slots__ = ()
+
+    @property
+    def num_plurals(self) -> int:
+        """The number of plurals used by the locale."""
+        return self[0]
+
+    @property
+    def plural_expr(self) -> str:
+        """The plural expression used by the locale."""
+        return self[1]
+
+    @property
+    def plural_forms(self) -> str:
+        """The plural expression used by the catalog or locale."""
+        return f'nplurals={self[0]}; plural={self[1]};'
+
+    def __str__(self) -> str:
+        return self.plural_forms
+
+
+def get_plural(locale: Locale | str | None = None) -> _PluralTuple:
+    """A tuple with the information catalogs need to perform proper
+    pluralization.  The first item of the tuple is the number of plural
+    forms, the second the plural expression.
+
+    :param locale: the `Locale` object or locale identifier. Defaults to the system character type locale.
+
+    >>> get_plural(locale='en')
+    (2, '(n != 1)')
+    >>> get_plural(locale='ga')
+    (5, '(n==1 ? 0 : n==2 ? 1 : n>=3 && n<=6 ? 2 : n>=7 && n<=10 ? 3 : 4)')
+
+    The object returned is a special tuple with additional members:
+
+    >>> tup = get_plural("ja")
+    >>> tup.num_plurals
+    1
+    >>> tup.plural_expr
+    '0'
+    >>> tup.plural_forms
+    'nplurals=1; plural=0;'
+
+    Converting the tuple into a string prints the plural forms for a
+    gettext catalog:
+
+    >>> str(tup)
+    'nplurals=1; plural=0;'
+    """
+    locale = Locale.parse(locale or LC_CTYPE)
+    try:
+        tup = PLURALS[str(locale)]
+    except KeyError:
+        try:
+            tup = PLURALS[locale.language]
+        except KeyError:
+            tup = DEFAULT_PLURAL
+    return _PluralTuple(tup)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               MZê       ˇˇ  ∏       @                                   ∞   ∫ ¥	Õ!∏LÕ!This program cannot be run in DOS mode.
+$       ≠X=ﬂÈ9SåÈ9SåÈ9Såõ∏¨åË9Såõ∏QçË9SåRichÈ9Så        PE  L ˆ~o        ‡ !&                              
+   
+           0     ª£   @                                       d                             8                                                                           .rdata  ‡                        @  @.rsrc   d                        @  @            ˆ~o       l   P  P      ˆ~o       $   º  º      Ä Ä                       8   .rdata  8     .rdata$voltmd   P  ê   .rdata$zzzdbg       ∞  .rsrc$01    ∞#  à  .rsrc$02        ì≈Èƒ]¿öníœ∏Rú^∑FVgÑ*6EÉˆ~o                                                                                                                                                                                                                                                                                                             † Ä0  Ä   H  Ä   p  Ä   ‡  Ä                 ¯  Ä              »    ÄÓ  ( Ä¸  @ Ä              A   X Ä  p Ä  à Ä  † Ä  ∏ Ä  – Ä  Ë Ä    Ä   Ä  0 Ä  H Ä 	  ` Ä                 x Ä                ê                  †                  ∞                  ¿                  –                  ‡                                                                                            0                  @                  P                  `                  p                  Ä                  ê  ®#  ∏   ‰      `$    ‰      p&    ‰      x'  n  ‰      Ë(  0   ‰      )  p   ‰      à)  2   ‰      º)  4   ‰      )  .   ‰       *  6   ‰      X*  8   ‰      ê*  <   ‰      Ã*  .   ‰      ¸*  6   ‰      4+  0   ‰      d+  î   ‰      ¯+  l  ‰       M U I Õ˛Õ˛∏                     lr.0òª•Ø¢ëzRÛ/∑ÚRÕÙµÈzy.JŸ<ê¸í                        à      ò                      ®                  M U I                        z h - T W       ƒ »ê     
+  e}     ÍÅäÂ]wQR  	 M i c r o s o f t   J h e n g H e i   U I    P    4 ,   ˇˇÄ ‹ïâï( & C )         P    4 ,    ˇˇÄ Õë-ä( & E )         P    4( ,  Õ ˇˇÄ ™äf( & H )         P    4J ,  Œ ˇˇÄ Ä_
+N˚y( & U )       P    4[ ,  œ ˇˇÄ Ä_N˚y( & D )       P      T 
+ ˇˇˇˇÇ ÔS(uÑvÂ]wQR	cí( & V ) :     Q±P      x d … ˇˇÉ         P    É * ,   ˇˇÄ ∞eûX( & A )   - >       P    É > ,  Ã ˇˇÄ < -   ˚ydñ( & R )       P    ∂  N 
+ ˇˇˇˇÇ ÓvMRÑvÂ]wQR	cí( & T ) :     Q±P    ∂  x d À ˇˇÉ     PAƒ »ê       ‹ å       	 M i c r o s o f t   J h e n g H e i   U I      P     z 2   ˇˇÄ ∫xö[        P    : z 2   ˇˇÄ ÷Sàm        X    p z 2  !0ˇˇÄ WY(u( & A )         P    ¶ z 2  	 ˇˇÄ ™äf       P      ‘ r  0S y s T a b C o n t r o l 3 2       PAƒ »ê       ".       	 M i c r o s o f t   J h e n g H e i   U I       X        0S y s T a b C o n t r o l 3 2           P       &0ˇˇÇ         P      2  #0ˇˇÄ <   
+N Nek( & B )      P    >  2  $0ˇˇÄ N Nek( & N )   >       P    w  2  %0ˇˇÄ å[b        P    ∞  2   ˇˇÄ ÷Sàm        P    È  2  	 ˇˇÄ ™äf        P      # " '0ˇˇÇ     PA RîñW[CQ   +    !q                           ‹ïâï ∫xö[ % s   -   gQπ[  N)Y:  ˚y0R N)Y( & G )  / . , - :  M M M M 	 M M M M   y y y y                  Àä(Wdk8èeQáeW[ gQπ[                            PA
+ øäteêPñâózÑv'Y\0                               ˚y’RêPñâóz0                              PA \êPñâóz.~\bW:y0                              PA \êPñâóz>e'YbhQ¢áU^0                               R€c0RN NP  M D I   ñâóz0                               ‹ïâïêPñâóz0                              PA \ñâóz©_üSbjñn'Y\0                              PA R€c0RvQ÷NÂ]\O0                               +T	g(uºeUÜtñâózÑv}T‰N0 TÊ]bTÛS÷bÛfÜOøätekMO'Y\0 O(uπeTuì Sö[MOuìøätekMO'Y\0 (WÂ]wQR∞eûX0˚y’R S˚ydñ	cí0                        l4   V S _ V E R S I O N _ I N F O     ΩÔ˛   R  7Ùe  
+ 7Ùe?                        Ã   S t r i n g F i l e I n f o   ®   0 4 0 4 0 4 B 0   L   C o m p a n y N a m e     M i c r o s o f t   C o r p o r a t i o n   : 	  F i l e D e s c r i p t i o n     ê(ußc6Ròz_´^    X   F i l e V e r s i o n     5 . 8 2   ( W i n B u i l d . 1 6 0 1 0 1 . 0 8 0 0 )   2 	  I n t e r n a l N a m e   C O M C T L 3 2     Ä .  L e g a l C o p y r i g h t   ©   M i c r o s o f t   C o r p o r a t i o n .   A l l   r i g h t s   r e s e r v e d .   J   O r i g i n a l F i l e n a m e   C O M C T L 3 2 . D L L . M U I     j %  P r o d u c t N a m e     M i c r o s o f t Æ   W i n d o w s Æ   O p e r a t i n g   S y s t e m     D   P r o d u c t V e r s i o n   1 0 . 0 . 2 6 1 0 0 . 1 5 9 1   D    V a r F i l e I n f o     $    T r a n s l a t i o n     ∞PADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPAD                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var React = require("react");
+var Utilities_1 = require("../../../Utilities");
+var clamp_1 = require("../../../utilities/color/clamp");
+var consts_1 = require("../../../utilities/color/consts");
+var getClassNames = Utilities_1.classNamesFunction();
+/**
+ * {@docCategory ColorPicker}
+ */
+var ColorSliderBase = /** @class */ (function (_super) {
+    tslib_1.__extends(ColorSliderBase, _super);
+    function ColorSliderBase(props) {
+        var _this = _super.call(this, props) || this;
+        _this._disposables = [];
+        _this._root = React.createRef();
+        _this._onKeyDown = function (ev) {
+            var currentValue = _this.value;
+            var maxValue = _this._maxValue;
+            var increment = ev.shiftKey ? 10 : 1;
+            // Intentionally DO NOT flip the color picker in RTL: its orientation is not very meaningful,
+            // and getting all the math and styles flipped correctly is tricky
+            // eslint-disable-next-line deprecation/deprecation
+            switch (ev.which) {
+                case Utilities_1.KeyCodes.left: {
+                    currentValue -= increment;
+                    break;
+                }
+                case Utilities_1.KeyCodes.right: {
+                    currentValue += increment;
+                    break;
+                }
+                case Utilities_1.KeyCodes.home: {
+                    currentValue = 0;
+                    break;
+                }
+                case Utilities_1.KeyCodes.end: {
+                    currentValue = maxValue;
+                    break;
+                }
+                default: {
+                    return;
+                }
+            }
+            _this._updateValue(ev, clamp_1.clamp(currentValue, maxValue));
+        };
+        _this._onMouseDown = function (ev) {
+            var win = Utilities_1.getWindow(_this);
+            if (win) {
+                _this._disposables.push(Utilities_1.on(win, 'mousemove', _this._onMouseMove, true), Utilities_1.on(win, 'mouseup', _this._disposeListeners, true));
+            }
+            _this._onMouseMove(ev);
+        };
+        _this._onMouseMove = function (ev) {
+            if (!_this._root.current) {
+                return;
+            }
+            var maxValue = _this._maxValue;
+            var rectSize = _this._root.current.getBoundingClientRect();
+            var currentPercentage = (ev.clientX - rectSize.left) / rectSize.width;
+            var newValue = clamp_1.clamp(Math.round(currentPercentage * maxValue), maxValue);
+            _this._updateValue(ev, newValue);
+        };
+        _this._disposeListeners = function () {
+            _this._disposables.forEach(function (dispose) { return dispose(); });
+            _this._disposables = [];
+        };
+        Utilities_1.initializeComponentRef(_this);
+        Utilities_1.warnDeprecations('ColorSlider', props, {
+            thumbColor: 'styles.sliderThumb',
+            overlayStyle: 'overlayColor',
+            isAlpha: 'type',
+            maxValue: 'type',
+            minValue: 'type',
+        });
+        // eslint-disable-next-line deprecation/deprecation
+        if (_this._type !== 'hue' && !(props.overlayColor || props.overlayStyle)) {
+            Utilities_1.warn("ColorSlider: 'overlayColor' is required when 'type' is \"alpha\" or \"transparency\"");
+        }
+        _this.state = {
+            currentValue: props.value || 0,
+        };
+        return _this;
+    }
+    Object.defineProperty(ColorSliderBase.prototype, "value", {
+        get: function () {
+            return this.state.currentValue;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ColorSliderBase.prototype.componentDidUpdate = function (prevProps, prevState) {
+        // if props changed (as opposed to a state update), set the value
+        // TODO: switch to strict controlled pattern instead
+        if (prevProps !== this.props && this.props.value !== undefined) {
+            this.setState({ currentValue: this.props.value });
+        }
+    };
+    ColorSliderBase.prototype.componentWillUnmount = function () {
+        this._disposeListeners();
+    };
+    ColorSliderBase.prototype.render = function () {
+        var type = this._type;
+        var maxValue = this._maxValue;
+        var _a = this.props, 
+        // eslint-disable-next-line deprecation/deprecation
+        overlayStyle = _a.overlayStyle, overlayColor = _a.overlayColor, theme = _a.theme, className = _a.className, styles = _a.styles, _b = _a.ariaLabel, ariaLabel = _b === void 0 ? type : _b;
+        var currentValue = this.value;
+        var classNames = getClassNames(styles, {
+            theme: theme,
+            className: className,
+            type: type,
+        });
+        var currentPercentage = (100 * currentValue) / maxValue;
+        return (React.createElement("div", { ref: this._root, className: classNames.root, tabIndex: 0, onKeyDown: this._onKeyDown, onMouseDown: this._onMouseDown, role: "slider", "aria-valuenow": currentValue, "aria-valuetext": String(currentValue), "aria-valuemin": 0, "aria-valuemax": maxValue, "aria-label": ariaLabel, "data-is-focusable": true },
+            !!(overlayColor || overlayStyle) && (React.createElement("div", { className: classNames.sliderOverlay, 
+                // this isn't included in getStyles because it may change frequently
+                style: overlayColor
+                    ? {
+                        background: type === 'transparency'
+                            ? "linear-gradient(to right, #" + overlayColor + ", transparent)"
+                            : "linear-gradient(to right, transparent, #" + overlayColor + ")",
+                    }
+                    : overlayStyle })),
+            React.createElement("div", { className: classNames.sliderThumb, style: { left: currentPercentage + '%' } })));
+    };
+    Object.defineProperty(ColorSliderBase.prototype, "_type", {
+        get: function () {
+            // eslint-disable-next-line deprecation/deprecation
+            var _a = this.props, isAlpha = _a.isAlpha, _b = _a.type, type = _b === void 0 ? isAlpha ? 'alpha' : 'hue' : _b;
+            return type;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ColorSliderBase.prototype, "_maxValue", {
+        get: function () {
+            return this._type === 'hue' ? consts_1.MAX_COLOR_HUE : consts_1.MAX_COLOR_ALPHA;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ColorSliderBase.prototype._updateValue = function (ev, newValue) {
+        if (newValue === this.value) {
+            return;
+        }
+        var onChange = this.props.onChange;
+        if (onChange) {
+            onChange(ev, newValue);
+        }
+        if (!ev.defaultPrevented) {
+            this.setState({
+                currentValue: newValue,
+            });
+            ev.preventDefault();
+        }
+    };
+    ColorSliderBase.defaultProps = {
+        value: 0,
+    };
+    return ColorSliderBase;
+}(React.Component));
+exports.ColorSliderBase = ColorSliderBase;
+//# sourceMappingURL=ColorSlider.base.js.map                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         /*=============================================================================
+    Copyright (c) 2001-2011 Joel de Guzman
+    Copyright (c) 2001-2011 Hartmut Kaiser
+    Copyright (c) 2010-2011 Bryce Lelbach
+
+    Distributed under the Boost Software License, Version 1.0. (See accompanying
+    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+=============================================================================*/
+#if !defined(BOOST_SPIRIT_OUTPUT_UTREE_TRAITS_APR_16_2010_0655AM)
+#define BOOST_SPIRIT_OUTPUT_UTREE_TRAITS_APR_16_2010_0655AM
+
+#include <boost/spirit/home/support/attributes.hpp>
+#include <boost/spirit/home/support/container.hpp>
+#include <boost/spirit/home/support/utree.hpp>
+#include <boost/spirit/home/qi/domain.hpp>
+#include <boost/spirit/home/karma/domain.hpp>
+#include <boost/spirit/home/qi/nonterminal/nonterminal_fwd.hpp>
+#include <boost/spirit/home/karma/nonterminal/nonterminal_fwd.hpp>
+
+#include <string>
+
+#include <boost/cstdint.hpp>
+#include <boost/variant.hpp>
+#include <boost/mpl/bool.hpp>
+#include <boost/mpl/identity.hpp>
+#include <boost/mpl/or.hpp>
+#include <boost/range/iterator_range_core.hpp>
+#include <boost/type_traits/is_same.hpp>
+#include <boost/utility/enable_if.hpp>
+
+///////////////////////////////////////////////////////////////////////////////
+namespace boost
+{
+    template <typename T>
+    inline T get(boost::spirit::utree const& x)
+    {
+        return x.get<T>();
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+namespace boost { namespace spirit { namespace traits
+{
+    namespace detail
+    {
+        inline bool is_list(utree const& ut)
+        {
+            switch (traits::which(ut))
+            {
+            case utree_type::reference_type:
+                return is_list(ut.deref());
+
+            case utree_type::list_type:
+            case utree_type::range_type:
+                return true;
+
+            default:
+                break;
+            }
+            return false;
+        }
+
+        inline bool is_uninitialized(utree const& ut)
+        {
+            return traits::which(ut) == utree_type::invalid_type;
+        }
+    }
+
+    // this specialization tells Spirit how to extract the type of the value
+    // stored in the given utree node
+    template <>
+    struct variant_which<utree>
+    {
+        static int call(utree const& u) { return u.which(); }
+    };
+    
+    template <>
+    struct variant_which<utree::list_type>
+    {
+        static int call(utree::list_type const& u) { return u.which(); }
+    };
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Make sure all components of an alternative expose utree, even if they
+    // actually expose a utree::list_type
+    template <typename Domain> 
+    struct alternative_attribute_transform<utree::list_type, Domain>
+      : mpl::identity<utree>
+    {};
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Make sure all components of a sequence expose utree, even if they
+    // actually expose a utree::list_type
+    template <typename Domain> 
+    struct sequence_attribute_transform<utree::list_type, Domain>
+      : mpl::identity<utree>
+    {};
+
+    ///////////////////////////////////////////////////////////////////////////
+    // this specialization lets Spirit know that typed basic_strings
+    // are strings
+    template <typename Base, utree_type::info I>
+    struct is_string<spirit::basic_string<Base, I> > 
+      : mpl::true_ 
+    {};
+
+    ///////////////////////////////////////////////////////

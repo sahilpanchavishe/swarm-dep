@@ -1,0 +1,69 @@
+amdefine is released under two licenses: new BSD, and MIT. You may pick the
+license that best suits your development needs. The text of both licenses are
+provided below.
+
+
+The "New" BSD License:
+----------------------
+
+Copyright (c) 2011-2016, The Dojo Foundation
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice, this
+  ring"
+                name="User"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="SID"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Threat Name"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Threat ID"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Severity ID"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Category ID"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="FWLink"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Path"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Unused6"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Unused7"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Unused8"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Unused9"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Unused10"
+                />
+            <data
+                inType="win:UnicodeString"
+                name="Unused11
